@@ -22,7 +22,7 @@ class CreateKonsultasisTable extends Migration
             $table->string('keterangan')->nullable();
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('pertanyaan_id')->references('id')->on('peenyataans')->onDelete('set null');
+            $table->foreign('pertanyaan_id')->references('id')->on('pertanyaans')->onDelete('set null');
         });
     }
 
