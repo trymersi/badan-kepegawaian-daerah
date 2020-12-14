@@ -60,7 +60,7 @@ class BidangController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'nama_bidang' => 'required|unique:bidangs,nama',
+            'nama_bidang' => 'required|unique:bidangs,nama,NULL,id,deleted_at,NULL',
         ]);
         if ($validator->fails()) {
             Toastr::error('Terjadi Kesalahan Saat Menyimpan Data', 'Gagal', ["positionClass" => "toast-bottom-right"]);
@@ -98,7 +98,7 @@ class BidangController extends Controller
         $edit = $this->bidangClass->find($id);
         $this->data['edit'] = $edit;
         $this->data['update_name'] = $edit->nama;
-        $this->data['page_name'] = 'tabel data bidang';
+        $this->data['page_name'] = 'ubah data bidang';
         return view('dashboard.page.bidang.edit',$this->data);
     }
 

@@ -28,7 +28,7 @@
                         
                         <div class="form-group">
                           <label>Keterangan</label>
-                          <textarea rows="5" name="keterangan" class="form-control" placeholder="Masukan Keterangan Bidang"> {{ $edit->keterangan }}</textarea>
+                          <textarea rows="5" name="keterangan" class="form-control" placeholder="Masukan Keterangan Bidang"> {{ old('keterangan',$edit->keterangan) }}</textarea>
                         </div>
                     </div>
                     <!-- /.box-body -->

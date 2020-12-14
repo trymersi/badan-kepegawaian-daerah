@@ -11,12 +11,20 @@
           </a>
         </li>
         <li class="header">Data Dinas </li>
-        <li>
+        <li class="@if($category_name == "Bidang") active @endif">
             <a href="{{ url('/dashboard/bidang') }}">
                 <i class="icon-Library"><span class="path1"></span><span class="path2"></span></i>
                 <span>Data Bidang</span>
             </a>
-          </li>
+        </li>
+
+        <li class="@if($category_name == "Sub Bidang") active @endif">
+            <a href="{{ url('/dashboard/sub-bidang') }}">
+                <i class="fa fa-window-restore" aria-hidden="true"></i>
+                <span>Data Sub Bidang</span>
+            </a>
+        </li>
+
       </ul>
     </section>
 	<div class="sidebar-footer">

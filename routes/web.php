@@ -28,4 +28,12 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()
         Route::patch('/update/{id}','Backend\BidangController@update');
         Route::delete('/delete/{id}','Backend\BidangController@destroy');
     });
+
+    Route::prefix('/sub-bidang')->group(function(){
+        Route::resource('/','Backend\SubBidangController');
+        Route::get('/table','Backend\SubBidangController@table');
+        Route::get('/edit/{id}','Backend\SubBidangController@edit');
+        Route::patch('/update/{id}','Backend\SubBidangController@update');
+        Route::delete('/delete/{id}','Backend\SubBidangController@destroy');
+    });
 });
