@@ -17,3 +17,15 @@ Route::prefix('/')->group(function(){
     
 });
 
+Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()
+{
+    Route::get('/', "Backend\DashboardController@index");
+
+    Route::prefix('/bidang')->group(function(){
+        Route::resource('/','Backend\BidangController');
+        Route::get('/table','Backend\BidangController@table');
+        Route::get('/edit/{id}','Backend\BidangController@edit');
+        Route::patch('/update/{id}','Backend\BidangController@update');
+        Route::delete('/delete/{id}','Backend\BidangController@destroy');
+    });
+});

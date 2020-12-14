@@ -29,7 +29,7 @@
 					<div class="col-lg-5 col-md-5 col-12">
 						<div class="bg-white rounded30 shadow-lg">
 							<div class="content-top-agile p-20 pb-0">
-								<h2 class="text-primary">Let's Get Started</h2>
+								<h2 class="text-primary">Let's Get Starteds</h2>
 								<p class="mb-0">Sign in to continue to WebkitX.</p>							
 							</div>
 							<div class="p-40">
@@ -40,7 +40,12 @@
 											<div class="input-group-prepend">
 												<span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
 											</div>
-											<input type="text" name="email" class="form-control pl-15 bg-transparent" placeholder="Username" autofocus>
+											<input type="text" name="email" class="form-control pl-15 bg-transparent @error('email') is-invalid @enderror" placeholder="email" autofocus>
+											@error('email')
+												<span class="invalid-feedback" role="alert">
+													<strong>{{ $message }}</strong>
+												</span>
+											@enderror
 										</div>
 									</div>
 									<div class="form-group">
@@ -48,7 +53,12 @@
 											<div class="input-group-prepend">
 												<span class="input-group-text  bg-transparent"><i class="ti-lock"></i></span>
 											</div>
-											<input type="password" name="password" class="form-control pl-15 bg-transparent" placeholder="Password">
+											<input type="password" name="password" class="form-control pl-15 bg-transparent @error('password') is-invalid @enderror" placeholder="Password" >
+											@error('password')
+												<span class="invalid-feedback" role="alert">
+													<strong>{{ $message }}</strong>
+												</span>
+											@enderror
 										</div>
 									</div>
 									  <div class="row">
