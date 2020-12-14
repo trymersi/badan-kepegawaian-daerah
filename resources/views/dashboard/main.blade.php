@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="{{ asset('assets/backend/css/style.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/backend/css/skin_color.css') }}">
 	@stack('css')
+	
   </head>
 
 <body class="hold-transition light-skin sidebar-mini theme-primary">
@@ -61,17 +62,24 @@
 	
 	<!-- Vendor JS -->
 	<script src="{{ asset('assets/backend/js/vendors.min.js')}}"></script>
-	<script src="{{ asset('assets/backend/js/pages/chat-popup.js')}}"></script>
     <script src="{{ asset('assets/backend/icons/feather-icons/feather.min.js')}}"></script>	
 
-	<script src="{{ asset('assets/backend/vendor_components/apexcharts-bundle/dist/apexcharts.js')}}"></script>
 	<script src="{{ asset('assets/backend/vendor_components/moment/min/moment.min.js')}}"></script>
-	<script src="{{ asset('assets/backend/vendor_components/fullcalendar/fullcalendar.js')}}"></script>
 	
 	<!-- EduAdmin App -->
 	<script src="{{ asset('assets/backend/js/template.js')}}"></script>
-	<script src="{{ asset('assets/backend/js/pages/dashboard.js')}}"></script>
-	<script src="{{ asset('assets/backend/js/pages/calendar.js')}}"></script>
+	{{-- <script src="{{ asset('assets/backend/js/pages/dashboard.js')}}"></script> --}}
+	@toastr_css
+	@toastr_js
+	@toastr_render
+	<script>
+	$("#button-simpan").on('click',function()
+	{
+		
+		$("#icon-simpan").addClass('d-none');
+		$("#loading-simpan").removeClass('d-none');
+	})
+	</script>
 	@stack('js')
 </body>
 </html>

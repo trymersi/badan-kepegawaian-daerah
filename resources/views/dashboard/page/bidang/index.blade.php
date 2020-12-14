@@ -2,26 +2,26 @@
 
 
 @section('content')
+@include('dashboard.include.breadcrumb')
 <section class="content">
     <div class="row">
         
       <div class="col-12">
           <div class="box">
               <div class="box-header">						
-                  <h4 class="box-title">Complex headers (rowspan and colspan)</h4>
+                  <h4 class="box-title">{{ strtoupper($page_name) }}</h4>
+                  <a href="{{ action('Backend\BidangController@create') }}" class="btn btn-success mb-2 mr-2 float-right"><i class="fa fa-plus" aria-hidden="true"></i> Tambah Data</a>
               </div>
               <div class="box-body">
                   <div class="table-responsive">
-                    <table id="tabel" class="tabel table table-striped table-bordered display" style="width:100%">
+                    <table id="tabel" class="tabel table table-striped display" style="width:100%">
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Judul</th>
-                                <th>Thumbnail</th>
-                                <th>Kategori</th>
-                                <th>Label</th>
-                                <th>Status</th>
-                                <th>Detail</th>
+                                <th>Nama Bidang</th>
+                                <th>Keterangan</th>
+                                <th>Jumlah Sub Bidang</th>
+                                <th>Terakhir Diubah</th>
                                 <th class="no-content"></th>
                             </tr>
                         </thead>
@@ -35,30 +35,33 @@
     </div>
 </section>
 
-<div class="modal fade stick-up" id="ModalHapus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+<div class="modal center-modal fade" id="ModalHapus" tabindex="-1">
     <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Hapus Data {{ $page_name }}</h5>
-            </div>
-            <div class="modal-body">
-              <p class="no-margin">Apakah Anda Yakin Akan Menghapus {{ $page_name }} <mark class="text-danger NamaUserHapus">highlight</mark> ?</p>
-            </div>
-            <div class="modal-footer AksiHapus">
-              
-            </div>
-          </div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Hapus Data {{ $category_name }}</h5>
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <p class="no-margin">Apakah Anda Yakin Akan Menghapus {{ $category_name }} <span class="badge badge-danger NamaUserHapus">Danger</span> ?</p>
+        </div>
+        <div class="modal-footer modal-footer-uniform modal-footer AksiHapus">
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 
 @endsection
 
 @push('css')
-<link rel="stylesheet" type="text/css" href="{{asset('backend/vendor_components/datatable/datatables.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('assets/backend/vendor_components/datatable/datatables.css')}}">
 @endpush
 
 @push('js')
-<script src="{{asset('backend/vendor_components/datatable/datatables.js')}}"></script>
+<script src="{{asset('assets/backend/vendor_components/datatable/datatables.js')}}"></script>
 <script>
     $(document).ready(function(){
         
@@ -76,32 +79,22 @@
            processing: true,
            serverSide: true,
            ajax: {
-           url: "{{ url('dashboard/berita/table') }}",
+           url: "{{ url('dashboard/bidang/table') }}",
            },
            columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false,searchable: false},
             {
-                data: 'title',
-                name: 'title'
+                data: 'nama',
+                name: 'nama'
             },
             {
-                data: 'gambar',
-                name: 'gambar'
+                data: 'keterangan',
+                name: 'keterangan'
             },
             {
-                data: 'nama_kategori',
-                name: 'nama_kategori'
+                data: 'total_sub_bidang',
+                name: 'total_sub_bidang'
             },
-            {
-                data: 'label',
-                name: 'label'
-            },
-            @if(Auth::user()->level != 7)
-            {
-                data: 'nama_kabupaten',
-                name: 'nama_kabupaten'
-            },
-            @endif
             {
                 data: 'tanggal',
                 name: 'tanggal'
@@ -126,20 +119,20 @@
                     $('.NamaUserHapus').html('');
                     $('.AksiHapus').html('');
                     $('.NamaUserHapus').html(nama);
-                    $('.AksiHapus').html('<button type="button" class="btn btn-default btn-cons no-margin pull-left inline" data-dismiss="modal">Batal</button><button type="button" class="btn btn-danger btn-cons  pull-left inline TombolHapus" data-id="'+id+'" data-token="{{ csrf_token() }}" >Hapus</button>');
+                    $('.AksiHapus').html('<button type="button" class="btn btn-default btn-cons no-margin float-left inline" data-dismiss="modal">Batal</button><button type="button" class="btn btn-danger btn-cons  float-right inline TombolHapus" data-id="'+id+'" data-token="{{ csrf_token() }}" >Hapus</button>');
                     $('.TombolHapus').on('click',function(e)
                     {
                         var idDelete = $(this).attr('data-id');
                         var token = $(this).attr('data-token');
                         $.ajax({
-                            url:"{{url('dashboard/berita/delete')}}/" + idDelete,
+                            url:"{{url('dashboard/bidang/delete')}}/" + idDelete,
                             type: 'POST',
                             data: {_method: 'delete', _token :token},
                             success:function(get){
                             toastr.options = {
                                 "positionClass": "toast-bottom-right",
                                 }
-                            if(get.status == '1')
+                            if(get == 1)
                             {
                                 toastr["success"]("Data  Berhasil Dihapus", "Sukses !!")
                             }
