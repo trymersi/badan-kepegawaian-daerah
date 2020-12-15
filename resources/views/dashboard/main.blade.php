@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../images/favicon.ico">
+    <link rel="icon" href="{{ asset('assets/backend/images/logo-letter.png') }}">
 
-    <title>EduAdmin - Dashboard</title>
+    <title>BKD PROVINSI RIAU - ADMIN</title>
     
 	<!-- Vendors Style-->
 	<link rel="stylesheet" href="{{ asset('assets/backend/css/vendors_css.css') }}">

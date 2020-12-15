@@ -24,6 +24,13 @@
                 <span>Data Sub Bidang</span>
             </a>
         </li>
+        
+        <li class="@if($category_name == "Link Terkait") active @endif">
+          <a href="{{ url('/dashboard/link-terkait') }}">
+              <i class="fa fa-window-restore" aria-hidden="true"></i>
+              <span>Data Link Terkait</span>
+          </a>
+        </li>
 
       </ul>
     </section>
