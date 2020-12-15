@@ -17,7 +17,7 @@ class CreateGaleriVideosTable extends Migration
             $table->bigIncrements('id');
             $table->string('nama')->nullable();
             $table->string('url_video')->nullable();
-            $table->string('deksripsi')->nullable();
+            $table->string('deskripsi')->nullable();
             $table->string('slug')->nullable();
             $table->timestamps();
             $table->softDeletes();

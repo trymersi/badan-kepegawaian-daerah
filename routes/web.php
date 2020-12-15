@@ -95,4 +95,12 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()
         Route::patch('/update/{id}','Backend\PegawaiController@update');
         Route::delete('/delete/{id}','Backend\PegawaiController@destroy');
     });
+
+    Route::prefix('/galeri-video')->group(function(){
+        Route::resource('/','Backend\GaleriVideoController');
+        Route::get('/table','Backend\GaleriVideoController@table');
+        Route::get('/edit/{id}','Backend\GaleriVideoController@edit');
+        Route::patch('/update/{id}','Backend\GaleriVideoController@update');
+        Route::delete('/delete/{id}','Backend\GaleriVideoController@destroy');
+    });
 });
