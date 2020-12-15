@@ -65,7 +65,7 @@
     <script src="{{ asset('assets/backend/icons/feather-icons/feather.min.js')}}"></script>	
 
 	<script src="{{ asset('assets/backend/vendor_components/moment/min/moment.min.js')}}"></script>
-	
+	<script src="{{ asset('assets/backend/vendor_components/dropzone/dropzone.js')}}"></script>
 	<!-- EduAdmin App -->
 	<script src="{{ asset('assets/backend/js/template.js')}}"></script>
 	{{-- <script src="{{ asset('assets/backend/js/pages/dashboard.js')}}"></script> --}}

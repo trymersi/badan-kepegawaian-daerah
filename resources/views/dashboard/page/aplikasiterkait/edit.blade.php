@@ -11,7 +11,7 @@
                   <h4 class="box-title">{{ strtoupper($page_name) }} [{{ strtoupper($update_name) }}]</h4>
                 </div>
                 <!-- /.box-header -->
-                <form class="form" method="POST" action="{{ url('dashboard/link-terkait/update/'.$edit->id)}}">
+                <form class="form" method="POST" action="{{ url('dashboard/aplikasi-terkait/update/'.$edit->id)}}" enctype="multipart/form-data">
                     @csrf @method('PATCH')
                     <div class="box-body">
                        <div class="row">
@@ -37,6 +37,19 @@
                             </div>
                           </div>
                         </div>
+
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group @error('gambar') error @enderror">
+                              <label>Pilih Gambar <span class="text-danger">*</label>
+                              <input type="file" name="gambar" value="{{ old('gambar') }}" accept="image/gif, image/jpeg, image/png" />
+                              @error('gambar')
+                              <div class="help-block"><ul role="alert"><li>{{$message}}</li></ul></div>
+                              @enderror
+                            </div>
+                          </div>
+                        </div
+                        
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">

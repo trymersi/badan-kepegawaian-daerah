@@ -24,7 +24,7 @@ class AplikasiTerkaitController extends Controller
         $this->AplikasiClass = new Aplikasi;
 
         $this->data = [
-            'category_name' => 'Terkait',
+            'category_name' => 'Aplikasi Terkait',
             'main_url' => 'aplikasi-terkait',
         ];
     }
@@ -60,16 +60,29 @@ class AplikasiTerkaitController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'nama' => 'required|unique:link_terkaits,nama,NULL,id,deleted_at,NULL',
-            'link' => 'required|unique:link_terkaits,link,NULL,id,deleted_at,NULL',
+            'nama' => 'required|unique:aplikasis,nama,NULL,id,deleted_at,NULL',
+            'link' => 'required|unique:aplikasis,link,NULL,id,deleted_at,NULL',
+            'gambar' => 'required',
         ]);
         if ($validator->fails()) {
             Toastr::error('Terjadi Kesalahan Saat Menyimpan Data', 'Gagal', ["positionClass" => "toast-bottom-right"]);
             return Redirect::back()->withErrors($validator)->withInput();
         }
+        $nama_bersih = bersih($request->nama,'-');
+
+        if($request->file('gambar'))
+        {
+            $gambar = $request->file('gambar');
+            $ext = $gambar->getClientOriginalExtension();
+            $destination = public_path('uploads/images/aplikasi-terkait');
+            $filename_header = $nama_bersih.".".$ext;
+            $gambar->move($destination, $filename_header);
+        }
+        
 
         $this->AplikasiClass->nama = $request->nama;
         $this->AplikasiClass->link = $request->link;
+        $this->AplikasiClass->gambar = $filename_header ; 
         $this->AplikasiClass->save();
 
         $this->AplikasiClass->id ? Toastr::success('Data Berhasil Disimpan', 'Sukses', ["positionClass" => "toast-bottom-right"]) : Toastr::error('Terjadi Kesalahan Saat Menyimpan Data', 'Gagal', ["positionClass" => "toast-bottom-right"]);
@@ -99,7 +112,7 @@ class AplikasiTerkaitController extends Controller
         $edit = $this->AplikasiClass->find($id);
         $this->data['edit'] = $edit;
         $this->data['update_name'] = $edit->nama;
-        $this->data['page_name'] = 'ubah data aplikasi terkait';
+        $this->data['page_name'] = 'ubah data link terkait';
         return view('dashboard.page.aplikasiterkait.edit',$this->data);
     }
 
@@ -120,10 +133,22 @@ class AplikasiTerkaitController extends Controller
             Toastr::error('Terjadi Kesalahan Saat Menyimpan Data', 'Gagal', ["positionClass" => "toast-bottom-right"]);
             return Redirect::back()->withErrors($validator)->withInput();
         }
+        $nama_bersih = bersih($request->nama,'-');
 
+        if($request->file('gambar'))
+        {
+            $gambar = $request->file('gambar');
+            $ext = $gambar->getClientOriginalExtension();
+            $destination = public_path('uploads/images/aplikasi-terkait');
+            $filename_header = $nama_bersih.".".$ext;
+            $gambar->move($destination, $filename_header);
+        }
         $update = Aplikasi::find($id);
         $update->nama = $request->nama;
         $update->link = $request->link;
+        if(isset($filename_header)):
+            $update->gambar = $filename_header;
+        endif;  
         $update->save();
 
         $update ? Toastr::success('Data Berhasil Diubah', 'Sukses', ["positionClass" => "toast-bottom-right"]) : Toastr::error('Terjadi Kesalahan Saat Menyimpan Data', 'Gagal', ["positionClass" => "toast-bottom-right"]);
@@ -162,13 +187,19 @@ class AplikasiTerkaitController extends Controller
                 return  $link;
             })
 
+            ->addColumn('gambar', function($data)
+            {
+                $gambar = '<figure class="img-hov-zoomin"><img src="'.asset("uploads/images/aplikasi-terkait/".$data->gambar).'" alt="'.$data->gambar.'"></figure>';
+                return  $gambar;
+            })
+
             ->addColumn('tanggal', function($data)
             {
             return  Carbon::parse($data->updated_at)->diffForHumans();
             })
 
             ->addIndexColumn()
-            ->rawColumns(['tanggal','option','link_terkait'])
+            ->rawColumns(['tanggal','option','link_terkait','gambar'])
             ->make(true);
     }
 }

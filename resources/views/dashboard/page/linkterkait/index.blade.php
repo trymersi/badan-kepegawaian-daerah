@@ -20,6 +20,7 @@
                                 <th>#</th>
                                 <th>Nama Website</th>
                                 <th>Link</th>
+                                <th>Gambar</th>
                                 <th>Terakhir Diubah</th>
                                 <th class="no-content"></th>
                             </tr>
@@ -89,6 +90,10 @@
             {
                 data: 'link_terkait',
                 name: 'link_terkait'
+            },
+            {
+                data: 'gambar',
+                name: 'gambar'
             },
             {
                 data: 'tanggal',
