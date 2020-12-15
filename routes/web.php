@@ -52,4 +52,12 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()
         Route::patch('/update/{id}','Backend\LinkTerkaitController@update');
         Route::delete('/delete/{id}','Backend\LinkTerkaitController@destroy');
     });
+
+    Route::prefix('/aplikasi-terkait')->group(function(){
+        Route::resource('/','Backend\AplikasiTerkaitController');
+        Route::get('/table','Backend\AplikasiTerkaitController@table');
+        Route::get('/edit/{id}','Backend\AplikasiTerkaitController@edit');
+        Route::patch('/update/{id}','Backend\AplikasiTerkaitController@update');
+        Route::delete('/delete/{id}','Backend\AplikasiTerkaitController@destroy');
+    });
 });

@@ -119,22 +119,35 @@ class UnduhController extends Controller
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
-            'nama_bidang' => 'required',
+            'nama_file' => 'required',
         ]);
         if ($validator->fails()) {
             Toastr::error('Terjadi Kesalahan Saat Menyimpan Data', 'Gagal', ["positionClass" => "toast-bottom-right"]);
             return Redirect::back()->withErrors($validator)->withInput();
         }
 
-        $update = Unduh::find($id);
-        $update->nama = $request->nama_bidang;
-        $update->slug = bersih($request->nama_bidang);
-        $update->keterangan = ($request->keterangan) ? $request->keterangan : '-';
-        $update->save();
+        $old = $this->unduhClass->find($id);
 
-        $update ? Toastr::success('Data Berhasil Diubah', 'Sukses', ["positionClass" => "toast-bottom-right"]) : Toastr::error('Terjadi Kesalahan Saat Menyimpan Data', 'Gagal', ["positionClass" => "toast-bottom-right"]);
+        if($request->hasFile('file'))
+        {
+            unlink(public_path('uploads/unduhan/'.$old->file));
+            $file = $request->file('file');
+            $nama_file = bersih($request->nama_file).'-'.date('d-m-Y').'.pdf';
+            $file->move(public_path('uploads/unduhan'),$nama_file);
+        }
+        
+        $edit = Unduh::find($id);
+        $edit->nama = $request->nama_file;
+        $edit->slug = bersih($request->nama_file);
+        if(isset($nama_file)):
+            $edit->file = $nama_file;
+        endif;
+        $edit->keterangan = ($request->keterangan) ? $request->keterangan : '-';
+        $edit->save();
 
-        return redirect::to('dashboard/bidang');
+        $edit ? Toastr::success('Data Berhasil Disimpan', 'Sukses', ["positionClass" => "toast-bottom-right"]) : Toastr::error('Terjadi Kesalahan Saat Menyimpan Data', 'Gagal', ["positionClass" => "toast-bottom-right"]);
+
+        return redirect::to('dashboard/unduhan');
     }
 
     /**
@@ -145,7 +158,8 @@ class UnduhController extends Controller
      */
     public function destroy($id)
     {
-        $delete = $this->bidangClass->find($id);
+        $delete = $this->unduhClass->find($id);
+        unlink(public_path('uploads/unduhan/'.$delete->file));
         $delete->delete();
         return $delete ? 1 : 0;
     }

@@ -11,7 +11,7 @@
                   <h4 class="box-title">{{ strtoupper($page_name) }} [{{ strtoupper($update_name) }}]</h4>
                 </div>
                 <!-- /.box-header -->
-                <form class="form" method="POST" action="{{ url('dashboard/unduhan/update/'.$edit->id)}}">
+                <form class="form" method="POST" action="{{ url('dashboard/unduhan/update/'.$edit->id)}}" enctype="multipart/form-data">
                     @csrf @method('PATCH')
                     <div class="box-body">
                       <div class="row">

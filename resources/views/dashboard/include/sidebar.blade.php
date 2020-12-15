@@ -156,7 +156,7 @@
                 </li>
         
                 <li class="@if($category_name == "Aplikasi Terkait") active @endif">
-                  <a href="{{ url('/dashboard/aplikasi') }}">
+                  <a href="{{ url('/dashboard/aplikasi-terkait') }}">
                       <i class="fa fa-desktop" aria-hidden="true"></i>
                       <span>Aplikasi Terkait</span>
                   </a>
