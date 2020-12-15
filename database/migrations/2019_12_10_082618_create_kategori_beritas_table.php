@@ -16,6 +16,7 @@ class CreateKategoriBeritasTable extends Migration
         Schema::create('kategori_beritas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama')->nullable();
+            $table->string('slug')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

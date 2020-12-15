@@ -72,7 +72,7 @@
               </li>
 
               <li class="@if($category_name == "Kategori Berita") active @endif">
-                <a href="{{ url('/dashboard/kategroriberita') }}">
+                <a href="{{ url('/dashboard/kategori-berita') }}">
                     <i class="fa fa-server" aria-hidden="true"></i>
                     <span>Kategori Berita</span>
                 </a>

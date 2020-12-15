@@ -60,4 +60,12 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()
         Route::patch('/update/{id}','Backend\AplikasiTerkaitController@update');
         Route::delete('/delete/{id}','Backend\AplikasiTerkaitController@destroy');
     });
+
+    Route::prefix('/kategori-berita')->group(function(){
+        Route::resource('/','Backend\KategoriBeritaController');
+        Route::get('/table','Backend\KategoriBeritaController@table');
+        Route::get('/edit/{id}','Backend\KategoriBeritaController@edit');
+        Route::patch('/update/{id}','Backend\KategoriBeritaController@update');
+        Route::delete('/delete/{id}','Backend\KategoriBeritaController@destroy');
+    });
 });
