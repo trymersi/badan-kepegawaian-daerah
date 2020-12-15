@@ -103,4 +103,12 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()
         Route::patch('/update/{id}','Backend\GaleriVideoController@update');
         Route::delete('/delete/{id}','Backend\GaleriVideoController@destroy');
     });
+
+    Route::prefix('/faq')->group(function(){
+        Route::resource('/','Backend\FaqController');
+        Route::get('/table','Backend\FaqController@table');
+        Route::get('/edit/{id}','Backend\FaqController@edit');
+        Route::patch('/update/{id}','Backend\FaqController@update');
+        Route::delete('/delete/{id}','Backend\FaqController@destroy');
+    });
 });
