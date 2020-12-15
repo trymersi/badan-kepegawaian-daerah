@@ -44,4 +44,12 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()
         Route::patch('/update/{id}','Backend\UnduhController@update');
         Route::delete('/delete/{id}','Backend\UnduhController@destroy');
     });
+
+    Route::prefix('/link-terkait')->group(function(){
+        Route::resource('/','Backend\LinkTerkaitController');
+        Route::get('/table','Backend\LinkTerkaitController@table');
+        Route::get('/edit/{id}','Backend\LinkTerkaitController@edit');
+        Route::patch('/update/{id}','Backend\LinkTerkaitController@update');
+        Route::delete('/delete/{id}','Backend\LinkTerkaitController@destroy');
+    });
 });
