@@ -36,4 +36,12 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()
         Route::patch('/update/{id}','Backend\SubBidangController@update');
         Route::delete('/delete/{id}','Backend\SubBidangController@destroy');
     });
+
+    Route::prefix('/unduhan')->group(function(){
+        Route::resource('/','Backend\UnduhController');
+        Route::get('/table','Backend\UnduhController@table');
+        Route::get('/edit/{id}','Backend\UnduhController@edit');
+        Route::patch('/update/{id}','Backend\UnduhController@update');
+        Route::delete('/delete/{id}','Backend\UnduhController@destroy');
+    });
 });
