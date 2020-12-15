@@ -87,4 +87,12 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()
         Route::patch('/update/{id}','Backend\TupoksiController@update');
         Route::delete('/delete/{id}','Backend\TupoksiController@destroy');
     });
+
+    Route::prefix('/pegawai')->group(function(){
+        Route::resource('/','Backend\PegawaiController');
+        Route::get('/table','Backend\PegawaiController@table');
+        Route::get('/edit/{id}','Backend\PegawaiController@edit');
+        Route::patch('/update/{id}','Backend\PegawaiController@update');
+        Route::delete('/delete/{id}','Backend\PegawaiController@destroy');
+    });
 });

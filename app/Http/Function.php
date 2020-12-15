@@ -705,3 +705,24 @@ function statusUlasan($kode)
     }
     return $status;
 }
+
+function getJabatan($kode)
+{
+    switch($kode)
+    {
+        case 1 :
+            $sosmed = "<span class='badge badge-success'>Kepala Dinas</span>";
+            break;
+        case 2 :
+            $sosmed = "<span class='badge badge-primary'>Sekretaris</span>";
+            break;
+        case 3 :
+            $sosmed = "<span class='badge badge-secondary'>Kepala Bidang</span>";
+            break;
+        case 4 :
+            $sosmed = "<span class='badge badge-warning'>Kepala Sub Bidang</span>";
+            break;
+    }
+    return $sosmed;
+    
+}

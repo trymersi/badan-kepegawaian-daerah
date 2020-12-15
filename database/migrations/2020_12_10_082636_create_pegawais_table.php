@@ -16,6 +16,7 @@ class CreatePegawaisTable extends Migration
         Schema::create('pegawais', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama')->nullable();
+            $table->string('jabatan')->nullable();
             $table->unsignedBigInteger('bidang_id')->nullable();
             $table->unsignedBigInteger('sub_bidang_id')->nullable();
             $table->string('pendidikan')->nullable();
