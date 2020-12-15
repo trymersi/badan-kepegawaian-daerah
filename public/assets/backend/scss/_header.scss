@@ -18,7 +18,7 @@
         -moz-transition: -moz-transform .3s ease-in-out, width .3s ease-in-out;
         -o-transition: -o-transform .3s ease-in-out, width .3s ease-in-out;
         transition: transform .3s ease-in-out, width .3s ease-in-out;
-        background: $white;
+        background: $dark;
         border-top-right-radius: 0px;
     }
     .push-btn, .full-screen, .svg-bt-icon{
@@ -44,7 +44,7 @@
         margin-top: 2.5px;
     }
     .logo-box{
-        border-right: 1px solid rgba($dx-blue,0);
+        border-right: 1px solid rgba($dx-blue,0.16);
     }
     .app-menu{        
         .search-bx {   
@@ -1173,6 +1173,8 @@ body{
     overflow: visible;
     background: #fff url('../../images/preloaders/1.gif') no-repeat center center;
 }
+
+
 
 
 

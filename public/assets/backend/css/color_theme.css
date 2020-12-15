@@ -496,16 +496,16 @@ Theme Primary Color
 
 .theme-primary.light-skin .sidebar-menu > li.active.treeview > a {
   background: transparent;
-  color: #0052cc !important; }
+  color: #b5b5c3 !important; }
   .theme-primary.light-skin .sidebar-menu > li.active.treeview > a > i {
-    color: #0052cc; }
+    color: #ffffff; }
   .theme-primary.light-skin .sidebar-menu > li.active.treeview > a > svg {
-    color: #0052cc;
+    color: #ffffff;
     fill: rgba(1, 104, 250, 0.2); }
   .theme-primary.light-skin .sidebar-menu > li.active.treeview > a:after {
     border-color: transparent #fafafa transparent transparent !important; }
 .theme-primary.light-skin .sidebar-menu > li.treeview .treeview-menu li a {
-  color: #172b4c; }
+  color: #b5b5c3; }
 .theme-primary.light-skin.sidebar-mini.sidebar-collapse .sidebar-menu > li.active > a > span {
   background: #0052cc !important; }
 .theme-primary.dark-skin .sidebar-menu > li.active > a:after {
@@ -523,64 +523,56 @@ Theme Primary Color
   background: #0052cc !important; }
 .theme-primary.light-skin .sidebar-menu > li:hover, .theme-primary.light-skin .sidebar-menu > li:active, .theme-primary.light-skin .sidebar-menu > li.active {
   background-color: rgba(0, 82, 204, 0);
-  color: #0052cc;
+  color: white;
   border-left: 5px solid rgba(0, 82, 204, 0); }
   .theme-primary.light-skin .sidebar-menu > li:hover a, .theme-primary.light-skin .sidebar-menu > li:active a, .theme-primary.light-skin .sidebar-menu > li.active a {
-    color: #0052cc; }
-    .theme-primary.light-skin .sidebar-menu > li:hover a > i, .theme-primary.light-skin .sidebar-menu > li:active a > i, .theme-primary.light-skin .sidebar-menu > li.active a > i {
-      color: #172b4c;
-      background-color: rgba(0, 82, 204, 0); }
-    .theme-primary.light-skin .sidebar-menu > li:hover a > svg, .theme-primary.light-skin .sidebar-menu > li:active a > svg, .theme-primary.light-skin .sidebar-menu > li.active a > svg {
-      color: #0052cc;
-      fill: rgba(1, 104, 250, 0.2); }
-    .theme-primary.light-skin .sidebar-menu > li:hover a img.svg-icon, .theme-primary.light-skin .sidebar-menu > li:active a img.svg-icon, .theme-primary.light-skin .sidebar-menu > li.active a img.svg-icon {
-      filter: invert(0.7) sepia(1) saturate(14) hue-rotate(195deg); }
+    color: white; }
 .theme-primary.light-skin .sidebar-menu > li.active {
   background-color: rgba(0, 82, 204, 0);
-  color: #0052cc;
+  color: white;
   border-left: 5px solid #0052cc; }
   .theme-primary.light-skin .sidebar-menu > li.active a {
-    color: #0052cc;
+    color: white;
     background-color: transparent; }
     .theme-primary.light-skin .sidebar-menu > li.active a > i {
-      color: #0052cc;
+      color: #ffffff;
       background-color: rgba(0, 82, 204, 0); }
     .theme-primary.light-skin .sidebar-menu > li.active a > svg {
-      color: #0052cc;
+      color: #ffffff;
       fill: rgba(1, 104, 250, 0.2); }
     .theme-primary.light-skin .sidebar-menu > li.active a img.svg-icon {
       filter: invert(0.7) sepia(1) saturate(14) hue-rotate(195deg); }
   .theme-primary.light-skin .sidebar-menu > li.active .treeview-menu li.active {
     background-color: rgba(0, 82, 204, 0);
-    color: #0052cc; }
+    color: white; }
     .theme-primary.light-skin .sidebar-menu > li.active .treeview-menu li.active a {
-      color: #0052cc; }
+      color: white; }
       .theme-primary.light-skin .sidebar-menu > li.active .treeview-menu li.active a > i {
-        color: #0052cc;
+        color: white;
         background-color: rgba(0, 82, 204, 0); }
   .theme-primary.light-skin .sidebar-menu > li.active .treeview-menu li a > i {
-    color: #172b4c;
+    color: #b5b5c3;
     background-color: rgba(0, 82, 204, 0); }
   .theme-primary.light-skin .sidebar-menu > li.active .treeview-menu li.treeview.active {
     background-color: rgba(0, 82, 204, 0);
-    color: #0052cc; }
+    color: white; }
     .theme-primary.light-skin .sidebar-menu > li.active .treeview-menu li.treeview.active a {
-      color: #0052cc; }
+      color: white; }
       .theme-primary.light-skin .sidebar-menu > li.active .treeview-menu li.treeview.active a > i {
-        color: #0052cc;
+        color: white;
         background-color: rgba(0, 82, 204, 0); }
   .theme-primary.light-skin .sidebar-menu > li.active .treeview-menu li.treeview .treeview-menu li.active {
     background-color: rgba(0, 82, 204, 0);
-    color: #0052cc; }
+    color: white; }
     .theme-primary.light-skin .sidebar-menu > li.active .treeview-menu li.treeview .treeview-menu li.active a {
-      color: #0052cc; }
+      color: white; }
       .theme-primary.light-skin .sidebar-menu > li.active .treeview-menu li.treeview .treeview-menu li.active a > i {
-        color: #0052cc;
+        color: white;
         background-color: rgba(0, 82, 204, 0); }
   .theme-primary.light-skin .sidebar-menu > li.active .treeview-menu li.treeview .treeview-menu li a {
-    color: #172b4c; }
+    color: #b5b5c3; }
     .theme-primary.light-skin .sidebar-menu > li.active .treeview-menu li.treeview .treeview-menu li a > i {
-      color: #172b4c;
+      color: #b5b5c3;
       background-color: rgba(0, 82, 204, 0); }
 .theme-primary.rtl.light-skin .sidebar-menu > li:hover, .theme-primary.rtl.light-skin .sidebar-menu > li:active, .theme-primary.rtl.light-skin .sidebar-menu > li.active {
   border-left: 0px solid rgba(0, 82, 204, 0);

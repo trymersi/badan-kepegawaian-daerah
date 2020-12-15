@@ -78,19 +78,19 @@ Waves
 /*Body*/
 @import url(color_theme.css);
 @import url(style_rtl.css);
-@import url(../../assets/icons/font-awesome/css/font-awesome.css);
-@import url(../../assets/icons/Ionicons/css/ionicons.css);
-@import url(../../assets/icons/themify-icons/themify-icons.css);
-@import url(../../assets/icons/linea-icons/linea.css);
-@import url(../../assets/icons/glyphicons/glyphicon.css);
-@import url(../../assets/icons/flag-icon-css/css/flag-icon.css);
-@import url(../../assets/icons/material-design-iconic-font/css/materialdesignicons.css);
-@import url(../../assets/icons/simple-line-icons/css/simple-line-icons.css);
-@import url(../../assets/icons/cryptocoins-master/cryptocoins.css);
-@import url(../../assets/icons/weather-icons/css/weather-icons.min.css);
-@import url(../../assets/icons/iconsmind/style.css);
-@import url(../../assets/icons/icomoon/style.css);
-@import url(../../assets/vendor_components/animate/animate.css);
+@import url(../icons/font-awesome/css/font-awesome.css);
+@import url(../icons/Ionicons/css/ionicons.css);
+@import url(../icons/themify-icons/themify-icons.css);
+@import url(../icons/linea-icons/linea.css);
+@import url(../icons/glyphicons/glyphicon.css);
+@import url(../icons/flag-icon-css/css/flag-icon.css);
+@import url(../icons/material-design-iconic-font/css/materialdesignicons.css);
+@import url(../icons/simple-line-icons/css/simple-line-icons.css);
+@import url(../icons/cryptocoins-master/cryptocoins.css);
+@import url(../icons/weather-icons/css/weather-icons.min.css);
+@import url(../icons/iconsmind/style.css);
+@import url(../icons/icomoon/style.css);
+@import url(../vendor_components/animate/animate.css);
 html {
   height: 100%;
   font-size: 14px; }
@@ -12577,7 +12577,7 @@ Height property
     -moz-transition: -moz-transform .3s ease-in-out, width .3s ease-in-out;
     -o-transition: -o-transform .3s ease-in-out, width .3s ease-in-out;
     transition: transform .3s ease-in-out, width .3s ease-in-out;
-    background: #ffffff;
+    background: #172b4c;
     border-top-right-radius: 0px; }
   .main-header .push-btn, .main-header .full-screen, .main-header .svg-bt-icon {
     height: 45px;
@@ -12599,7 +12599,7 @@ Height property
     width: 20px;
     margin-top: 2.5px; }
   .main-header .logo-box {
-    border-right: 1px solid rgba(72, 94, 144, 0); }
+    border-right: 1px solid rgba(72, 94, 144, 0.16); }
   .main-header .app-menu .search-bx {
     max-width: 250px;
     -webkit-box-shadow: 0 0 30px 0 rgba(82, 63, 105, 0.05);
@@ -13280,7 +13280,7 @@ body .main-header .navbar .nav > li.search-box > a:hover, body .main-header .nav
   height: 100vh;
   z-index: 999999;
   overflow: visible;
-  background: #fff url("../../images/preloaders/1.gif") no-repeat center center; }
+  background: #fff url("../images/preloaders/1.gif") no-repeat center center; }
 
 /*sidebar*/
 .main-sidebar {
@@ -13297,9 +13297,9 @@ body .main-header .navbar .nav > li.search-box > a:hover, body .main-header .nav
   transition: transform .3s ease-in-out, width .3s ease-in-out;
   border-top-right-radius: 20px; }
   .main-sidebar .sidebar-footer {
-    background-color: #f2f2f2; }
+    background-color: #112038; }
     .main-sidebar .sidebar-footer a {
-      color: #b5b5c3; }
+      color: #ffffff; }
 
 .sidebar-footer {
   position: fixed;
@@ -13309,7 +13309,7 @@ body .main-header .navbar .nav > li.search-box > a:hover, body .main-header .nav
   transition: .2s ease-out;
   width: 270px;
   background-color: #ffffff;
-  border-top: 1px solid rgba(23, 43, 76, 0); }
+  border-top: 1px solid rgba(23, 43, 76, 0.13); }
   .sidebar-footer a {
     padding: 12px;
     width: 33.333337%;
@@ -13397,7 +13397,7 @@ body .main-header .navbar .nav > li.search-box > a:hover, body .main-header .nav
         font-size: 1.5714285714rem;
         display: inline-block;
         vertical-align: middle;
-        color: #172b4c;
+        color: #b5b5c3;
         text-align: center;
         border-radius: 10px;
         margin-right: 20px;
@@ -18261,34 +18261,6 @@ time {
   width: 150px;
   margin-bottom: 10px;
   display: inline-block; }
-
-.cours-search {
-  padding: 10px;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 4px;
-  max-width: 700px;
-  margin: auto;
-  margin-bottom: 50px;
-  width: 100%; }
-  .cours-search .form-control {
-    border: 0;
-    height: 50px;
-    border-radius: 5px !important;
-    padding: 10px 20px;
-    font-size: 1.143rem; }
-  .cours-search .input-group-append {
-    margin-left: 10px; }
-    .cours-search .input-group-append .btn {
-      border-radius: 5px; }
-  .cours-search .select2-container--default .select2-selection--single {
-    height: 50px; }
-  .cours-search .select2-container--default .select2-selection--single .select2-selection__rendered {
-    line-height: 44px; }
-  .cours-search .select2-container--default .select2-selection--single .select2-selection__arrow {
-    height: 44px; }
-  .cours-search .btn {
-    height: 50px;
-    line-height: 30px; }
 
 /* Radio Buttons
    ========================================================================== */

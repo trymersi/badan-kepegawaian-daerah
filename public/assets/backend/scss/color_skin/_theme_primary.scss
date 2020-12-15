@@ -115,12 +115,12 @@ Theme Primary Color
                 &.active.treeview {
                     >a{
                         background: transparent;
-                        color: $theme-primary-primary !important;
+                        color: $light5 !important;
                         > i{
-                           color: $theme-primary-primary; 
+                           color: $white; 
                         }
                         > svg{
-                           color: $theme-primary-primary; 
+                           color: $white; 
                             fill: rgba(1, 104, 250, 0.2);
                         }
                         &:after{
@@ -132,7 +132,7 @@ Theme Primary Color
                     .treeview-menu{
                         li{
                             a{
-                                color: $dark;
+                                color: $light5;
                             }
                         }
                     }
@@ -204,37 +204,25 @@ Theme Primary Color
             >li{
                 @include hover-active-state{                    
                     background-color: rgba($theme-primary-primary, 0.0);
-                    color: rgba($theme-primary-primary, 1);
+                    color: rgba($white, 1);
                     border-left: 5px solid rgba($theme-primary-primary, 0);
                     a{
-                        color: rgba($theme-primary-primary, 1);
-                        > i{
-                           color: $dark ;
-                           background-color: rgba($theme-primary-primary, 0) ;
-                        }                        
-                        > svg{
-                           color: $theme-primary-primary; 
-                            fill: rgba(1, 104, 250, 0.2);
-                        }
-                        img.svg-icon
-                        {                            
-                            filter: invert(0.7) sepia(1) saturate(14) hue-rotate(195deg);
-                        }
+                        color: rgba($white, 1);
                     }
                 }
                 &.active{
                     background-color: rgba($theme-primary-primary, 0.0);
-                    color: rgba($theme-primary-primary, 1);
+                    color: rgba($white, 1);
                     border-left: 5px solid rgba($theme-primary-primary, 1);
                     a{
-                        color: rgba($theme-primary-primary, 1);
+                        color: rgba($white, 1);
                         background-color: transparent;
                         > i{
-                           color: $theme-primary-primary ;
+                           color: $white ;
                            background-color: rgba($theme-primary-primary, 0) ;
                         }                        
                         > svg{
-                           color: $theme-primary-primary; 
+                           color: $white; 
                             fill: rgba(1, 104, 250, 0.2);
                         }
                         img.svg-icon
@@ -245,11 +233,11 @@ Theme Primary Color
                     .treeview-menu{
                         li.active{
                             background-color: rgba($theme-primary-primary, 0.0);
-                            color: rgba($theme-primary-primary, 1);
+                            color: rgba($white, 1);
                             a{
-                                color: rgba($theme-primary-primary, 1);                                
+                                color: rgba($white, 1);                                
                                 > i{
-                                   color: rgba($theme-primary-primary, 1) ;
+                                   color: rgba($white, 1) ;
                                    background-color: rgba($theme-primary-primary, 0) ;
                                 } 
                             }
@@ -257,7 +245,7 @@ Theme Primary Color
                         li{
                             a{                                
                                 > i{
-                                   color: $dark ;
+                                   color: $light5 ;
                                    background-color: rgba($theme-primary-primary, 0) ;
                                 } 
                             }
@@ -265,11 +253,11 @@ Theme Primary Color
                         li.treeview{
                             &.active{
                                 background-color: rgba($theme-primary-primary, 0.0);
-                                color: rgba($theme-primary-primary, 1);
+                                color: rgba($white, 1);
                                 a{
-                                    color: rgba($theme-primary-primary, 1);                                
+                                    color: rgba($white, 1);                                
                                     > i{
-                                       color: rgba($theme-primary-primary, 1) ;
+                                       color: rgba($white, 1) ;
                                        background-color: rgba($theme-primary-primary, 0) ;
                                     } 
                                 }
@@ -278,19 +266,19 @@ Theme Primary Color
                                 li{                                    
                                     &.active{
                                         background-color: rgba($theme-primary-primary, 0.0);
-                                        color: rgba($theme-primary-primary, 1);
+                                        color: rgba($white, 1);
                                         a{
-                                            color: rgba($theme-primary-primary, 1);                                
+                                            color: rgba($white, 1);                                
                                             > i{
-                                               color: rgba($theme-primary-primary, 1) ;
+                                               color: rgba($white, 1) ;
                                                background-color: rgba($theme-primary-primary, 0) ;
                                             } 
                                         }
                                     }
                                     a{    
-                                        color: $dark ;
+                                        color: $light5 ;
                                         > i{
-                                           color: $dark ;
+                                           color: $light5 ;
                                            background-color: rgba($theme-primary-primary, 0) ;
                                         } 
                                     }

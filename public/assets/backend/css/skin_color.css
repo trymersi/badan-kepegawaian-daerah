@@ -30,7 +30,7 @@ File: scss
   color: #3b6dc1; }
 .light-skin .main-sidebar {
   border-right: 0px solid rgba(72, 94, 144, 0.16);
-  background-color: #ffffff; }
+  background-color: #172b4c; }
 .light-skin .user-panel > .info {
   color: #ffffff; }
   .light-skin .user-panel > .info > a {
@@ -58,16 +58,16 @@ File: scss
 .light-skin .sidebar-menu > li > .treeview-menu {
   margin: 0 0px; }
 .light-skin.sidebar-collapse .sidebar-menu > li > .treeview-menu {
-  background-color: #ffffff;
+  background-color: #172b4c;
   box-shadow: 5px 8px 10px 0px rgba(0, 0, 0, 0.1); }
 .light-skin.sidebar-mini.sidebar-collapse .sidebar-menu > li > a > span {
-  background-color: #ffffff !important;
+  background-color: #172b4c !important;
   box-shadow: 5px 8px 10px 0px rgba(0, 0, 0, 0.1); }
 .light-skin.sidebar-mini.sidebar-collapse .sidebar-menu > li.active > a > span {
-  background: #ffffff !important;
+  background: #172b4c !important;
   color: #ffffff; }
 .light-skin .sidebar a {
-  color: #172b4c; }
+  color: #b5b5c3; }
   .light-skin .sidebar a:hover {
     text-decoration: none; }
 .light-skin .sidebar-form {
@@ -791,7 +791,7 @@ body.dark-skin {
   color: #8cade4;
   border: 0px solid #8cade4; }
 .dark-skin .sidebar-menu > li > a > i {
-  color: #b5b5c3; }
+  color: #566f9e; }
 .dark-skin .sidebar-menu > li > .treeview-menu {
   margin: 0 0px; }
 .dark-skin .sidebar-menu li.header {

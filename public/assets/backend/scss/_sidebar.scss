@@ -14,9 +14,9 @@
     transition: transform .3s ease-in-out, width .3s ease-in-out;
     border-top-right-radius: 20px;
     .sidebar-footer {
-        background-color: darken($white,05%);
+        background-color: darken($dark,05%);
         a {
-            color: $light5;
+            color: $white;
         }
     }    
 }
@@ -28,7 +28,7 @@
     transition: .2s ease-out;
     width: $sid-bar-w;
     background-color: $white;
-    border-top: 1px solid rgba($dark, .0);
+    border-top: 1px solid rgba($dark, .13);
     a {
         padding: 12px;
         width: 33.333337%;
@@ -152,7 +152,7 @@
                 font-size: $fs-22;
                 display: inline-block;
                 vertical-align: middle;
-                color: $dark;
+                color: $light5;
                 text-align: center;
                 border-radius: $default-border-radius;
                 margin-right: 20px;

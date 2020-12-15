@@ -63,7 +63,7 @@ File: scss
     }
     .main-sidebar{
         border-right: 0px solid rgba($dx-blue,0.16);
-        background-color: $white; 
+        background-color: $dark; 
     }
     .user-panel{
         >.info{
@@ -115,7 +115,7 @@ File: scss
         .sidebar-menu{
             >li{
                 >.treeview-menu{
-                    background-color: $white;    
+                    background-color: $dark;    
                     box-shadow: 5px 8px 10px 0px rgba(0, 0, 0, 0.1);
                 }
             }
@@ -127,7 +127,7 @@ File: scss
                 >li{
                     >a{
                         >span{
-                            background-color: $white !important;
+                            background-color: $dark !important;
                             box-shadow: 5px 8px 10px 0px rgba(0, 0, 0, 0.1);
                         }
                     }
@@ -135,7 +135,7 @@ File: scss
                 >li.active{
                     >a{
                         >span{
-                            background: $white !important;
+                            background: $dark !important;
                             color: $white;
                         }
                     }
@@ -145,7 +145,7 @@ File: scss
     }
     .sidebar{
         a{
-          color: $dark;  
+          color: $light5;  
             &:hover{
                text-decoration: none; 
             }
@@ -1511,7 +1511,7 @@ body{
             }
             >a{
                 >i{
-                   color:$dark-text; 
+                   color:$dark2; 
                 }
             }
             >.treeview-menu{
