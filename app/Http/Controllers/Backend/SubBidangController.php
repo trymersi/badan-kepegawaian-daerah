@@ -172,4 +172,10 @@ class SubBidangController extends Controller
             ->rawColumns(['tanggal','option'])
             ->make(true);
     }
+
+    public function listSubBidang($id_bidang)
+    {
+        $data = $this->subBidang->where('bidang_id',$id_bidang)->select('id','nama as text')->get();
+        return response()->json($data);
+    }
 }

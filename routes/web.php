@@ -35,6 +35,8 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()
         Route::get('/edit/{id}','Backend\SubBidangController@edit');
         Route::patch('/update/{id}','Backend\SubBidangController@update');
         Route::delete('/delete/{id}','Backend\SubBidangController@destroy');
+        Route::get('/list-sub-bidang/{id_bidang}','Backend\SubBidangController@listSubBidang');
+        
     });
 
     Route::prefix('/unduhan')->group(function(){
@@ -76,5 +78,13 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()
         Route::patch('/update/{id}','Backend\BeritaController@update');
         Route::delete('/delete/{id}','Backend\BeritaController@destroy');
         Route::get('/table-file/{id}','Backend\BeritaController@tableFile');
+    });
+
+    Route::prefix('/tupoksi')->group(function(){
+        Route::resource('/','Backend\TupoksiController');
+        Route::get('/table','Backend\TupoksiController@table');
+        Route::get('/edit/{id}','Backend\TupoksiController@edit');
+        Route::patch('/update/{id}','Backend\TupoksiController@update');
+        Route::delete('/delete/{id}','Backend\TupoksiController@destroy');
     });
 });
