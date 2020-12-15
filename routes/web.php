@@ -37,6 +37,14 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()
         Route::delete('/delete/{id}','Backend\SubBidangController@destroy');
     });
 
+    Route::prefix('/unduhan')->group(function(){
+        Route::resource('/','Backend\UnduhController');
+        Route::get('/table','Backend\UnduhController@table');
+        Route::get('/edit/{id}','Backend\UnduhController@edit');
+        Route::patch('/update/{id}','Backend\UnduhController@update');
+        Route::delete('/delete/{id}','Backend\UnduhController@destroy');
+    });
+
     Route::prefix('/link-terkait')->group(function(){
         Route::resource('/','Backend\LinkTerkaitController');
         Route::get('/table','Backend\LinkTerkaitController@table');
@@ -51,5 +59,13 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()
         Route::get('/edit/{id}','Backend\AplikasiTerkaitController@edit');
         Route::patch('/update/{id}','Backend\AplikasiTerkaitController@update');
         Route::delete('/delete/{id}','Backend\AplikasiTerkaitController@destroy');
+    });
+
+    Route::prefix('/kategori-berita')->group(function(){
+        Route::resource('/','Backend\KategoriBeritaController');
+        Route::get('/table','Backend\KategoriBeritaController@table');
+        Route::get('/edit/{id}','Backend\KategoriBeritaController@edit');
+        Route::patch('/update/{id}','Backend\KategoriBeritaController@update');
+        Route::delete('/delete/{id}','Backend\KategoriBeritaController@destroy');
     });
 });

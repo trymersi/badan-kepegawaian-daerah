@@ -68,6 +68,7 @@ class BidangController extends Controller
         }
 
         $this->bidangClass->nama = $request->nama_bidang;
+        $this->bidangClass->slug = bersih($request->nama_bidang);
         $this->bidangClass->keterangan = ($request->keterangan) ? $request->keterangan : '-';
         $this->bidangClass->save();
 
@@ -121,6 +122,7 @@ class BidangController extends Controller
 
         $update = Bidang::find($id);
         $update->nama = $request->nama_bidang;
+        $update->slug = bersih($request->nama_bidang);
         $update->keterangan = ($request->keterangan) ? $request->keterangan : '-';
         $update->save();
 

@@ -14,7 +14,7 @@
               </div>
               <div class="box-body">
                   <div class="table-responsive">
-                    <table id="tabel" class="tabel table table-striped display" style="width:100%">
+                    <table id="tabel" class="tabel table table-striped display table-bordered" style="width:100%">
                         <thead>
                             <tr>
                                 <th>#</th>
