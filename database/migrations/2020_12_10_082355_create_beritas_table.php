@@ -20,6 +20,7 @@ class CreateBeritasTable extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->string('judul')->nullable();
             $table->text('konten')->nullable();
+            $table->string('thumbnail')->nullable();
             $table->string('meta_deskripsi')->nullable();
             $table->string('meta_keyword')->nullable();
             $table->string('slug')->nullable();

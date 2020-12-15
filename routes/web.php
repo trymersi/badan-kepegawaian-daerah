@@ -68,4 +68,13 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()
         Route::patch('/update/{id}','Backend\KategoriBeritaController@update');
         Route::delete('/delete/{id}','Backend\KategoriBeritaController@destroy');
     });
+
+    Route::prefix('/berita')->group(function(){
+        Route::resource('/','Backend\BeritaController');
+        Route::get('/table','Backend\BeritaController@table');
+        Route::get('/edit/{id}','Backend\BeritaController@edit');
+        Route::patch('/update/{id}','Backend\BeritaController@update');
+        Route::delete('/delete/{id}','Backend\BeritaController@destroy');
+        Route::get('/table-file/{id}','Backend\BeritaController@tableFile');
+    });
 });
