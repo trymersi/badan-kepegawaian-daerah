@@ -107,14 +107,14 @@
               </li>
 
               <li class="@if($category_name == "Galeri Gambar") active @endif">
-                <a href="{{ url('/dashboard/galerigambar') }}">
+                <a href="{{ url('/dashboard/galeri-gambar') }}">
                     <i class="fa fa-file-image-o" aria-hidden="true"></i>
                     <span>Galeri Gambar</span>
                 </a>
               </li>
       
               <li class="@if($category_name == "Galeri Video") active @endif">
-                <a href="{{ url('/dashboard/galerivideo') }}">
+                <a href="{{ url('/dashboard/galeri-video') }}">
                     <i class="fa fa-file-video-o" aria-hidden="true"></i>
                     <span>Galeri Video</span>
                 </a>
