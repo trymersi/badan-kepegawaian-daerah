@@ -17,6 +17,7 @@ class CreateAplikasisTable extends Migration
             $table->bigIncrements('id');
             $table->string('nama')->nullable();
             $table->string('link')->nullable();
+            $table->text('gambar')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
