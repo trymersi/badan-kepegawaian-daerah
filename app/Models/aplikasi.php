@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -15,6 +15,7 @@ class Aplikasi extends Model
         $data = $this->select(
                 'aplikasis.nama',
                 'aplikasis.link',
+                'aplikasis.gambar',
                 'aplikasis.updated_at',
                 'aplikasis.id',
             )

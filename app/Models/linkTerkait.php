@@ -16,6 +16,7 @@ class LinkTerkait extends Model
         $data = $this->select(
                 'link_terkaits.nama',
                 'link_terkaits.link',
+                'link_terkaits.gambar',
                 'link_terkaits.updated_at',
                 'link_terkaits.id',
             )

@@ -24,7 +24,7 @@ class LinkTerkaitController extends Controller
         $this->LinkTerkaitClass = new LinkTerkait;
 
         $this->data = [
-            'category_name' => 'Terkait',
+            'category_name' => 'Link Terkait',
             'main_url' => 'link-terkait',
         ];
     }
@@ -62,14 +62,27 @@ class LinkTerkaitController extends Controller
         $validator = Validator::make($request->all(), [
             'nama' => 'required|unique:link_terkaits,nama,NULL,id,deleted_at,NULL',
             'link' => 'required|unique:link_terkaits,link,NULL,id,deleted_at,NULL',
+            'gambar' => 'required',
         ]);
         if ($validator->fails()) {
             Toastr::error('Terjadi Kesalahan Saat Menyimpan Data', 'Gagal', ["positionClass" => "toast-bottom-right"]);
             return Redirect::back()->withErrors($validator)->withInput();
         }
+        $nama_bersih = bersih($request->nama,'-');
+
+        if($request->file('gambar'))
+        {
+            $gambar = $request->file('gambar');
+            $ext = $gambar->getClientOriginalExtension();
+            $destination = public_path('uploads/images/link-terkait');
+            $filename_header = $nama_bersih.".".$ext;
+            $gambar->move($destination, $filename_header);
+        }
+        
 
         $this->LinkTerkaitClass->nama = $request->nama;
         $this->LinkTerkaitClass->link = $request->link;
+        $this->LinkTerkaitClass->gambar = $filename_header ; 
         $this->LinkTerkaitClass->save();
 
         $this->LinkTerkaitClass->id ? Toastr::success('Data Berhasil Disimpan', 'Sukses', ["positionClass" => "toast-bottom-right"]) : Toastr::error('Terjadi Kesalahan Saat Menyimpan Data', 'Gagal', ["positionClass" => "toast-bottom-right"]);
@@ -120,10 +133,22 @@ class LinkTerkaitController extends Controller
             Toastr::error('Terjadi Kesalahan Saat Menyimpan Data', 'Gagal', ["positionClass" => "toast-bottom-right"]);
             return Redirect::back()->withErrors($validator)->withInput();
         }
+        $nama_bersih = bersih($request->nama,'-');
 
+        if($request->file('gambar'))
+        {
+            $gambar = $request->file('gambar');
+            $ext = $gambar->getClientOriginalExtension();
+            $destination = public_path('uploads/images/link-terkait');
+            $filename_header = $nama_bersih.".".$ext;
+            $gambar->move($destination, $filename_header);
+        }
         $update = LinkTerkait::find($id);
         $update->nama = $request->nama;
         $update->link = $request->link;
+        if(isset($filename_header)):
+            $update->gambar = $filename_header;
+        endif;  
         $update->save();
 
         $update ? Toastr::success('Data Berhasil Diubah', 'Sukses', ["positionClass" => "toast-bottom-right"]) : Toastr::error('Terjadi Kesalahan Saat Menyimpan Data', 'Gagal', ["positionClass" => "toast-bottom-right"]);
@@ -162,13 +187,19 @@ class LinkTerkaitController extends Controller
                 return  $link;
             })
 
+            ->addColumn('gambar', function($data)
+            {
+                $gambar = '<figure class="img-hov-zoomin"><img src="'.asset("uploads/images/link-terkait/".$data->gambar).'" alt="'.$data->gambar.'"></figure>';
+                return  $gambar;
+            })
+
             ->addColumn('tanggal', function($data)
             {
             return  Carbon::parse($data->updated_at)->diffForHumans();
             })
 
             ->addIndexColumn()
-            ->rawColumns(['tanggal','option','link_terkait'])
+            ->rawColumns(['tanggal','option','link_terkait','gambar'])
             ->make(true);
     }
 }

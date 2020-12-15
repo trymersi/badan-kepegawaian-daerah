@@ -10,7 +10,7 @@
           <div class="box">
               <div class="box-header">						
                   <h4 class="box-title">{{ strtoupper($page_name) }}</h4>
-                  <a href="{{ action('Backend\LinkTerkaitController@create') }}" class="btn btn-success mb-2 mr-2 float-right"><i class="fa fa-plus" aria-hidden="true"></i> Tambah Data</a>
+                  <a href="{{ action('Backend\AplikasiTerkaitController@create') }}" class="btn btn-success mb-2 mr-2 float-right"><i class="fa fa-plus" aria-hidden="true"></i> Tambah Data</a>
               </div>
               <div class="box-body">
                   <div class="table-responsive">
@@ -20,6 +20,7 @@
                                 <th>#</th>
                                 <th>Nama Website</th>
                                 <th>Link</th>
+                                <th>Gambar</th>
                                 <th>Terakhir Diubah</th>
                                 <th class="no-content"></th>
                             </tr>
@@ -78,7 +79,7 @@
            processing: true,
            serverSide: true,
            ajax: {
-           url: "{{ url('dashboard/link-terkait/table') }}",
+           url: "{{ url('dashboard/aplikasi-terkait/table') }}",
            },
            columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false,searchable: false},
@@ -89,6 +90,10 @@
             {
                 data: 'link_terkait',
                 name: 'link_terkait'
+            },
+            {
+                data: 'gambar',
+                name: 'gambar'
             },
             {
                 data: 'tanggal',
@@ -120,7 +125,7 @@
                         var idDelete = $(this).attr('data-id');
                         var token = $(this).attr('data-token');
                         $.ajax({
-                            url:"{{url('dashboard/link-terkait/delete')}}/" + idDelete,
+                            url:"{{url('dashboard/aplikasi-terkait/delete')}}/" + idDelete,
                             type: 'POST',
                             data: {_method: 'delete', _token :token},
                             success:function(get){
