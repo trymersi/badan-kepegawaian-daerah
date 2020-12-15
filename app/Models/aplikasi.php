@@ -9,4 +9,17 @@ use Illuminate\Database\Eloquent\Model;
 class Aplikasi extends Model
 {
     use HasFactory,SoftDeletes;
+
+    public function getData()
+    {
+        $data = $this->select(
+                'aplikasis.nama',
+                'aplikasis.link',
+                'aplikasis.updated_at',
+                'aplikasis.id',
+            )
+            ->orderBy('aplikasis.nama','asc')
+            ->get();
+        return $data;
+    }
 }

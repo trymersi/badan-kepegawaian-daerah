@@ -24,7 +24,7 @@ class LinkTerkaitController extends Controller
         $this->LinkTerkaitClass = new LinkTerkait;
 
         $this->data = [
-            'category_name' => 'Data Terkait',
+            'category_name' => 'Terkait',
             'main_url' => 'link-terkait',
         ];
     }
