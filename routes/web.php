@@ -111,4 +111,12 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()
         Route::patch('/update/{id}','Backend\FaqController@update');
         Route::delete('/delete/{id}','Backend\FaqController@destroy');
     });
+
+    Route::prefix('/profil')->group(function(){
+        Route::resource('/','Backend\ProfilController');
+        Route::get('/table','Backend\ProfilController@table');
+        Route::get('/edit/{id}','Backend\ProfilController@edit');
+        Route::patch('/update/{id}','Backend\ProfilController@update');
+        Route::delete('/delete/{id}','Backend\ProfilController@destroy');
+    });
 });
