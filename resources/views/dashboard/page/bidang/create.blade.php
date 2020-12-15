@@ -34,10 +34,10 @@
                     <!-- /.box-body -->
                     <div class="box-footer">
                         <a href="{{ url('dashboard/'.$main_url) }}" type="button" class="btn btn-rounded btn-warning btn-outline mr-1">
-                          <i class="ti-trash"></i> Cancel
+                          <i class="ti-trash"></i> Batalkan
                         </a>
                         <button type="submit" id="button-simpan" class="btn btn-rounded btn-primary btn-outline">
-                          <i id="icon-simpan" class="ti-save-alt"></i> <i id="loading-simpan" class="fa fa-spin fa-refresh d-none"></i> Save
+                          <i id="icon-simpan" class="ti-save-alt"></i> <i id="loading-simpan" class="fa fa-spin fa-refresh d-none"></i> Simpan
                         </button>
                     </div>  
                 </form>
