@@ -143,4 +143,19 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()
         Route::patch('/update/{id}','Backend\UserController@update');
         Route::delete('/delete/{id}','Backend\UserController@destroy');
     });
+
+    Route::prefix('/galeri-gambar')->group(function(){
+        Route::resource('/','Backend\GaleriGambarController');
+        Route::get('/table','Backend\GaleriGambarController@table');
+        Route::get('/edit/{id}','Backend\GaleriGambarController@edit');
+        Route::patch('/update/{id}','Backend\GaleriGambarController@update');
+        Route::delete('/delete/{id}','Backend\GaleriGambarController@destroy');
+        Route::prefix('/detail')->group(function(){
+            Route::get('/{id}','Backend\GaleriGambarController@detail');
+            Route::get('/create/{id}','Backend\GaleriGambarController@detailCreate');
+            Route::post('/store','Backend\GaleriGambarController@detailStore');
+            Route::get('/table/{id}','Backend\GaleriGambarController@detailTable');
+            Route::delete('/delete/{id}','Backend\GaleriGambarController@detailDestroy');
+        });
+    });
 });

@@ -16,6 +16,7 @@ class CreateUnduhsTable extends Migration
         Schema::create('unduhs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('berita_id')->nullable();
+            $table->unsignedBigInteger('kategori_unduhan_id')->nullable();
             $table->string('nama')->nullable();
             $table->string('file')->nullable();
             $table->string('keterangan')->nullable();
@@ -23,6 +24,7 @@ class CreateUnduhsTable extends Migration
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('berita_id')->references('id')->on('beritas')->onDelete('set null');
+            $table->foreign('kategori_unduhan_id')->references('id')->on('kategori_unduhans')->onDelete('set null');
         });
     }
 

@@ -15,15 +15,12 @@ class CreateDetailGalerisTable extends Migration
     {
         Schema::create('detail_galeris', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('berita_id')->nullable();
+            $table->unsignedBigInteger('galeri_gambar_id')->nullable();
             $table->string('nama')->nullable();
             $table->string('gambar')->nullable();
-            $table->string('keterangan')->nullable();
-            $table->string('alt_gambar')->nullable();
-            $table->string('slug')->nullable();
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('berita_id')->references('id')->on('beritas')->onDelete('set null');
+            $table->foreign('galeri_gambar_id')->references('id')->on('galeri_gambars')->onDelete('set null');
         });
     }
 
