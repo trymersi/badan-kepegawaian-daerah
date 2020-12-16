@@ -18,7 +18,7 @@
                           <div class="col-md-6">
                             <div class="form-group @error('nama') error @enderror">
                               <label>Nama Website <span class="text-danger">*</span></label>
-                              <input type="text" name="nama" value="{{ old('nama') }}" class="form-control" placeholder="Masukan Nama Lengkap Bidang">
+                              <input type="text" name="nama" value="{{ old('nama') }}" class="form-control" placeholder="Masukan Nama Lengkap Link Terkait">
                               @error('nama')
                               <div class="help-block"><ul role="alert"><li>{{$message}}</li></ul></div>
                               @enderror
@@ -29,7 +29,7 @@
                           <div class="col-md-6">
                             <div class="form-group @error('link') error @enderror">
                               <label>URL Link Website <span class="text-danger">*</span></label>
-                              <input type="url" name="link" value="{{ old('link') }}" class="form-control" placeholder="Masukan Nama Lengkap Bidang">
+                              <input type="url" name="link" value="{{ old('link') }}" class="form-control" placeholder="Masukan Url Lengkap Link Terkait">
                               @error('link')
                               <div class="help-block"><ul role="alert"><li>{{$message}}</li></ul></div>
                               @enderror
