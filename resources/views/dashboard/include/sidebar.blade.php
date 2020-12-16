@@ -29,7 +29,7 @@
                 </li>
 
                 <li class="@if($category_name == "Level User") active @endif">
-                  <a href="{{ url('/dashboard/leveluser') }}">
+                  <a href="{{ url('/dashboard/level-user') }}">
                       <i class="fa fa-user-plus" aria-hidden="true"></i>
                       <span>Level User</span>
                   </a>
