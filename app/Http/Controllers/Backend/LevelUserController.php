@@ -59,7 +59,7 @@ class LevelUserController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'nama' => 'required|unique:levelusers,nama,NULL,id,deleted_at,NULL',
+            'nama' => 'required|unique:level_users,nama,NULL,id,deleted_at,NULL',
         ]);
         if ($validator->fails()) {
             Toastr::error('Terjadi Kesalahan Saat Menyimpan Data', 'Gagal', ["positionClass" => "toast-bottom-right"]);

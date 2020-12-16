@@ -135,4 +135,12 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()
         Route::patch('/update/{id}','Backend\LevelUserController@update');
         Route::delete('/delete/{id}','Backend\LevelUserController@destroy');
     });
+
+    Route::prefix('/user')->group(function(){
+        Route::resource('/','Backend\UserController');
+        Route::get('/table','Backend\UserController@table');
+        Route::get('/edit/{id}','Backend\UserController@edit');
+        Route::patch('/update/{id}','Backend\UserController@update');
+        Route::delete('/delete/{id}','Backend\UserController@destroy');
+    });
 });

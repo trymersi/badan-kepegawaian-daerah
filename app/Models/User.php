@@ -43,4 +43,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getData()
+    {
+        $data = $this->leftJoin('level_users','users.level_user_id','level_users.id')
+            ->select(
+                'users.nama as nama',
+                'users.id as id',
+                'users.username as username_user',
+                'users.email as email_user',
+                'level_users.nama as level_user',
+            )
+            ->orderBy('users.created_at','asc')
+            ->get();
+        return $data;
+    }
 }
