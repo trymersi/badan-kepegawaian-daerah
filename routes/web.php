@@ -158,4 +158,9 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()
             Route::delete('/delete/{id}','Backend\GaleriGambarController@detailDestroy');
         });
     });
+
+    Route::prefix('/kontak')->group(function(){
+        Route::resource('/','Backend\KontakController');
+        Route::get('/table','Backend\KontakController@table');
+    });
 });

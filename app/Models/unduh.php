@@ -12,7 +12,9 @@ class Unduh extends Model
     public function getData()
     {
         $data = $this->leftJoin('beritas','beritas.id','unduhs.berita_id')
+            ->leftJoin('kategori_unduhans','kategori_unduhans.id','unduhs.kategori_unduhan_id')
             ->select(
+                'kategori_unduhans.nama as nama_kategori',
                 'beritas.judul',
                 'unduhs.nama',
                 'unduhs.file',

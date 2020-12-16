@@ -19,6 +19,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>Nama File</th>
+                                <th>Nama Kategori</th>
                                 <th>Keterangan</th>
                                 <th>File</th>
                                 <th>Berita Terkait</th>
@@ -87,6 +88,10 @@
             {
                 data: 'nama',
                 name: 'nama'
+            },
+            {
+                data: 'nama_kategori',
+                name: 'nama_kategori'
             },
             {
                 data: 'keterangan',

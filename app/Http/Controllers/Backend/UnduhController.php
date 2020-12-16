@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Unduh;
+use App\Models\kategoriUnduhan;
 use Carbon\Carbon;
 use DataTables;
 use Toastr;
@@ -16,12 +17,14 @@ use Auth;
 class UnduhController extends Controller
 {
     private $data;
-    private $bidangClass;
+    private $unduhClass;
+    private $kategoriUnduh;
 
 
     public function __construct()
     {
         $this->unduhClass = new Unduh;
+        $this->kategoriUnduh = new kategoriUnduhan;
 
         $this->data = [
             'category_name' => 'Unduhan',
@@ -47,6 +50,7 @@ class UnduhController extends Controller
      */
     public function create()
     {
+        $this->data['kategori'] = $this->kategoriUnduh->orderBy('nama','asc')->get();
         $this->data['page_name'] = 'tambah data unduhan';
         return view('dashboard.page.unduhan.create',$this->data);
     }
@@ -62,6 +66,7 @@ class UnduhController extends Controller
         $validator = Validator::make($request->all(), [
             'nama_file' => 'required|unique:unduhs,nama,NULL,id,deleted_at,NULL',
             'file' => 'required|mimes:pdf',
+            'kategori_unduh' => 'required', 
         ]);
         if ($validator->fails()) {
             Toastr::error('Terjadi Kesalahan Saat Menyimpan Data', 'Gagal', ["positionClass" => "toast-bottom-right"]);
@@ -73,6 +78,7 @@ class UnduhController extends Controller
         $file->move(public_path('uploads/unduhan'),$nama_file);
 
         $this->unduhClass->nama = $request->nama_file;
+        $this->unduhClass->kategori_unduhan_id = $request->kategori_unduh;
         $this->unduhClass->slug = bersih($request->nama_file);
         $this->unduhClass->file = $nama_file;
         $this->unduhClass->keterangan = ($request->keterangan) ? $request->keterangan : '-';
@@ -101,11 +107,12 @@ class UnduhController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    {   
         $edit = $this->unduhClass->find($id);
         $this->data['edit'] = $edit;
         $this->data['update_name'] = $edit->nama;
         $this->data['page_name'] = 'ubah data unduhan';
+        $this->data['kategori'] = $this->kategoriUnduh->orderBy('nama','asc')->get();
         return view('dashboard.page.unduhan.edit',$this->data);
     }
 
@@ -120,6 +127,7 @@ class UnduhController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'nama_file' => 'required',
+            'kategori_unduh' => 'required', 
         ]);
         if ($validator->fails()) {
             Toastr::error('Terjadi Kesalahan Saat Menyimpan Data', 'Gagal', ["positionClass" => "toast-bottom-right"]);
@@ -130,7 +138,11 @@ class UnduhController extends Controller
 
         if($request->hasFile('file'))
         {
-            unlink(public_path('uploads/unduhan/'.$old->file));
+            if(file_exists(public_path('uploads/unduhan/'.$old->file)))
+            {
+                unlink(public_path('uploads/unduhan/'.$old->file));
+            }
+            
             $file = $request->file('file');
             $nama_file = bersih($request->nama_file).'-'.date('d-m-Y').'.pdf';
             $file->move(public_path('uploads/unduhan'),$nama_file);
@@ -138,6 +150,7 @@ class UnduhController extends Controller
         
         $edit = Unduh::find($id);
         $edit->nama = $request->nama_file;
+        $edit->kategori_unduhan_id = $request->kategori_unduh;
         $edit->slug = bersih($request->nama_file);
         if(isset($nama_file)):
             $edit->file = $nama_file;

@@ -24,10 +24,24 @@
                              @enderror
                            </div>
                          </div>
+                         <div class="col-md-6">
+                          <div class="form-group @error('kategori_unduh') error @enderror">
+                            <label>Kategori Unduhan <span class="text-danger">*</span></label>
+                            <select name="kategori_unduh"  class="form-control select" style="width: 100%;">
+                              <option selected="selected" value="">Pilih Kategori</option>
+                              @foreach($kategori as $kat)
+                                  <option @if(old('kategori_unduh',$edit->kategori_unduhan_id) == $kat->id) selected="" @endif value="{{ $kat->id }}">{{ $kat->nama }}</option>
+                              @endforeach
+                            </select>
+                            @error('kategori_unduh')
+                            <div class="help-block"><ul role="alert"><li>{{$message}}</li></ul></div>
+                            @enderror
+                          </div>
+                        </div>
                        </div>
                        
                        <div class="row">
-                         <div class="col-md-6">
+                         <div class="col-md-8">
                            <div class="form-group @error('file') error @enderror">
                              <label>File <span class="text-danger"></span></label>
                              <input type="file" name="file" class="form-control" accept="application/pdf">
@@ -78,3 +92,12 @@
 
 </section>
 @endsection
+
+@push('js')
+  <script src="{{ asset('assets/backend/vendor_components/select2/dist/js/select2.full.js')}}"></script>
+  <script>  
+    $(document).ready(function() {
+      $(".select").select2();
+    });
+  </script> 
+@endpush
