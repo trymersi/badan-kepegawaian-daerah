@@ -112,6 +112,13 @@
                     <span>Galeri Gambar</span>
                 </a>
               </li>
+
+              <li class="@if($category_name == "Slider") active @endif">
+                <a href="{{ url('/dashboard/slider') }}">
+                    <i class="fa fa-file-image-o" aria-hidden="true"></i>
+                    <span>Gambar Slider</span>
+                </a>
+              </li>
       
               <li class="@if($category_name == "Galeri Video") active @endif">
                 <a href="{{ url('/dashboard/galeri-video') }}">
@@ -174,12 +181,35 @@
             </li>
 
         <li class="header">File Unduhan</li>
-        <li class="@if($category_name == "Unduhan") active @endif">
-          <a href="{{ url('/dashboard/unduhan') }}">
-              <i class="fa fa-download" aria-hidden="true"></i>
-              <span>Unduhan</span>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-download"><span class="path1"></span><span class="path2"></span></i>
+            <span>Data Unduhan</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
           </a>
+          <ul class="treeview-menu">
+
+            <li class="@if($category_name == "Unduhan") active @endif">
+              <a href="{{ url('/dashboard/unduhan') }}">
+                  <i class="fa fa-download" aria-hidden="true"></i>
+                  <span>Unduhan</span>
+              </a>
+            </li>
+    
+            <li class="@if($category_name == "Aplikasi Terkait") active @endif">
+              <a href="{{ url('/dashboard/kategori-unduhan') }}">
+                  <i class="fa fa-download" aria-hidden="true"></i>
+                  <span>Kategori Unduhan</span>
+              </a>
+            </li>
+
+          </ul>
         </li>
+        
+
         <li class="header">FAQ</li>
         <li class="@if($category_name == "FAQ") active @endif">
           <a href="{{ url('/dashboard/faq') }}">

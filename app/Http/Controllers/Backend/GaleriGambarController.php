@@ -71,7 +71,7 @@ class GaleriGambarController extends Controller
             return Redirect::back()->withErrors($validator)->withInput();
         }
 
-        $nama_bersih = bersih($request->nama,'-');
+        $nama_bersih = bersih($request->nama_galeri,'-');
         $gambar = $request->file('gambar');
         $ext = $gambar->getClientOriginalExtension();
         $destination = public_path('uploads/images/gambar-galeri');
@@ -137,7 +137,7 @@ class GaleriGambarController extends Controller
         if($request->hasFile('gambar'))
         {
             unlink(public_path('uploads/images/gambar-galeri/'.$update->gambar));
-            $nama_bersih = bersih($request->nama,'-');
+            $nama_bersih = bersih($request->nama_galeri,'-');
             $gambar = $request->file('gambar');
             $ext = $gambar->getClientOriginalExtension();
             $destination = public_path('uploads/images/gambar-galeri');
@@ -242,7 +242,7 @@ class GaleriGambarController extends Controller
             return Redirect::back()->withErrors($validator)->withInput();
         }
 
-        $nama_bersih = bersih($request->nama,'-');
+        $nama_bersih = bersih($request->nama_gambar,'-');
         $gambar = $request->file('gambar');
         $ext = $gambar->getClientOriginalExtension();
         $destination = public_path('uploads/images/detail-galeri');

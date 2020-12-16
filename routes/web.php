@@ -163,4 +163,20 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()
         Route::resource('/','Backend\KontakController');
         Route::get('/table','Backend\KontakController@table');
     });
+
+    Route::prefix('/slider')->group(function(){
+        Route::resource('/','Backend\SliderController');
+        Route::get('/table','Backend\SliderController@table');
+        Route::get('/edit/{id}','Backend\SliderController@edit');
+        Route::patch('/update/{id}','Backend\SliderController@update');
+        Route::delete('/delete/{id}','Backend\SliderController@destroy');
+    });
+
+    Route::prefix('/kategori-unduhan')->group(function(){
+        Route::resource('/','Backend\KategoriUnduhController');
+        Route::get('/table','Backend\KategoriUnduhController@table');
+        Route::get('/edit/{id}','Backend\KategoriUnduhController@edit');
+        Route::patch('/update/{id}','Backend\KategoriUnduhController@update');
+        Route::delete('/delete/{id}','Backend\KategoriUnduhController@destroy');
+    });
 });
