@@ -127,4 +127,12 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()
         Route::patch('/update/{id}','Backend\PengaturanController@update');
         Route::delete('/delete/{id}','Backend\PengaturanController@destroy');
     });
+
+    Route::prefix('/level-user')->group(function(){
+        Route::resource('/','Backend\LevelUserController');
+        Route::get('/table','Backend\LevelUserController@table');
+        Route::get('/edit/{id}','Backend\LevelUserController@edit');
+        Route::patch('/update/{id}','Backend\LevelUserController@update');
+        Route::delete('/delete/{id}','Backend\LevelUserController@destroy');
+    });
 });
