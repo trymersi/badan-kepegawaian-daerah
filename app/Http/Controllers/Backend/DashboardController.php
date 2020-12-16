@@ -7,6 +7,17 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
+    private $data;
+
+
+    public function __construct()
+    {
+
+        $this->data = [
+            'category_name' => 'Dahsboard',
+            'main_url' => 'dashboard',
+        ];
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +25,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.page.home');
+        $this->data['page_name'] = 'tabel data bidang';
+        return view('dashboard.page.home',$this->data);
     }
 
     /**
