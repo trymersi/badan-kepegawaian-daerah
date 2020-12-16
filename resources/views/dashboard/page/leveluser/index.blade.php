@@ -10,7 +10,7 @@
           <div class="box">
               <div class="box-header">						
                   <h4 class="box-title">{{ strtoupper($page_name) }}</h4>
-                  <a href="{{ action('Backend\LinkTerkaitController@create') }}" class="btn btn-success mb-2 mr-2 float-right"><i class="fa fa-plus" aria-hidden="true"></i> Tambah Data</a>
+                  <a href="{{ action('Backend\LevelUserController@create') }}" class="btn btn-success mb-2 mr-2 float-right"><i class="fa fa-plus" aria-hidden="true"></i> Tambah Data</a>
               </div>
               <div class="box-body">
                   <div class="table-responsive">
