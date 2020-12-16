@@ -299,8 +299,13 @@ class BeritaController extends Controller
         }
         
         $file = $this->unduhClass->where('berita_id',$id)->get();
-        unlink(public_path('uploads/unduhan/'.$file->file));
-        $file->delete();
+        foreach($file as $key)
+        {
+            unlink(public_path('uploads/unduhan/'.$key->file));
+            $del = $this->unduhClass->find($key->id);
+            $del->delet();
+        }
+        
 
         $data->delete();
         return $data ? 1 : 0;
