@@ -781,6 +781,67 @@
             </div>
         </div><!--~./End frontpage popular posts ~-->
 
+        <div class="frontpage-popular-posts pb-80">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-header">
+                            <h2 class="section-title">Link BKD Kabupaten / Kota</h2>
+                        </div><!--~./ end section header ~-->
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-12">
+                        <div id="bkd-terkait-carousel" class="owl-carousel carousel-nav-circle">
+                           <!--~~~~~ Start Post ~~~~~-->
+                            <article class="post hentry post-grid">
+                                <div class="entry-thumb">
+                                    <figure class="thumb-wrap">
+                                        <a href="post-details.html">
+                                            <img src="http://via.placeholder.com/350x150" alt="post">
+                                        </a>
+                                    </figure><!--./ thumb-wrap -->
+                                </div><!--./ entry-thumb -->
+                            </article><!--~./ end post ~-->
+
+                            <!--~~~~~ Start Post ~~~~~-->
+                            <article class="post hentry post-grid">
+                                <div class="entry-thumb">
+                                    <figure class="thumb-wrap">
+                                        <a href="post-details.html">
+                                            <img src="http://via.placeholder.com/350x150" alt="post">
+                                        </a>
+                                        <div class="featured-badge-list">
+                                            <a class="trending" href="#">
+                                                <span class="fab fa-gripfire"></span>
+                                            </a>
+                                        </div><!--./ featured-badge-list -->
+                                    </figure><!--./ thumb-wrap -->
+                                </div><!--./ entry-thumb -->
+                            </article><!--~./ end post ~-->
+                            <!--~~~~~ Start Post ~~~~~-->
+                            <article class="post hentry post-grid">
+                                <div class="entry-thumb">
+                                    <figure class="thumb-wrap">
+                                        <a href="post-details.html">
+                                            <img src="http://via.placeholder.com/350x150" alt="post">
+                                        </a>
+                                        <div class="featured-badge-list">
+                                            <a class="featured" href="#">
+                                                <span class="fa fa-bolt"></span>
+                                            </a>
+                                        </div><!--./ featured-badge-list -->
+                                    </figure><!--./ thumb-wrap -->
+                                </div><!--./ entry-thumb -->
+
+                            </article><!--~./ end post ~-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--~./End frontpage popular posts ~-->
+
         <div class="top-stories-block style-two ptb-80">
             <div class="container">
                 <div class="row">

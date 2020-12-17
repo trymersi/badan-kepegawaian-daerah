@@ -332,7 +332,45 @@
                     center: false,
                     items: 3,
                     smartSpeed: 800,
-                    autoplay: false,
+                    autoplay: true,
+                    autoplayTimeout: 3000,
+                    loop: true,
+                    margin: 30,
+                    nav: true,
+                    dots: false,
+                    singleItem: false, 
+                    navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+                    responsive: {
+                        280: {
+                            items: 1
+                        },
+                        450: {
+                            items: 1
+                        },
+                        768: {
+                            items: 2
+                        },
+                        992: {
+                            items: 3
+                        },
+                        1300: {
+                            items: 3
+                        },
+                        1400: {
+                            items: 3
+                        }
+                    }
+                });     
+            }
+        },
+
+        bkd_terkait_carousel: function() {
+            if ($('#bkd-terkait-carousel').length) {
+                $('#bkd-terkait-carousel').owlCarousel({
+                    center: false,
+                    items: 3,
+                    smartSpeed: 800,
+                    autoplay: true,
                     autoplayTimeout: 3000,
                     loop: true,
                     margin: 30,
@@ -632,6 +670,7 @@
             magalaApp.widget_posts_slider();        
             magalaApp.popular_posts_carousel();        
             magalaApp.aplikasi_terkait_carousel();        
+            magalaApp.bkd_terkait_carousel();        
             magalaApp.trending_posts_carousel();          
             magalaApp.featured_slider();         
             magalaApp.category_carousel();
