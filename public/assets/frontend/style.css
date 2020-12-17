@@ -603,7 +603,7 @@ cite {
 }
 
 .pb-80 {
-  padding-bottom: 80px;
+  padding-bottom: 0px;
 }
 
 .pb-70 {
@@ -5299,6 +5299,7 @@ ul.dropdown-content > .dropdown-trigger:hover > ul.dropdown-content > li:hover >
 
 .frontpage-slider-posts.slider-style-two {
   overflow: hidden;
+  margin-bottom: 80px;
 }
 
 .frontpage-slider-posts.slider-style-two #frontpage-slider .slider-item {
