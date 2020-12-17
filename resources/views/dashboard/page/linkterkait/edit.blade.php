@@ -40,6 +40,22 @@
 
                         <div class="row">
                           <div class="col-md-6">
+                            <div class="form-group @error('jenis') error @enderror">
+                              <label>Level User <span class="text-danger">*</span></label>
+                              <select name="jenis"  id="jenis" class="form-control select" style="width: 100%;">
+                                <option selected="selected" value="">Pilih Jenis Link</option>
+                                <option @if(old('level',$edit->jenis) == 1) selected="" @endif value="1">Link Terkait BKD</option>
+                                <option @if(old('level',$edit->jenis) == 2) selected="" @endif value="2">Link Universal</option>
+                              </select>
+                              @error('level')
+                              <div class="help-block"><ul role="alert"><li>{{$message}}</li></ul></div>
+                              @enderror
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-6">
                             <div class="form-group @error('gambar') error @enderror">
                               <label>Pilih Gambar <span class="text-danger">*</label>
                               <input type="file" name="gambar" value="{{ old('gambar') }}" accept="image/gif, image/jpeg, image/png" />
@@ -74,3 +90,11 @@
 
 </section>
 @endsection
+@push('js')
+  <script src="{{ asset('assets/backend/vendor_components/select2/dist/js/select2.full.js')}}"></script>
+  <script>  
+    $(document).ready(function() {
+      $(".select").select2();
+    });
+  </script> 
+@endpush

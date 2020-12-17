@@ -63,6 +63,7 @@ class LinkTerkaitController extends Controller
             'nama' => 'required|unique:link_terkaits,nama,NULL,id,deleted_at,NULL',
             'link' => 'required|unique:link_terkaits,link,NULL,id,deleted_at,NULL',
             'gambar' => 'required',
+            'jenis' => 'required',
         ]);
         if ($validator->fails()) {
             Toastr::error('Terjadi Kesalahan Saat Menyimpan Data', 'Gagal', ["positionClass" => "toast-bottom-right"]);
@@ -82,6 +83,7 @@ class LinkTerkaitController extends Controller
 
         $this->LinkTerkaitClass->nama = $request->nama;
         $this->LinkTerkaitClass->link = $request->link;
+        $this->LinkTerkaitClass->jenis = $request->jenis;
         $this->LinkTerkaitClass->gambar = $filename_header ; 
         $this->LinkTerkaitClass->save();
 
@@ -128,6 +130,7 @@ class LinkTerkaitController extends Controller
         $validator = Validator::make($request->all(), [
             'nama' => 'required',
             'link' => 'required',
+            'jenis' => 'required',
         ]);
         if ($validator->fails()) {
             Toastr::error('Terjadi Kesalahan Saat Menyimpan Data', 'Gagal', ["positionClass" => "toast-bottom-right"]);
@@ -146,6 +149,7 @@ class LinkTerkaitController extends Controller
         $update = LinkTerkait::find($id);
         $update->nama = $request->nama;
         $update->link = $request->link;
+        $update->jenis = $request->jenis;
         if(isset($filename_header)):
             $update->gambar = $filename_header;
         endif;  
@@ -187,6 +191,16 @@ class LinkTerkaitController extends Controller
                 return  $link;
             })
 
+            ->addColumn('jenis', function($data)
+            {
+                if($data->jenis == 1){
+                $jenis = '<span class="badge badge-success">Link Terkait BKD</span>';
+                }else {
+                $jenis = '<span class="badge badge-dark">Link Universal</span>';
+                }
+                return  $jenis;
+            })
+
             ->addColumn('gambar', function($data)
             {
                 $gambar = '<figure class="img-hov-zoomin"><img src="'.asset("uploads/images/link-terkait/".$data->gambar).'" alt="'.$data->gambar.'"></figure>';
@@ -199,7 +213,7 @@ class LinkTerkaitController extends Controller
             })
 
             ->addIndexColumn()
-            ->rawColumns(['tanggal','option','link_terkait','gambar'])
+            ->rawColumns(['tanggal','option','link_terkait','gambar','jenis'])
             ->make(true);
     }
 }

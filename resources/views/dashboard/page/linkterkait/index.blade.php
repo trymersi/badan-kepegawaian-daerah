@@ -20,6 +20,7 @@
                                 <th>#</th>
                                 <th>Nama Website</th>
                                 <th>Link</th>
+                                <th>Jenis</th>
                                 <th>Gambar</th>
                                 <th>Terakhir Diubah</th>
                                 <th class="no-content"></th>
@@ -90,6 +91,10 @@
             {
                 data: 'link_terkait',
                 name: 'link_terkait'
+            },
+            {
+                data: 'jenis',
+                name: 'jenis'
             },
             {
                 data: 'gambar',

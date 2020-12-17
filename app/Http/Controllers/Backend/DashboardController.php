@@ -14,7 +14,7 @@ class DashboardController extends Controller
     {
 
         $this->data = [
-            'category_name' => 'Dahsboard',
+            'category_name' => 'Dashboard',
             'main_url' => 'dashboard',
         ];
     }

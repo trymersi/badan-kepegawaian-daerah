@@ -4,10 +4,10 @@
 		
       <!-- sidebar menu-->
     <ul class="sidebar-menu" data-widget="tree">		
-		    <li class="treeview">
+        <li class="@if($category_name == "Dashboard") active @endif">
           <a href="{{ url('/dashboard') }}">
-                <i class="icon-Layout-4-blocks"><span class="path1"></span><span class="path2"></span></i>
-                <span>Dashboard</span>
+            <i class="icon-Layout-4-blocks"><span class="path1"></span><span class="path2"></span></i>
+			    <span>Dashboard</span>
           </a>
         </li>
         <li class="header">Pengaturan Aplikasi</li>
