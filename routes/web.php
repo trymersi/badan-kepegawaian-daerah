@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('/')->group(function(){
     Route::get('/', "Frontend\HomeCrontoller@index");   
+    Route::get('/berita', "Frontend\HomeCrontoller@berita");   
+    Route::get('/unduhan', "Frontend\HomeCrontoller@unduhan");
+    Route::get('/unduhan/table','Backend\LinkTerkaitController@table');  
 });
 
 Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()

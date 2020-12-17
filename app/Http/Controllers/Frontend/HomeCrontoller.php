@@ -30,6 +30,17 @@ class HomeCrontoller extends Controller
         $this->data['page_name'] = 'tabel data bidang';
         return view('frontend.page.beranda.index',$this->data);
     }
+    public function berita()
+    {
+        $this->data['page_name'] = 'tabel data bidang';
+        return view('frontend.page.berita.index',$this->data);
+    }
+
+    public function unduhan()
+    {
+        $this->data['page_name'] = 'tabel data bidang';
+        return view('frontend.page.unduhan.index',$this->data);
+    }
 
     /**
      * Show the form for creating a new resource.

@@ -122,9 +122,9 @@
                                         </li>
                                         <li class="dropdown-trigger"><a href="#"><i class="fa fa-newspaper-o" aria-hidden="true"></i> BERITA</a>
                                             <ul class="dropdown-content">
-                                                <li><a href="category-standard.html">Standard Post</a></li>
-                                                <li><a href="category-grid.html">Grid Post</a></li>
-                                                <li><a href="category-list.html">List Post</a></li>
+                                                <li><a href="{{ url('/berita') }}">Standard Post</a></li>
+                                                <li><a href="{{ url('/berita') }}">Grid Post</a></li>
+                                                <li><a href="{{ url('/berita') }}">List Post</a></li>
                                             </ul>
                                         </li>
                                         <li class="dropdown-trigger"><a href="#"><i class="fa fa-university" aria-hidden="true"></i> PROFILE</a>

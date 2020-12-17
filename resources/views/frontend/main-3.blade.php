@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+    <!-- Page Title -->
+    <title>Magala - Magazine and Blog Template</title>
+    
+    <!---Font Icon-->
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/fontawesome.all.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/fontawesome.min.css')}}">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="shortcut icon" href="{{ asset('assets/frontend/images/favicon.ico')}}">
+
+    <!-- Plugins css -->
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/plugins.css')}}">
+    
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="{{ asset('assets/frontend/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/backend/vendor_components/datatable/datatables.css')}}">
+    
+</head>
+<body>
+    <!--********************************************************-->
+    <!--********************* SITE HEADER **********************-->
+    <!--********************************************************-->
+    <header class="site-header header-style-three">
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Start Header Top Navbar
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <div class="header-top-navbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="top-navbar-left">
+                        <div class="social-profile">
+                            <ul class="social-share-two">
+                                <li><a href="#"><i class="fa fa-phone"></i> 021-3823033 / </a></li>
+                                <li><a href="#"><i class="fa fa-fax"></i> 021-3823033 / </a></li>
+                                <li><a href="#"><i class="fa fa-envelope"></i> aliakbar@riau.go.id</a></li>
+                            </ul>
+                        </div><!--~./ social-profile ~-->
+                        </div><!--~./ top-navbar-left ~-->
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="top-navbar-right">
+                            <div class="social-profile">
+                                <ul class="social-share-two">
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                </ul>
+                            </div><!--~./ social-profile ~-->
+                        </div><!--~./ top-navbar-right ~-->
+                    </div>
+                </div>
+            </div>
+        </div><!--~./ end header top navbar ~-->
+       
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Start Header Middle Area
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <div class="header-middle-area ptb-20">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4">
+                        <div class="site-logo-block">
+                            <a class="navbar-brand site-logo" href="{{ url('/') }}">
+                                <img src="{{ asset('assets/frontend//images/logo/logo-bkd.png')}}" alt="logo">
+                            </a>  
+                        </div><!--~./ site-logo-block ~-->
+                    </div>
+                    <div class="col-lg-8">
+                         <!--~~~~~ Start Add Banner ~~~~~--> 
+                        <div class="add-banner">           
+                            <div class="add-content text-right">
+                                <a title="add" href="#">
+                                    <img src="{{ asset('assets/frontend/images/slogan.png')}}" alt="slogan-bkd-riau">
+                                </a>
+                            </div>
+                        </div><!--~./ end add banner ~-->
+                    </div>
+                </div>
+            </div>
+        </div><!--~./ end header middle area ~-->
+       
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Start Site Navigation
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <div class="site-navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="navbar navbar-expand-lg navigation-area">
+                            <div class="mainmenu-area">
+                                <nav class="menu">
+                                    <ul id="nav">
+                                        <li class="dropdown-trigger"><a href="#"><i class="fa fa-home" aria-hidden="true"></i> BERANDA</a>
+                                            <ul class="dropdown-content">
+                                                <li class="dropdown-trigger"><a href="#">Magazine</a>
+                                                    <ul class="dropdown-content">
+                                                        <li><a href="{{ url('/') }}">Magazine one</a></li>
+                                                        <li><a href="index02.html">Magazine two</a></li>
+                                                        <li><a href="index03.html">Magazine Three</a></li>
+                                                        <li><a href="index04.html">Magazine four</a></li>
+                                                        <li><a href="index05.html">Magazine five</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown-trigger"><a href="#">Blog</a>
+                                                    <ul class="dropdown-content">
+                                                        <li><a href="index06.html">Blog one</a></li>
+                                                        <li><a href="index07.html">Blog two</a></li>
+                                                        <li><a href="index08.html">Blog Three</a></li>
+                                                        <li><a href="index09.html">Blog four</a></li>
+                                                        <li><a href="index10.html">Blog five</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown-trigger"><a href="#"><i class="fa fa-newspaper-o" aria-hidden="true"></i> BERITA</a>
+                                            <ul class="dropdown-content">
+                                                <li><a href="{{ url('/berita') }}">Standard Post</a></li>
+                                                <li><a href="{{ url('/berita') }}">Grid Post</a></li>
+                                                <li><a href="{{ url('/berita') }}">List Post</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown-trigger"><a href="#"><i class="fa fa-university" aria-hidden="true"></i> PROFILE</a>
+                                            <ul class="dropdown-content">
+                                                <li><a href="category-grid.html">Business</a></li>
+                                                <li><a href="category-list.html">Fashion</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown-trigger"><a href="#"><i class="fa fa-download" aria-hidden="true"></i> UNDUHAN</a>
+                                            <ul class="dropdown-content">
+                                                <li><a href="{{ url ('/unduhan') }}">Features</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown-trigger"><a href="#"><i class="fa fa-list" aria-hidden="true"></i> APPS & LAINNYA</a>
+                                            <ul class="dropdown-content">
+                                                <li><a href="category-standard.html">Post standard</a></li>
+                                                <li><a href="category-grid.html">Post Grid Two</a></li>
+                                                <li><a href="category-list.html">Post list Three</a></li>
+                                                <li><a href="post-details.html">Post details One</a></li>
+                                                <li><a href="post-details-two.html">Post details Two</a></li>
+                                                <li><a href="post-details-three.html">Post details Three</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav><!--/.menu-->
+                            </div><!--~./ mainmenu-wrap ~-->
+                            
+                            <div class="header-navigation-right">
+                                <div class="search-wrap">
+                                    <div class="search-btn">
+                                        <img src="{{ asset('assets/frontend/images/icon/search.png')}}" alt="icon">
+                                        <span>PENCARIAN</span>
+                                    </div>
+                                    <div class="search-form">
+                                        <form action="#">
+                                            <input type="search" placeholder="Search">
+                                            <button type="submit"><i class='fa fa-search'></i></button>
+                                        </form>
+                                    </div>
+                                </div><!--~./ search-wrap ~-->
+
+                                <ul class="nav-btns">
+                                    <li>
+                                        <a id="random-post" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Random Post"><img src="{{ asset('assets/frontend/images/icon/random.png')}}" alt="icon"></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" id="bt-show-sidebar"><i class="fa fa-bars"></i></a>
+                                    </li>
+                                </ul>
+                            </div><!--~./ header-navigation-right ~-->
+                        </div><!--~./ navigation-area ~-->
+                    </div>
+                </div>
+            </div>
+        </div><!--~./ site-navigation ~-->
+        
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Start Mobile Menu
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <div class="mobile-menu">
+            <a class="mobile-logo" href="{{ url('/') }}">
+                <img src="{{ asset('assets/frontend//images/logo/logo-bkd.png')}}" alt="logo">
+            </a>
+        </div><!--~~./ end mobile menu ~~-->
+        <div class="breaking-news-area" >
+            <div class="container">
+                <div class="row">
+                    <div class="col -12">
+                        <div id="newsTicker" class="breaking-news-ticker">
+                            <div class="bn-label">Breaking News</div>
+                            <div class="bn-news">
+                                <ul>
+                                    <li><a href="#">Taiwanese flag on artwork painted very pretty in australia & canada <span>Politics</span></a></li>
+                                    <li><a href="#">The five biggest fashion looks for next spring <span>Fashion</span></a></li>
+                                    <li><a href="#">Cold skateboard an annual booking release in brazil <span>Food</span></a></li>
+                                    <li><a href="#">Return of the bench seat Concept show space big for sofas<span>Lifestyle</span></a></li>
+                                </ul>
+                            </div><!--./ bn-news -->
+                            <div class="bn-controls">
+                                <button><span class="bn-arrow bn-prev"></span></button>
+                                <button><span class="bn-arrow bn-next"></span></button>
+                            </div><!--./ bn-controls -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--~./ end breaking news area ~-->
+    </header>
+    <!--~./ end site header ~-->
+    <div class="page-title-area text-white bg-image bg-overlay ptb-60" style="background-image:url(http://via.placeholder.com/1920x180);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-header-content">
+                        <div class="page-header-caption">
+                            <h1>Fashion Category</h1>
+                        </div>
+                        <div class="breadcrumb-area">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>   
+                                <li class="breadcrumb-item"><a href="category-list.html">Categories</a></li>
+                                <li aria-current="page" class="breadcrumb-item active">fashion</li>
+                            </ol>
+                        </div>
+                    </div><!--~~./ page-header-content ~~-->
+                </div>
+            </div>
+        </div><!--~~./ end container ~~-->
+    </div>
+    <!--~~./ end page title area ~~-->
+    
+    
+    <!--********************************************************-->
+    <!--********************* SITE CONTENT *********************-->
+    <!--********************************************************-->
+    <div class="site-content">
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Start Main Wrapper
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <div class="main-wrapper ptb-80 style-two">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p class="alert alert-success">Berikut adalah berkas digital yang dapat Anda unduh dalam kategori <strong>Undang-Undang</strong></p>
+                        <!--~~~~~ Start Site Main ~~~~~-->
+                        <main class="site-main">
+                            <div class="row">
+                                <div class="table-responsive">
+                                    <table id="tabel" class="tabel table table-striped display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>NO</th>
+                                                <th>NAMA DOKUMEN</th>
+                                                <th>KETERANGAN / TENTANG</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                  </div>
+                            </div>
+                        </main>
+                </div>
+            </div>
+        </div><!--~./ end main wrapper ~-->
+    </div>
+    <!-- End site content -->
+    <!--********************************************************-->
+    <!--********************** SITE FOOTER *********************-->
+    <!--********************************************************-->
+    <footer class="site-footer footer-default-style bg-black pt-80">
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Start Footer Widget Area
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <div class="footer-widget-area pb-20">
+            <div class="container">
+                <div class="row">
+                    <!--~~~~~ Start Widget About us Info ~~~~~--> 
+                    <div class="col-lg-3">
+                        <aside class="widget bt-about-us-widget">
+                            <div class="widget-content">
+                                <div class="about-logo">
+                                    <a href="{{ url('/') }}"><img src="{{ asset('assets/frontend//images/logo/logo-bkd.png')}}" alt="Logo-footer-bkd-provinsi-riau"></a>
+                                </div>
+                                <p>BADAN KEPEGAWAIAN DAERAH PROVINSI RIAU</p>
+                                <ul class="social-share">
+                                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a class="youtube" href="#"><i class="fa fa-youtube"></i></a></li>
+                                    <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </aside>
+                    </div><!--~./ end about us widget ~-->
+                    
+                    <!--~~~~~ Start Latest Posts Widget~~~~~-->
+                    <div class="col-lg-3">
+                        <aside class="widget latest-posts-widget latest-posts-widget-two">
+                            <h4 class="widget-title">Tentang Kami</h4>
+                            <div class="widget-content">
+                                <article class="post side-post">
+                                    <div class="content-entry-wrap">
+                                        <h3 class="entry-title">
+                                            <a href="post-details.html">The rumored been iPhone could in hot pink not rose</a>
+                                        </h3><!--./ entry-title -->
+                                        <div class="entry-meta-content">
+                                            <div class="entry-date">
+                                                <span>July 24, 2019 </span>
+                                            </div><!--./ entry-date -->
+                                        </div><!--./ entry-meta-content -->
+                                    </div><!--./ content-entry-wrap -->
+                                    <div class="thumb-wrap">
+                                        <a href="post-details.html">
+                                            <img src="http://via.placeholder.com/100x100" alt="post">
+                                        </a>
+                                    </div><!--./ thumb-wrap -->
+                                </article><!--./ end post -->
+                                
+                                <article class="post side-post">
+                                    <div class="content-entry-wrap">
+                                        <h3 class="entry-title">
+                                            <a href="post-details.html">This gun is advertise as the most popular gun</a>
+                                        </h3><!--./ entry-title -->
+                                        <div class="entry-meta-content">
+                                            <div class="entry-date">
+                                                <span>July 24, 2019 </span>
+                                            </div><!--./ entry-date -->
+                                        </div><!--./ entry-meta-content -->
+                                    </div><!--./ content-entry-wrap -->
+                                    <div class="thumb-wrap">
+                                        <a href="post-details.html">
+                                            <img src="http://via.placeholder.com/100x100" alt="post">
+                                        </a>
+                                    </div><!--./ thumb-wrap -->
+                                </article><!--./ end post -->
+                            </div>
+                        </aside>
+                    </div><!--~./ end latest posts widget ~-->
+                    
+                    <!--~~~~~ Start Latest Posts Widget~~~~~-->
+                    <div class="col-lg-3">
+                        <aside class="widget latest-posts-widget latest-posts-widget-two">
+                            <h4 class="widget-title">Unduhan</h4>
+                            <div class="widget-content">
+                                <article class="post side-post">
+                                    <div class="content-entry-wrap">
+                                        <h3 class="entry-title">
+                                            <a href="post-details.html">This gun is advertise as the most popular gun</a>
+                                        </h3><!--./ entry-title -->
+                                        <div class="entry-meta-content">
+                                            <div class="entry-date">
+                                                <span>July 24, 2019 </span>
+                                            </div><!--./ entry-date -->
+                                        </div><!--./ entry-meta-content -->
+                                    </div><!--./ content-entry-wrap -->
+                                    <div class="thumb-wrap">
+                                        <a href="post-details.html">
+                                            <img src="http://via.placeholder.com/100x100" alt="post">
+                                        </a>
+                                    </div><!--./ thumb-wrap -->
+                                </article><!--./ end post -->
+                                
+                                <article class="post side-post">
+                                    <div class="content-entry-wrap">
+                                        <h3 class="entry-title">
+                                            <a href="post-details.html">The rumored been iPhone could in hot pink not rose</a>
+                                        </h3><!--./ entry-title -->
+                                        <div class="entry-meta-content">
+                                            <div class="entry-date">
+                                                <span>July 24, 2019 </span>
+                                            </div><!--./ entry-date -->
+                                        </div><!--./ entry-meta-content -->
+                                    </div><!--./ content-entry-wrap -->
+                                    <div class="thumb-wrap">
+                                        <a href="post-details.html">
+                                            <img src="http://via.placeholder.com/100x100" alt="post">
+                                        </a>
+                                    </div><!--./ thumb-wrap -->
+                                </article><!--./ end post -->
+                            </div>
+                        </aside>
+                    </div><!--~./ end latest posts widget ~-->
+                    
+                    <!--~~~~~ Start Subscribe Widget~~~~~-->
+                        <!--~~~~~ Start Latest Posts Widget~~~~~-->
+                        <div class="col-lg-3">
+                        <aside class="widget latest-posts-widget latest-posts-widget-two">
+                            <h4 class="widget-title">Berita</h4>
+                            <div class="widget-content">
+                                <article class="post side-post">
+                                    <div class="content-entry-wrap">
+                                        <h3 class="entry-title">
+                                            <a href="post-details.html">This gun is advertise as the most popular gun</a>
+                                        </h3><!--./ entry-title -->
+                                        <div class="entry-meta-content">
+                                            <div class="entry-date">
+                                                <span>July 24, 2019 </span>
+                                            </div><!--./ entry-date -->
+                                        </div><!--./ entry-meta-content -->
+                                    </div><!--./ content-entry-wrap -->
+                                    <div class="thumb-wrap">
+                                        <a href="post-details.html">
+                                            <img src="http://via.placeholder.com/100x100" alt="post">
+                                        </a>
+                                    </div><!--./ thumb-wrap -->
+                                </article><!--./ end post -->
+                                
+                                <article class="post side-post">
+                                    <div class="content-entry-wrap">
+                                        <h3 class="entry-title">
+                                            <a href="post-details.html">The rumored been iPhone could in hot pink not rose</a>
+                                        </h3><!--./ entry-title -->
+                                        <div class="entry-meta-content">
+                                            <div class="entry-date">
+                                                <span>July 24, 2019 </span>
+                                            </div><!--./ entry-date -->
+                                        </div><!--./ entry-meta-content -->
+                                    </div><!--./ content-entry-wrap -->
+                                    <div class="thumb-wrap">
+                                        <a href="post-details.html">
+                                            <img src="http://via.placeholder.com/100x100" alt="post">
+                                        </a>
+                                    </div><!--./ thumb-wrap -->
+                                </article><!--./ end post -->
+                            </div>
+                        </aside>
+                    </div><!--~./ end latest posts widget ~-->
+                </div>
+            </div>
+        </div>
+        <!--~./ end footer widgets area ~-->
+        
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Start Footer Bottom Area
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="copyright-text">
+                            <p>Badan Kepegawaian Daerah Provinsi Riau. © Tahun 2020</p>
+                        </div>
+                    </div><!--~./ end copyright ~-->
+                    <div class="col-lg-6  col-md-6">
+                        <div class="footer-menu">
+                            <ul class="list">
+                                <li><a href="#">Hubungi Kami</a></li>
+                                <!-- <li><a href="#">Private Policy</a></li>
+                                <li><a href="#">Support</a></li>
+                                <li><a href="#">Use Of Terms</a></li> -->
+                            </ul>
+                        </div><!--~./ end footer menu ~-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--~./ end footer bottom area ~-->
+    </footer>
+    <!--~./ end site footer ~-->
+    
+    <!-- jQuery js -->
+    <script src="{{ asset('assets/frontend/js/jquery.min.js')}}"></script>
+    <!-- Bootstrap js -->
+    <script src="{{ asset('assets/frontend/js/bootstrap.min.js')}}"></script>
+    <!-- Popper js -->
+    <script src="{{ asset('assets/frontend/js/popper.min.js')}}"></script>
+    <!-- Owl carousel js -->
+    <script src="{{ asset('assets/frontend/js/owl.carousel.min.js')}}"></script>
+    <!-- Masonary js -->
+    <script src="{{ asset('assets/frontend/js/masonary.min.js')}}"></script>
+    <!-- News Ticker js -->
+    <script src="{{ asset('assets/frontend/js/breaking-news-ticker.min.js')}}"></script>
+    <!-- Trackpad Scroll js -->
+    <script src="{{ asset('assets/frontend/js/jquery.trackpad-scroll-emulator.min.js')}}"></script>
+    <!-- Sticky ResizeSensor js -->
+    <script src="{{ asset('assets/frontend/js/ResizeSensor.min.js')}}"></script>
+    <!-- Sticky Sidebar js -->
+    <script src="{{ asset('assets/frontend/js/theia-sticky-sidebar.min.js')}}"></script>
+    <!-- Plugin js -->
+    <script src="{{ asset('assets/frontend/js/plugins.js')}}"></script>
+    <!-- main js -->
+    <script src="{{ asset('assets/frontend/js/main.js')}}"></script>
+    <script src="{{asset('assets/backend/vendor_components/datatable/datatables.js')}}"></script>
+    <script>
+        $(document).ready(function(){
+            
+               var tabel = $('.tabel').DataTable({
+                "oLanguage": {
+                    "oPaginate": { "sPrevious": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>', "sNext": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>' },
+                    "sInfo": "Showing page _PAGE_ of _PAGES_",
+                    "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
+                    "sSearchPlaceholder": "Search...",
+                    "sLengthMenu": "Results :  _MENU_",
+                },
+                "stripeClasses": [],
+                "lengthMenu": [7, 10, 20, 50],
+                "pageLength": 7 ,
+               processing: true,
+               serverSide: true,
+               ajax: {
+               url: "{{ url('dashboard/link-terkait/table') }}",
+               },
+               columns: [
+                {data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false,searchable: false},
+                {
+                    data: 'nama',
+                    name: 'nama'
+                },
+                {
+                    data: 'nama',
+                    name: 'nama'
+                },
+               
+               ],
+               "initComplete": function(settings, json) {
+                   deleteData();
+                   
+               }
+               });
+    
+               function deleteData()
+               {
+                    $('#ModalHapus').on('show.bs.modal', function(e) {
+                        var id = $(e.relatedTarget).attr('data-id');
+                        var nama = $(e.relatedTarget).attr('data-nama');
+                        console.log(id);
+                        $('.NamaUserHapus').html('');
+                        $('.AksiHapus').html('');
+                        $('.NamaUserHapus').html(nama);
+                        $('.AksiHapus').html('<button type="button" class="btn btn-default btn-cons no-margin float-left inline" data-dismiss="modal">Batal</button><button type="button" class="btn btn-danger btn-cons  float-right inline TombolHapus" data-id="'+id+'" data-token="{{ csrf_token() }}" >Hapus</button>');
+                        $('.TombolHapus').on('click',function(e)
+                        {
+                            var idDelete = $(this).attr('data-id');
+                            var token = $(this).attr('data-token');
+                            $.ajax({
+                                url:"{{url('dashboard/link-terkait/delete')}}/" + idDelete,
+                                type: 'POST',
+                                data: {_method: 'delete', _token :token},
+                                success:function(get){
+                                toastr.options = {
+                                    "positionClass": "toast-bottom-right",
+                                    }
+                                if(get == 1)
+                                {
+                                    toastr["success"]("Data  Berhasil Dihapus", "Sukses !!")
+                                }
+                                else
+                                {
+                                    toastr["error"]("Terjadi Kesalahan Saat Menghapus Data", "Gagal !!")
+                                }
+                                $('#ModalHapus').modal('hide');
+                                tabel.ajax.reload();
+                                }
+    
+                            });
+                        });
+                    });
+               }
+    
+              
+               
+           });
+        </script>
+</body>
+</html>
