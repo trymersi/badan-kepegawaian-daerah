@@ -224,6 +224,10 @@ cite {
   background-color: #fff;
 }
 
+.bg-blue {
+  background-color: #3E4673;
+}
+
 .bg-black {
   background-color: #000;
 }
@@ -2793,6 +2797,13 @@ ul.dropdown-content > .dropdown-trigger:hover > ul.dropdown-content > li:hover >
   line-height: 20px;
   width: 25px;
 }
+.site-header .header-top-navbar .top-navbar-left .social-share-two > li > a {
+  color: #fff;
+  font-size: 11px;
+  height: 20px;
+  line-height: 20px;
+  width: auto;
+}
 
 .site-header .header-top-navbar .top-navbar-right .social-share-two > li > a:focus, .site-header .header-top-navbar .top-navbar-right .social-share-two > li > a:hover {
   color: #D82E2A;
@@ -2957,12 +2968,12 @@ ul.dropdown-content > .dropdown-trigger:hover > ul.dropdown-content > li:hover >
 }
 
 .site-header.header-style-three .header-top-navbar {
-  background-color: #000;
+  background-color: #138a23;
 }
 
 .site-header.header-style-three .site-navigation {
   background-image: -webkit-linear-gradient(left, #3a2480, #cc1c28);
-  background-image: linear-gradient(to right, #3a2480, #cc1c28);
+  background-image: linear-gradient(to right, #00ab4e, #e9c31e);
 }
 
 .site-header.header-style-three .navbar.navigation-area {
@@ -7946,7 +7957,7 @@ ul.dropdown-content > .dropdown-trigger:hover > ul.dropdown-content > li:hover >
 }
 
 .site-footer.footer-default-style .footer-bottom-area {
-  border-top: 1px solid #1e1e1e;
+  border-top: 1px solid #28a745;
   font-size: 12px;
   line-height: 20px;
   padding: 20px 0;

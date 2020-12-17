@@ -16,7 +16,7 @@
                             <div class="mainmenu-area">
                                 <nav class="menu">
                                     <ul id="nav">
-                                        <li class=""><a href="#"><i class="fa fa-home" aria-hidden="true"></i> BERANDA</a>
+                                        <li class=""><a href="{{ url('/') }}"><i class="fa fa-home" aria-hidden="true"></i> BERANDA</a>
                                             <ul class="dropdown-content">
                                                 <li class="dropdown-trigger"><a href="#">Magazine</a>
                                                     <ul class="dropdown-content">

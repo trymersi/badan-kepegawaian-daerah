@@ -1,0 +1,2123 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+    <!-- Page Title -->
+    <title>Magala - Magazine and Blog Template</title>
+    
+    <!---Font Icon-->
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/fontawesome.all.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/fontawesome.min.css')}}">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="shortcut icon" href="{{ asset('assets/frontend/images/favicon.ico')}}">
+
+    <!-- Plugins css -->
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/plugins.css')}}">
+    
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="{{ asset('assets/frontend/style.css')}}">
+    
+</head>
+<body>
+    <!--********************************************************-->
+    <!--********************* SITE HEADER **********************-->
+    <!--********************************************************-->
+    <header class="site-header header-style-three">
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Start Header Top Navbar
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <div class="header-top-navbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="top-navbar-left">
+                        <div class="social-profile">
+                            <ul class="social-share-two">
+                                <li><a href="#"><i class="fa fa-phone"></i> 021-3823033 / </a></li>
+                                <li><a href="#"><i class="fa fa-fax"></i> 021-3823033 / </a></li>
+                                <li><a href="#"><i class="fa fa-envelope"></i> aliakbar@riau.go.id</a></li>
+                            </ul>
+                        </div><!--~./ social-profile ~-->
+                        </div><!--~./ top-navbar-left ~-->
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="top-navbar-right">
+                            <div class="social-profile">
+                                <ul class="social-share-two">
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                </ul>
+                            </div><!--~./ social-profile ~-->
+                        </div><!--~./ top-navbar-right ~-->
+                    </div>
+                </div>
+            </div>
+        </div><!--~./ end header top navbar ~-->
+       
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Start Header Middle Area
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <div class="header-middle-area ptb-20">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4">
+                        <div class="site-logo-block">
+                            <a class="navbar-brand site-logo" href="{{ url('/') }}">
+                                <img src="{{ asset('assets/frontend//images/logo/logo-bkd.png')}}" alt="logo">
+                            </a>  
+                        </div><!--~./ site-logo-block ~-->
+                    </div>
+                    <div class="col-lg-8">
+                         <!--~~~~~ Start Add Banner ~~~~~--> 
+                        <div class="add-banner">           
+                            <div class="add-content text-right">
+                                <a title="add" href="#">
+                                    <img src="{{ asset('assets/frontend/images/slogan.png')}}" alt="slogan-bkd-riau">
+                                </a>
+                            </div>
+                        </div><!--~./ end add banner ~-->
+                    </div>
+                </div>
+            </div>
+        </div><!--~./ end header middle area ~-->
+       
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Start Site Navigation
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <div class="site-navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="navbar navbar-expand-lg navigation-area">
+                            <div class="mainmenu-area">
+                                <nav class="menu">
+                                    <ul id="nav">
+                                        <li class="dropdown-trigger"><a href="#"><i class="fa fa-home" aria-hidden="true"></i> BERANDA</a>
+                                            <ul class="dropdown-content">
+                                                <li class="dropdown-trigger"><a href="#">Magazine</a>
+                                                    <ul class="dropdown-content">
+                                                        <li><a href="{{ url('/') }}">Magazine one</a></li>
+                                                        <li><a href="index02.html">Magazine two</a></li>
+                                                        <li><a href="index03.html">Magazine Three</a></li>
+                                                        <li><a href="index04.html">Magazine four</a></li>
+                                                        <li><a href="index05.html">Magazine five</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown-trigger"><a href="#">Blog</a>
+                                                    <ul class="dropdown-content">
+                                                        <li><a href="index06.html">Blog one</a></li>
+                                                        <li><a href="index07.html">Blog two</a></li>
+                                                        <li><a href="index08.html">Blog Three</a></li>
+                                                        <li><a href="index09.html">Blog four</a></li>
+                                                        <li><a href="index10.html">Blog five</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown-trigger"><a href="#"><i class="fa fa-newspaper-o" aria-hidden="true"></i> BERITA</a>
+                                            <ul class="dropdown-content">
+                                                <li><a href="category-standard.html">Standard Post</a></li>
+                                                <li><a href="category-grid.html">Grid Post</a></li>
+                                                <li><a href="category-list.html">List Post</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown-trigger"><a href="#"><i class="fa fa-university" aria-hidden="true"></i> PROFILE</a>
+                                            <ul class="dropdown-content">
+                                                <li><a href="category-grid.html">Business</a></li>
+                                                <li><a href="category-list.html">Fashion</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown-trigger"><a href="#"><i class="fa fa-download" aria-hidden="true"></i> UNDUHAN</a>
+                                            <ul class="dropdown-content">
+                                                <li><a href="#">Features</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown-trigger"><a href="#"><i class="fa fa-list" aria-hidden="true"></i> APPS & LAINNYA</a>
+                                            <ul class="dropdown-content">
+                                                <li><a href="category-standard.html">Post standard</a></li>
+                                                <li><a href="category-grid.html">Post Grid Two</a></li>
+                                                <li><a href="category-list.html">Post list Three</a></li>
+                                                <li><a href="post-details.html">Post details One</a></li>
+                                                <li><a href="post-details-two.html">Post details Two</a></li>
+                                                <li><a href="post-details-three.html">Post details Three</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav><!--/.menu-->
+                            </div><!--~./ mainmenu-wrap ~-->
+                            
+                            <div class="header-navigation-right">
+                                <div class="search-wrap">
+                                    <div class="search-btn">
+                                        <img src="{{ asset('assets/frontend/images/icon/search.png')}}" alt="icon">
+                                        <span>PENCARIAN</span>
+                                    </div>
+                                    <div class="search-form">
+                                        <form action="#">
+                                            <input type="search" placeholder="Search">
+                                            <button type="submit"><i class='fa fa-search'></i></button>
+                                        </form>
+                                    </div>
+                                </div><!--~./ search-wrap ~-->
+
+                                <ul class="nav-btns">
+                                    <li>
+                                        <a id="random-post" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Random Post"><img src="{{ asset('assets/frontend/images/icon/random.png')}}" alt="icon"></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" id="bt-show-sidebar"><i class="fa fa-bars"></i></a>
+                                    </li>
+                                </ul>
+                            </div><!--~./ header-navigation-right ~-->
+                        </div><!--~./ navigation-area ~-->
+                    </div>
+                </div>
+            </div>
+        </div><!--~./ site-navigation ~-->
+        
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Start Mobile Menu
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <div class="mobile-menu">
+            <a class="mobile-logo" href="{{ url('/') }}">
+                <img src="{{ asset('assets/frontend//images/logo/logo-bkd.png')}}" alt="logo">
+            </a>
+        </div><!--~~./ end mobile menu ~~-->
+                <div class="breaking-news-area" >
+            <div class="container">
+                <div class="row">
+                    <div class="col -12">
+                        <div id="newsTicker" class="breaking-news-ticker">
+                            <div class="bn-label">Breaking News</div>
+                            <div class="bn-news">
+                                <ul>
+                                    <li><a href="#">Taiwanese flag on artwork painted very pretty in australia & canada <span>Politics</span></a></li>
+                                    <li><a href="#">The five biggest fashion looks for next spring <span>Fashion</span></a></li>
+                                    <li><a href="#">Cold skateboard an annual booking release in brazil <span>Food</span></a></li>
+                                    <li><a href="#">Return of the bench seat Concept show space big for sofas<span>Lifestyle</span></a></li>
+                                </ul>
+                            </div><!--./ bn-news -->
+                            <div class="bn-controls">
+                                <button><span class="bn-arrow bn-prev"></span></button>
+                                <button><span class="bn-arrow bn-next"></span></button>
+                            </div><!--./ bn-controls -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--~./ end breaking news area ~-->
+    </header>
+    <!--~./ end site header ~-->
+    
+    
+    <!--********************************************************-->
+    <!--********************* SITE CONTENT *********************-->
+    <!--********************************************************-->
+    <div class="site-content">
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Start Frontpage Featured Posts
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <div class="frontpage-featured-posts featured-style-three">
+            <div id="featured-carousel-two" class="owl-carousel carousel-nav-dots">
+                <!--~~~~~ Start Featured Item ~~~~~-->
+                <article class="featured-item">
+                    <figure class="featured-media"> 
+                        <a href="#" class="featured-link"> 
+                            <img src="http://via.placeholder.com/384x480" alt="Thmubnail"> 
+                        </a>
+                        <div class="featured-badge-list">
+                            <a class="trending" href="#">
+                                <span class="fab fa-gripfire"></span>
+                            </a>
+                        </div><!--./ featured-badge-list -->
+                    </figure><!--./ featured-media -->
+                    <div class="content-entry-wrap">
+                        <div class="entry-content">
+                            <h3 class="entry-title">
+                                <a href="post-details.html">The five biggest fashion looks for next spring</a>
+                            </h3><!--./ entry-title -->
+                        </div><!--./ entry-content -->
+                        <div class="entry-meta-content">
+                            <div class="entry-date">
+                                <span>October 24, 2019</span>
+                            </div><!--./ entry-date -->
+                            <div class="entry-category">
+                                <a class="cat" href="#">Fashion</a>
+                            </div><!--./ entry-category -->
+                        </div><!--./ thumb-wrap -->
+                    </div><!--./ content-entry-wrap -->
+                </article><!--./ end featured item -->
+                
+                <!--~~~~~ Start Featured Item ~~~~~-->
+                <article class="featured-item">
+                    <figure class="featured-media"> 
+                        <a href="#" class="featured-link"> 
+                            <img src="http://via.placeholder.com/384x480" alt="Thmubnail"> 
+                        </a>
+                    </figure><!--./ featured-media -->
+                    <div class="content-entry-wrap">
+                        <div class="entry-content">
+                            <h3 class="entry-title">
+                                <a href="post-details.html">The rumored iPhone come in hot pink, not rose gold</a>
+                            </h3><!--./ entry-title -->
+                        </div><!--./ entry-content -->
+                        <div class="entry-meta-content">
+                            <div class="entry-date">
+                                <span>October 24, 2019</span>
+                            </div><!--./ entry-date -->
+                            <div class="entry-category">
+                                <a class="cat" href="#">Gaming</a>
+                            </div><!--./ entry-category -->
+                        </div><!--./ thumb-wrap -->
+                    </div><!--./ content-entry-wrap -->
+                </article><!--./ end featured item -->
+                
+                <!--~~~~~ Start Featured Item ~~~~~-->
+                <article class="featured-item">
+                    <figure class="featured-media"> 
+                        <a href="#" class="featured-link"> 
+                            <img src="http://via.placeholder.com/384x480" alt="Thmubnail"> 
+                        </a>
+                        <div class="featured-badge-list">
+                            <a class="trending" href="#">
+                                <span class="fab fa-gripfire"></span>
+                            </a>
+                            <a class="featured" href="#">
+                                <span class="fa fa-bolt"></span>
+                            </a>
+                        </div><!--./ featured-badge-list -->
+                    </figure><!--./ featured-media -->
+                    <div class="content-entry-wrap">
+                        <div class="entry-content">
+                            <h3 class="entry-title">
+                                <a href="post-details.html">How to live with some vegeterian when you eat</a>
+                            </h3><!--./ entry-title -->
+                        </div><!--./ entry-content -->
+                        <div class="entry-meta-content">
+                            <div class="entry-date">
+                                <span>October 24, 2019</span>
+                            </div><!--./ entry-date -->
+                            <div class="entry-category">
+                                <a class="cat" href="#">Food</a>
+                            </div><!--./ entry-category -->
+                        </div><!--./ thumb-wrap -->
+                    </div><!--./ content-entry-wrap -->
+                </article><!--./ end featured item -->
+                
+                <!--~~~~~ Start Featured Item ~~~~~-->
+                <article class="featured-item">
+                    <figure class="featured-media"> 
+                        <a href="#" class="featured-link"> 
+                            <img src="http://via.placeholder.com/384x480" alt="Thmubnail"> 
+                        </a>
+                    </figure><!--./ featured-media -->
+                    <div class="content-entry-wrap">
+                        <div class="entry-content">
+                            <h3 class="entry-title">
+                                <a href="post-details.html">Supreme court girds for fight over census question</a>
+                            </h3><!--./ entry-title -->
+                        </div><!--./ entry-content -->
+                        <div class="entry-meta-content">
+                            <div class="entry-date">
+                                <span>October 24, 2019</span>
+                            </div><!--./ entry-date -->
+                            <div class="entry-category">
+                                <a class="cat" href="#">Lifestyle</a>
+                            </div><!--./ entry-category -->
+                        </div><!--./ thumb-wrap -->
+                    </div><!--./ content-entry-wrap -->
+                </article><!--./ end featured item -->
+                
+                <!--~~~~~ Start Featured Item ~~~~~-->
+                <article class="featured-item">
+                    <figure class="featured-media"> 
+                        <a href="#" class="featured-link"> 
+                            <img src="http://via.placeholder.com/384x480" alt="Thmubnail"> 
+                        </a>
+                        <div class="featured-badge-list">
+                            <a class="featured" href="#">
+                                <span class="fa fa-bolt"></span>
+                            </a>
+                        </div><!--./ featured-badge-list -->
+                    </figure><!--./ featured-media -->
+                    <div class="content-entry-wrap">
+                        <div class="entry-content">
+                            <h3 class="entry-title">
+                                <a href="post-details.html">The five biggest fashion looks for next spring</a>
+                            </h3><!--./ entry-title -->
+                        </div><!--./ entry-content -->
+                        <div class="entry-meta-content">
+                            <div class="entry-date">
+                                <span>October 24, 2019</span>
+                            </div><!--./ entry-date -->
+                            <div class="entry-category">
+                                <a class="cat" href="#">Fashion</a>
+                            </div><!--./ entry-category -->
+                        </div><!--./ thumb-wrap -->
+                    </div><!--./ content-entry-wrap -->
+                </article><!--./ end featured item -->
+            </div>
+        </div><!--~./End frontpage featured posts ~-->
+        
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Start Main Wrapper
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <div class="main-wrapper pt-80">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <!--~~~~~ Start Site Main ~~~~~-->
+                        <div class="site-main">
+                            <!--~~~~~ Start Frontpage Cat Posts ~~~~~-->
+                            <div class="frontpage-cat-posts pb-80">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="section-header">
+                                            <h2 class="section-title">Tajuk Berita</h2>
+                                        </div>
+                                    </div>
+                                </div><!--~./ end section header ~-->
+                                <div class="row">
+                                    <!--~~~~~ Start Post ~~~~~-->
+                                    <div class="col-lg-7">
+                                        <article class="post hentry post-grid">
+                                            <div class="entry-thumb">
+                                                <figure class="thumb-wrap">
+                                                    <a href="post-details.html">
+                                                        <img src="http://via.placeholder.com/470x480" alt="post">
+                                                    </a>
+                                                    <div class="featured-badge-list">
+                                                        <a class="trending" href="#">
+                                                            <span class="fab fa-gripfire"></span>
+                                                        </a>
+                                                        <a class="featured" href="#">
+                                                            <span class="fa fa-bolt"></span>
+                                                        </a>
+                                                    </div><!--./ featured-badge-list -->
+                                                </figure><!--./ thumb-wrap -->
+                                            </div><!--./ entry-thumb -->
+                                            <div class="content-entry-wrap">
+                                                <div class="entry-content">
+                                                    <h3 class="entry-title">
+                                                        <a href="post-details.html">Return of the bench seat Concept show space big for sofas</a>
+                                                    </h3><!--./ entry-title -->
+                                                </div><!--./ entry-content -->
+                                                <div class="entry-meta-content">
+                                                    <div class="entry-meta-author">
+                                                        <div class="entry-author-thumb">
+                                                            <img class="avatar photo" src="http://via.placeholder.com/40x40" alt="author">
+                                                        </div>
+                                                        <div class="entry-author-name">
+                                                            <a href="#">Ahmed Arafa</a>
+                                                        </div>
+                                                    </div><!--./ entry-meta-author -->
+                                                    <div class="entry-date">
+                                                        <span>October 24, 2019</span>
+                                                    </div><!--./ entry-date -->
+                                                    <div class="entry-category">
+                                                        <a class="cat" href="#">Business</a>
+                                                    </div><!--./ entry-category -->
+                                                </div><!--./ entry-meta-content -->
+                                            </div><!--./ content-entry-wrap -->
+                                        </article>
+                                    </div><!--~./ end post ~-->
+                                    
+                                    <div class="col-lg-5">
+                                        <!--~~~~~ Start Post ~~~~~-->
+                                        <article class="post hentry post-list post-list-small">
+                                            <div class="entry-thumb">
+                                                <figure class="thumb-wrap">
+                                                    <a href="post-details.html">
+                                                        <img src="http://via.placeholder.com/140x140" alt="post">
+                                                    </a>
+                                                    <div class="featured-badge-list">
+                                                        <a class="trending" href="#">
+                                                            <span class="fab fa-gripfire"></span>
+                                                        </a>
+                                                    </div><!--./ featured-badge-list -->
+                                                </figure><!--./ thumb-wrap -->
+                                            </div><!--./ entry-thumb -->
+                                            <div class="content-entry-wrap">
+                                                <div class="entry-content">
+                                                    <h3 class="entry-title">
+                                                        <a href="post-details.html">This gun is advertised as the most popular gun in American crime</a>
+                                                    </h3><!--./ entry-title -->
+                                                </div><!--./ entry-content -->
+                                                <div class="entry-meta-content">
+                                                    <div class="entry-date">
+                                                        <span>July 24, 2019 </span>
+                                                    </div><!--./ entry-date -->
+                                                    <div class="entry-category">
+                                                        <a class="cat" href="#">Fashion</a>
+                                                    </div><!--./ entry-category -->
+                                                </div><!--./ thumb-wrap -->
+                                            </div><!--./ content-entry-wrap -->
+                                        </article><!--~./ end post ~-->
+                                        
+                                        <!--~~~~~ Start Post ~~~~~-->
+                                        <article class="post hentry post-list post-list-small">
+                                            <div class="entry-thumb">
+                                                <figure class="thumb-wrap">
+                                                    <a href="post-details.html">
+                                                        <img src="http://via.placeholder.com/140x140" alt="post">
+                                                    </a>
+                                                </figure><!--./ thumb-wrap -->
+                                            </div><!--./ entry-thumb -->
+                                            <div class="content-entry-wrap">
+                                                <div class="entry-content">
+                                                    <h3 class="entry-title">
+                                                        <a href="post-details.html">How to live with some vegeterian when you eat barbecue meat</a>
+                                                    </h3><!--./ entry-title -->
+                                                </div><!--./ entry-content -->
+                                                <div class="entry-meta-content">
+                                                    <div class="entry-date">
+                                                        <span>July 24, 2019 </span>
+                                                    </div><!--./ entry-date -->
+                                                    <div class="entry-category">
+                                                        <a class="cat" href="#">LifeStyle</a>
+                                                    </div><!--./ entry-category -->
+                                                </div><!--./ thumb-wrap -->
+                                            </div><!--./ content-entry-wrap -->
+                                        </article><!--~./ end post ~-->
+                                        
+                                        <!--~~~~~ Start Post ~~~~~-->
+                                        <article class="post hentry post-list post-list-small">
+                                            <div class="entry-thumb">
+                                                <figure class="thumb-wrap">
+                                                    <a href="post-details.html">
+                                                        <img src="http://via.placeholder.com/140x140" alt="post">
+                                                    </a>
+                                                    <div class="featured-badge-list">
+                                                        <a class="featured" href="#">
+                                                            <span class="fa fa-bolt"></span>
+                                                        </a>
+                                                    </div><!--./ featured-badge-list -->
+                                                </figure><!--./ thumb-wrap -->
+                                            </div><!--./ entry-thumb -->
+                                            <div class="content-entry-wrap">
+                                                <div class="entry-content">
+                                                    <h3 class="entry-title">
+                                                        <a href="post-details.html">This gun is advertised as the most popular gun in American crime</a>
+                                                    </h3><!--./ entry-title -->
+                                                </div><!--./ entry-content -->
+                                                <div class="entry-meta-content">
+                                                    <div class="entry-date">
+                                                        <span>July 24, 2019 </span>
+                                                    </div><!--./ entry-date -->
+                                                    <div class="entry-category">
+                                                        <a class="cat" href="#">Fashion</a>
+                                                    </div><!--./ entry-category -->
+                                                </div><!--./ thumb-wrap -->
+                                            </div><!--./ content-entry-wrap -->
+                                        </article><!--~./ end post ~-->
+                                        
+                                        <!--~~~~~ Start Post ~~~~~-->
+                                        <article class="post hentry post-list post-list-small">
+                                            <div class="entry-thumb">
+                                                <figure class="thumb-wrap">
+                                                    <a href="post-details.html">
+                                                        <img src="http://via.placeholder.com/140x140" alt="post">
+                                                    </a>
+                                                </figure><!--./ thumb-wrap -->
+                                            </div><!--./ entry-thumb -->
+                                            <div class="content-entry-wrap">
+                                                <div class="entry-content">
+                                                    <h3 class="entry-title">
+                                                        <a href="post-details.html">The rumored iPhone could come in hot pink, not rose gold and silver</a>
+                                                    </h3><!--./ entry-title -->
+                                                </div><!--./ entry-content -->
+                                                <div class="entry-meta-content">
+                                                    <div class="entry-date">
+                                                        <span>July 24, 2019 </span>
+                                                    </div><!--./ entry-date -->
+                                                    <div class="entry-category">
+                                                        <a class="cat" href="#">LifeStyle</a>
+                                                    </div><!--./ entry-category -->
+                                                </div><!--./ thumb-wrap -->
+                                            </div><!--./ content-entry-wrap -->
+                                        </article><!--~./ end post ~-->
+                                    </div>
+                                </div>
+                            </div><!--~./ end frontpage cat posts ~-->
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <!--~~~~~ Start Frontpage Cat Posts ~~~~~-->
+                                    <div class="frontpage-cat-posts pb-80">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="section-header">
+                                                    <h2 class="section-title">Berita Kegiatan</h2>
+                                                </div>
+                                            </div>
+                                        </div><!--~./ end section header ~-->
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <!--~~~~~ Start Post ~~~~~-->
+                                                <article class="post hentry post-grid">
+                                                    <div class="entry-thumb">
+                                                        <figure class="thumb-wrap">
+                                                            <a href="post-details.html">
+                                                                <img src="http://via.placeholder.com/370x370" alt="post">
+                                                            </a>
+                                                            <div class="featured-badge-list">
+                                                                <a class="trending" href="#">
+                                                                    <span class="fab fa-gripfire"></span>
+                                                                </a>
+                                                                <a class="featured" href="#">
+                                                                    <span class="fa fa-bolt"></span>
+                                                                </a>
+                                                            </div><!--./ featured-badge-list -->
+                                                        </figure><!--./ thumb-wrap -->
+                                                    </div><!--./ entry-thumb -->
+                                                    <div class="content-entry-wrap">
+                                                        <div class="entry-content">
+                                                            <h3 class="entry-title">
+                                                                <a href="post-details.html">Supreme court girds for fight over census citizenship question</a>
+                                                            </h3><!--./ entry-title -->
+                                                        </div><!--./ entry-content -->
+                                                        <div class="entry-meta-content">
+                                                            <div class="entry-meta-author">
+                                                                <div class="entry-author-thumb">
+                                                                    <img class="avatar photo" src="http://via.placeholder.com/40x40" alt="author">
+                                                                </div>
+                                                                <div class="entry-author-name">
+                                                                    <a href="#">Ahmed Arafa</a>
+                                                                </div>
+                                                            </div><!--./ entry-meta-author -->
+                                                            <div class="entry-date">
+                                                                <span>October 24, 2019</span>
+                                                            </div><!--./ entry-date -->
+                                                            <div class="entry-category">
+                                                                <a class="cat" href="#">LifeStyle</a>
+                                                            </div><!--./ entry-category -->
+                                                        </div><!--./ entry-meta-content -->
+                                                    </div><!--./ content-entry-wrap -->
+                                                </article><!--~./ end post ~-->
+                                                
+                                                <!--~~~~~ Start Post ~~~~~-->
+                                                <article class="post hentry post-list post-list-small">
+                                                    <div class="entry-thumb">
+                                                        <figure class="thumb-wrap">
+                                                            <a href="post-details.html">
+                                                                <img src="http://via.placeholder.com/140x140" alt="post">
+                                                            </a>
+                                                            <div class="featured-badge-list">
+                                                                <a class="featured" href="#">
+                                                                    <span class="fa fa-bolt"></span>
+                                                                </a>
+                                                            </div><!--./ featured-badge-list -->
+                                                        </figure><!--./ thumb-wrap -->
+                                                    </div><!--./ entry-thumb -->
+                                                    <div class="content-entry-wrap">
+                                                        <div class="entry-content">
+                                                            <h3 class="entry-title">
+                                                                <a href="post-details.html">The rumored iPhone could come in hot pink, not rose gold and silver</a>
+                                                            </h3><!--./ entry-title -->
+                                                        </div><!--./ entry-content -->
+                                                        <div class="entry-meta-content">
+                                                            <div class="entry-date">
+                                                                <span>July 24, 2019 </span>
+                                                            </div><!--./ entry-date -->
+                                                            <div class="entry-category">
+                                                                <a class="cat" href="#">LifeStyle</a>
+                                                            </div><!--./ entry-category -->
+                                                        </div><!--./ entry-meta-content -->
+                                                    </div><!--./ content-entry-wrap -->
+                                                </article><!--~./ end post ~-->
+                                                
+                                                <!--~~~~~ Start Post ~~~~~-->
+                                                <article class="post hentry post-list post-list-small">
+                                                    <div class="entry-thumb">
+                                                        <figure class="thumb-wrap">
+                                                            <a href="post-details.html">
+                                                                <img src="http://via.placeholder.com/140x140" alt="post">
+                                                            </a>
+                                                        </figure><!--./ thumb-wrap -->
+                                                    </div><!--./ entry-thumb -->
+                                                    <div class="content-entry-wrap">
+                                                        <div class="entry-content">
+                                                            <h3 class="entry-title">
+                                                                <a href="post-details.html">How to live with some vegeterian when you eat barbecue meat</a>
+                                                            </h3><!--./ entry-title -->
+                                                        </div><!--./ entry-content -->
+                                                        <div class="entry-meta-content">
+                                                            <div class="entry-date">
+                                                                <span>July 24, 2019 </span>
+                                                            </div><!--./ entry-date -->
+                                                            <div class="entry-category">
+                                                                <a class="cat" href="#">Business</a>
+                                                            </div><!--./ entry-category -->
+                                                        </div><!--./ entry-meta-content -->
+                                                    </div><!--./ content-entry-wrap -->
+                                                </article><!--~./ end post ~-->
+                                                
+                                                <!--~~~~~ Start Post ~~~~~-->
+                                                <article class="post hentry post-list post-list-small">
+                                                    <div class="entry-thumb">
+                                                        <figure class="thumb-wrap">
+                                                            <a href="post-details.html">
+                                                                <img src="http://via.placeholder.com/140x140" alt="post">
+                                                            </a>
+                                                            <div class="featured-badge-list">
+                                                                <a class="trending" href="#">
+                                                                    <span class="fab fa-gripfire"></span>
+                                                                </a>
+                                                            </div><!--./ featured-badge-list -->
+                                                        </figure><!--./ thumb-wrap -->
+                                                    </div><!--./ entry-thumb -->
+                                                    <div class="content-entry-wrap">
+                                                        <div class="entry-content">
+                                                            <h3 class="entry-title">
+                                                                <a href="post-details.html">This gun is advertised as the most popular gun in American crime</a>
+                                                            </h3><!--./ entry-title -->
+                                                        </div><!--./ entry-content -->
+                                                        <div class="entry-meta-content">
+                                                            <div class="entry-date">
+                                                                <span>July 24, 2019 </span>
+                                                            </div><!--./ entry-date -->
+                                                            <div class="entry-category">
+                                                                <a class="cat" href="#">Fashion</a>
+                                                            </div><!--./ entry-category -->
+                                                        </div><!--./ entry-meta-content -->
+                                                    </div><!--./ content-entry-wrap -->
+                                                </article><!--~./ end post ~-->
+                                            </div>
+                                        </div>
+                                    </div><!--~./ end frontpage cat posts ~-->
+                                </div>
+                                <div class="col-lg-6">
+                                    <!--~~~~~ Start Frontpage Cat Posts ~~~~~-->
+                                    <div class="frontpage-cat-posts pb-80">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="section-header">
+                                                    <h2 class="section-title">Berita Seputar BKD</h2>
+                                                </div>
+                                            </div>
+                                        </div><!--~./ end section header ~-->
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <!--~~~~~ Start Post ~~~~~-->
+                                                <article class="post hentry post-grid">
+                                                    <div class="entry-thumb">
+                                                        <figure class="thumb-wrap">
+                                                            <a href="post-details.html">
+                                                                <img src="http://via.placeholder.com/370x370" alt="post">
+                                                            </a>
+                                                        </figure><!--./ thumb-wrap -->
+                                                    </div><!--./ entry-thumb -->
+                                                    <div class="content-entry-wrap">
+                                                        <div class="entry-content">
+                                                            <h3 class="entry-title">
+                                                                <a href="post-details.html">The five biggest fashion looks for next spring</a>
+                                                            </h3><!--./ entry-title -->
+                                                        </div><!--./ entry-content -->
+                                                        <div class="entry-meta-content">
+                                                            <div class="entry-meta-author">
+                                                                <div class="entry-author-thumb">
+                                                                    <img class="avatar photo" src="http://via.placeholder.com/40x40" alt="author">
+                                                                </div>
+                                                                <div class="entry-author-name">
+                                                                    <a href="#">Ahmed Arafa</a>
+                                                                </div>
+                                                            </div><!--./ entry-meta-author -->
+                                                            <div class="entry-date">
+                                                                <span>October 24, 2019</span>
+                                                            </div><!--./ entry-date -->
+                                                            <div class="entry-category">
+                                                                <a class="cat" href="#">LifeStyle</a>
+                                                            </div><!--./ entry-category -->
+                                                        </div><!--./ entry-meta-content -->
+                                                    </div><!--./ content-entry-wrap -->
+                                                </article><!--~./ end post ~-->
+                                                
+                                                <!--~~~~~ Start Post ~~~~~-->
+                                                <article class="post hentry post-list post-list-small">
+                                                    <div class="entry-thumb">
+                                                        <figure class="thumb-wrap">
+                                                            <a href="post-details.html">
+                                                                <img src="http://via.placeholder.com/140x140" alt="post">
+                                                            </a>
+                                                            <div class="featured-badge-list">
+                                                                <a class="trending" href="#">
+                                                                    <span class="fab fa-gripfire"></span>
+                                                                </a>
+                                                            </div><!--./ featured-badge-list -->
+                                                        </figure><!--./ thumb-wrap -->
+                                                    </div><!--./ entry-thumb -->
+                                                    <div class="content-entry-wrap">
+                                                        <div class="entry-content">
+                                                            <h3 class="entry-title">
+                                                                <a href="post-details.html">This gun is advertised as the most popular gun in American crime</a>
+                                                            </h3><!--./ entry-title -->
+                                                        </div><!--./ entry-content -->
+                                                        <div class="entry-meta-content">
+                                                            <div class="entry-date">
+                                                                <span>July 24, 2019 </span>
+                                                            </div><!--./ entry-date -->
+                                                            <div class="entry-category">
+                                                                <a class="cat" href="#">Fashion</a>
+                                                            </div><!--./ entry-category -->
+                                                        </div><!--./ entry-meta-content -->
+                                                    </div><!--./ content-entry-wrap -->
+                                                </article><!--~./ end post ~-->
+
+                                                <!--~~~~~ Start Post ~~~~~-->
+                                                <article class="post hentry post-list post-list-small">
+                                                    <div class="entry-thumb">
+                                                        <figure class="thumb-wrap">
+                                                            <a href="post-details.html">
+                                                                <img src="http://via.placeholder.com/140x140" alt="post">
+                                                            </a>
+                                                        </figure><!--./ thumb-wrap -->
+                                                    </div><!--./ entry-thumb -->
+                                                    <div class="content-entry-wrap">
+                                                        <div class="entry-content">
+                                                            <h3 class="entry-title">
+                                                                <a href="post-details.html">The rumored iPhone could come in hot pink, not rose gold and silver</a>
+                                                            </h3><!--./ entry-title -->
+                                                        </div><!--./ entry-content -->
+                                                        <div class="entry-meta-content">
+                                                            <div class="entry-date">
+                                                                <span>July 24, 2019 </span>
+                                                            </div><!--./ entry-date -->
+                                                            <div class="entry-category">
+                                                                <a class="cat" href="#">LifeStyle</a>
+                                                            </div><!--./ entry-category -->
+                                                        </div><!--./ entry-meta-content -->
+                                                    </div><!--./ content-entry-wrap -->
+                                                </article><!--~./ end post ~-->
+
+                                                <!--~~~~~ Start Post ~~~~~-->
+                                                <article class="post hentry post-list post-list-small">
+                                                    <div class="entry-thumb">
+                                                        <figure class="thumb-wrap">
+                                                            <a href="post-details.html">
+                                                                <img src="http://via.placeholder.com/140x140" alt="post">
+                                                            </a>
+                                                        </figure><!--./ thumb-wrap -->
+                                                    </div><!--./ entry-thumb -->
+                                                    <div class="content-entry-wrap">
+                                                        <div class="entry-content">
+                                                            <h3 class="entry-title">
+                                                                <a href="post-details.html">How to live with some vegeterian when you eat barbecue meat</a>
+                                                            </h3><!--./ entry-title -->
+                                                        </div><!--./ entry-content -->
+                                                        <div class="entry-meta-content">
+                                                            <div class="entry-date">
+                                                                <span>July 24, 2019 </span>
+                                                            </div><!--./ entry-date -->
+                                                            <div class="entry-category">
+                                                                <a class="cat" href="#">LifeStyle</a>
+                                                            </div><!--./ entry-category -->
+                                                        </div><!--./ entry-meta-content -->
+                                                    </div><!--./ content-entry-wrap -->
+                                                </article><!--~./ end post ~-->
+                                            </div>
+                                        </div>
+                                    </div><!--~./ end frontpage cat posts ~-->
+                                </div>
+                            </div>
+                        </div>
+                        <!--~./ end site main ~-->
+                    </div>
+                    
+                    <!--~~~~~ Start sidebar ~~~~~-->
+                    <div class="col-lg-3">
+                        <div class="sidebar pb-80">
+                            <!--~~~~~ Start Bt Social Widget~~~~~-->
+                            <aside class="widget bt-socail-widget">
+                                <div class="widget-content">
+                                    <div class="bt-socail-profile">
+                                        <a class="bt-facebook-icon icon" href="#" target="_blank">
+                                            <span class="social-icon">
+                                                <i class="fa fa-facebook"></i>
+                                            </span>
+                                            <span class="bt-count">30.2k</span>
+                                            <span class="bt-media-type">Likes</span>
+                                        </a>
+                                    </div><!--~./ bt-socail-profile ~-->
+                                    
+                                    <div class="bt-socail-profile">
+                                        <a class="bt-google-plus-icon icon" href="#" target="_blank">
+                                            <span class="social-icon">
+                                                <i class="fa fa-google-plus"></i>
+                                            </span>
+                                            <span class="bt-count">10.2k</span>
+                                            <span class="bt-media-type">Followers</span>
+                                        </a>
+                                    </div><!--~./ bt-socail-profile ~-->
+                                    
+                                    <div class="bt-socail-profile">
+                                        <a class="bt-twitter-icon icon" href="#" target="_blank">
+                                            <span class="social-icon">
+                                                <i class="fa fa-twitter"></i>
+                                            </span>
+                                            <span class="bt-count">62.4k</span>
+                                            <span class="bt-media-type">Followers</span>
+                                        </a>
+                                    </div><!--~./ bt-socail-profile ~-->
+                                    
+                                    <div class="bt-socail-profile">
+                                        <a class="bt-youtube-icon icon" href="#" target="_blank">
+                                            <span class="social-icon">
+                                                <i class="fa fa-youtube"></i>
+                                            </span>
+                                            <span class="bt-count">30.2k</span>
+                                            <span class="bt-media-type">Subscrib</span>
+                                        </a>
+                                    </div><!--~./ bt-socail-profile ~-->
+                                    
+                                    <div class="bt-socail-profile">
+                                        <a class="bt-instagram-icon icon" href="#" target="_blank">
+                                            <span class="social-icon">
+                                                <i class="fa fa-instagram"></i>
+                                            </span>
+                                            <span class="bt-count">30.2k</span>
+                                            <span class="bt-media-type">Likes</span>
+                                        </a>
+                                    </div><!--~./ bt-socail-profile ~-->
+                                    
+                                    <div class="bt-socail-profile">
+                                        <a class="bt-vimeo-icon icon" href="#" target="_blank">
+                                            <span class="social-icon">
+                                                <i class="fa fa-vimeo"></i>
+                                            </span>
+                                            <span class="bt-count">10.4k</span>
+                                            <span class="bt-media-type">Followers</span>
+                                        </a>
+                                    </div><!--~./ bt-socail-profile ~-->
+                                    
+                                    <div class="bt-socail-profile">
+                                        <a class="bt-pinterest-icon icon" href="#" target="_blank">
+                                            <span class="social-icon">
+                                                <i class="fa fa-pinterest"></i>
+                                            </span>
+                                            <span class="bt-count">10.2k</span>
+                                            <span class="bt-media-type">Followers</span>
+                                        </a>
+                                    </div><!--~./ bt-socail-profile ~-->
+                                    
+                                    <div class="bt-socail-profile">
+                                        <a class="bt-soundcloud-icon icon" href="#" target="_blank">
+                                            <span class="social-icon">
+                                                <i class="fa fa-soundcloud"></i>
+                                            </span>
+                                            <span class="bt-count">5.2k</span>
+                                            <span class="bt-media-type">Followers</span>
+                                        </a>
+                                    </div><!--~./ bt-socail-profile ~-->
+                                </div>
+                            </aside><!--~./ end bt social widget ~-->
+                            
+                            <!--~~~~~ Start Bt Widget Categories~~~~~-->
+                            <aside class="widget bt-widget-categories">
+                                <div class="widget-content">
+                                    <a href="#" class="cat-item">
+                                        <div class="cat-item-inner">
+                                            <div class="cat-thumb">
+                                                <img src="http://via.placeholder.com/130x100" alt="img">
+                                            </div>
+                                            <div class="cat-name">
+                                                <span>LifeStyle</span>
+                                            </div>
+                                        </div>
+                                    </a><!--~./ cat-item ~-->
+                                    
+                                    <a href="#" class="cat-item">
+                                        <div class="cat-item-inner">
+                                            <div class="cat-thumb">
+                                                <img src="http://via.placeholder.com/130x100" alt="img">
+                                            </div>
+                                            <div class="cat-name">
+                                                <span>Business</span>
+                                            </div>
+                                        </div>
+                                    </a><!--~./ cat-item ~-->
+                                    
+                                    <a href="#" class="cat-item">
+                                        <div class="cat-item-inner">
+                                            <div class="cat-thumb">
+                                                <img src="http://via.placeholder.com/130x100" alt="img">
+                                            </div>
+                                            <div class="cat-name">
+                                                <span>Fashion</span>
+                                            </div>
+                                        </div>
+                                    </a><!--~./ cat-item ~-->
+                                    
+                                    <a href="#" class="cat-item">
+                                        <div class="cat-item-inner">
+                                            <div class="cat-thumb">
+                                                <img src="http://via.placeholder.com/130x100" alt="img">
+                                            </div>
+                                            <div class="cat-name">
+                                                <span>Food</span>
+                                            </div>
+                                        </div>
+                                    </a><!--~./ cat-item ~-->
+                                    
+                                    <a href="#" class="cat-item">
+                                        <div class="cat-item-inner">
+                                            <div class="cat-thumb">
+                                                <img src="http://via.placeholder.com/130x100" alt="img">
+                                            </div>
+                                            <div class="cat-name">
+                                                <span>Health</span>
+                                            </div>
+                                        </div>
+                                    </a><!--~./ cat-item ~-->
+                                    
+                                    <a href="#" class="cat-item">
+                                        <div class="cat-item-inner">
+                                            <div class="cat-thumb">
+                                                <img src="http://via.placeholder.com/130x100" alt="img">
+                                            </div>
+                                            <div class="cat-name">
+                                                <span>Sport</span>
+                                            </div>
+                                        </div>
+                                    </a><!--~./ cat-item ~-->
+                                </div>
+                            </aside><!--~./ end bt widget categories ~-->
+                               
+                            <!--~~~~~ Start Popular Posts Widget~~~~~-->
+                            <aside class="widget popular-posts-widget">
+                                <h4 class="widget-title"><span>Link Terkait</span></h4>
+                                <div class="widget-content">
+                                    <article class="post side-post">
+                                        <div class="thumb-wrap">
+                                            <a href="post-details.html">
+                                                <img src="http://via.placeholder.com/100x100" alt="post">
+                                            </a>
+                                            <span class="count">1</span>
+                                        </div><!--./ thumb-wrap -->
+                                        <div class="content-entry-wrap">
+                                            <h3 class="entry-title">
+                                                <a href="post-details.html">The rumored iPhone could come in hot pink</a>
+                                            </h3><!--./ entry-title -->
+                                            <div class="entry-meta-content">
+                                                <div class="entry-date">
+                                                    <span>July 24, 2019 </span>
+                                                </div><!--./ entry-date -->
+                                            </div><!--./ entry-meta-content -->
+                                        </div>
+                                    </article><!--./ end post -->
+                                    
+                                    <article class="post side-post">
+                                        <div class="thumb-wrap">
+                                            <a href="post-details.html">
+                                                <img src="http://via.placeholder.com/100x100" alt="post">
+                                            </a>
+                                            <span class="count">2</span>
+                                        </div><!--./ thumb-wrap -->
+                                        <div class="content-entry-wrap">
+                                            <h3 class="entry-title">
+                                                <a href="post-details.html">This gun is advertise as the most popular gun</a>
+                                            </h3><!--./ entry-title -->
+                                            <div class="entry-meta-content">
+                                                <div class="entry-date">
+                                                    <span>July 24, 2019 </span>
+                                                </div><!--./ entry-date -->
+                                            </div><!--./ entry-meta-content -->
+                                        </div>
+                                    </article><!--./ end post -->
+                                    
+                                    <article class="post side-post">
+                                        <div class="thumb-wrap">
+                                            <a href="post-details.html">
+                                                <img src="http://via.placeholder.com/100x100" alt="post">
+                                            </a>
+                                            <span class="count">3</span>
+                                        </div><!--./ thumb-wrap -->
+                                        <div class="content-entry-wrap">
+                                            <h3 class="entry-title">
+                                                <a href="post-details.html">How to live with some vegeterian when you eat </a>
+                                            </h3><!--./ entry-title -->
+                                            <div class="entry-meta-content">
+                                                <div class="entry-date">
+                                                    <span>July 24, 2019 </span>
+                                                </div><!--./ entry-date -->
+                                            </div><!--./ entry-meta-content -->
+                                        </div>
+                                    </article><!--./ end post -->
+                                </div>
+                            </aside><!--~./ end popular posts widget ~-->
+                               
+                            <!--~~~~~ Start Posts Slide Widget~~~~~-->
+                            <aside class="widget tb-posts-slide-widget">
+                                <div class="widget-content">
+                                    <div id="post-widget-carousel" class="owl-carousel carousel-nav-circle">
+                                        <!--~~~~~ Start Post ~~~~~-->
+                                        <article class="post hentry post-grid style-five">
+                                            <div class="entry-thumb">
+                                                <figure class="thumb-wrap">
+                                                    <a href="post-details.html">
+                                                        <img src="http://via.placeholder.com/270x340" alt="post">
+                                                    </a>
+                                                </figure><!--./ thumb-wrap -->
+                                            </div><!--./ entry-thumb -->
+                                            <div class="content-entry-wrap">
+                                                <div class="featured-badge-list">
+                                                    <a class="featured" href="#">
+                                                        <span class="fa fa-bolt"></span>
+                                                    </a>
+                                                </div>
+                                                <div class="entry-content">
+                                                    <h3 class="entry-title">
+                                                        <a href="post-details.html">Barr releases Mueller and feels the heat
+</a>
+                                                    </h3><!--./ entry-title -->
+                                                </div><!--./ entry-content -->
+                                                <div class="entry-meta-content">
+                                                    <div class="entry-date">
+                                                        <span>October 24, 2019</span>
+                                                    </div><!--./ entry-date -->
+                                                    <div class="entry-category">
+                                                        <a class="cat" href="#">Lifestyle</a>
+                                                    </div><!--./ entry-category -->
+                                                </div><!--./ thumb-wrap -->
+                                            </div><!--./ content-entry-wrap -->
+                                        </article><!--~./ end post ~-->
+                                        
+                                        <!--~~~~~ Start Post ~~~~~-->
+                                        <article class="post hentry post-grid style-five">
+                                            <div class="entry-thumb">
+                                                <figure class="thumb-wrap">
+                                                    <a href="post-details.html">
+                                                        <img src="http://via.placeholder.com/270x340" alt="post">
+                                                    </a>
+                                                </figure><!--./ thumb-wrap -->
+                                            </div><!--./ entry-thumb -->
+                                            <div class="content-entry-wrap">
+                                                <div class="entry-content">
+                                                    <h3 class="entry-title">
+                                                        <a href="post-details.html">Cold an annual booking release in brazil</a>
+                                                    </h3><!--./ entry-title -->
+                                                </div><!--./ entry-content -->
+                                                <div class="entry-meta-content">
+                                                    <div class="entry-date">
+                                                        <span>October 24, 2019</span>
+                                                    </div><!--./ entry-date -->
+                                                    <div class="entry-category">
+                                                        <a class="cat" href="#">Sport</a>
+                                                    </div><!--./ entry-category -->
+                                                </div><!--./ thumb-wrap -->
+                                            </div><!--./ content-entry-wrap -->
+                                        </article><!--~./ end post ~-->
+                                    </div>
+                                </div>
+                            </aside><!--~./ end posts slide widget ~-->
+                        </div>
+                    </div><!--~./ end sidebar ~-->
+                </div>
+            </div>
+        </div><!--~./ end main wrapper ~-->
+       
+        
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Start Main Wrapper
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <div class="main-wrapper ptb-80">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <!--~~~~~ Start Site Main ~~~~~-->
+                        <main class="site-main">
+                            <!--~~~~~ Start Frontpage Cat Posts ~~~~~-->
+                            <div class="frontpage-cat-posts pb-80">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="section-header">
+                                            <h2 class="section-title">Aplikasi Terkait</h2>
+                                        </div>
+                                    </div>
+                                </div><!--~./ end section header ~-->
+                                
+                                <div class="row">
+                                    <!--~~~~~ Start Post ~~~~~-->
+                                    <div class="col-lg-6">
+                                        <article class="post hentry post-list post-list-small">
+                                            <div class="entry-thumb">
+                                                <figure class="thumb-wrap">
+                                                    <a href="post-details.html">
+                                                        <img src="http://via.placeholder.com/140x140" alt="post">
+                                                    </a>
+                                                    <div class="featured-badge-list">
+                                                        <a class="featured" href="#">
+                                                            <span class="fa fa-bolt"></span>
+                                                        </a>
+                                                    </div><!--./ featured-badge-list -->
+                                                </figure><!--./ thumb-wrap -->
+                                            </div><!--./ entry-thumb -->
+                                            <div class="content-entry-wrap">
+                                                <div class="entry-content">
+                                                    <h3 class="entry-title">
+                                                        <a href="post-details.html">The rumored iPhone could come in hot pink, not rose gold and silver</a>
+                                                    </h3><!--./ entry-title -->
+                                                </div><!--./ entry-content -->
+                                                <div class="entry-meta-content">
+                                                    <div class="entry-date">
+                                                        <span>July 24, 2019 </span>
+                                                    </div><!--./ entry-date -->
+                                                    <div class="entry-category">
+                                                        <a class="cat" href="#">LifeStyle</a>
+                                                    </div><!--./ entry-category -->
+                                                </div><!--./ entry-meta-content -->
+                                            </div><!--./ content-entry-wrap -->
+                                        </article>
+                                    </div><!--~./ end post ~-->
+                                    
+                                    <!--~~~~~ Start Post ~~~~~-->
+                                    <div class="col-lg-6">
+                                        <article class="post hentry post-list post-list-small">
+                                            <div class="entry-thumb">
+                                                <figure class="thumb-wrap">
+                                                    <a href="post-details.html">
+                                                        <img src="http://via.placeholder.com/140x140" alt="post">
+                                                    </a>
+                                                    <div class="featured-badge-list">
+                                                        <a class="trending" href="#">
+                                                            <span class="fab fa-gripfire"></span>
+                                                        </a>
+                                                    </div><!--./ featured-badge-list -->
+                                                </figure><!--./ thumb-wrap -->
+                                            </div><!--./ entry-thumb -->
+                                            <div class="content-entry-wrap">
+                                                <div class="entry-content">
+                                                    <h3 class="entry-title">
+                                                        <a href="post-details.html">This gun is advertised as the most popular gun in American crime</a>
+                                                    </h3><!--./ entry-title -->
+                                                </div><!--./ entry-content -->
+                                                <div class="entry-meta-content">
+                                                    <div class="entry-date">
+                                                        <span>July 24, 2019 </span>
+                                                    </div><!--./ entry-date -->
+                                                    <div class="entry-category">
+                                                        <a class="cat" href="#">Fashion</a>
+                                                    </div><!--./ entry-category -->
+                                                </div><!--./ entry-meta-content -->
+                                            </div><!--./ content-entry-wrap -->
+                                        </article>
+                                    </div><!--~./ end post ~-->
+
+                                    <!--~~~~~ Start Post ~~~~~-->
+                                    <div class="col-lg-6">
+                                        <article class="post hentry post-list post-list-small">
+                                            <div class="entry-thumb">
+                                                <figure class="thumb-wrap">
+                                                    <a href="post-details.html">
+                                                        <img src="http://via.placeholder.com/140x140" alt="post">
+                                                    </a>
+                                                </figure><!--./ thumb-wrap -->
+                                            </div><!--./ entry-thumb -->
+                                            <div class="content-entry-wrap">
+                                                <div class="entry-content">
+                                                    <h3 class="entry-title">
+                                                        <a href="post-details.html">How to live with some vegeterian when you eat barbecue meat</a>
+                                                    </h3><!--./ entry-title -->
+                                                </div><!--./ entry-content -->
+                                                <div class="entry-meta-content">
+                                                    <div class="entry-date">
+                                                        <span>July 24, 2019 </span>
+                                                    </div><!--./ entry-date -->
+                                                    <div class="entry-category">
+                                                        <a class="cat" href="#">Business</a>
+                                                    </div><!--./ entry-category -->
+                                                </div><!--./ entry-meta-content -->
+                                            </div><!--./ content-entry-wrap -->
+                                        </article>
+                                    </div><!--~./ end post ~-->
+                                    
+                                    <!--~~~~~ Start Post ~~~~~-->
+                                    <div class="col-lg-6">
+                                        <article class="post hentry post-list post-list-small">
+                                            <div class="entry-thumb">
+                                                <figure class="thumb-wrap">
+                                                    <a href="post-details.html">
+                                                        <img src="http://via.placeholder.com/140x140" alt="post">
+                                                    </a>
+                                                </figure><!--./ thumb-wrap -->
+                                            </div><!--./ entry-thumb -->
+                                            <div class="content-entry-wrap">
+                                                <div class="entry-content">
+                                                    <h3 class="entry-title">
+                                                        <a href="post-details.html">The rumored iPhone could come in hot pink, not rose gold and silver</a>
+                                                    </h3><!--./ entry-title -->
+                                                </div><!--./ entry-content -->
+                                                <div class="entry-meta-content">
+                                                    <div class="entry-date">
+                                                        <span>July 24, 2019 </span>
+                                                    </div><!--./ entry-date -->
+                                                    <div class="entry-category">
+                                                        <a class="cat" href="#">LifeStyle</a>
+                                                    </div><!--./ entry-category -->
+                                                </div><!--./ entry-meta-content -->
+                                            </div><!--./ content-entry-wrap -->
+                                        </article>
+                                    </div><!--~./ end post ~-->
+                                    
+                                    <!--~~~~~ Start Post ~~~~~-->
+                                    <div class="col-lg-6">
+                                        <article class="post hentry post-list post-list-small">
+                                            <div class="entry-thumb">
+                                                <figure class="thumb-wrap">
+                                                    <a href="post-details.html">
+                                                        <img src="http://via.placeholder.com/140x140" alt="post">
+                                                    </a>
+                                                    <div class="featured-badge-list">
+                                                        <a class="trending" href="#">
+                                                            <span class="fab fa-gripfire"></span>
+                                                        </a>
+                                                    </div><!--./ featured-badge-list -->
+                                                </figure><!--./ thumb-wrap -->
+                                            </div><!--./ entry-thumb -->
+                                            <div class="content-entry-wrap">
+                                                <div class="entry-content">
+                                                    <h3 class="entry-title">
+                                                        <a href="post-details.html">This gun is advertised as the most popular gun in American crime</a>
+                                                    </h3><!--./ entry-title -->
+                                                </div><!--./ entry-content -->
+                                                <div class="entry-meta-content">
+                                                    <div class="entry-date">
+                                                        <span>July 24, 2019 </span>
+                                                    </div><!--./ entry-date -->
+                                                    <div class="entry-category">
+                                                        <a class="cat" href="#">Fashion</a>
+                                                    </div><!--./ entry-category -->
+                                                </div><!--./ entry-meta-content -->
+                                            </div><!--./ content-entry-wrap -->
+                                        </article>
+                                    </div><!--~./ end post ~-->
+                                    
+                                    <!--~~~~~ Start Post ~~~~~-->
+                                    <div class="col-lg-6">
+                                        <article class="post hentry post-list post-list-small">
+                                            <div class="entry-thumb">
+                                                <figure class="thumb-wrap">
+                                                    <a href="post-details.html">
+                                                        <img src="http://via.placeholder.com/140x140" alt="post">
+                                                    </a>
+                                                </figure><!--./ thumb-wrap -->
+                                            </div><!--./ entry-thumb -->
+                                            <div class="content-entry-wrap">
+                                                <div class="entry-content">
+                                                    <h3 class="entry-title">
+                                                        <a href="post-details.html">How to live with some vegeterian when you eat barbecue meat</a>
+                                                    </h3><!--./ entry-title -->
+                                                </div><!--./ entry-content -->
+                                                <div class="entry-meta-content">
+                                                    <div class="entry-date">
+                                                        <span>July 24, 2019 </span>
+                                                    </div><!--./ entry-date -->
+                                                    <div class="entry-category">
+                                                        <a class="cat" href="#">LifeStyle</a>
+                                                    </div><!--./ entry-category -->
+                                                </div><!--./ entry-meta-content -->
+                                            </div><!--./ content-entry-wrap -->
+                                        </article><!--~./ end post ~-->
+                                    </div><!--~./ end post ~-->
+                                </div>
+                            </div><!--~./ end frontpage cat posts ~-->
+                            <!--~~~~~ Start Frontpage Cat Posts ~~~~~-->
+                            <div class="frontpage-cat-posts">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="section-header">
+                                            <h2 class="section-title">Berita Terbaru</h2>
+                                        </div>
+                                    </div>
+                                </div><!--~./ end section header ~-->
+                                
+                                <div class="row">
+                                    <!--~~~~~ Start Post ~~~~~-->
+                                    <div class="col-12">
+                                        <article class="post hentry post-list">
+                                            <div class="entry-thumb">
+                                                <figure class="thumb-wrap">
+                                                    <a href="post-details.html">
+                                                        <img src="http://via.placeholder.com/270x220" alt="post">
+                                                    </a>
+                                                    <div class="featured-badge-list">
+                                                        <a class="trending" href="#">
+                                                            <span class="fab fa-gripfire"></span>
+                                                        </a>
+                                                    </div><!--./ featured-badge-list -->
+                                                </figure><!--./ thumb-wrap -->
+                                            </div><!--./ entry-thumb -->
+                                            <div class="content-entry-wrap">
+                                                <div class="entry-content">
+                                                    <h3 class="entry-title">
+                                                        <a href="post-details.html">This gun is advertised as the most popular gun in American crime</a>
+                                                    </h3><!--./ entry-title -->
+                                                </div><!--./ entry-content -->
+                                                <div class="entry-meta-content">
+                                                    <div class="entry-meta-author">
+                                                        <div class="entry-author-thumb">
+                                                            <img class="avatar photo" src="http://via.placeholder.com/40x40" alt="author">
+                                                        </div>
+                                                        <div class="entry-author-name">
+                                                            <a href="#">Ahmed Arafa</a>
+                                                        </div>
+                                                    </div><!--./ entry-meta-author -->
+                                                    <div class="entry-date">
+                                                        <span>October 24, 2019</span>
+                                                    </div><!--./ entry-date -->
+                                                    <div class="entry-views">
+                                                        <span>3 Min Read</span>
+                                                    </div><!--./ entry-date -->
+                                                    <div class="entry-category">
+                                                        <a class="cat" href="#">LifeStyle</a>
+                                                    </div><!--./ entry-category -->
+                                                </div><!--./ entry-meta-content -->
+                                                <div class="entry-summary">
+                                                    <p>Sitting on a working-class comme  dows of an easy above-ground rail line, a group cal led Make the Road New York's busy street-level offices are easy to miss. But its mission to support</p>
+                                                </div>
+                                            </div><!--./ content-entry-wrap -->
+                                        </article>
+                                    </div><!--~./ end post ~-->
+
+                                    <!--~~~~~ Start Post ~~~~~-->
+                                    <div class="col-12">
+                                        <article class="post hentry post-list">
+                                            <div class="entry-thumb">
+                                                <figure class="thumb-wrap">
+                                                    <a href="post-details.html">
+                                                        <img src="http://via.placeholder.com/270x220" alt="post">
+                                                    </a>
+                                                    <div class="featured-badge-list">
+                                                        <a class="trending" href="#">
+                                                            <span class="fab fa-gripfire"></span>
+                                                        </a>
+                                                        <a class="featured" href="#">
+                                                            <span class="fa fa-bolt"></span>
+                                                        </a>
+                                                    </div><!--./ featured-badge-list -->
+                                                </figure><!--./ thumb-wrap -->
+                                            </div><!--./ entry-thumb -->
+                                            <div class="content-entry-wrap">
+                                                <div class="entry-content">
+                                                    <h3 class="entry-title">
+                                                        <a href="post-details.html">The rumored iPhone could come in hot pink, not rose gold and silver</a>
+                                                    </h3><!--./ entry-title -->
+                                                </div><!--./ entry-content -->
+                                                <div class="entry-meta-content">
+                                                    <div class="entry-meta-author">
+                                                        <div class="entry-author-thumb">
+                                                            <img class="avatar photo" src="http://via.placeholder.com/40x40" alt="author">
+                                                        </div>
+                                                        <div class="entry-author-name">
+                                                            <a href="#">Ahmed Arafa</a>
+                                                        </div>
+                                                    </div><!--./ entry-meta-author -->
+                                                    <div class="entry-date">
+                                                        <span>October 24, 2019</span>
+                                                    </div><!--./ entry-date -->
+                                                    <div class="entry-views">
+                                                        <span>3 Min Read</span>
+                                                    </div><!--./ entry-date -->
+                                                    <div class="entry-category">
+                                                        <a class="cat" href="#">LifeStyle</a>
+                                                    </div><!--./ entry-category -->
+                                                </div><!--./ entry-meta-content -->
+                                                <div class="entry-summary">
+                                                    <p>Sitting on a working-class comme  dows of an easy above-ground rail line, a group cal led Make the Road New York's busy street-level offices are easy to miss. But its mission to support</p>
+                                                </div>
+                                            </div><!--./ content-entry-wrap -->
+                                        </article>
+                                    </div><!--~./ end post ~-->
+
+                                    <!--~~~~~ Start Post ~~~~~-->
+                                    <div class="col-12">
+                                        <article class="post hentry post-list">
+                                            <div class="entry-thumb">
+                                                <figure class="thumb-wrap">
+                                                    <a href="post-details.html">
+                                                        <img src="http://via.placeholder.com/270x220" alt="post">
+                                                    </a>
+                                                </figure><!--./ thumb-wrap -->
+                                            </div><!--./ entry-thumb -->
+                                            <div class="content-entry-wrap">
+                                                <div class="entry-content">
+                                                    <h3 class="entry-title">
+                                                        <a href="post-details.html">How to live with some vegeterian when you eat barbecue meat</a>
+                                                    </h3><!--./ entry-title -->
+                                                </div><!--./ entry-content -->
+                                                <div class="entry-meta-content">
+                                                    <div class="entry-meta-author">
+                                                        <div class="entry-author-thumb">
+                                                            <img class="avatar photo" src="http://via.placeholder.com/40x40" alt="author">
+                                                        </div>
+                                                        <div class="entry-author-name">
+                                                            <a href="#">Ahmed Arafa</a>
+                                                        </div>
+                                                    </div><!--./ entry-meta-author -->
+                                                    <div class="entry-date">
+                                                        <span>October 24, 2019</span>
+                                                    </div><!--./ entry-date -->
+                                                    <div class="entry-views">
+                                                        <span>3 Min Read</span>
+                                                    </div><!--./ entry-date -->
+                                                    <div class="entry-category">
+                                                        <a class="cat" href="#">LifeStyle</a>
+                                                    </div><!--./ entry-category -->
+                                                </div><!--./ entry-meta-content -->
+                                                <div class="entry-summary">
+                                                    <p>Sitting on a working-class comme  dows of an easy above-ground rail line, a group cal led Make the Road New York's busy street-level offices are easy to miss. But its mission to support</p>
+                                                </div>
+                                            </div><!--./ content-entry-wrap -->
+                                        </article>
+                                    </div><!--~./ end post ~-->
+
+                                    <!--~~~~~ Start Post ~~~~~-->
+                                    <div class="col-12">
+                                        <article class="post hentry post-list">
+                                            <div class="entry-thumb">
+                                                <figure class="thumb-wrap">
+                                                    <a href="post-details.html">
+                                                        <img src="http://via.placeholder.com/270x220" alt="post">
+                                                    </a>
+                                                </figure><!--./ thumb-wrap -->
+                                            </div><!--./ entry-thumb -->
+                                            <div class="content-entry-wrap">
+                                                <div class="entry-content">
+                                                    <h3 class="entry-title">
+                                                        <a href="post-details.html">This gun is advertised as the most popular gun in American crime</a>
+                                                    </h3><!--./ entry-title -->
+                                                </div><!--./ entry-content -->
+                                                <div class="entry-meta-content">
+                                                    <div class="entry-meta-author">
+                                                        <div class="entry-author-thumb">
+                                                            <img class="avatar photo" src="http://via.placeholder.com/40x40" alt="author">
+                                                        </div>
+                                                        <div class="entry-author-name">
+                                                            <a href="#">Ahmed Arafa</a>
+                                                        </div>
+                                                    </div><!--./ entry-meta-author -->
+                                                    <div class="entry-date">
+                                                        <span>October 24, 2019</span>
+                                                    </div><!--./ entry-date -->
+                                                    <div class="entry-views">
+                                                        <span>3 Min Read</span>
+                                                    </div><!--./ entry-date -->
+                                                    <div class="entry-category">
+                                                        <a class="cat" href="#">LifeStyle</a>
+                                                    </div><!--./ entry-category -->
+                                                </div><!--./ entry-meta-content -->
+                                                <div class="entry-summary">
+                                                    <p>Sitting on a working-class comme  dows of an easy above-ground rail line, a group cal led Make the Road New York's busy street-level offices are easy to miss. But its mission to support</p>
+                                                </div><!--./ entry-summary -->
+                                            </div><!--./ content-entry-wrap -->
+                                        </article>
+                                    </div><!--~./ end post ~-->
+
+                                    <!--~~~~~ Start Post ~~~~~-->
+                                    <div class="col-12">
+                                        <article class="post hentry post-list">
+                                            <div class="entry-thumb">
+                                                <figure class="thumb-wrap">
+                                                    <a href="post-details.html">
+                                                        <img src="http://via.placeholder.com/270x220" alt="post">
+                                                    </a>
+                                                    <div class="featured-badge-list">
+                                                        <a class="trending" href="#">
+                                                            <span class="fab fa-gripfire"></span>
+                                                        </a>
+                                                    </div><!--./ featured-badge-list -->
+                                                </figure><!--./ thumb-wrap -->
+                                            </div><!--./ entry-thumb -->
+                                            <div class="content-entry-wrap">
+                                                <div class="entry-content">
+                                                    <h3 class="entry-title">
+                                                        <a href="post-details.html">The rumored iPhone could come in hot pink, not rose gold and silver</a>
+                                                    </h3><!--./ entry-title -->
+                                                </div><!--./ entry-content -->
+                                                <div class="entry-meta-content">
+                                                    <div class="entry-meta-author">
+                                                        <div class="entry-author-thumb">
+                                                            <img class="avatar photo" src="http://via.placeholder.com/40x40" alt="author">
+                                                        </div>
+                                                        <div class="entry-author-name">
+                                                            <a href="#">Ahmed Arafa</a>
+                                                        </div>
+                                                    </div><!--./ entry-meta-author -->
+                                                    <div class="entry-date">
+                                                        <span>October 24, 2019</span>
+                                                    </div><!--./ entry-date -->
+                                                    <div class="entry-views">
+                                                        <span>3 Min Read</span>
+                                                    </div><!--./ entry-date -->
+                                                    <div class="entry-category">
+                                                        <a class="cat" href="#">LifeStyle</a>
+                                                    </div><!--./ entry-category -->
+                                                </div><!--./ entry-meta-content -->
+                                                <div class="entry-summary">
+                                                    <p>Sitting on a working-class comme  dows of an easy above-ground rail line, a group cal led Make the Road New York's busy street-level offices are easy to miss. But its mission to support</p>
+                                                </div>
+                                            </div><!--./ content-entry-wrap -->
+                                        </article>
+                                    </div><!--~./ end post ~-->
+                                </div>
+                            </div><!--~./ end frontpage cat posts ~-->
+                        </main>
+                        <!--~./ end site main ~-->
+                        
+                        <!--~~~~~ Load More Area ~~~~~-->
+                        <div class="load-more-area text-center mt-60">
+                            <button class="btn btn-load-more loadmore">
+                                <i class="fa fa-spinner"></i>
+                                Load More
+                            </button><!--/#loadmore-->
+                            <span class="no-posts">No more posts</span>
+                        </div><!--/.load-more-area-->
+                    </div>
+                    
+                    <!--~~~~~ Start sidebar ~~~~~-->
+                    <div class="col-lg-3">
+                        <div class="sidebar">
+                            <!--~~~~~ Start Widget Advertisement ~~~~~-->
+                            <aside class="widget widget-text">           
+                                <div class="widget-content">
+                                    <a title="add" href="#">
+                                        <img src="http://via.placeholder.com/270x270" alt="">
+                                    </a>
+                                </div>
+                            </aside><!--~./ end widget advertisement ~-->
+                            
+                            <!--~~~~~ Start Review Posts Widget~~~~~-->
+                            <aside class="widget tb-review-posts-widget">
+                                <h4 class="widget-title"><span>Review Post</span></h4>
+                                <div class="widget-content">
+                                    <article class="post side-post">
+                                        <div class="post-review-rating">
+                                            <div class="progress" data-percentage="60">
+                                                <div class="progress-left">
+                                                    <span class="progress-bar"></span>
+                                                </div>
+                                                <div class="progress-right">
+                                                    <span class="progress-bar"></span>
+                                                </div>
+                                                <div class="progress-value">6</div>
+                                            </div>
+                                        </div><!--./ post-review-rating -->
+                                        <div class="content-entry-wrap">
+                                            <h3 class="entry-title">
+                                                <a href="post-details.html">The rumored iPhone could come in hot pink</a>
+                                            </h3><!--./ entry-title -->
+                                            <div class="entry-meta-content">
+                                                <div class="entry-date">
+                                                    <span>July 24, 2019 </span>
+                                                </div><!--./ entry-date -->
+                                            </div><!--./ entry-meta-content -->
+                                        </div>
+                                    </article><!--./ end post -->
+
+                                    <article class="post side-post">
+                                        <div class="post-review-rating">
+                                            <div class="progress" data-percentage="50">
+                                                <div class="progress-left">
+                                                    <span class="progress-bar"></span>
+                                                </div>
+                                                <div class="progress-right">
+                                                    <span class="progress-bar"></span>
+                                                </div>
+                                                <div class="progress-value">5</div>
+                                            </div>
+                                        </div><!--./ post-review-rating -->
+                                        <div class="content-entry-wrap">
+                                            <h3 class="entry-title">
+                                                <a href="post-details.html">This gun is advertised as gun in American</a>
+                                            </h3><!--./ entry-title -->
+                                            <div class="entry-meta-content">
+                                                <div class="entry-date">
+                                                    <span>July 24, 2019 </span>
+                                                </div><!--./ entry-date -->
+                                            </div><!--./ entry-meta-content -->
+                                        </div>
+                                    </article><!--./ end post -->
+                                    <article class="post side-post">
+                                        <div class="post-review-rating">
+                                            <div class="progress" data-percentage="70">
+                                                <div class="progress-left">
+                                                    <span class="progress-bar"></span>
+                                                </div>
+                                                <div class="progress-right">
+                                                    <span class="progress-bar"></span>
+                                                </div>
+                                                <div class="progress-value">7</div>
+                                            </div>
+                                        </div><!--./ post-review-rating -->
+                                        <div class="content-entry-wrap">
+                                            <h3 class="entry-title">
+                                                <a href="post-details.html">How to live with some news vegeterian </a>
+                                            </h3><!--./ entry-title -->
+                                            <div class="entry-meta-content">
+                                                <div class="entry-date">
+                                                    <span>July 24, 2019 </span>
+                                                </div><!--./ entry-date -->
+                                            </div><!--./ entry-meta-content -->
+                                        </div>
+                                    </article><!--./ end post -->
+                                    <article class="post side-post">
+                                        <div class="post-review-rating">
+                                            <div class="progress" data-percentage="90">
+                                                <div class="progress-left">
+                                                    <span class="progress-bar"></span>
+                                                </div>
+                                                <div class="progress-right">
+                                                    <span class="progress-bar"></span>
+                                                </div>
+                                                <div class="progress-value">9</div>
+                                            </div>
+                                        </div><!--./ post-review-rating -->
+                                        <div class="content-entry-wrap">
+                                            <h3 class="entry-title">
+                                                <a href="post-details.html">The rumored iPhone could come in hot pink</a>
+                                            </h3><!--./ entry-title -->
+                                            <div class="entry-meta-content">
+                                                <div class="entry-date">
+                                                    <span>July 24, 2019 </span>
+                                                </div><!--./ entry-date -->
+                                            </div><!--./ entry-meta-content -->
+                                        </div>
+                                    </article><!--./ end post -->
+                                </div>
+                            </aside><!--~./ end review posts widget ~-->
+
+                            <!--~~~~~ Start Widget Categories ~~~~~--> 
+                            <aside class="widget widget-categories">
+                                <h4 class="widget-title"><span>Kategori Berita</span></h4>
+                                <div class="widget-content">
+                                    <ul>  
+                                        <li class="cat-item">
+                                            <a href="#">Sport<span class="count">14</span></a>
+                                        </li>
+                                        <li class="cat-item">
+                                            <a href="#">Health<span class="count">25</span></a>
+                                        </li>
+                                        <li class="cat-item">
+                                            <a href="#">Business<span class="count">10</span></a>
+                                        </li>
+                                        <li class="cat-item">
+                                            <a href="#">Lifestyle<span class="count">6</span></a>
+                                        </li>
+                                        <li class="cat-item">
+                                            <a href="#">Fashion<span class="count">50</span></a>
+                                        </li>
+                                        <li class="cat-item">
+                                            <a href="#">Food<span class="count">65</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </aside><!--~./ end widget categories ~-->
+
+                            <aside class="widget widget-categories">
+                                <h4 class="widget-title"><span>Kategori Unduhan</span></h4>
+                                <div class="widget-content">
+                                    <ul>  
+                                        <li class="cat-item">
+                                            <a href="#">Sport<span class="count">14</span></a>
+                                        </li>
+                                        <li class="cat-item">
+                                            <a href="#">Health<span class="count">25</span></a>
+                                        </li>
+                                        <li class="cat-item">
+                                            <a href="#">Business<span class="count">10</span></a>
+                                        </li>
+                                        <li class="cat-item">
+                                            <a href="#">Lifestyle<span class="count">6</span></a>
+                                        </li>
+                                        <li class="cat-item">
+                                            <a href="#">Fashion<span class="count">50</span></a>
+                                        </li>
+                                        <li class="cat-item">
+                                            <a href="#">Food<span class="count">65</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </aside><!--~./ end widget categories ~-->
+                        </div>
+                    </div><!--~./ end sidebar ~-->
+                </div>
+            </div>
+        </div><!--~./ end main wrapper ~-->
+    </div>
+    <!-- End site content --> 
+      
+    
+    <!--********************************************************-->
+    <!--****************** MAGALA SIDE SIDEBAR *****************-->
+    <!--********************************************************-->
+    <div class="magala-side-sidebar tse-scrollable">
+        <div class="tse-content">
+            <a href="#" class="sidebar-close-button" tabindex="0"><i class="fa fa-close"></i></a>
+            <div class="sidebar">
+                <!--~~~~~ Start Popular Posts Widget~~~~~-->
+                <aside class="widget popular-posts-widget">
+                    <h4 class="widget-title"><span>Recent Post</span></h4>
+                    <div class="widget-content">
+                        <article class="post side-post">
+                            <div class="thumb-wrap">
+                                <a href="post-details.html">
+                                    <img src="http://via.placeholder.com/100x100" alt="post">
+                                </a>
+                                <span class="count">1</span>
+                            </div><!--./ thumb-wrap -->
+                            <div class="content-entry-wrap">
+                                <h3 class="entry-title">
+                                    <a href="post-details.html">The rumored iPhone could come in hot pink</a>
+                                </h3><!--./ entry-title -->
+                                <div class="entry-meta-content">
+                                    <div class="entry-date">
+                                        <span>July 24, 2019 </span>
+                                    </div><!--./ entry-date -->
+                                </div><!--./ entry-meta-content -->
+                            </div>
+                        </article><!--./ end post -->
+
+                        <article class="post side-post">
+                            <div class="thumb-wrap">
+                                <a href="post-details.html">
+                                    <img src="http://via.placeholder.com/100x100" alt="post">
+                                </a>
+                                <span class="count">2</span>
+                            </div><!--./ thumb-wrap -->
+                            <div class="content-entry-wrap">
+                                <h3 class="entry-title">
+                                    <a href="post-details.html">This gun is advertise as the most popular gun</a>
+                                </h3><!--./ entry-title -->
+                                <div class="entry-meta-content">
+                                    <div class="entry-date">
+                                        <span>July 24, 2019 </span>
+                                    </div><!--./ entry-date -->
+                                </div><!--./ entry-meta-content -->
+                            </div>
+                        </article><!--./ end post -->
+
+                        <article class="post side-post">
+                            <div class="thumb-wrap">
+                                <a href="post-details.html">
+                                    <img src="http://via.placeholder.com/100x100" alt="post">
+                                </a>
+                                <span class="count">3</span>
+                            </div><!--./ thumb-wrap -->
+                            <div class="content-entry-wrap">
+                                <h3 class="entry-title">
+                                    <a href="post-details.html">How to live with some vegeterian when you eat </a>
+                                </h3><!--./ entry-title -->
+                                <div class="entry-meta-content">
+                                    <div class="entry-date">
+                                        <span>July 24, 2019 </span>
+                                    </div><!--./ entry-date -->
+                                </div><!--./ entry-meta-content -->
+                            </div>
+                        </article><!--./ end post -->
+                        
+                        <article class="post side-post">
+                            <div class="thumb-wrap">
+                                <a href="post-details.html">
+                                    <img src="http://via.placeholder.com/100x100" alt="post">
+                                </a>
+                                <span class="count">4</span>
+                            </div><!--./ thumb-wrap -->
+                            <div class="content-entry-wrap">
+                                <h3 class="entry-title">
+                                    <a href="post-details.html">The rumored iPhone could come in hot pink</a>
+                                </h3><!--./ entry-title -->
+                                <div class="entry-meta-content">
+                                    <div class="entry-date">
+                                        <span>July 24, 2019 </span>
+                                    </div><!--./ entry-date -->
+                                </div><!--./ entry-meta-content -->
+                            </div>
+                        </article><!--./ end post -->
+
+                        <article class="post side-post">
+                            <div class="thumb-wrap">
+                                <a href="post-details.html">
+                                    <img src="http://via.placeholder.com/100x100" alt="post">
+                                </a>
+                                <span class="count">5</span>
+                            </div><!--./ thumb-wrap -->
+                            <div class="content-entry-wrap">
+                                <h3 class="entry-title">
+                                    <a href="post-details.html">This gun is advertise as the most popular gun</a>
+                                </h3><!--./ entry-title -->
+                                <div class="entry-meta-content">
+                                    <div class="entry-date">
+                                        <span>July 24, 2019 </span>
+                                    </div><!--./ entry-date -->
+                                </div><!--./ entry-meta-content -->
+                            </div>
+                        </article><!--./ end post -->
+
+                        <article class="post side-post">
+                            <div class="thumb-wrap">
+                                <a href="post-details.html">
+                                    <img src="http://via.placeholder.com/100x100" alt="post">
+                                </a>
+                                <span class="count">6</span>
+                            </div><!--./ thumb-wrap -->
+                            <div class="content-entry-wrap">
+                                <h3 class="entry-title">
+                                    <a href="post-details.html">How to live with some vegeterian when you eat </a>
+                                </h3><!--./ entry-title -->
+                                <div class="entry-meta-content">
+                                    <div class="entry-date">
+                                        <span>July 24, 2019 </span>
+                                    </div><!--./ entry-date -->
+                                </div><!--./ entry-meta-content -->
+                            </div>
+                        </article><!--./ end post -->
+                        
+                        <article class="post side-post">
+                            <div class="thumb-wrap">
+                                <a href="post-details.html">
+                                    <img src="http://via.placeholder.com/100x100" alt="post">
+                                </a>
+                                <span class="count">7</span>
+                            </div><!--./ thumb-wrap -->
+                            <div class="content-entry-wrap">
+                                <h3 class="entry-title">
+                                    <a href="post-details.html">The rumored iPhone could come in hot pink</a>
+                                </h3><!--./ entry-title -->
+                                <div class="entry-meta-content">
+                                    <div class="entry-date">
+                                        <span>July 24, 2019 </span>
+                                    </div><!--./ entry-date -->
+                                </div><!--./ entry-meta-content -->
+                            </div>
+                        </article><!--./ end post -->
+                    </div>
+                </aside><!--~./ end popular posts widget ~-->
+            </div>
+        </div>
+    </div>
+    <div class="magala-close-all-window"></div>
+    <!--~./ end magala side sidebar ~-->
+    
+    
+    <!--********************************************************-->
+    <!--********************** SITE FOOTER *********************-->
+    <!--********************************************************-->
+    <footer class="site-footer footer-default-style bg-black pt-80">
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Start Footer Widget Area
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <div class="footer-widget-area pb-20">
+            <div class="container">
+                <div class="row">
+                    <!--~~~~~ Start Widget About us Info ~~~~~--> 
+                    <div class="col-lg-3">
+                        <aside class="widget bt-about-us-widget">
+                            <div class="widget-content">
+                                <div class="about-logo">
+                                    <a href="{{ url('/') }}"><img src="{{ asset('assets/frontend//images/logo/logo-bkd.png')}}" alt="Logo-footer-bkd-provinsi-riau"></a>
+                                </div>
+                                <p>BADAN KEPEGAWAIAN DAERAH PROVINSI RIAU</p>
+                                <ul class="social-share">
+                                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a class="youtube" href="#"><i class="fa fa-youtube"></i></a></li>
+                                    <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </aside>
+                    </div><!--~./ end about us widget ~-->
+                    
+                    <!--~~~~~ Start Latest Posts Widget~~~~~-->
+                    <div class="col-lg-3">
+                        <aside class="widget latest-posts-widget latest-posts-widget-two">
+                            <h4 class="widget-title">Tentang Kami</h4>
+                            <div class="widget-content">
+                                <article class="post side-post">
+                                    <div class="content-entry-wrap">
+                                        <h3 class="entry-title">
+                                            <a href="post-details.html">The rumored been iPhone could in hot pink not rose</a>
+                                        </h3><!--./ entry-title -->
+                                        <div class="entry-meta-content">
+                                            <div class="entry-date">
+                                                <span>July 24, 2019 </span>
+                                            </div><!--./ entry-date -->
+                                        </div><!--./ entry-meta-content -->
+                                    </div><!--./ content-entry-wrap -->
+                                    <div class="thumb-wrap">
+                                        <a href="post-details.html">
+                                            <img src="http://via.placeholder.com/100x100" alt="post">
+                                        </a>
+                                    </div><!--./ thumb-wrap -->
+                                </article><!--./ end post -->
+                                
+                                <article class="post side-post">
+                                    <div class="content-entry-wrap">
+                                        <h3 class="entry-title">
+                                            <a href="post-details.html">This gun is advertise as the most popular gun</a>
+                                        </h3><!--./ entry-title -->
+                                        <div class="entry-meta-content">
+                                            <div class="entry-date">
+                                                <span>July 24, 2019 </span>
+                                            </div><!--./ entry-date -->
+                                        </div><!--./ entry-meta-content -->
+                                    </div><!--./ content-entry-wrap -->
+                                    <div class="thumb-wrap">
+                                        <a href="post-details.html">
+                                            <img src="http://via.placeholder.com/100x100" alt="post">
+                                        </a>
+                                    </div><!--./ thumb-wrap -->
+                                </article><!--./ end post -->
+                            </div>
+                        </aside>
+                    </div><!--~./ end latest posts widget ~-->
+                    
+                    <!--~~~~~ Start Latest Posts Widget~~~~~-->
+                    <div class="col-lg-3">
+                        <aside class="widget latest-posts-widget latest-posts-widget-two">
+                            <h4 class="widget-title">Unduhan</h4>
+                            <div class="widget-content">
+                                <article class="post side-post">
+                                    <div class="content-entry-wrap">
+                                        <h3 class="entry-title">
+                                            <a href="post-details.html">This gun is advertise as the most popular gun</a>
+                                        </h3><!--./ entry-title -->
+                                        <div class="entry-meta-content">
+                                            <div class="entry-date">
+                                                <span>July 24, 2019 </span>
+                                            </div><!--./ entry-date -->
+                                        </div><!--./ entry-meta-content -->
+                                    </div><!--./ content-entry-wrap -->
+                                    <div class="thumb-wrap">
+                                        <a href="post-details.html">
+                                            <img src="http://via.placeholder.com/100x100" alt="post">
+                                        </a>
+                                    </div><!--./ thumb-wrap -->
+                                </article><!--./ end post -->
+                                
+                                <article class="post side-post">
+                                    <div class="content-entry-wrap">
+                                        <h3 class="entry-title">
+                                            <a href="post-details.html">The rumored been iPhone could in hot pink not rose</a>
+                                        </h3><!--./ entry-title -->
+                                        <div class="entry-meta-content">
+                                            <div class="entry-date">
+                                                <span>July 24, 2019 </span>
+                                            </div><!--./ entry-date -->
+                                        </div><!--./ entry-meta-content -->
+                                    </div><!--./ content-entry-wrap -->
+                                    <div class="thumb-wrap">
+                                        <a href="post-details.html">
+                                            <img src="http://via.placeholder.com/100x100" alt="post">
+                                        </a>
+                                    </div><!--./ thumb-wrap -->
+                                </article><!--./ end post -->
+                            </div>
+                        </aside>
+                    </div><!--~./ end latest posts widget ~-->
+                    
+                    <!--~~~~~ Start Subscribe Widget~~~~~-->
+                        <!--~~~~~ Start Latest Posts Widget~~~~~-->
+                        <div class="col-lg-3">
+                        <aside class="widget latest-posts-widget latest-posts-widget-two">
+                            <h4 class="widget-title">Berita</h4>
+                            <div class="widget-content">
+                                <article class="post side-post">
+                                    <div class="content-entry-wrap">
+                                        <h3 class="entry-title">
+                                            <a href="post-details.html">This gun is advertise as the most popular gun</a>
+                                        </h3><!--./ entry-title -->
+                                        <div class="entry-meta-content">
+                                            <div class="entry-date">
+                                                <span>July 24, 2019 </span>
+                                            </div><!--./ entry-date -->
+                                        </div><!--./ entry-meta-content -->
+                                    </div><!--./ content-entry-wrap -->
+                                    <div class="thumb-wrap">
+                                        <a href="post-details.html">
+                                            <img src="http://via.placeholder.com/100x100" alt="post">
+                                        </a>
+                                    </div><!--./ thumb-wrap -->
+                                </article><!--./ end post -->
+                                
+                                <article class="post side-post">
+                                    <div class="content-entry-wrap">
+                                        <h3 class="entry-title">
+                                            <a href="post-details.html">The rumored been iPhone could in hot pink not rose</a>
+                                        </h3><!--./ entry-title -->
+                                        <div class="entry-meta-content">
+                                            <div class="entry-date">
+                                                <span>July 24, 2019 </span>
+                                            </div><!--./ entry-date -->
+                                        </div><!--./ entry-meta-content -->
+                                    </div><!--./ content-entry-wrap -->
+                                    <div class="thumb-wrap">
+                                        <a href="post-details.html">
+                                            <img src="http://via.placeholder.com/100x100" alt="post">
+                                        </a>
+                                    </div><!--./ thumb-wrap -->
+                                </article><!--./ end post -->
+                            </div>
+                        </aside>
+                    </div><!--~./ end latest posts widget ~-->
+                </div>
+            </div>
+        </div>
+        <!--~./ end footer widgets area ~-->
+        
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Start Footer Bottom Area
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="copyright-text">
+                            <p>Badan Kepegawaian Daerah Provinsi Riau. © Tahun 2020</p>
+                        </div>
+                    </div><!--~./ end copyright ~-->
+                    <div class="col-lg-6  col-md-6">
+                        <div class="footer-menu">
+                            <ul class="list">
+                                <li><a href="#">Hubungi Kami</a></li>
+                                <!-- <li><a href="#">Private Policy</a></li>
+                                <li><a href="#">Support</a></li>
+                                <li><a href="#">Use Of Terms</a></li> -->
+                            </ul>
+                        </div><!--~./ end footer menu ~-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--~./ end footer bottom area ~-->
+    </footer>
+    <!--~./ end site footer ~-->
+    
+    <!-- jQuery js -->
+    <script src="{{ asset('assets/frontend/js/jquery.min.js')}}"></script>
+    <!-- Bootstrap js -->
+    <script src="{{ asset('assets/frontend/js/bootstrap.min.js')}}"></script>
+    <!-- Popper js -->
+    <script src="{{ asset('assets/frontend/js/popper.min.js')}}"></script>
+    <!-- Owl carousel js -->
+    <script src="{{ asset('assets/frontend/js/owl.carousel.min.js')}}"></script>
+    <!-- Masonary js -->
+    <script src="{{ asset('assets/frontend/js/masonary.min.js')}}"></script>
+    <!-- News Ticker js -->
+    <script src="{{ asset('assets/frontend/js/breaking-news-ticker.min.js')}}"></script>
+    <!-- Trackpad Scroll js -->
+    <script src="{{ asset('assets/frontend/js/jquery.trackpad-scroll-emulator.min.js')}}"></script>
+    <!-- Sticky ResizeSensor js -->
+    <script src="{{ asset('assets/frontend/js/ResizeSensor.min.js')}}"></script>
+    <!-- Sticky Sidebar js -->
+    <script src="{{ asset('assets/frontend/js/theia-sticky-sidebar.min.js')}}"></script>
+    <!-- Plugin js -->
+    <script src="{{ asset('assets/frontend/js/plugins.js')}}"></script>
+    <!-- main js -->
+    <script src="{{ asset('assets/frontend/js/main.js')}}"></script>
+</body>
+</html>
