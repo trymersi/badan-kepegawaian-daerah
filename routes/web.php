@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('/')->group(function(){
-    
+    Route::get('/', "Frontend\HomeCrontoller@index");   
 });
 
 Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()

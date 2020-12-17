@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="{{ asset('assets/backend/images/favicon.ico') }}">
+    <link rel="icon" href="{{ asset('assets/backend/images/logo-letter.png') }}">
 
-    <title>EduAdmin - Log in </title>
+    <title>BKD PROVINSI RIAU - Log in </title>
   
 	<!-- Vendors Style-->
 	<link rel="stylesheet" href="{{ asset('assets/backend/css/vendors_css.css') }}">
@@ -19,7 +19,7 @@
 
 </head>
 	
-<body class="hold-transition theme-primary bg-img" style="background-image: url({{ asset('assets/backend/images/auth-bg/bg-1.jpg') }})">
+<body class="hold-transition theme-primary bg-img" style="background-image: url({{ asset('assets/backend/images/auth-bg/bg-11.jpg') }})">
 	
 	<div class="container h-p100">
 		<div class="row align-items-center justify-content-md-center h-p100">	
@@ -29,8 +29,8 @@
 					<div class="col-lg-5 col-md-5 col-12">
 						<div class="bg-white rounded30 shadow-lg">
 							<div class="content-top-agile p-20 pb-0">
-								<h2 class="text-primary">Let's Get Starteds</h2>
-								<p class="mb-0">Sign in to continue to WebkitX.</p>							
+								<h2 class="text-primary">Log In</h2>
+								<p class="mb-0">Website Resmi BKD Pemerintah Provinsi Riau</p>							
 							</div>
 							<div class="p-40">
                                 <form method="POST" action="{{ route('login') }}" class="text-left">
@@ -40,7 +40,7 @@
 											<div class="input-group-prepend">
 												<span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
 											</div>
-											<input type="text" name="email" class="form-control pl-15 bg-transparent @error('email') is-invalid @enderror" placeholder="email" autofocus>
+											<input type="text" name="email" class="form-control pl-15 bg-transparent @error('email') is-invalid @enderror" placeholder="email atau username" autofocus>
 											@error('email')
 												<span class="invalid-feedback" role="alert">
 													<strong>{{ $message }}</strong>
@@ -65,7 +65,7 @@
 										<div class="col-6">
 										  <div class="checkbox">
 											<input type="checkbox" id="basic_checkbox_1" >
-											<label for="basic_checkbox_1">Remember Me</label>
+											<label for="basic_checkbox_1">Ingat Sandi</label>
 										  </div>
 										</div>
 										<!-- /.col -->
