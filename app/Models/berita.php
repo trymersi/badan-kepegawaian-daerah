@@ -29,4 +29,24 @@ class Berita extends Model
             ->get();
         return $data;
     }
+
+    public function getDataHome()
+    {
+        $data = $this->leftJoin('kategori_beritas','kategori_beritas.id','beritas.kategori_berita_id')
+            ->select(
+                'kategori_beritas.nama as nama_kategori',
+                'kategori_beritas.slug as slug_kategori',
+                'beritas.id',
+                'beritas.judul',
+                'beritas.meta_deskripsi',
+                'beritas.thumbnail',
+                'beritas.updated_at',
+                'beritas.slug',
+            )
+            ->orderBy('beritas.created_at','desc')
+            ->groupBy('beritas.id')
+            ->limit(6)
+            ->get();
+        return $data;
+    }
 }

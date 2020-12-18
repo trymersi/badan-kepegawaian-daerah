@@ -4,15 +4,34 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\Pengaturan;
+use App\Models\Berita;
+use App\Models\Aplikasi;
+use App\Models\LinkTerkait;
+use App\Models\GaleriGambar;
+use App\Models\GaleriVideo;
+use App\Models\Slider;
 class HomeCrontoller extends Controller
 {
     private $data;
-
+    private $beritaClass;
+    private $PengaturanClass;
+    private $AplikasiClass;
+    private $LinkTerkaitClass;
+    private $galeriGambar;
+    private $galeriVideo;
+    private $sliderClass;
+    
 
     public function __construct()
     {
-
+        $this->beritaClass = new Berita;
+        $this->PengaturanClass = new Pengaturan;
+        $this->AplikasiClass = new Aplikasi;
+        $this->LinkTerkaitClass = new LinkTerkait;
+        $this->galeriGambar = new GaleriGambar;
+        $this->galeriVideo = new GaleriVideo;
+        $this->sliderClass = new Slider;
         $this->data = [
             'category_name' => 'Dashboard',
             'main_url' => 'dashboard',
@@ -27,6 +46,13 @@ class HomeCrontoller extends Controller
      */
     public function index()
     {
+        $this->data['slider'] = $this->sliderClass->orderBy('created_at','desc')->get();
+        $this->data['link_terkait'] = $this->LinkTerkaitClass->orderBy('created_at','desc')->get();
+        $this->data['aplikasi'] = $this->AplikasiClass->orderBy('created_at','desc')->get();
+        $this->data['galeri'] = $this->galeriGambar->getHome();
+        $this->data['galeri_seluruh'] = $this->galeriGambar->getHomeSeluruh();
+        $this->data['video'] = $this->galeriVideo->orderBy('created_at','asc')->limit(5)->get();
+        $this->data['berita'] = $this->beritaClass->getDataHome();
         $this->data['page_name'] = 'tabel data bidang';
         return view('frontend.page.beranda.index',$this->data);
     }

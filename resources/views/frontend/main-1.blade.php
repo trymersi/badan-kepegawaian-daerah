@@ -194,13 +194,12 @@
                 <div class="row">
                     <div class="col -12">
                         <div id="newsTicker" class="breaking-news-ticker">
-                            <div class="bn-label">Breaking News</div>
+                            <div class="bn-label">Berita Terbaru</div>
                             <div class="bn-news">
                                 <ul>
-                                    <li><a href="#">Taiwanese flag on artwork painted very pretty in australia & canada <span>Politics</span></a></li>
-                                    <li><a href="#">The five biggest fashion looks for next spring <span>Fashion</span></a></li>
-                                    <li><a href="#">Cold skateboard an annual booking release in brazil <span>Food</span></a></li>
-                                    <li><a href="#">Return of the bench seat Concept show space big for sofas<span>Lifestyle</span></a></li>
+                                    @foreach($berita as $item)
+                                    <li><a href="{{ url('/berita/'.$item->slug) }}">{{ $item->judul }} <span>{{ $item->nama_kategori }}</span></a></li>
+                                    @endforeach
                                 </ul>
                             </div><!--./ bn-news -->
                             <div class="bn-controls">
@@ -219,27 +218,18 @@
     <!--********************************************************-->
     <!--********************* SITE CONTENT *********************-->
     <!--********************************************************-->
-    <div class="site-content">
+    <div class="site-content" style="margin-top: -30px; ">
         
         <div class="frontpage-slider-posts slider-style-two mt-30">
             <div id="frontpage-slider" class="owl-carousel frontpage-slider-three carousel-nav-align-center"> 
+                @foreach($slider as $item)
                 <article class="slider-item">
                     <figure class="slider-thumb">  
-                        <img src="http://via.placeholder.com/1170x570" alt="Thmubnail"> 
+                        <img src="{{ asset('uploads/images/gambar-slider/'.$item->gambar) }}" width="1170" height="570" alt="{{ $item->nama }}"> 
                     </figure><!--./ slider-thumb -->
                 </article><!--./ slider-item -->
-                
-                <article class="slider-item">
-                    <figure class="slider-thumb">  
-                        <img src="http://via.placeholder.com/1170x570" alt="Thmubnail"> 
-                    </figure><!--./ slider-thumb -->
-                </article><!--./ slider-item -->
-                
-                <article class="slider-item">
-                    <figure class="slider-thumb">  
-                        <img src="http://via.placeholder.com/1170x570" alt="Thmubnail"> 
-                    </figure><!--./ slider-thumb -->
-                </article><!--./ slider-item -->
+                @endforeach
+            
             </div><!--/#frontpage-slide --> 
         </div>
         
@@ -518,188 +508,36 @@
                                 </div><!--~./ end section header ~-->
                                 
                                 <div class="row">
-                                    <!--~~~~~ Start Post ~~~~~-->
+                                    @foreach($berita as $item)
                                     <div class="col-lg-6">
                                         <article class="post hentry post-list post-list-small">
                                             <div class="entry-thumb">
                                                 <figure class="thumb-wrap">
-                                                    <a href="post-details.html">
-                                                        <img src="http://via.placeholder.com/140x140" alt="post">
+                                                    <a href="{{ url('/berita/'.$item->slug) }}">
+                                                        <img src="{{ asset('uploads/images/gambar-berita/'.$item->thumbnail) }}" width="140px" height="140px" alt="post">
                                                     </a>
-                                                    <div class="featured-badge-list">
-                                                        <a class="featured" href="#">
-                                                            <span class="fa fa-bolt"></span>
-                                                        </a>
-                                                    </div><!--./ featured-badge-list -->
+                                                   
                                                 </figure><!--./ thumb-wrap -->
                                             </div><!--./ entry-thumb -->
                                             <div class="content-entry-wrap">
                                                 <div class="entry-content">
                                                     <h3 class="entry-title">
-                                                        <a href="post-details.html">The rumored iPhone could come in hot pink, not rose gold and silver</a>
+                                                        <a href="{{ url('/berita/'.$item->slug) }}">{{ ucwords($item->judul) }}</a>
                                                     </h3><!--./ entry-title -->
                                                 </div><!--./ entry-content -->
                                                 <div class="entry-meta-content">
                                                     <div class="entry-date">
-                                                        <span>July 24, 2019 </span>
+                                                        <span>{{ tgl_indo($item->updated_at) }} </span>
                                                     </div><!--./ entry-date -->
                                                     <div class="entry-category">
-                                                        <a class="cat" href="#">LifeStyle</a>
+                                                        <a class="cat" href="{{ url('/kategori-berita/'.$item->slug_kategori) }}">{{ $item->nama_kategori }}</a>
                                                     </div><!--./ entry-category -->
                                                 </div><!--./ entry-meta-content -->
                                             </div><!--./ content-entry-wrap -->
                                         </article>
                                     </div><!--~./ end post ~-->
+                                    @endforeach
                                     
-                                    <!--~~~~~ Start Post ~~~~~-->
-                                    <div class="col-lg-6">
-                                        <article class="post hentry post-list post-list-small">
-                                            <div class="entry-thumb">
-                                                <figure class="thumb-wrap">
-                                                    <a href="post-details.html">
-                                                        <img src="http://via.placeholder.com/140x140" alt="post">
-                                                    </a>
-                                                    <div class="featured-badge-list">
-                                                        <a class="trending" href="#">
-                                                            <span class="fab fa-gripfire"></span>
-                                                        </a>
-                                                    </div><!--./ featured-badge-list -->
-                                                </figure><!--./ thumb-wrap -->
-                                            </div><!--./ entry-thumb -->
-                                            <div class="content-entry-wrap">
-                                                <div class="entry-content">
-                                                    <h3 class="entry-title">
-                                                        <a href="post-details.html">This gun is advertised as the most popular gun in American crime</a>
-                                                    </h3><!--./ entry-title -->
-                                                </div><!--./ entry-content -->
-                                                <div class="entry-meta-content">
-                                                    <div class="entry-date">
-                                                        <span>July 24, 2019 </span>
-                                                    </div><!--./ entry-date -->
-                                                    <div class="entry-category">
-                                                        <a class="cat" href="#">Fashion</a>
-                                                    </div><!--./ entry-category -->
-                                                </div><!--./ entry-meta-content -->
-                                            </div><!--./ content-entry-wrap -->
-                                        </article>
-                                    </div><!--~./ end post ~-->
-
-                                    <!--~~~~~ Start Post ~~~~~-->
-                                    <div class="col-lg-6">
-                                        <article class="post hentry post-list post-list-small">
-                                            <div class="entry-thumb">
-                                                <figure class="thumb-wrap">
-                                                    <a href="post-details.html">
-                                                        <img src="http://via.placeholder.com/140x140" alt="post">
-                                                    </a>
-                                                </figure><!--./ thumb-wrap -->
-                                            </div><!--./ entry-thumb -->
-                                            <div class="content-entry-wrap">
-                                                <div class="entry-content">
-                                                    <h3 class="entry-title">
-                                                        <a href="post-details.html">How to live with some vegeterian when you eat barbecue meat</a>
-                                                    </h3><!--./ entry-title -->
-                                                </div><!--./ entry-content -->
-                                                <div class="entry-meta-content">
-                                                    <div class="entry-date">
-                                                        <span>July 24, 2019 </span>
-                                                    </div><!--./ entry-date -->
-                                                    <div class="entry-category">
-                                                        <a class="cat" href="#">Business</a>
-                                                    </div><!--./ entry-category -->
-                                                </div><!--./ entry-meta-content -->
-                                            </div><!--./ content-entry-wrap -->
-                                        </article>
-                                    </div><!--~./ end post ~-->
-                                    
-                                    <!--~~~~~ Start Post ~~~~~-->
-                                    <div class="col-lg-6">
-                                        <article class="post hentry post-list post-list-small">
-                                            <div class="entry-thumb">
-                                                <figure class="thumb-wrap">
-                                                    <a href="post-details.html">
-                                                        <img src="http://via.placeholder.com/140x140" alt="post">
-                                                    </a>
-                                                </figure><!--./ thumb-wrap -->
-                                            </div><!--./ entry-thumb -->
-                                            <div class="content-entry-wrap">
-                                                <div class="entry-content">
-                                                    <h3 class="entry-title">
-                                                        <a href="post-details.html">The rumored iPhone could come in hot pink, not rose gold and silver</a>
-                                                    </h3><!--./ entry-title -->
-                                                </div><!--./ entry-content -->
-                                                <div class="entry-meta-content">
-                                                    <div class="entry-date">
-                                                        <span>July 24, 2019 </span>
-                                                    </div><!--./ entry-date -->
-                                                    <div class="entry-category">
-                                                        <a class="cat" href="#">LifeStyle</a>
-                                                    </div><!--./ entry-category -->
-                                                </div><!--./ entry-meta-content -->
-                                            </div><!--./ content-entry-wrap -->
-                                        </article>
-                                    </div><!--~./ end post ~-->
-                                    
-                                    <!--~~~~~ Start Post ~~~~~-->
-                                    <div class="col-lg-6">
-                                        <article class="post hentry post-list post-list-small">
-                                            <div class="entry-thumb">
-                                                <figure class="thumb-wrap">
-                                                    <a href="post-details.html">
-                                                        <img src="http://via.placeholder.com/140x140" alt="post">
-                                                    </a>
-                                                    <div class="featured-badge-list">
-                                                        <a class="trending" href="#">
-                                                            <span class="fab fa-gripfire"></span>
-                                                        </a>
-                                                    </div><!--./ featured-badge-list -->
-                                                </figure><!--./ thumb-wrap -->
-                                            </div><!--./ entry-thumb -->
-                                            <div class="content-entry-wrap">
-                                                <div class="entry-content">
-                                                    <h3 class="entry-title">
-                                                        <a href="post-details.html">This gun is advertised as the most popular gun in American crime</a>
-                                                    </h3><!--./ entry-title -->
-                                                </div><!--./ entry-content -->
-                                                <div class="entry-meta-content">
-                                                    <div class="entry-date">
-                                                        <span>July 24, 2019 </span>
-                                                    </div><!--./ entry-date -->
-                                                    <div class="entry-category">
-                                                        <a class="cat" href="#">Fashion</a>
-                                                    </div><!--./ entry-category -->
-                                                </div><!--./ entry-meta-content -->
-                                            </div><!--./ content-entry-wrap -->
-                                        </article>
-                                    </div><!--~./ end post ~-->
-                                    
-                                    <!--~~~~~ Start Post ~~~~~-->
-                                    <div class="col-lg-6">
-                                        <article class="post hentry post-list post-list-small">
-                                            <div class="entry-thumb">
-                                                <figure class="thumb-wrap">
-                                                    <a href="post-details.html">
-                                                        <img src="http://via.placeholder.com/140x140" alt="post">
-                                                    </a>
-                                                </figure><!--./ thumb-wrap -->
-                                            </div><!--./ entry-thumb -->
-                                            <div class="content-entry-wrap">
-                                                <div class="entry-content">
-                                                    <h3 class="entry-title">
-                                                        <a href="post-details.html">How to live with some vegeterian when you eat barbecue meat</a>
-                                                    </h3><!--./ entry-title -->
-                                                </div><!--./ entry-content -->
-                                                <div class="entry-meta-content">
-                                                    <div class="entry-date">
-                                                        <span>July 24, 2019 </span>
-                                                    </div><!--./ entry-date -->
-                                                    <div class="entry-category">
-                                                        <a class="cat" href="#">LifeStyle</a>
-                                                    </div><!--./ entry-category -->
-                                                </div><!--./ entry-meta-content -->
-                                            </div><!--./ content-entry-wrap -->
-                                        </article><!--~./ end post ~-->
-                                    </div><!--~./ end post ~-->
                                 </div>
                             </div><!--~./ end frontpage cat posts ~-->
                             
@@ -734,47 +572,18 @@
                     <div class="col-12">
                         <div id="aplikasi-terkait-carousel" class="owl-carousel carousel-nav-circle">
                            <!--~~~~~ Start Post ~~~~~-->
+                           @foreach($aplikasi as $item)
                             <article class="post hentry post-grid">
                                 <div class="entry-thumb">
                                     <figure class="thumb-wrap">
-                                        <a href="post-details.html">
-                                            <img src="http://via.placeholder.com/350x150" alt="post">
+                                        <a href="{{ $item->link }}" target="_blank">
+                                            <img src="{{ asset('uploads/images/aplikasi-terkait/'.$item->gambar) }}" width="350px" height="150px" alt="post">
                                         </a>
                                     </figure><!--./ thumb-wrap -->
                                 </div><!--./ entry-thumb -->
                             </article><!--~./ end post ~-->
-
-                            <!--~~~~~ Start Post ~~~~~-->
-                            <article class="post hentry post-grid">
-                                <div class="entry-thumb">
-                                    <figure class="thumb-wrap">
-                                        <a href="post-details.html">
-                                            <img src="http://via.placeholder.com/350x150" alt="post">
-                                        </a>
-                                        <div class="featured-badge-list">
-                                            <a class="trending" href="#">
-                                                <span class="fab fa-gripfire"></span>
-                                            </a>
-                                        </div><!--./ featured-badge-list -->
-                                    </figure><!--./ thumb-wrap -->
-                                </div><!--./ entry-thumb -->
-                            </article><!--~./ end post ~-->
-                            <!--~~~~~ Start Post ~~~~~-->
-                            <article class="post hentry post-grid">
-                                <div class="entry-thumb">
-                                    <figure class="thumb-wrap">
-                                        <a href="post-details.html">
-                                            <img src="http://via.placeholder.com/350x150" alt="post">
-                                        </a>
-                                        <div class="featured-badge-list">
-                                            <a class="featured" href="#">
-                                                <span class="fa fa-bolt"></span>
-                                            </a>
-                                        </div><!--./ featured-badge-list -->
-                                    </figure><!--./ thumb-wrap -->
-                                </div><!--./ entry-thumb -->
-
-                            </article><!--~./ end post ~-->
+                            @endforeach
+                            
                         </div>
                     </div>
                 </div>
@@ -794,48 +603,17 @@
                 <div class="row">
                     <div class="col-12">
                         <div id="bkd-terkait-carousel" class="owl-carousel carousel-nav-circle">
-                           <!--~~~~~ Start Post ~~~~~-->
+                            @foreach($link_terkait as $item)
                             <article class="post hentry post-grid">
                                 <div class="entry-thumb">
                                     <figure class="thumb-wrap">
-                                        <a href="post-details.html">
-                                            <img src="http://via.placeholder.com/350x150" alt="post">
+                                        <a href="{{ $item->link }}" target="_blank">
+                                            <img src="{{ asset('uploads/images/link-terkait/'.$item->gambar) }}" width="350px" height="150px" alt="post">
                                         </a>
                                     </figure><!--./ thumb-wrap -->
                                 </div><!--./ entry-thumb -->
                             </article><!--~./ end post ~-->
-
-                            <!--~~~~~ Start Post ~~~~~-->
-                            <article class="post hentry post-grid">
-                                <div class="entry-thumb">
-                                    <figure class="thumb-wrap">
-                                        <a href="post-details.html">
-                                            <img src="http://via.placeholder.com/350x150" alt="post">
-                                        </a>
-                                        <div class="featured-badge-list">
-                                            <a class="trending" href="#">
-                                                <span class="fab fa-gripfire"></span>
-                                            </a>
-                                        </div><!--./ featured-badge-list -->
-                                    </figure><!--./ thumb-wrap -->
-                                </div><!--./ entry-thumb -->
-                            </article><!--~./ end post ~-->
-                            <!--~~~~~ Start Post ~~~~~-->
-                            <article class="post hentry post-grid">
-                                <div class="entry-thumb">
-                                    <figure class="thumb-wrap">
-                                        <a href="post-details.html">
-                                            <img src="http://via.placeholder.com/350x150" alt="post">
-                                        </a>
-                                        <div class="featured-badge-list">
-                                            <a class="featured" href="#">
-                                                <span class="fa fa-bolt"></span>
-                                            </a>
-                                        </div><!--./ featured-badge-list -->
-                                    </figure><!--./ thumb-wrap -->
-                                </div><!--./ entry-thumb -->
-
-                            </article><!--~./ end post ~-->
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -856,9 +634,11 @@
                                 <li>
                                     <a class="active" data-toggle="tab" href="#semua" role="tab"><i class="fa fa-list"></i>Semua</a>
                                 </li>
+                                @foreach($galeri as $item)
                                 <li>
-                                    <a data-toggle="tab" href="#pelantikan" role="tab"><i class="fa fa-picture-o"></i>Pelantikan</a>
+                                    <a data-toggle="tab" href="#{{ $item->slug }}" role="tab"><i class="fa fa-picture-o"></i>{{ $item->nama }}</a>
                                 </li>
+                                @endforeach
                             </ul>
                         </div><!--~./ end filter tab area ~-->
                     </div>
@@ -872,215 +652,46 @@
                             <div class="tab-pane fade show active" id="semua" role="tabpanel">
                                 <div class="row">
                                     <!--~~~~~ Start Post ~~~~~-->
+                                    @foreach($galeri_seluruh as $item)
                                     <div class="col-lg-3 col-md-6">
                                         <article class="post hentry post-grid">
                                             <div class="entry-thumb">
                                                 <figure class="thumb-wrap">
-                                                    <a href="post-details.html">
-                                                        <img src="http://via.placeholder.com/370x370" alt="post">
+                                                    <a href="#">
+                                                        <img src="{{ asset('uploads/images/detail-galeri/'.$item->gambar) }}" width="370px" height="250px alt="{{ $item->nama }}">
                                                     </a>
-                                                    <div class="featured-badge-list">
-                                                        <a class="trending" href="#">
-                                                            <span class="fab fa-gripfire"></span>
-                                                        </a>
-                                                        <a class="featured" href="#">
-                                                            <span class="fa fa-bolt"></span>
-                                                        </a>
-                                                    </div><!--./ featured-badge-list -->
                                                 </figure><!--./ thumb-wrap -->
                                             </div><!--./ entry-thumb -->
                                
                          
                                         </article>
                                     </div><!--~./ end post ~-->
-                                    
-                                    <!--~~~~~ Start Post ~~~~~-->
-                                    <div class="col-lg-3 col-md-6">
-                                        <article class="post hentry post-grid">
-                                            <div class="entry-thumb">
-                                                <figure class="thumb-wrap">
-                                                    <a href="post-details.html">
-                                                        <img src="http://via.placeholder.com/370x370" alt="post">
-                                                    </a>
-                                                </figure><!--./ thumb-wrap -->
-                                            </div><!--./ entry-thumb -->
-                                        </article>
-                                    </div><!--~./ end post ~-->
-                                    
-                                    <!--~~~~~ Start Post ~~~~~-->
-                                    <div class="col-lg-3 col-md-6">
-                                        <article class="post hentry post-grid">
-                                            <div class="entry-thumb">
-                                                <figure class="thumb-wrap">
-                                                    <a href="post-details.html">
-                                                        <img src="http://via.placeholder.com/370x370" alt="post">
-                                                    </a>
-                                                    <div class="featured-badge-list">
-                                                        <a class="featured" href="#">
-                                                            <span class="fa fa-bolt"></span>
-                                                        </a>
-                                                    </div><!--./ featured-badge-list -->
-                                                </figure><!--./ thumb-wrap -->
-                                            </div><!--./ entry-thumb -->
-                 
-                                        </article>
-                                    </div><!--~./ end post ~-->
-
-                                    <!--~~~~~ Start Post ~~~~~-->
-                                    <div class="col-lg-3 col-md-6">
-                                        <article class="post hentry post-grid">
-                                            <div class="entry-thumb">
-                                                <figure class="thumb-wrap">
-                                                    <a href="post-details.html">
-                                                        <img src="http://via.placeholder.com/370x370" alt="post">
-                                                    </a>
-                                                </figure><!--./ thumb-wrap -->
-                                            </div><!--./ entry-thumb -->
-                         
-                                        </article>
-                                    </div><!--~./ end post ~-->
-
-                                    <!--~~~~~ Start Post ~~~~~-->
-                                    <div class="col-lg-3 col-md-6">
-                                        <article class="post hentry post-grid">
-                                            <div class="entry-thumb">
-                                                <figure class="thumb-wrap">
-                                                    <a href="post-details.html">
-                                                        <img src="http://via.placeholder.com/370x370" alt="post">
-                                                    </a>
-                                                    <div class="featured-badge-list">
-                                                        <a class="trending" href="#">
-                                                            <span class="fab fa-gripfire"></span>
-                                                        </a>
-                                                    </div><!--./ featured-badge-list -->
-                                                </figure><!--./ thumb-wrap -->
-                                            </div><!--./ entry-thumb -->
-                          
-                                        </article>
-                                    </div><!--~./ end post ~-->
-
-                                    <!--~~~~~ Start Post ~~~~~-->
-                                    <div class="col-lg-3 col-md-6">
-                                        <article class="post hentry post-grid">
-                                            <div class="entry-thumb">
-                                                <figure class="thumb-wrap">
-                                                    <a href="post-details.html">
-                                                        <img src="http://via.placeholder.com/370x370" alt="post">
-                                                    </a>
-                                                </figure><!--./ thumb-wrap -->
-                                            </div><!--./ entry-thumb -->
-                        
-                                        </article>
-                                    </div><!--~./ end post ~-->
+                                    @endforeach
                                 </div><br>
                             </div><!--~./ end tab pane ~-->
-
-                            <div class="tab-pane fade" id="pelantikan" role="tabpanel">
+                            @foreach($galeri as $item)
+                            <div class="tab-pane fade" id="{{ $item->slug }}" role="tabpanel">
                                 <div class="row">
                                     <!--~~~~~ Start Post ~~~~~-->
+                                    @foreach(getGaleriDetail($item->id) as $item)
                                     <div class="col-lg-3 col-md-6">
                                         <article class="post hentry post-grid">
                                             <div class="entry-thumb">
                                                 <figure class="thumb-wrap">
-                                                    <a href="post-details.html">
-                                                        <img src="http://via.placeholder.com/370x370" alt="post">
+                                                    <a href="#">
+                                                        <img src="{{ asset('uploads/images/detail-galeri/'.$item->gambar) }}" width="370px" height="250px" alt="{{ $item->nama }}">
                                                     </a>
-                                                    <div class="featured-badge-list">
-                                                        <a class="trending" href="#">
-                                                            <span class="fab fa-gripfire"></span>
-                                                        </a>
-                                                        <a class="featured" href="#">
-                                                            <span class="fa fa-bolt"></span>
-                                                        </a>
-                                                    </div><!--./ featured-badge-list -->
                                                 </figure><!--./ thumb-wrap -->
                                             </div><!--./ entry-thumb -->
                                
                          
                                         </article>
                                     </div><!--~./ end post ~-->
+                                    @endforeach
                                     
-                                    <!--~~~~~ Start Post ~~~~~-->
-                                    <div class="col-lg-3 col-md-6">
-                                        <article class="post hentry post-grid">
-                                            <div class="entry-thumb">
-                                                <figure class="thumb-wrap">
-                                                    <a href="post-details.html">
-                                                        <img src="http://via.placeholder.com/370x370" alt="post">
-                                                    </a>
-                                                </figure><!--./ thumb-wrap -->
-                                            </div><!--./ entry-thumb -->
-                                        </article>
-                                    </div><!--~./ end post ~-->
-                                    
-                                    <!--~~~~~ Start Post ~~~~~-->
-                                    <div class="col-lg-3 col-md-6">
-                                        <article class="post hentry post-grid">
-                                            <div class="entry-thumb">
-                                                <figure class="thumb-wrap">
-                                                    <a href="post-details.html">
-                                                        <img src="http://via.placeholder.com/370x370" alt="post">
-                                                    </a>
-                                                    <div class="featured-badge-list">
-                                                        <a class="featured" href="#">
-                                                            <span class="fa fa-bolt"></span>
-                                                        </a>
-                                                    </div><!--./ featured-badge-list -->
-                                                </figure><!--./ thumb-wrap -->
-                                            </div><!--./ entry-thumb -->
-                 
-                                        </article>
-                                    </div><!--~./ end post ~-->
-
-                                    <!--~~~~~ Start Post ~~~~~-->
-                                    <div class="col-lg-3 col-md-6">
-                                        <article class="post hentry post-grid">
-                                            <div class="entry-thumb">
-                                                <figure class="thumb-wrap">
-                                                    <a href="post-details.html">
-                                                        <img src="http://via.placeholder.com/370x370" alt="post">
-                                                    </a>
-                                                </figure><!--./ thumb-wrap -->
-                                            </div><!--./ entry-thumb -->
-                         
-                                        </article>
-                                    </div><!--~./ end post ~-->
-
-                                    <!--~~~~~ Start Post ~~~~~-->
-                                    <div class="col-lg-3 col-md-6">
-                                        <article class="post hentry post-grid">
-                                            <div class="entry-thumb">
-                                                <figure class="thumb-wrap">
-                                                    <a href="post-details.html">
-                                                        <img src="http://via.placeholder.com/370x370" alt="post">
-                                                    </a>
-                                                    <div class="featured-badge-list">
-                                                        <a class="trending" href="#">
-                                                            <span class="fab fa-gripfire"></span>
-                                                        </a>
-                                                    </div><!--./ featured-badge-list -->
-                                                </figure><!--./ thumb-wrap -->
-                                            </div><!--./ entry-thumb -->
-                          
-                                        </article>
-                                    </div><!--~./ end post ~-->
-
-                                    <!--~~~~~ Start Post ~~~~~-->
-                                    <div class="col-lg-3 col-md-6">
-                                        <article class="post hentry post-grid">
-                                            <div class="entry-thumb">
-                                                <figure class="thumb-wrap">
-                                                    <a href="post-details.html">
-                                                        <img src="http://via.placeholder.com/370x370" alt="post">
-                                                    </a>
-                                                </figure><!--./ thumb-wrap -->
-                                            </div><!--./ entry-thumb -->
-                        
-                                        </article>
-                                    </div><!--~./ end post ~-->
                                 </div><br>
                             </div><!--~./ end tab pane ~-->
-                            
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -1093,32 +704,15 @@
                     <div class="col-lg-7">
                         <div class="tab-content filter-tab-content video-filter-tab-content">
                             <!--~~~~~ Start Tab Pane ~~~~~--> 
-                            <div class="tab-pane fade show active" id="video_post_one" role="tabpanel">
+                            <?php $i = 0; ?>
+                            @foreach($video as $item)
+                            <div class="tab-pane fade show @if($i == 0) active @endif" id="{{ $item->slug }}" role="tabpanel">
                                 <div class="video-single">
-                                    <iframe src="https://domainsultan.xyz/video/vid/12t8UV4cNrHT6JeAKVWLKX3E26JO0UXIW.mp4" allow="fullscreen" allowfullscreen></iframe>
+                                    <iframe src="https://www.youtube.com/embed/{{ getYoutubeID($item->url_video) }}" allow="fullscreen" allowfullscreen></iframe>
                                 </div>
                             </div><!--~./ end tab pane ~-->
-
-                            <!--~~~~~ Start Tab Pane ~~~~~--> 
-                            <div class="tab-pane fade" id="video_post_two" role="tabpanel">
-                                <div class="video-single">
-                                    <iframe src="https://domainsultan.xyz/video/vid/12t8UV4cNrHT6JeAKVWLKX3E26JO0UXIW.mp4" allow="fullscreen" allowfullscreen></iframe>
-                                </div>
-                            </div><!--~./ end tab pane ~-->
-
-                            <!--~~~~~ Start Tab Pane ~~~~~--> 
-                            <div class="tab-pane fade" id="video_post_three" role="tabpanel">
-                                <div class="video-single">
-                                    <iframe src="https://domainsultan.xyz/video/vid/12t8UV4cNrHT6JeAKVWLKX3E26JO0UXIW.mp4" allow="fullscreen" allowfullscreen></iframe>
-                                </div>
-                            </div><!--~./ end tab pane ~-->
-
-                            <!--~~~~~ Start Tab Pane ~~~~~--> 
-                            <div class="tab-pane fade" id="video_post_four" role="tabpanel">
-                                <div class="video-single">
-                                    <iframe src="https://domainsultan.xyz/video/vid/12t8UV4cNrHT6JeAKVWLKX3E26JO0UXIW.mp4" allow="fullscreen" allowfullscreen></iframe>
-                                </div>
-                            </div><!--~./ end tab pane ~-->
+                            <?php $i++;?>
+                            @endforeach
                         </div>
 
                     </div>
@@ -1131,12 +725,13 @@
                             <div class="video-channels-inner tse-scrollable">
                                 <div class="tse-content">
                                     <ul class="nav nav-tabs" role="tablist">
+                                        @foreach($video as $item)
                                         <li>
-                                            <a class="active" data-toggle="tab" href="#video_post_one" role="tab">
+                                            <a  data-toggle="tab" href="#{{ $item->slug }}" role="tab">
                                                 <article class="post hentry post-list post-list-small">
                                                     <div class="entry-thumb">
                                                         <figure class="thumb-wrap">
-                                                            <img src="http://via.placeholder.com/140x140" alt="post">
+                                                            <img src="https://img.youtube.com/vi/{{ getYoutubeID($item->url_video) }}/1.jpg" alt="post">
                                                         </figure><!--./ thumb-wrap -->
                                                         <div class="play-now-overlay">
                                                             <div class="play-now-overlay-inner">        
@@ -1148,7 +743,7 @@
                                                     <div class="content-entry-wrap">
                                                         <div class="entry-content">
                                                             <h3 class="entry-title">
-                                                                This gun is advertised as the most popular gun in American crime
+                                                                {{ $item->nama }}
                                                             </h3><!--./ entry-title -->
                                                         </div><!--./ entry-content -->
                                                         <div class="current-play-now">
@@ -1156,121 +751,17 @@
                                                         </div>
                                                         <div class="entry-meta-content">
                                                             <div class="entry-date">
-                                                                <span>July 24, 2019 </span>
+                                                                <span>{{ tgl_indo($item->updated_at) }} </span>
                                                             </div><!--./ entry-date -->
                                                             <div class="entry-category">
-                                                                <span># Food</span>
+                                                                <span># Galeri Video</span>
                                                             </div><!--./ entry-category -->
                                                         </div><!--./ entry-meta-content -->
                                                     </div><!--./ content-entry-wrap -->
                                                 </article> 
                                             </a>
                                         </li>
-                                        <li>
-                                            <a data-toggle="tab" href="#video_post_two" role="tab">
-                                                <article class="post hentry post-list post-list-small">
-                                                    <div class="entry-thumb">
-                                                        <figure class="thumb-wrap">
-                                                            <img src="http://via.placeholder.com/140x140" alt="post">
-                                                        </figure><!--./ thumb-wrap -->
-                                                        <div class="play-now-overlay">
-                                                            <div class="play-now-overlay-inner">        
-                                                                <i class="fa fa-play"></i>
-                                                                <span>play now</span>
-                                                            </div>
-                                                        </div>
-                                                    </div><!--./ entry-thumb -->
-                                                    <div class="content-entry-wrap">
-                                                        <div class="entry-content">
-                                                            <h3 class="entry-title">
-                                                                The rumored iPhone could come in hot pink, not rose gold and silver
-                                                            </h3><!--./ entry-title -->
-                                                        </div><!--./ entry-content -->
-                                                        <div class="current-play-now">
-                                                            <span class="fa fa-play-circle-o"></span> Play Now
-                                                        </div>
-                                                        <div class="entry-meta-content">
-                                                            <div class="entry-date">
-                                                                <span>July 24, 2019 </span>
-                                                            </div><!--./ entry-date -->
-                                                            <div class="entry-category">
-                                                                <span># Food</span>
-                                                            </div><!--./ entry-category -->
-                                                        </div><!--./ entry-meta-content -->
-                                                    </div><!--./ content-entry-wrap -->
-                                                </article>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a data-toggle="tab" href="#video_post_three" role="tab">
-                                                <article class="post hentry post-list post-list-small">
-                                                    <div class="entry-thumb">
-                                                        <figure class="thumb-wrap">
-                                                            <img src="http://via.placeholder.com/140x140" alt="post">
-                                                        </figure><!--./ thumb-wrap -->
-                                                        <div class="play-now-overlay">
-                                                            <div class="play-now-overlay-inner">        
-                                                                <i class="fa fa-play"></i>
-                                                                <span>play now</span>
-                                                            </div>
-                                                        </div>
-                                                    </div><!--./ entry-thumb -->
-                                                    <div class="content-entry-wrap">
-                                                        <div class="entry-content">
-                                                            <h3 class="entry-title">
-                                                                How to live with some vegeterian when you eat barbecue meat
-                                                            </h3><!--./ entry-title -->
-                                                        </div><!--./ entry-content -->
-                                                        <div class="current-play-now">
-                                                            <span class="fa fa-play-circle-o"></span> Play Now
-                                                        </div>
-                                                        <div class="entry-meta-content">
-                                                            <div class="entry-date">
-                                                                <span>July 24, 2019 </span>
-                                                            </div><!--./ entry-date -->
-                                                            <div class="entry-category">
-                                                                <span># Gameing</span>
-                                                            </div><!--./ entry-category -->
-                                                        </div><!--./ entry-meta-content -->
-                                                    </div><!--./ content-entry-wrap -->
-                                                </article>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a data-toggle="tab" href="#video_post_four" role="tab">
-                                                <article class="post hentry post-list post-list-small">
-                                                    <div class="entry-thumb">
-                                                        <figure class="thumb-wrap">
-                                                            <img src="http://via.placeholder.com/140x140" alt="post">
-                                                        </figure><!--./ thumb-wrap -->
-                                                        <div class="play-now-overlay">
-                                                            <div class="play-now-overlay-inner">        
-                                                                <i class="fa fa-play"></i>
-                                                                <span>play now</span>
-                                                            </div>
-                                                        </div>
-                                                    </div><!--./ entry-thumb -->
-                                                    <div class="content-entry-wrap">
-                                                        <div class="entry-content">
-                                                            <h3 class="entry-title">
-                                                                The rumored iPhone could come in hot pink, not rose gold and silver
-                                                            </h3><!--./ entry-title -->
-                                                        </div><!--./ entry-content -->
-                                                        <div class="current-play-now">
-                                                            <span class="fa fa-play-circle-o"></span> Play Now
-                                                        </div>
-                                                        <div class="entry-meta-content">
-                                                            <div class="entry-date">
-                                                                <span>July 24, 2019 </span>
-                                                            </div><!--./ entry-date -->
-                                                            <div class="entry-category">
-                                                                <span># Food</span>
-                                                            </div><!--./ entry-category -->
-                                                        </div><!--./ entry-meta-content -->
-                                                    </div><!--./ content-entry-wrap -->
-                                                </article>
-                                            </a>
-                                        </li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div><!--~./ video-list-inner ~-->
