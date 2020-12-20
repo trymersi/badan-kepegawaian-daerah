@@ -9,6 +9,7 @@ use App\Models\Berita;
 use App\Models\Aplikasi;
 use App\Models\LinkTerkait;
 use App\Models\GaleriGambar;
+use App\Models\DetailGaleri;
 use App\Models\GaleriVideo;
 use App\Models\Slider;
 class HomeCrontoller extends Controller
@@ -21,6 +22,7 @@ class HomeCrontoller extends Controller
     private $galeriGambar;
     private $galeriVideo;
     private $sliderClass;
+    private $galeriDetail;
     
 
     public function __construct()
@@ -32,6 +34,8 @@ class HomeCrontoller extends Controller
         $this->galeriGambar = new GaleriGambar;
         $this->galeriVideo = new GaleriVideo;
         $this->sliderClass = new Slider;
+        $this->galeriDetail = new DetailGaleri;
+
         $this->data = [
             'category_name' => 'Dashboard',
             'main_url' => 'dashboard',
@@ -66,6 +70,23 @@ class HomeCrontoller extends Controller
     {
         $this->data['page_name'] = 'tabel data bidang';
         return view('frontend.page.unduhan.index',$this->data);
+    }
+
+    public function galeri()
+    {
+        $this->data['category_name'] = 'data galeri';
+        $this->data['galeri'] = $this->galeriGambar->getHome();
+        return view('frontend.page.galeri.index',$this->data);
+    }
+
+    public function galeriDetail($id)
+    {
+        
+        $galeri = $this->galeriGambar->where('slug',$id)->first();
+        $this->data['category_name'] = 'galeri';
+        $this->data['page_name'] = 'galeri '.$galeri->nama;
+        $this->data['detail_galeri'] = $this->galeriDetail->where('galeri_gambar_id',$galeri->id)->get();
+        return view('frontend.page.galeri.detail',$this->data);
     }
 
     /**

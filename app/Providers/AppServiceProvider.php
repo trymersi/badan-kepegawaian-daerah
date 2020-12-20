@@ -23,6 +23,23 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-       
+        view()->composer('frontend.main-1',function($view)
+        {
+            $view->with('berita',\App\Models\Berita::leftJoin('kategori_beritas','kategori_beritas.id','beritas.kategori_berita_id')
+            ->select(
+                'kategori_beritas.nama as nama_kategori',
+                'kategori_beritas.slug as slug_kategori',
+                'beritas.id',
+                'beritas.judul',
+                'beritas.meta_deskripsi',
+                'beritas.thumbnail',
+                'beritas.updated_at',
+                'beritas.slug',
+            )
+            ->orderBy('beritas.created_at','desc')
+            ->groupBy('beritas.id')
+            ->limit(6)
+            ->get());
+        });
     }
 }
