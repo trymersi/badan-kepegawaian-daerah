@@ -26,7 +26,7 @@
                                             <th>NO</th>
                                             <th>NAMA DOKUMEN</th>
                                             <th>KETERANGAN / TENTANG</th>
-                                            <th width="20%"></th>
+                                            <th width="15%"></th>
                                         </tr>
                                     </thead>
                                     <tbody>

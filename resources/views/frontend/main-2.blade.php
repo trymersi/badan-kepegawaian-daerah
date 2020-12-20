@@ -135,7 +135,10 @@
                                         </li>
                                         <li class="dropdown-trigger"><a href="#"><i class="fa fa-download" aria-hidden="true"></i> UNDUHAN</a>
                                             <ul class="dropdown-content">
-                                                <li><a href="{{ url ('/unduhan') }}">Features</a></li>
+                                                @foreach($kategori_unduhan as $item)
+                                                <li><a href="{{ url('/unduhan/'.$item->slug) }}">{{ $item->nama }}</a></li>
+                                                @endforeach
+                                                <li><a href="{{ url('/unduhan/') }}">Seluruh Unduhan</a></li>
                                             </ul>
                                         </li>
                                         <li class="dropdown-trigger"><a href="#"><i class="fa fa-list" aria-hidden="true"></i> APPS & LAINNYA</a>

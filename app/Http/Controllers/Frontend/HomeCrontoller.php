@@ -13,6 +13,7 @@ use App\Models\DetailGaleri;
 use App\Models\GaleriVideo;
 use App\Models\Slider;
 use App\Models\Unduh;
+use App\Models\kategoriUnduhan;
 use DataTables;
 class HomeCrontoller extends Controller
 {
@@ -26,6 +27,7 @@ class HomeCrontoller extends Controller
     private $sliderClass;
     private $galeriDetail;
     private $unduhClass;
+    private $kategoriUnduh;
     
 
     public function __construct()
@@ -39,6 +41,7 @@ class HomeCrontoller extends Controller
         $this->sliderClass = new Slider;
         $this->galeriDetail = new DetailGaleri;
         $this->unduhClass = new Unduh;
+        $this->kategoriUnduh = new kategoriUnduhan;
 
         $this->data = [
             'category_name' => 'Dashboard',
@@ -73,8 +76,18 @@ class HomeCrontoller extends Controller
 
     public function unduhan()
     {
-        $this->data['page_name'] = 'tabel data bidang';
+        $this->data['category_name'] = 'list seluruh unduhan';
         return view('frontend.page.unduhan.index',$this->data);
+    }
+
+    public function unduhanDetail($id)
+    {
+        $kategori = $this->kategoriUnduh->where('slug',$id)->first();
+        $this->data['unduhan'] = $this->unduhClass->where('kategori_unduhan_id',$kategori->id)->orderBy('updated_at','asc')->get();
+        $this->data['page_name'] = $kategori->nama;
+        $this->data['category_name'] = 'list seluruh unduhan';
+        $this->data['id_kategori_unduhan'] = $kategori->id;
+        return view('frontend.page.unduhan.detail',$this->data);
     }
 
     public function galeri()
@@ -96,7 +109,7 @@ class HomeCrontoller extends Controller
 
     public function tableUnduhan($id)
     {
-        $data = isset($id) ? $this->unduhClass->getData() : $this->unduhClass->getData();
+        $data = (isset($id) && $id !="seluruh") ? $this->unduhClass->getDataByKat($id) : $this->unduhClass->getData();
             return DataTables::of($data)
             ->addColumn('option', function($data)
             {
