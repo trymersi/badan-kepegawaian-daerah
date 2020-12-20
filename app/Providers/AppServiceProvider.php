@@ -41,6 +41,7 @@ class AppServiceProvider extends ServiceProvider
             ->limit(6)
             ->get());
             $view->with('kategori_unduhan',\App\Models\KategoriUnduhan::orderBy('nama','asc')->get());
+            $view->with('kategori_berita_menu',\App\Models\KategoriBerita::orderBy('nama','asc')->get());
         });
 
         view()->composer('frontend.main-2',function($view)
@@ -61,6 +62,7 @@ class AppServiceProvider extends ServiceProvider
             ->limit(6)
             ->get());
             $view->with('kategori_unduhan',\App\Models\KategoriUnduhan::orderBy('nama','asc')->get());
+            $view->with('kategori_berita_menu',\App\Models\KategoriBerita::orderBy('nama','asc')->get());
         });
 
         

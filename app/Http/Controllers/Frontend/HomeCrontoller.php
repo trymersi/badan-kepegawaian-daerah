@@ -14,6 +14,7 @@ use App\Models\GaleriVideo;
 use App\Models\Slider;
 use App\Models\Unduh;
 use App\Models\kategoriUnduhan;
+use App\Models\KategoriBerita;
 use DataTables;
 class HomeCrontoller extends Controller
 {
@@ -28,7 +29,7 @@ class HomeCrontoller extends Controller
     private $galeriDetail;
     private $unduhClass;
     private $kategoriUnduh;
-    
+    private $kategoriBerita;
 
     public function __construct()
     {
@@ -42,6 +43,7 @@ class HomeCrontoller extends Controller
         $this->galeriDetail = new DetailGaleri;
         $this->unduhClass = new Unduh;
         $this->kategoriUnduh = new kategoriUnduhan;
+        $this->kategoriBerita = new KategoriBerita;
 
         $this->data = [
             'category_name' => 'Dashboard',
@@ -67,11 +69,34 @@ class HomeCrontoller extends Controller
         $this->data['page_name'] = 'tabel data bidang';
         return view('frontend.page.beranda.index',$this->data);
     }
+
     public function berita()
     {
         $this->data['category_name'] = 'Seluruh berita';
         $this->data['list_berita'] = $this->beritaClass->getList();
         return view('frontend.page.berita.index',$this->data);
+    }
+
+    public function detailBerita($id)
+    {
+        $berita = $this->beritaClass->getDetail($id);
+        $this->data['detail_berita'] = $berita;
+        $this->data['sebelum'] = $this->beritaClass->getSebelum($berita->id);
+        $this->data['sesudah'] = $this->beritaClass->getSesudah($berita->id);
+        $this->data['page_name'] = $berita->judul;
+        $this->data['category_name'] = $berita->nama_kategori;
+        $this->data['kategori_related'] = $this->beritaClass->getListByKatRel($berita->id_kategori);
+        $this->data['berita_related'] = $this->beritaClass->getRelated($berita->id);
+        return view('frontend.page.berita.detail',$this->data);
+    }
+
+    public function kategoriBerita($id)
+    {
+        $kategori = $this->kategoriBerita->where('slug',$id)->first();
+        $this->data['category_name'] = 'Kategori Berita';
+        $this->data['page_name'] = $kategori->nama;
+        $this->data['list_berita'] = $this->beritaClass->getListByKat($kategori->id);
+        return view('frontend.page.berita.kategori',$this->data);
     }
 
     public function unduhan()

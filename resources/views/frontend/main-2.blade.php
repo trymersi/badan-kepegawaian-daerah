@@ -122,9 +122,10 @@
                                         </li>
                                         <li class="dropdown-trigger"><a href="#"><i class="fa fa-newspaper-o" aria-hidden="true"></i> BERITA</a>
                                             <ul class="dropdown-content">
-                                                <li><a href="{{ url('/berita') }}">Standard Post</a></li>
-                                                <li><a href="{{ url('/berita') }}">Grid Post</a></li>
-                                                <li><a href="{{ url('/berita') }}">List Post</a></li>
+                                                @foreach($kategori_berita_menu as $item)
+                                                <li><a href="{{ url('/kategori-berita/'.$item->slug) }}">{{ $item->nama }}</a></li>
+                                                @endforeach
+                                                <li><a href="{{ url('/berita') }}">Seluruh Berita</a></li>
                                             </ul>
                                         </li>
                                         <li class="dropdown-trigger"><a href="#"><i class="fa fa-university" aria-hidden="true"></i> PROFILE</a>
@@ -197,13 +198,12 @@
                 <div class="row">
                     <div class="col -12">
                         <div id="newsTicker" class="breaking-news-ticker">
-                            <div class="bn-label">Breaking News</div>
+                            <div class="bn-label">Berita Terbaru</div>
                             <div class="bn-news">
                                 <ul>
-                                    <li><a href="#">Taiwanese flag on artwork painted very pretty in australia & canada <span>Politics</span></a></li>
-                                    <li><a href="#">The five biggest fashion looks for next spring <span>Fashion</span></a></li>
-                                    <li><a href="#">Cold skateboard an annual booking release in brazil <span>Food</span></a></li>
-                                    <li><a href="#">Return of the bench seat Concept show space big for sofas<span>Lifestyle</span></a></li>
+                                    @foreach($berita as $item)
+                                    <li><a href="{{ url('/berita/'.$item->slug) }}">{{ $item->judul }} <span>{{ $item->nama_kategori }}</span></a></li>
+                                    @endforeach
                                 </ul>
                             </div><!--./ bn-news -->
                             <div class="bn-controls">

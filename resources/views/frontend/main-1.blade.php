@@ -122,9 +122,10 @@
                                         </li>
                                         <li class="dropdown-trigger"><a href="#"><i class="fa fa-newspaper-o" aria-hidden="true"></i> BERITA</a>
                                             <ul class="dropdown-content">
-                                                <li><a href="{{ url('/berita') }}">Standard Post</a></li>
-                                                <li><a href="{{ url('/berita') }}">Grid Post</a></li>
-                                                <li><a href="{{ url('/berita') }}">List Post</a></li>
+                                                @foreach($kategori_berita_menu as $item)
+                                                <li><a href="{{ url('/kategori-berita') }}">{{ $item->nama }}</a></li>
+                                                @endforeach
+                                                <li><a href="{{ url('/berita') }}">Seluruh Berita</a></li>
                                             </ul>
                                         </li>
                                         <li class="dropdown-trigger"><a href="#"><i class="fa fa-university" aria-hidden="true"></i> PROFILE</a>
