@@ -62,7 +62,8 @@ class HomeCrontoller extends Controller
     }
     public function berita()
     {
-        $this->data['page_name'] = 'tabel data bidang';
+        $this->data['category_name'] = 'Seluruh berita';
+        $this->data['list_berita'] = $this->beritaClass->getList();
         return view('frontend.page.berita.index',$this->data);
     }
 
