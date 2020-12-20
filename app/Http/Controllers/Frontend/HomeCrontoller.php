@@ -12,6 +12,8 @@ use App\Models\GaleriGambar;
 use App\Models\DetailGaleri;
 use App\Models\GaleriVideo;
 use App\Models\Slider;
+use App\Models\Unduh;
+use DataTables;
 class HomeCrontoller extends Controller
 {
     private $data;
@@ -23,6 +25,7 @@ class HomeCrontoller extends Controller
     private $galeriVideo;
     private $sliderClass;
     private $galeriDetail;
+    private $unduhClass;
     
 
     public function __construct()
@@ -35,6 +38,7 @@ class HomeCrontoller extends Controller
         $this->galeriVideo = new GaleriVideo;
         $this->sliderClass = new Slider;
         $this->galeriDetail = new DetailGaleri;
+        $this->unduhClass = new Unduh;
 
         $this->data = [
             'category_name' => 'Dashboard',
@@ -88,6 +92,22 @@ class HomeCrontoller extends Controller
         $this->data['page_name'] = 'galeri '.$galeri->nama;
         $this->data['detail_galeri'] = $this->galeriDetail->where('galeri_gambar_id',$galeri->id)->get();
         return view('frontend.page.galeri.detail',$this->data);
+    }
+
+    public function tableUnduhan($id)
+    {
+        $data = isset($id) ? $this->unduhClass->getData() : $this->unduhClass->getData();
+            return DataTables::of($data)
+            ->addColumn('option', function($data)
+            {
+                
+                return '<a href="'.asset('/uploads/unduhan/'.$data->file).'" target="_blank" class=""><i class="fa fa-download" aria-hidden="true"></i> Unduh</a>';
+            })
+
+
+            ->addIndexColumn()
+            ->rawColumns(['tanggal','option','isi'])
+            ->make(true);
     }
 
     /**
