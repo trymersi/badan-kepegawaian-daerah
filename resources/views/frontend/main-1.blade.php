@@ -146,12 +146,12 @@
                                         </li>
                                         <li class="dropdown-trigger"><a href="#"><i class="fa fa-list" aria-hidden="true"></i> APPS & LAINNYA</a>
                                             <ul class="dropdown-content">
-                                                <li><a href="category-standard.html">Post standard</a></li>
-                                                <li><a href="category-grid.html">Post Grid Two</a></li>
-                                                <li><a href="category-list.html">Post list Three</a></li>
-                                                <li><a href="post-details.html">Post details One</a></li>
-                                                <li><a href="post-details-two.html">Post details Two</a></li>
-                                                <li><a href="post-details-three.html">Post details Three</a></li>
+                                                @foreach($aplikasi as $item)
+                                                <li><a target="_blank" href="{{ $item->link}}">{{ $item->nama }}</a></li>
+                                                @endforeach
+                                                @foreach($link_terkait as $item)
+                                                <li><a target="_blank" href="{{ $item->link}}">{{ $item->nama }}</a></li>
+                                                @endforeach
                                             </ul>
                                         </li>
                                     </ul>

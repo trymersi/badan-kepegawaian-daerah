@@ -42,6 +42,8 @@ class AppServiceProvider extends ServiceProvider
             ->get());
             $view->with('kategori_unduhan',\App\Models\KategoriUnduhan::orderBy('nama','asc')->get());
             $view->with('profil',\App\Models\Profil::orderBy('nama','asc')->get());
+            $view->with('aplikasi',\App\Models\Aplikasi::orderBy('nama','asc')->get());
+            $view->with('link_terkait',\App\Models\LinkTerkait::orderBy('nama','asc')->get());
             $view->with('kategori_berita_menu',\App\Models\KategoriBerita::orderBy('nama','asc')->get());
             $view->with('pengaturan_website',\App\Models\Pengaturan::first());
             $view->with('kategori_unduhan_footer',\App\Models\KategoriUnduhan::orderBy('nama','asc')->limit(10)->get());
