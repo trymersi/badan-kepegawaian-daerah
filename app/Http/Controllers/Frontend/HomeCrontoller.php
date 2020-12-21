@@ -4,19 +4,22 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\LinkTerkait;
+
 
 class HomeCrontoller extends Controller
 {
     private $data;
-
+    private $LinkTerkaitClass;
 
     public function __construct()
     {
-
+        $this->LinkTerkaitClass = new LinkTerkait;
         $this->data = [
             'category_name' => 'Dashboard',
             'main_url' => 'dashboard',
-            'title' => '>Badan Kepegawaian Daerah Provinsi Riau - BERSIH - KOMPETEN - DISIPLIN'
+            'title' => '>Badan Kepegawaian Daerah Provinsi Riau - BERSIH - KOMPETEN - DISIPLIN',
+            'link_terkait' => $this->LinkTerkaitClass->orderBy('nama','asc')->get()
         ];
     }
 
