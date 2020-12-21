@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
   
     <!-- Page Title -->
-    <title>Magala - Magazine and Blog Template</title>
+    <title>
+        {{ $site_title }}
+    </title>
     
     <!---Font Icon-->
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/fontawesome.all.min.css')}}">
@@ -20,7 +22,7 @@
     
     <!-- Theme Style -->
     <link rel="stylesheet" href="{{ asset('assets/frontend/style.css')}}">
-    
+    @stack('css')
 </head>
 <body>
     <!--********************************************************-->
@@ -234,7 +236,7 @@
                 <aside class="widget popular-posts-widget">
                     <h4 class="widget-title"><span>Recent Post</span></h4>
                     <div class="widget-content">
-                        <article class="post side-post">
+                        <article class="post side-post" style="margin-bottom: 20px;">
                             <div class="thumb-wrap">
                                 <a href="post-details.html">
                                     <img src="http://via.placeholder.com/100x100" alt="post">
@@ -375,199 +377,7 @@
     <!--~./ end magala side sidebar ~-->
     
     
-    <!--********************************************************-->
-    <!--********************** SITE FOOTER *********************-->
-    <!--********************************************************-->
-    <footer class="site-footer footer-default-style bg-black pt-80">
-        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-            Start Footer Widget Area
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-        <div class="footer-widget-area pb-20">
-            <div class="container">
-                <div class="row">
-                    <!--~~~~~ Start Widget About us Info ~~~~~--> 
-                    <div class="col-lg-3">
-                        <aside class="widget bt-about-us-widget">
-                            <div class="widget-content">
-                                <div class="about-logo">
-                                    <a href="{{ url('/') }}"><img src="{{ asset('assets/frontend//images/logo/logo-bkd.png')}}" alt="Logo-footer-bkd-provinsi-riau"></a>
-                                </div>
-                                <p>BADAN KEPEGAWAIAN DAERAH PROVINSI RIAU</p>
-                                <ul class="social-share">
-                                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a class="youtube" href="#"><i class="fa fa-youtube"></i></a></li>
-                                    <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                        </aside>
-                    </div><!--~./ end about us widget ~-->
-                    
-                    <!--~~~~~ Start Latest Posts Widget~~~~~-->
-                    <div class="col-lg-3">
-                        <aside class="widget latest-posts-widget latest-posts-widget-two">
-                            <h4 class="widget-title">Tentang Kami</h4>
-                            <div class="widget-content">
-                                <article class="post side-post">
-                                    <div class="content-entry-wrap">
-                                        <h3 class="entry-title">
-                                            <a href="post-details.html">The rumored been iPhone could in hot pink not rose</a>
-                                        </h3><!--./ entry-title -->
-                                        <div class="entry-meta-content">
-                                            <div class="entry-date">
-                                                <span>July 24, 2019 </span>
-                                            </div><!--./ entry-date -->
-                                        </div><!--./ entry-meta-content -->
-                                    </div><!--./ content-entry-wrap -->
-                                    <div class="thumb-wrap">
-                                        <a href="post-details.html">
-                                            <img src="http://via.placeholder.com/100x100" alt="post">
-                                        </a>
-                                    </div><!--./ thumb-wrap -->
-                                </article><!--./ end post -->
-                                
-                                <article class="post side-post">
-                                    <div class="content-entry-wrap">
-                                        <h3 class="entry-title">
-                                            <a href="post-details.html">This gun is advertise as the most popular gun</a>
-                                        </h3><!--./ entry-title -->
-                                        <div class="entry-meta-content">
-                                            <div class="entry-date">
-                                                <span>July 24, 2019 </span>
-                                            </div><!--./ entry-date -->
-                                        </div><!--./ entry-meta-content -->
-                                    </div><!--./ content-entry-wrap -->
-                                    <div class="thumb-wrap">
-                                        <a href="post-details.html">
-                                            <img src="http://via.placeholder.com/100x100" alt="post">
-                                        </a>
-                                    </div><!--./ thumb-wrap -->
-                                </article><!--./ end post -->
-                            </div>
-                        </aside>
-                    </div><!--~./ end latest posts widget ~-->
-                    
-                    <!--~~~~~ Start Latest Posts Widget~~~~~-->
-                    <div class="col-lg-3">
-                        <aside class="widget latest-posts-widget latest-posts-widget-two">
-                            <h4 class="widget-title">Unduhan</h4>
-                            <div class="widget-content">
-                                <article class="post side-post">
-                                    <div class="content-entry-wrap">
-                                        <h3 class="entry-title">
-                                            <a href="post-details.html">This gun is advertise as the most popular gun</a>
-                                        </h3><!--./ entry-title -->
-                                        <div class="entry-meta-content">
-                                            <div class="entry-date">
-                                                <span>July 24, 2019 </span>
-                                            </div><!--./ entry-date -->
-                                        </div><!--./ entry-meta-content -->
-                                    </div><!--./ content-entry-wrap -->
-                                    <div class="thumb-wrap">
-                                        <a href="post-details.html">
-                                            <img src="http://via.placeholder.com/100x100" alt="post">
-                                        </a>
-                                    </div><!--./ thumb-wrap -->
-                                </article><!--./ end post -->
-                                
-                                <article class="post side-post">
-                                    <div class="content-entry-wrap">
-                                        <h3 class="entry-title">
-                                            <a href="post-details.html">The rumored been iPhone could in hot pink not rose</a>
-                                        </h3><!--./ entry-title -->
-                                        <div class="entry-meta-content">
-                                            <div class="entry-date">
-                                                <span>July 24, 2019 </span>
-                                            </div><!--./ entry-date -->
-                                        </div><!--./ entry-meta-content -->
-                                    </div><!--./ content-entry-wrap -->
-                                    <div class="thumb-wrap">
-                                        <a href="post-details.html">
-                                            <img src="http://via.placeholder.com/100x100" alt="post">
-                                        </a>
-                                    </div><!--./ thumb-wrap -->
-                                </article><!--./ end post -->
-                            </div>
-                        </aside>
-                    </div><!--~./ end latest posts widget ~-->
-                    
-                    <!--~~~~~ Start Subscribe Widget~~~~~-->
-                        <!--~~~~~ Start Latest Posts Widget~~~~~-->
-                        <div class="col-lg-3">
-                        <aside class="widget latest-posts-widget latest-posts-widget-two">
-                            <h4 class="widget-title">Berita</h4>
-                            <div class="widget-content">
-                                <article class="post side-post">
-                                    <div class="content-entry-wrap">
-                                        <h3 class="entry-title">
-                                            <a href="post-details.html">This gun is advertise as the most popular gun</a>
-                                        </h3><!--./ entry-title -->
-                                        <div class="entry-meta-content">
-                                            <div class="entry-date">
-                                                <span>July 24, 2019 </span>
-                                            </div><!--./ entry-date -->
-                                        </div><!--./ entry-meta-content -->
-                                    </div><!--./ content-entry-wrap -->
-                                    <div class="thumb-wrap">
-                                        <a href="post-details.html">
-                                            <img src="http://via.placeholder.com/100x100" alt="post">
-                                        </a>
-                                    </div><!--./ thumb-wrap -->
-                                </article><!--./ end post -->
-                                
-                                <article class="post side-post">
-                                    <div class="content-entry-wrap">
-                                        <h3 class="entry-title">
-                                            <a href="post-details.html">The rumored been iPhone could in hot pink not rose</a>
-                                        </h3><!--./ entry-title -->
-                                        <div class="entry-meta-content">
-                                            <div class="entry-date">
-                                                <span>July 24, 2019 </span>
-                                            </div><!--./ entry-date -->
-                                        </div><!--./ entry-meta-content -->
-                                    </div><!--./ content-entry-wrap -->
-                                    <div class="thumb-wrap">
-                                        <a href="post-details.html">
-                                            <img src="http://via.placeholder.com/100x100" alt="post">
-                                        </a>
-                                    </div><!--./ thumb-wrap -->
-                                </article><!--./ end post -->
-                            </div>
-                        </aside>
-                    </div><!--~./ end latest posts widget ~-->
-                </div>
-            </div>
-        </div>
-        <!--~./ end footer widgets area ~-->
-        
-        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-            Start Footer Bottom Area
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-        <div class="footer-bottom-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="copyright-text">
-                            <p>Badan Kepegawaian Daerah Provinsi Riau. © Tahun 2020</p>
-                        </div>
-                    </div><!--~./ end copyright ~-->
-                    <div class="col-lg-6  col-md-6">
-                        <div class="footer-menu">
-                            <ul class="list">
-                                <li><a href="#">Hubungi Kami</a></li>
-                                <!-- <li><a href="#">Private Policy</a></li>
-                                <li><a href="#">Support</a></li>
-                                <li><a href="#">Use Of Terms</a></li> -->
-                            </ul>
-                        </div><!--~./ end footer menu ~-->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--~./ end footer bottom area ~-->
-    </footer>
-    <!--~./ end site footer ~-->
+   @include('frontend.include.footer')
     
     <!-- jQuery js -->
     <script src="{{ asset('assets/frontend/js/jquery.min.js')}}"></script>
@@ -591,5 +401,6 @@
     <script src="{{ asset('assets/frontend/js/plugins.js')}}"></script>
     <!-- main js -->
     <script src="{{ asset('assets/frontend/js/main.js')}}"></script>
+    @stack('js')
 </body>
 </html>

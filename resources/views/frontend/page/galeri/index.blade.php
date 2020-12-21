@@ -1,6 +1,6 @@
 
 
-@extends('frontend.main-2')
+@extends('frontend.main-1')
 
 @section('content')
 @include('frontend.include.breadcrumb')

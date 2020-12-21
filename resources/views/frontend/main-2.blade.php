@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
   
     <!-- Page Title -->
-    <title>Magala - Magazine and Blog Template</title>
+    <title>{{ $site_title }}</title>
     
     <!---Font Icon-->
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/fontawesome.all.min.css')}}">
@@ -37,9 +37,9 @@
                         <div class="top-navbar-left">
                         <div class="social-profile">
                             <ul class="social-share-two">
-                                <li><a href="#"><i class="fa fa-phone"></i> 021-3823033 / </a></li>
-                                <li><a href="#"><i class="fa fa-fax"></i> 021-3823033 / </a></li>
-                                <li><a href="#"><i class="fa fa-envelope"></i> aliakbar@riau.go.id</a></li>
+                                <li><a href="#"><i class="fa fa-phone"></i> {{ $pengaturan_website->telpon }} / </a></li>
+                                <li><a href="#"><i class="fa fa-fax"></i> {{ $pengaturan_website->telpon }} / </a></li>
+                                <li><a href="#"><i class="fa fa-envelope"></i> {{ $pengaturan_website->email }}</a></li>
                             </ul>
                         </div><!--~./ social-profile ~-->
                         </div><!--~./ top-navbar-left ~-->
@@ -69,7 +69,7 @@
                     <div class="col-lg-4">
                         <div class="site-logo-block">
                             <a class="navbar-brand site-logo" href="{{ url('/') }}">
-                                <img src="{{ asset('assets/frontend//images/logo/logo-bkd.png')}}" alt="logo">
+                                <img src="{{ asset('uploads/images/pengaturan/'.$pengaturan_website->logo)}}" alt="logo">
                             </a>  
                         </div><!--~./ site-logo-block ~-->
                     </div>

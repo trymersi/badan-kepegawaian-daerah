@@ -2,7 +2,7 @@
 
 @endpush
 
-@extends('frontend.main-2')
+@extends('frontend.main-1')
 
 @section('content')
 
@@ -51,7 +51,7 @@
                                             </div><!--./ entry-date -->
                                             
                                             <div class="entry-category">
-                                                <a class="cat" href="#">{{ $item->nama_kategori }}</a>
+                                                <a class="cat" href="{{ url('/kategori-berita/'.$item->slug_kategori) }}">{{ $item->nama_kategori }}</a>
                                             </div><!--./ entry-category -->
                                         </div><!--./ entry-meta-content -->
                                         <div class="entry-summary">
