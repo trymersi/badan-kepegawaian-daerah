@@ -726,3 +726,15 @@ function getJabatan($kode)
     return $sosmed;
     
 }
+
+function getGaleriDetail($id)
+{
+    $get = App\Models\DetailGaleri::galeriByID($id);
+    return $get;
+}
+
+function getYoutubeID($url)
+{
+    parse_str( parse_url( $url, PHP_URL_QUERY ), $my_array_of_vars );
+    return $my_array_of_vars['v'];    
+}

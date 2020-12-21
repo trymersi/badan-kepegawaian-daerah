@@ -7250,7 +7250,7 @@ ul.dropdown-content > .dropdown-trigger:hover > ul.dropdown-content > li:hover >
   display: flex;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
-  margin-bottom: 30px;
+  /*margin-bottom: 30px;*/
 }
 
 .widget .post.side-post > .thumb-wrap {

@@ -27,4 +27,24 @@ class Unduh extends Model
             ->get();
         return $data;
     }
+
+    public function getDataByKat($id)
+    {
+        $data = $this->leftJoin('beritas','beritas.id','unduhs.berita_id')
+            ->leftJoin('kategori_unduhans','kategori_unduhans.id','unduhs.kategori_unduhan_id')
+            ->select(
+                'kategori_unduhans.nama as nama_kategori',
+                'beritas.judul',
+                'unduhs.nama',
+                'unduhs.file',
+                'unduhs.keterangan',
+                'unduhs.id',
+                'unduhs.created_at',
+                'unduhs.updated_at',
+                )
+            ->where('kategori_unduhan_id',$id)
+            ->orderBy('unduhs.created_at','desc')
+            ->get();
+        return $data;
+    }
 }

@@ -15,7 +15,7 @@ class CreateLinkTerkaitsTable extends Migration
     {
         Schema::create('link_terkaits', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigIncrements('jenis')->nullable();
+            $table->string('jenis')->nullable();
             $table->string('nama')->nullable();
             $table->string('link')->nullable();
             $table->text('gambar')->nullable();

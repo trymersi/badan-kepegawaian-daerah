@@ -26,4 +26,35 @@ class GaleriGambar extends Model
             ->get();
         return $data;
     }
+
+    public function getHome()
+    {
+        $data = $this->select(
+                'galeri_gambars.id',
+                'galeri_gambars.nama',
+                'galeri_gambars.keterangan',
+                'galeri_gambars.gambar',
+                'galeri_gambars.slug',
+                'galeri_gambars.updated_at',
+            )
+            ->orderBy('galeri_gambars.created_at','desc')
+            ->get();
+        return $data;
+    }
+
+    public function getHomeSeluruh()
+    {
+        $data = $this->rightJoin('detail_galeris','detail_galeris.galeri_gambar_id','galeri_gambars.id')
+            ->select(
+                'galeri_gambars.id',
+                'detail_galeris.nama',
+                'galeri_gambars.keterangan',
+                'detail_galeris.gambar',
+                'galeri_gambars.updated_at',
+            )
+            ->orderBy('galeri_gambars.created_at','desc')
+            ->limit(12)
+            ->get();
+        return $data;
+    }
 }
