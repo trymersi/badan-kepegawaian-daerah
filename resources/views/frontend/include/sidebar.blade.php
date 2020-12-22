@@ -1,49 +1,236 @@
 <!--~~~~~ Start sidebar ~~~~~-->
 <div class="col-lg-3">
     <div class="sidebar">
-
+        <!--~~~~~ Start Bt Social Widget~~~~~-->
+        <aside class="widget bt-socail-widget">
+            <div class="widget-content">
+                <div class="bt-socail-profile">
+                    <a class="bt-facebook-icon icon" href="#" target="_blank">
+                        <span class="social-icon">
+                            <i class="fa fa-facebook"></i>
+                        </span>
+                        <span class="bt-count">30.2k</span>
+                        <span class="bt-media-type">Likes</span>
+                    </a>
+                </div><!--~./ bt-socail-profile ~-->
+                
+                <div class="bt-socail-profile">
+                    <a class="bt-google-plus-icon icon" href="#" target="_blank">
+                        <span class="social-icon">
+                            <i class="fa fa-google-plus"></i>
+                        </span>
+                        <span class="bt-count">10.2k</span>
+                        <span class="bt-media-type">Followers</span>
+                    </a>
+                </div><!--~./ bt-socail-profile ~-->
+                
+                <div class="bt-socail-profile">
+                    <a class="bt-twitter-icon icon" href="#" target="_blank">
+                        <span class="social-icon">
+                            <i class="fa fa-twitter"></i>
+                        </span>
+                        <span class="bt-count">62.4k</span>
+                        <span class="bt-media-type">Followers</span>
+                    </a>
+                </div><!--~./ bt-socail-profile ~-->
+                
+                <div class="bt-socail-profile">
+                    <a class="bt-youtube-icon icon" href="#" target="_blank">
+                        <span class="social-icon">
+                            <i class="fa fa-youtube"></i>
+                        </span>
+                        <span class="bt-count">30.2k</span>
+                        <span class="bt-media-type">Subscrib</span>
+                    </a>
+                </div><!--~./ bt-socail-profile ~-->
+                
+                <div class="bt-socail-profile">
+                    <a class="bt-instagram-icon icon" href="#" target="_blank">
+                        <span class="social-icon">
+                            <i class="fa fa-instagram"></i>
+                        </span>
+                        <span class="bt-count">30.2k</span>
+                        <span class="bt-media-type">Likes</span>
+                    </a>
+                </div><!--~./ bt-socail-profile ~-->
+                
+                <div class="bt-socail-profile">
+                    <a class="bt-vimeo-icon icon" href="#" target="_blank">
+                        <span class="social-icon">
+                            <i class="fa fa-vimeo"></i>
+                        </span>
+                        <span class="bt-count">10.4k</span>
+                        <span class="bt-media-type">Followers</span>
+                    </a>
+                </div><!--~./ bt-socail-profile ~-->
+                
+                <div class="bt-socail-profile">
+                    <a class="bt-pinterest-icon icon" href="#" target="_blank">
+                        <span class="social-icon">
+                            <i class="fa fa-pinterest"></i>
+                        </span>
+                        <span class="bt-count">10.2k</span>
+                        <span class="bt-media-type">Followers</span>
+                    </a>
+                </div><!--~./ bt-socail-profile ~-->
+                
+                <div class="bt-socail-profile">
+                    <a class="bt-soundcloud-icon icon" href="#" target="_blank">
+                        <span class="social-icon">
+                            <i class="fa fa-soundcloud"></i>
+                        </span>
+                        <span class="bt-count">5.2k</span>
+                        <span class="bt-media-type">Followers</span>
+                    </a>
+                </div><!--~./ bt-socail-profile ~-->
+            </div>
+        </aside><!--~./ end bt social widget ~-->
+        
+        <!--~~~~~ Start Bt Widget Categories~~~~~-->
+        <aside class="widget bt-widget-categories">
+            <div class="widget-content">
+                <a href="#" class="cat-item">
+                    <div class="cat-item-inner">
+                        <div class="cat-thumb">
+                            <img src="http://via.placeholder.com/130x100" alt="img">
+                        </div>
+                        <div class="cat-name">
+                            <span>LifeStyle</span>
+                        </div>
+                    </div>
+                </a><!--~./ cat-item ~-->
+                
+                <a href="#" class="cat-item">
+                    <div class="cat-item-inner">
+                        <div class="cat-thumb">
+                            <img src="http://via.placeholder.com/130x100" alt="img">
+                        </div>
+                        <div class="cat-name">
+                            <span>Business</span>
+                        </div>
+                    </div>
+                </a><!--~./ cat-item ~-->
+                
+                <a href="#" class="cat-item">
+                    <div class="cat-item-inner">
+                        <div class="cat-thumb">
+                            <img src="http://via.placeholder.com/130x100" alt="img">
+                        </div>
+                        <div class="cat-name">
+                            <span>Fashion</span>
+                        </div>
+                    </div>
+                </a><!--~./ cat-item ~-->
+                
+                <a href="#" class="cat-item">
+                    <div class="cat-item-inner">
+                        <div class="cat-thumb">
+                            <img src="http://via.placeholder.com/130x100" alt="img">
+                        </div>
+                        <div class="cat-name">
+                            <span>Food</span>
+                        </div>
+                    </div>
+                </a><!--~./ cat-item ~-->
+                
+                <a href="#" class="cat-item">
+                    <div class="cat-item-inner">
+                        <div class="cat-thumb">
+                            <img src="http://via.placeholder.com/130x100" alt="img">
+                        </div>
+                        <div class="cat-name">
+                            <span>Health</span>
+                        </div>
+                    </div>
+                </a><!--~./ cat-item ~-->
+                
+                <a href="#" class="cat-item">
+                    <div class="cat-item-inner">
+                        <div class="cat-thumb">
+                            <img src="http://via.placeholder.com/130x100" alt="img">
+                        </div>
+                        <div class="cat-name">
+                            <span>Sport</span>
+                        </div>
+                    </div>
+                </a><!--~./ cat-item ~-->
+            </div>
+        </aside><!--~./ end bt widget categories ~-->
+           
         <!--~~~~~ Start Popular Posts Widget~~~~~-->
         <aside class="widget popular-posts-widget">
-            <h4 class="widget-title"><span>{{ $sidebar_name }}</span></h4>
+            <h4 class="widget-title"><span>Popular Post</span></h4>
             <div class="widget-content">
-                @php $no = 1;
-                @endphp
-                @foreach($profil as $item)
                 <article class="post side-post">
                     <div class="thumb-wrap">
                         <a href="post-details.html">
-                            <img src="{{ asset('assets/frontend/images/profil/profil.png')}}" alt="profil">
+                            <img src="http://via.placeholder.com/100x100" alt="post">
                         </a>
-                        <span class="count">{{ $no }}</span>
+                        <span class="count">1</span>
                     </div><!--./ thumb-wrap -->
                     <div class="content-entry-wrap">
                         <h3 class="entry-title">
-                            <a href="{{ url('/profil/'.$item->slug) }}">{{ $item->nama }}</a>
+                            <a href="post-details.html">The rumored iPhone could come in hot pink</a>
                         </h3><!--./ entry-title -->
                         <div class="entry-meta-content">
                             <div class="entry-date">
-                                <span>{{ tgl_indo($item->updated_at) }} </span>
+                                <span>July 24, 2019 </span>
                             </div><!--./ entry-date -->
                         </div><!--./ entry-meta-content -->
                     </div>
                 </article><!--./ end post -->
-                @php $no ++;
-                @endphp
-                @endforeach
+                
+                <article class="post side-post">
+                    <div class="thumb-wrap">
+                        <a href="post-details.html">
+                            <img src="http://via.placeholder.com/100x100" alt="post">
+                        </a>
+                        <span class="count">2</span>
+                    </div><!--./ thumb-wrap -->
+                    <div class="content-entry-wrap">
+                        <h3 class="entry-title">
+                            <a href="post-details.html">This gun is advertise as the most popular gun</a>
+                        </h3><!--./ entry-title -->
+                        <div class="entry-meta-content">
+                            <div class="entry-date">
+                                <span>July 24, 2019 </span>
+                            </div><!--./ entry-date -->
+                        </div><!--./ entry-meta-content -->
+                    </div>
+                </article><!--./ end post -->
+                
+                <article class="post side-post">
+                    <div class="thumb-wrap">
+                        <a href="post-details.html">
+                            <img src="http://via.placeholder.com/100x100" alt="post">
+                        </a>
+                        <span class="count">3</span>
+                    </div><!--./ thumb-wrap -->
+                    <div class="content-entry-wrap">
+                        <h3 class="entry-title">
+                            <a href="post-details.html">How to live with some vegeterian when you eat </a>
+                        </h3><!--./ entry-title -->
+                        <div class="entry-meta-content">
+                            <div class="entry-date">
+                                <span>July 24, 2019 </span>
+                            </div><!--./ entry-date -->
+                        </div><!--./ entry-meta-content -->
+                    </div>
+                </article><!--./ end post -->
             </div>
         </aside><!--~./ end popular posts widget ~-->
           
         <!--~~~~~ Start Widget Advertisement ~~~~~-->
-        {{-- <aside class="widget widget-text">           
+        <aside class="widget widget-text">           
             <div class="widget-content">
                 <a title="add" href="#">
                     <img src="http://via.placeholder.com/270x270" alt="">
                 </a>
             </div>
-        </aside><!--~./ end widget advertisement ~--> --}}
+        </aside><!--~./ end widget advertisement ~-->
            
         <!--~~~~~ Start Subscribe Widget~~~~~-->
-        {{-- <aside class="widget tb-subscribe-widget">
+        <aside class="widget tb-subscribe-widget">
             <div class="widget-content">
                 <div class="subscribe-box">
                     <div class="icon">
@@ -61,6 +248,6 @@
                      </div>
                 </div>
             </div>
-        </aside><!--~./ end subscribe widget ~--> --}}
+        </aside><!--~./ end subscribe widget ~-->
     </div>
 </div><!--~./ end sidebar ~-->

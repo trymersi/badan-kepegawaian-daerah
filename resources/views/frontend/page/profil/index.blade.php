@@ -32,7 +32,7 @@
                 </div>
                 
                 <!--~~~~~ Start sidebar ~~~~~-->
-                @include('frontend.include.sidebar')
+                @include('frontend.include.sidebar-profil')
             </div>
         </div>
     </div><!--~./ end main wrapper ~-->
