@@ -40,6 +40,23 @@ class AppServiceProvider extends ServiceProvider
             ->groupBy('beritas.id')
             ->limit(6)
             ->get());
+
+            $view->with('berita_terbaru',\App\Models\Berita::leftJoin('kategori_beritas','kategori_beritas.id','beritas.kategori_berita_id')
+            ->select(
+                'kategori_beritas.nama as nama_kategori',
+                'kategori_beritas.slug as slug_kategori',
+                'beritas.id',
+                'beritas.judul',
+                'beritas.meta_deskripsi',
+                'beritas.thumbnail',
+                'beritas.updated_at',
+                'beritas.slug',
+            )
+            ->orderBy('beritas.created_at','desc')
+            ->groupBy('beritas.id')
+            ->limit(10)
+            ->get());
+
             $view->with('kategori_unduhan',\App\Models\KategoriUnduhan::orderBy('nama','asc')->get());
             $view->with('profil',\App\Models\Profil::orderBy('nama','asc')->get());
             $view->with('aplikasi',\App\Models\Aplikasi::orderBy('nama','asc')->get());

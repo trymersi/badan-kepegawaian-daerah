@@ -44,7 +44,7 @@
                     </div><!--~./ end latest posts widget ~-->
                     
                     <!--~~~~~ Start Latest Posts Widget~~~~~-->
-                    <div class="col-lg-3">
+                    <div class="col-lg-6">
                         <aside class="widget latest-posts-widget latest-posts-widget-two widget-categories">
                             <h4 class="widget-title">Unduhan</h4>
                             <div class="widget-content">
@@ -60,25 +60,6 @@
                         </aside>
                     </div><!--~./ end latest posts widget ~-->
 
-                    <div class="col-lg-3">
-                        <aside class="widget latest-posts-widget latest-posts-widget-two">
-                            <h4 class="widget-title">Berita</h4>
-                            <div class="widget-content">
-                                @foreach($kategori_unduhan_footer as $item)
-                                <article class="post side-post">
-                                    <div class="content-entry-wrap">
-                                        
-                                        <h3 class="entry-title">
-                                            <a href="{{ url('/unduhan/'.$item->slug) }}">{{ $item->nama }}</a>
-                                        </h3><!--./ entry-title -->
-                                        
-                                    </div><!--./ content-entry-wrap -->
-                                
-                                </article><!--./ end post -->
-                                @endforeach
-                            </div>
-                        </aside>
-                    </div><!--~./ end latest posts widget ~-->
                     
                     <!--~~~~~ Start Subscribe Widget~~~~~-->
                         <!--~~~~~ Start Latest Posts Widget~~~~~-->

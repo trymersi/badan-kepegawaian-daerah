@@ -250,26 +250,30 @@
             <div class="sidebar">
                 <!--~~~~~ Start Popular Posts Widget~~~~~-->
                 <aside class="widget popular-posts-widget">
-                    <h4 class="widget-title"><span>Recent Post</span></h4>
+                    <h4 class="widget-title"><span>Berita Terbaru</span></h4>
                     <div class="widget-content">
-                        <article class="post side-post" style="margin-bottom: 20px;">
-                            <div class="thumb-wrap">
-                                <a href="post-details.html">
-                                    <img src="http://via.placeholder.com/100x100" alt="post">
-                                </a>
-                                <span class="count">1</span>
-                            </div><!--./ thumb-wrap -->
-                            <div class="content-entry-wrap">
-                                <h3 class="entry-title">
-                                    <a href="post-details.html">The rumored iPhone could come in hot pink</a>
-                                </h3><!--./ entry-title -->
-                                <div class="entry-meta-content">
-                                    <div class="entry-date">
-                                        <span>July 24, 2019 </span>
-                                    </div><!--./ entry-date -->
-                                </div><!--./ entry-meta-content -->
-                            </div>
-                        </article><!--./ end post -->
+                        @foreach ($berita_terbaru as $item)
+                            <article class="post side-post" style="margin-bottom: 20px;">
+                                <div class="thumb-wrap">
+                                    <a href="{{ url('/berita/'.$item->slug) }}">
+                                        <img src="{{ asset('uploads/images/gambar-berita/'.$item->thumbnail) }}" alt="{{ $item->judul }}" width="100" height="100">
+                                    </a>
+                                    <span class="count">1</span>
+                                </div><!--./ thumb-wrap -->
+                                <div class="content-entry-wrap">
+                                    <h3 class="entry-title">
+                                        <a href="{{ url('/berita/'.$item->slug) }}">{{ ucwords($item->judul) }}</a>
+                                    </h3><!--./ entry-title -->
+                                    <div class="entry-meta-content">
+                                        <div class="entry-date">
+                                            <span>{{ tgl_indo($item->updated_at) }} </span>
+                                        </div><!--./ entry-date -->
+                                    </div><!--./ entry-meta-content -->
+                                </div>
+                            </article><!--./ end post -->
+                            
+                        @endforeach
+                        
 
                         
                     </div>
