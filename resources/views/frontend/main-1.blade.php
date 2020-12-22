@@ -39,9 +39,9 @@
                         <div class="top-navbar-left">
                         <div class="social-profile">
                             <ul class="social-share-two">
-                                <li><a href="#"><i class="fa fa-phone"></i> 021-3823033 / </a></li>
-                                <li><a href="#"><i class="fa fa-fax"></i> 021-3823033 / </a></li>
-                                <li><a href="#"><i class="fa fa-envelope"></i> aliakbar@riau.go.id</a></li>
+                                <li><a href="#"><i class="fa fa-phone"></i> {{ $pengaturan_website->telpon }} / </a></li>
+                                <li><a href="#"><i class="fa fa-fax"></i> {{ $pengaturan_website->telpon }} / </a></li>
+                                <li><a href="#"><i class="fa fa-envelope"></i> {{ $pengaturan_website->email }}</a></li>
                             </ul>
                         </div><!--~./ social-profile ~-->
                         </div><!--~./ top-navbar-left ~-->
@@ -117,7 +117,15 @@
                                                         <li><a href="index07.html">Blog two</a></li>
                                                         <li><a href="index08.html">Blog Three</a></li>
                                                         <li><a href="index09.html">Blog four</a></li>
-                                                        <li><a href="index10.html">Blog five</a></li>
+                                                        <li class="dropdown-trigger"><a href="index10.html">Blog five</a>
+                                                            <ul class="dropdown-content">
+                                                                <li><a href="index06.html">Blog one</a></li>
+                                                                <li><a href="index07.html">Blog two</a></li>
+                                                                <li><a href="index08.html">Blog Three</a></li>
+                                                                <li><a href="index09.html">Blog four</a></li>
+                                                                <li class="dropdown-trigger"><a href="index10.html">Blog five</a></li>
+                                                            </ul>
+                                                        </li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -125,7 +133,7 @@
                                         <li class="dropdown-trigger"><a href="#"><i class="fa fa-newspaper-o" aria-hidden="true"></i> BERITA</a>
                                             <ul class="dropdown-content">
                                                 @foreach($kategori_berita_menu as $item)
-                                                <li><a href="{{ url('/kategori-berita') }}">{{ $item->nama }}</a></li>
+                                                <li><a href="{{ url('/kategori-berita/'.$item->slug) }}">{{ $item->nama }}</a></li>
                                                 @endforeach
                                                 <li><a href="{{ url('/berita') }}">Seluruh Berita</a></li>
                                             </ul>

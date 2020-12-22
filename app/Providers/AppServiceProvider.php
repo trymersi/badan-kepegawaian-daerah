@@ -36,7 +36,7 @@ class AppServiceProvider extends ServiceProvider
                 'beritas.updated_at',
                 'beritas.slug',
             )
-            ->orderBy('beritas.created_at','desc')
+            ->orderBy('beritas.dilihat','desc')
             ->groupBy('beritas.id')
             ->limit(6)
             ->get());
