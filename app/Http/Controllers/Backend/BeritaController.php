@@ -66,6 +66,7 @@ class BeritaController extends Controller
      */
     public function store(Request $request)
     {
+        
         $validator = Validator::make($request->all(), [
             'judul_berita' => 'required',
             'kategori_berita' => 'required',
@@ -117,6 +118,7 @@ class BeritaController extends Controller
         $this->beritaClass->judul = $request->judul_berita;
         $this->beritaClass->konten = $dom->saveHTML();
         $this->beritaClass->thumbnail = $thumb;
+        $this->beritaClass->tajuk = ($request->tajuk_berita) ? 1:0;
         $this->beritaClass->meta_deskripsi = meta_description($content);
         $this->beritaClass->meta_keyword = meta_keywords($request->judul_berita);    
         $this->beritaClass->save();
@@ -238,6 +240,7 @@ class BeritaController extends Controller
         $edit->user_id = Auth::user()->id;
         $edit->judul = $request->judul_berita;
         $edit->konten = $dom->saveHTML();
+        $edit->tajuk = ($request->tajuk_berita) ? 1:0;
         if($edit->thumbnail == '' || $edit->thumbnail == 'default.jpg'):
         $edit->thumbnail = $thumb;
         endif;

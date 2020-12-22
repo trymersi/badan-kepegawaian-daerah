@@ -39,7 +39,20 @@
                            </div>
                          </div>
                        </div>
-                       
+                       <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group @error('judul_berita') error @enderror">
+                            <div class="demo-checkbox">
+                              <input type="checkbox" id="basic_checkbox_1" name="tajuk_berita" @if($edit->tajuk == 1) checked="" @endif>
+                              <label for="basic_checkbox_1">Centang jika ingin memasukan berita ini pada bagian tajuk berita</label>
+                            </div>
+                            @error('judul_berita')
+                            <div class="help-block"><ul role="alert"><li>{{$message}}</li></ul></div>
+                            @enderror
+                          </div>
+                        </div>
+                      
+                      </div>
                        <div class="form-group">
                          <label>Isi Berita</label>
                          <textarea rows="5"  id="summernote" name="isi_berita" class="form-control">{!! old('isi_berita',$edit->konten) !!}</textarea>

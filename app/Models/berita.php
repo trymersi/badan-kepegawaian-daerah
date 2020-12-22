@@ -170,4 +170,25 @@ class Berita extends Model
             ->get();
         return $data;
     }
+
+    public function getDataTajuk()
+    {
+        $data = $this->leftJoin('kategori_beritas','kategori_beritas.id','beritas.kategori_berita_id')
+            ->select(
+                'kategori_beritas.nama as nama_kategori',
+                'kategori_beritas.slug as slug_kategori',
+                'beritas.id',
+                'beritas.judul',
+                'beritas.meta_deskripsi',
+                'beritas.thumbnail',
+                'beritas.updated_at',
+                'beritas.slug',
+            )
+            ->orderBy('beritas.created_at','desc')
+            ->groupBy('beritas.id')
+            ->where('beritas.tajuk',1)
+            ->limit(10)
+            ->get();
+        return $data;
+    }
 }

@@ -24,6 +24,7 @@ class CreateBeritasTable extends Migration
             $table->string('meta_deskripsi')->nullable();
             $table->string('meta_keyword')->nullable();
             $table->string('slug')->nullable();
+            $table->string('tajuk')->nullable();
             $table->integer('dilihat')->nullable();
             $table->timestamps();
             $table->softDeletes();

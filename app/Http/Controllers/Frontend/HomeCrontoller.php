@@ -80,6 +80,7 @@ class HomeCrontoller extends Controller
         $this->data['galeri_seluruh'] = $this->galeriGambar->getHomeSeluruh();
         $this->data['video'] = $this->galeriVideo->orderBy('created_at','asc')->limit(5)->get();
         $this->data['berita'] = $this->beritaClass->getDataHome();
+        $this->data['berita_tajuk'] = $this->beritaClass->getDataTajuk();
         $this->data['page_name'] = 'tabel data bidang';
         return view('frontend.page.beranda.index',$this->data);
     }

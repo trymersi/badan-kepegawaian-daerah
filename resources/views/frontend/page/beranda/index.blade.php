@@ -39,93 +39,32 @@
                 <div class="col-12">
                     <div id="popular-posts-carousel" class="owl-carousel carousel-nav-circle">
                        <!--~~~~~ Start Post ~~~~~-->
+                       @foreach($berita_tajuk as $item)
                         <article class="post hentry post-grid">
                             <div class="entry-thumb">
                                 <figure class="thumb-wrap">
-                                    <a href="post-details.html">
-                                        <img src="http://via.placeholder.com/370x370" alt="post">
+                                    <a href="{{ url('/berita/'.$item->slug) }}">
+                                        <img src="{{ asset('uploads/images/gambar-berita/'.$item->thumbnail) }}" alt="{{ $item->judul }}">
                                     </a>
                                 </figure><!--./ thumb-wrap -->
                             </div><!--./ entry-thumb -->
                             <div class="content-entry-wrap">
                                 <div class="entry-content">
                                     <h3 class="entry-title">
-                                        <a href="post-details.html">The five biggest fashion looks for next spring</a>
+                                        <a href="{{ url('/berita/'.$item->slug) }}">{{ ucwords($item->judul) }}</a>
                                     </h3><!--./ entry-title -->
                                 </div><!--./ entry-content -->
                                 <div class="entry-meta-content">
-                                    <div class="entry-meta-author">
-                                        <div class="entry-author-thumb">
-                                            <img class="avatar photo" src="http://via.placeholder.com/40x40" alt="author">
-                                        </div>
-                                        <div class="entry-author-name">
-                                            <a href="#">Kinda Arafa </a>
-                                        </div>
-                                    </div><!--./ entry-meta-author -->
                                     <div class="entry-date">
-                                        <span>October 24, 2019</span>
+                                        <span>{{ tgl_indo($item->updated_at) }} </span>
                                     </div><!--./ entry-date -->
                                     <div class="entry-category">
-                                        <a class="cat" href="#">Gaming</a>
+                                        <a class="cat" href="{{ url('/kategori-berita/'.$item->slug_kategori) }}">{{ $item->nama_kategori }}</a>
                                     </div><!--./ entry-category -->
-                                </div><!--./ thumb-wrap -->
+                                </div><!--./ entry-meta-content -->
                             </div><!--./ content-entry-wrap -->
                         </article><!--~./ end post ~-->
-
-                        <!--~~~~~ Start Post ~~~~~-->
-                        <article class="post hentry post-grid">
-                            <div class="entry-thumb">
-                                <figure class="thumb-wrap">
-                                    <a href="post-details.html">
-                                        <img src="http://via.placeholder.com/370x370" alt="post">
-                                    </a>
-                                    <div class="featured-badge-list">
-                                        <a class="trending" href="#">
-                                            <span class="fab fa-gripfire"></span>
-                                        </a>
-                                    </div><!--./ featured-badge-list -->
-                                </figure><!--./ thumb-wrap -->
-                            </div><!--./ entry-thumb -->
-                            <div class="content-entry-wrap">
-                                <div class="entry-content">
-                                    <h3 class="entry-title">
-                                        <a href="post-details.html">Cold skateboard an annual booking release in brazil</a>
-                                    </h3><!--./ entry-title -->
-                                </div><!--./ entry-content -->
-                                <div class="entry-meta-content">
-                                    <div class="entry-meta-author">
-                                        <div class="entry-author-thumb">
-                                            <img class="avatar photo" src="http://via.placeholder.com/40x40" alt="author">
-                                        </div>  
-                                        <div class="entry-author-name">
-                                            <a href="#">Amany Arafa</a>
-                                        </div>
-                                    </div><!--./ entry-meta-author -->
-                                    <div class="entry-date">
-                                        <span>October 24, 2019</span>
-                                    </div><!--./ entry-date -->
-                                    <div class="entry-category">
-                                        <a class="cat" href="#">Business</a>
-                                    </div><!--./ entry-category -->
-                                </div><!--./ thumb-wrap -->
-                            </div><!--./ content-entry-wrap -->
-                        </article><!--~./ end post ~-->
-                        <!--~~~~~ Start Post ~~~~~-->
-                        <article class="post hentry post-grid">
-                            <div class="entry-thumb">
-                                <figure class="thumb-wrap">
-                                    <a href="post-details.html">
-                                        <img src="http://via.placeholder.com/370x370" alt="post">
-                                    </a>
-                                    <div class="featured-badge-list">
-                                        <a class="featured" href="#">
-                                            <span class="fa fa-bolt"></span>
-                                        </a>
-                                    </div><!--./ featured-badge-list -->
-                                </figure><!--./ thumb-wrap -->
-                            </div><!--./ entry-thumb -->
-                            
-                        </article><!--~./ end post ~-->
+                        @endforeach
                     </div>
                 </div>
             </div>
