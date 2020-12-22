@@ -117,6 +117,16 @@ class HomeCrontoller extends Controller
         return view('frontend.page.berita.kategori',$this->data);
     }
 
+    public function pencarianBerita(Request $request)
+    {
+        
+        $this->data['category_name'] = 'Pencarian';
+        $this->data['page_name'] = "Pencarian ". '"'.$request->pencarian.'"';
+        $this->data['list_berita'] = $this->beritaClass->getPencarian($request->pencarian);
+        $this->data['site_title'] = '✅ ' .$request->pencarian.' - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
+        return view('frontend.page.berita.pencarian',$this->data);
+    }
+
     public function profil($id)
     {
         $profil = $this->Profil->where('slug',$id)->first();

@@ -180,8 +180,8 @@
                                         <span>PENCARIAN</span>
                                     </div>
                                     <div class="search-form">
-                                        <form action="#">
-                                            <input type="search" placeholder="Search">
+                                        <form action="{{url('/pencarian-berita')}}">
+                                            <input name="pencarian" type="search" placeholder="Cari Berita">
                                             <button type="submit"><i class='fa fa-search'></i></button>
                                         </form>
                                     </div>

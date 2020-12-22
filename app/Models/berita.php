@@ -191,4 +191,25 @@ class Berita extends Model
             ->get();
         return $data;
     }
+
+    public function getPencarian($id)
+    {
+        $data = $this->leftJoin('kategori_beritas','kategori_beritas.id','beritas.kategori_berita_id')
+            ->leftJoin('users','users.id','beritas.user_id')
+            ->select(
+                'users.nama as nama_user',
+                'kategori_beritas.nama as nama_kategori',
+                'kategori_beritas.slug as slug_kategori',
+                'beritas.id',
+                'beritas.judul',
+                'beritas.meta_deskripsi',
+                'beritas.thumbnail',
+                'beritas.updated_at',
+                'beritas.slug',
+            )
+            ->orderBy('beritas.created_at','desc')
+            ->where('beritas.judul','LIKE','%'.$id.'%')
+            ->paginate(15);
+        return $data;
+    }
 }

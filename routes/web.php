@@ -25,6 +25,7 @@ Route::prefix('/')->group(function(){
     Route::get('/unduhan/{id}', "Frontend\HomeCrontoller@unduhanDetail");
     Route::get('/unduhan/table/{id}','Frontend\HomeCrontoller@tableUnduhan');
     Route::get('/bidang/{id}', "Frontend\HomeCrontoller@detailBidang");  
+    Route::get('/pencarian-berita', ['as' => 'pencarian', 'uses' => 'Frontend\HomeCrontoller@pencarianBerita']);
 });
 
 Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()
