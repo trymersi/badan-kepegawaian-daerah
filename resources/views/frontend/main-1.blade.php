@@ -143,6 +143,13 @@
                                                 @foreach($profil as $item)
                                                 <li><a href="{{ url('/profil/'.$item->slug) }}">{{ $item->nama }}</a></li>
                                                 @endforeach
+                                                <li class="dropdown-trigger"><a href="#">Bidang</a>
+                                                    <ul class="dropdown-content">
+                                                        @foreach($bidang_menu as $item)
+                                                        <li><a href="{{ url('/bidang/'.$item->slug) }}">{{ $item->nama }}</a></li>
+                                                        @endforeach
+                                                    </ul>
+                                                </li>
                                             </ul>
                                         </li>
                                         <li class="dropdown-trigger"><a href="#"><i class="fa fa-download" aria-hidden="true"></i> UNDUHAN</a>

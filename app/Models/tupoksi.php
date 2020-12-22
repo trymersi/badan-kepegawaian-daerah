@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
-
+use DB;
 class Tupoksi extends Model
 {
     use HasFactory,SoftDeletes;
@@ -26,6 +26,10 @@ class Tupoksi extends Model
             ->groupBy('tupoksis.id')
             ->get();
         return $data;
+    }
 
+    public static function getSub($id)
+    {
+        return DB::Table('tupoksis')->where('sub_bidang_id',$id)->get();
     }
 }

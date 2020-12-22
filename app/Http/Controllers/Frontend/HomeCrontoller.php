@@ -16,8 +16,12 @@ use App\Models\Unduh;
 use App\Models\kategoriUnduhan;
 use App\Models\KategoriBerita;
 use App\Models\Profil;
+use App\Models\Bidang;
+use App\Models\SubBidang;
+use App\Models\Tupoksi;
 use DataTables;
 use Carbon\Carbon;
+
 
 class HomeCrontoller extends Controller
 {
@@ -34,6 +38,9 @@ class HomeCrontoller extends Controller
     private $kategoriUnduh;
     private $kategoriBerita;
     private $Profil;
+    private $bidangClass;
+    private $subBidang;
+    private $tupoksiClass;
 
     public function __construct()
     {
@@ -49,7 +56,9 @@ class HomeCrontoller extends Controller
         $this->kategoriUnduh = new kategoriUnduhan;
         $this->kategoriBerita = new KategoriBerita;
         $this->Profil = new Profil;
-
+        $this->bidangClass = new Bidang;
+        $this->subBidang = new SubBidang;
+        $this->tupoksiClass = new Tupoksi;
         $this->data = [
             'category_name' => 'Dashboard',
             'main_url' => 'dashboard',
@@ -154,6 +163,18 @@ class HomeCrontoller extends Controller
         $this->data['detail_galeri'] = $this->galeriDetail->where('galeri_gambar_id',$galeri->id)->get();
         $this->data['site_title'] = '✅ Galeri '.$galeri->nama.' - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
         return view('frontend.page.galeri.detail',$this->data);
+    }
+
+    public function detailBidang($id)
+    {
+        $bidang = $this->bidangClass->where('slug',$id)->first();
+        $this->data['category_name'] = 'Bidang';
+        $this->data['page_name'] = 'Bidang '.$bidang->nama;
+        $this->data['data_bidang'] = $bidang;
+        $this->data['tupoksi_bidang'] = $this->tupoksiClass->where('bidang_id',$bidang->id)->get();
+        $this->data['sub_bidang'] = $this->subBidang->where('bidang_id',$bidang->id)->get();
+        $this->data['site_title'] = '✅ Bidang '.$bidang->nama.' - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
+        return view('frontend.page.bidang.index',$this->data);
     }
 
     public function tableUnduhan($id)

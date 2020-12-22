@@ -23,7 +23,8 @@ Route::prefix('/')->group(function(){
     Route::get('/galeri/{id}', "Frontend\HomeCrontoller@galeriDetail");   
     Route::get('/unduhan', "Frontend\HomeCrontoller@unduhan");
     Route::get('/unduhan/{id}', "Frontend\HomeCrontoller@unduhanDetail");
-    Route::get('/unduhan/table/{id}','Frontend\HomeCrontoller@tableUnduhan');  
+    Route::get('/unduhan/table/{id}','Frontend\HomeCrontoller@tableUnduhan');
+    Route::get('/bidang/{id}', "Frontend\HomeCrontoller@detailBidang");  
 });
 
 Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()

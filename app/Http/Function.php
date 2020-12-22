@@ -738,3 +738,47 @@ function getYoutubeID($url)
     parse_str( parse_url( $url, PHP_URL_QUERY ), $my_array_of_vars );
     return $my_array_of_vars['v'];    
 }
+
+function nomorIndo($nomor)
+{
+    switch($nomor)
+    {
+        case 1 :
+            $no = "Satu";
+            break;
+        case 2 :
+            $no = "Dua";
+            break;
+        case 3 :
+            $no = "Tiga";
+            break;
+        case 4 :
+            $no = "Empat";
+            break;
+        case 5 :
+            $no = "Lima";
+            break;
+        case 6 :
+            $no = "Enam";
+            break;
+        case 7 :
+            $no = "Tujuh";
+            break;
+        case 8 :
+            $no = "Delapan";
+            break;
+        case 9 :
+            $no = "Sembilan";
+            break;
+        case 10 :
+            $no = "Sepuluh";
+            break;
+    }
+    return $no;
+}
+
+function getTupoksiSub($id)
+{
+    $get = App\Models\Tupoksi::getSub($id);
+    return $get;
+}

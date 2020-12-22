@@ -4,7 +4,7 @@
 
         <!--~~~~~ Start Popular Posts Widget~~~~~-->
         <aside class="widget popular-posts-widget">
-            <h4 class="widget-title"><span>{{ $sidebar_name }}</span></h4>
+            <h4 class="widget-title"><span>Profil Kami</span></h4>
             <div class="widget-content">
                 @php $no = 1;
                 @endphp
