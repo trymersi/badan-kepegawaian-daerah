@@ -100,35 +100,8 @@
                             <div class="mainmenu-area">
                                 <nav class="menu">
                                     <ul id="nav">
-                                        <li class="dropdown-trigger"><a href="#"><i class="fa fa-home" aria-hidden="true"></i> BERANDA</a>
-                                            <ul class="dropdown-content">
-                                                <li class="dropdown-trigger"><a href="#">Magazine</a>
-                                                    <ul class="dropdown-content">
-                                                        <li><a href="{{ url('/') }}">Magazine one</a></li>
-                                                        <li><a href="index02.html">Magazine two</a></li>
-                                                        <li><a href="index03.html">Magazine Three</a></li>
-                                                        <li><a href="index04.html">Magazine four</a></li>
-                                                        <li><a href="index05.html">Magazine five</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="dropdown-trigger"><a href="#">Blog</a>
-                                                    <ul class="dropdown-content">
-                                                        <li><a href="index06.html">Blog one</a></li>
-                                                        <li><a href="index07.html">Blog two</a></li>
-                                                        <li><a href="index08.html">Blog Three</a></li>
-                                                        <li><a href="index09.html">Blog four</a></li>
-                                                        <li class="dropdown-trigger"><a href="index10.html">Blog five</a>
-                                                            <ul class="dropdown-content">
-                                                                <li><a href="index06.html">Blog one</a></li>
-                                                                <li><a href="index07.html">Blog two</a></li>
-                                                                <li><a href="index08.html">Blog Three</a></li>
-                                                                <li><a href="index09.html">Blog four</a></li>
-                                                                <li class="dropdown-trigger"><a href="index10.html">Blog five</a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
+                                        <li ><a href="{{ url('/') }}"><i class="fa fa-home" aria-hidden="true"></i> BERANDA</a>
+                                            
                                         </li>
                                         <li class="dropdown-trigger"><a href="#"><i class="fa fa-newspaper-o" aria-hidden="true"></i> BERITA</a>
                                             <ul class="dropdown-content">
@@ -157,6 +130,7 @@
                                                 @foreach($kategori_unduhan as $item)
                                                 <li><a href="{{ url('/unduhan/'.$item->slug) }}">{{ $item->nama }}</a></li>
                                                 @endforeach
+                                                <li><a href="{{ url('/unduhan') }}">Seluruh Unduhan</a></li>
                                             </ul>
                                         </li>
                                         <li class="dropdown-trigger"><a href="#"><i class="fa fa-list" aria-hidden="true"></i> APPS & LAINNYA</a>
