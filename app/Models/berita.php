@@ -142,6 +142,7 @@ class Berita extends Model
             )
             ->orderBy('beritas.created_at','desc')
             ->where('kategori_berita_id',$id)
+            ->whereNotIn('beritas.id',[$id])
             ->limit(3)
             ->get();
         return $data;

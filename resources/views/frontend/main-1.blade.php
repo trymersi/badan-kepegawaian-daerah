@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/fontawesome.min.css')}}">
     
     <!-- Place favicon.ico in the root directory -->
-    <link rel="shortcut icon" href="{{ asset('assets/frontend/images/favicon.ico')}}">
+    <link rel="shortcut icon" href="{{ asset('assets/backend/images/logo-letter.png') }}">
 
     <!-- Plugins css -->
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/plugins.css')}}">
@@ -71,7 +71,7 @@
                     <div class="col-lg-4">
                         <div class="site-logo-block">
                             <a class="navbar-brand site-logo" href="{{ url('/') }}">
-                                <img src="{{ asset('assets/frontend//images/logo/logo-bkd.png')}}" alt="logo">
+                                <img src="{{ asset('assets/frontend/images/logo/logo-bkd.png')}}" alt="logo">
                             </a>  
                         </div><!--~./ site-logo-block ~-->
                     </div>
@@ -138,10 +138,11 @@
                                                 <li><a href="{{ url('/berita') }}">Seluruh Berita</a></li>
                                             </ul>
                                         </li>
-                                        <li class="dropdown-trigger"><a href="#"><i class="fa fa-university" aria-hidden="true"></i> PROFILE</a>
+                                        <li class="dropdown-trigger"><a href="#"><i class="fa fa-university" aria-hidden="true"></i> PROFIL</a>
                                             <ul class="dropdown-content">
-                                                <li><a href="category-grid.html">Business</a></li>
-                                                <li><a href="category-list.html">Fashion</a></li>
+                                                @foreach($profil as $item)
+                                                <li><a href="{{ url('/profil/'.$item->slug) }}">{{ $item->nama }}</a></li>
+                                                @endforeach
                                             </ul>
                                         </li>
                                         <li class="dropdown-trigger"><a href="#"><i class="fa fa-download" aria-hidden="true"></i> UNDUHAN</a>
@@ -153,12 +154,12 @@
                                         </li>
                                         <li class="dropdown-trigger"><a href="#"><i class="fa fa-list" aria-hidden="true"></i> APPS & LAINNYA</a>
                                             <ul class="dropdown-content">
-                                                <li><a href="category-standard.html">Post standard</a></li>
-                                                <li><a href="category-grid.html">Post Grid Two</a></li>
-                                                <li><a href="category-list.html">Post list Three</a></li>
-                                                <li><a href="post-details.html">Post details One</a></li>
-                                                <li><a href="post-details-two.html">Post details Two</a></li>
-                                                <li><a href="post-details-three.html">Post details Three</a></li>
+                                                @foreach($aplikasi as $item)
+                                                <li><a target="_blank" href="{{ $item->link}}">{{ $item->nama }}</a></li>
+                                                @endforeach
+                                                @foreach($link_terkait as $item)
+                                                <li><a target="_blank" href="{{ $item->link}}">{{ $item->nama }}</a></li>
+                                                @endforeach
                                             </ul>
                                         </li>
                                     </ul>
@@ -385,7 +386,7 @@
     <!--~./ end magala side sidebar ~-->
     
     
-   @include('frontend.include.footer')
+    @include('frontend.include.footer')
     
     <!-- jQuery js -->
     <script src="{{ asset('assets/frontend/js/jquery.min.js')}}"></script>

@@ -28,45 +28,41 @@
                     </div><!--~./ end about us widget ~-->
                     
                     <!--~~~~~ Start Latest Posts Widget~~~~~-->
-                    <div class="col-lg-4">
-                        <aside class="widget latest-posts-widget latest-posts-widget-two">
+                    <div class="col-lg-3">
+                        <aside class="widget latest-posts-widget latest-posts-widget-two widget-categories">
                             <h4 class="widget-title">Tentang Kami</h4>
                             <div class="widget-content">
-                                <article class="post side-post">
-                                    <div class="content-entry-wrap">
-                                        <h3 class="entry-title">
-                                            <a href="post-details.html">The rumored been iPhone could in hot pink not rose</a>
-                                        </h3><!--./ entry-title -->
-                                        <div class="entry-meta-content">
-                                            <div class="entry-date">
-                                                <span>July 24, 2019 </span>
-                                            </div><!--./ entry-date -->
-                                        </div><!--./ entry-meta-content -->
-                                    </div><!--./ content-entry-wrap -->
-                                    
-                                </article><!--./ end post -->
-                                
-                                <article class="post side-post">
-                                    <div class="content-entry-wrap">
-                                        <h3 class="entry-title">
-                                            <a href="post-details.html">This gun is advertise as the most popular gun</a>
-                                        </h3><!--./ entry-title -->
-                                        <div class="entry-meta-content">
-                                            <div class="entry-date">
-                                                <span>July 24, 2019 </span>
-                                            </div><!--./ entry-date -->
-                                        </div><!--./ entry-meta-content -->
-                                    </div><!--./ content-entry-wrap -->
-                                   
-                                </article><!--./ end post -->
+                                <ul>  
+                                    @foreach($profil as $item)
+                                    <li class="cat-item">
+                                        <a href="{{ url('/profil/'.$item->slug) }}">{{ $item->nama }}</a>
+                                    </li>
+                                    @endforeach
+                                </ul>
                             </div>
                         </aside>
                     </div><!--~./ end latest posts widget ~-->
                     
                     <!--~~~~~ Start Latest Posts Widget~~~~~-->
-                    <div class="col-lg-5">
-                        <aside class="widget latest-posts-widget latest-posts-widget-two">
+                    <div class="col-lg-3">
+                        <aside class="widget latest-posts-widget latest-posts-widget-two widget-categories">
                             <h4 class="widget-title">Unduhan</h4>
+                            <div class="widget-content">
+                                <ul>  
+                                    @foreach($kategori_unduhan_footer as $item)
+                                    <li class="cat-item">
+                                        <a href="{{ url('/unduhan/'.$item->slug) }}">{{ $item->nama }}</a>
+                                    </li>
+                                    @endforeach
+                                </ul>
+                         
+                            </div>
+                        </aside>
+                    </div><!--~./ end latest posts widget ~-->
+
+                    <div class="col-lg-3">
+                        <aside class="widget latest-posts-widget latest-posts-widget-two">
+                            <h4 class="widget-title">Berita</h4>
                             <div class="widget-content">
                                 @foreach($kategori_unduhan_footer as $item)
                                 <article class="post side-post">

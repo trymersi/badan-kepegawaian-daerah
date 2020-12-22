@@ -18,6 +18,7 @@ Route::prefix('/')->group(function(){
     Route::get('/berita', "Frontend\HomeCrontoller@berita");
     Route::get('/berita/{id}', "Frontend\HomeCrontoller@detailBerita");
     Route::get('/kategori-berita/{id}', "Frontend\HomeCrontoller@kategoriBerita");
+    Route::get('/profil/{id}', "Frontend\HomeCrontoller@profil");
     Route::get('/galeri', "Frontend\HomeCrontoller@galeri");   
     Route::get('/galeri/{id}', "Frontend\HomeCrontoller@galeriDetail");   
     Route::get('/unduhan', "Frontend\HomeCrontoller@unduhan");

@@ -15,7 +15,10 @@ use App\Models\Slider;
 use App\Models\Unduh;
 use App\Models\kategoriUnduhan;
 use App\Models\KategoriBerita;
+use App\Models\Profil;
 use DataTables;
+use Carbon\Carbon;
+
 class HomeCrontoller extends Controller
 {
     private $data;
@@ -30,6 +33,7 @@ class HomeCrontoller extends Controller
     private $unduhClass;
     private $kategoriUnduh;
     private $kategoriBerita;
+    private $Profil;
 
     public function __construct()
     {
@@ -44,11 +48,12 @@ class HomeCrontoller extends Controller
         $this->unduhClass = new Unduh;
         $this->kategoriUnduh = new kategoriUnduhan;
         $this->kategoriBerita = new KategoriBerita;
+        $this->Profil = new Profil;
 
         $this->data = [
             'category_name' => 'Dashboard',
             'main_url' => 'dashboard',
-            'site_title' => 'Badan Kepegawaian Daerah Provinsi Riau - BERSIH - KOMPETEN - DISIPLIN'
+            'site_title' => '✅ Badan Kepegawaian Daerah Provinsi Riau - BERSIH - KOMPETEN - DISIPLIN'
         ];
     }
 
@@ -74,7 +79,7 @@ class HomeCrontoller extends Controller
     {
         $this->data['category_name'] = 'Seluruh berita';
         $this->data['list_berita'] = $this->beritaClass->getList();
-        $this->data['site_title'] = 'Seluruh Berita - BKD RIAU';
+        $this->data['site_title'] = '✅ Seluruh Berita - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
         return view('frontend.page.berita.index',$this->data);
     }
 
@@ -88,7 +93,7 @@ class HomeCrontoller extends Controller
         $this->data['category_name'] = $berita->nama_kategori;
         $this->data['kategori_related'] = $this->beritaClass->getListByKatRel($berita->id_kategori);
         $this->data['berita_related'] = $this->beritaClass->getRelated($berita->id);
-        $this->data['site_title'] = $berita->judul.' - BKD RIAU';
+        $this->data['site_title'] = '✅ ' .$berita->judul.' - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
         return view('frontend.page.berita.detail',$this->data);
     }
 
@@ -98,14 +103,26 @@ class HomeCrontoller extends Controller
         $this->data['category_name'] = 'Kategori Berita';
         $this->data['page_name'] = $kategori->nama;
         $this->data['list_berita'] = $this->beritaClass->getListByKat($kategori->id);
-        $this->data['site_title'] = $kategori->nama.' - BKD RIAU';
+        $this->data['site_title'] = '✅ ' .$kategori->nama.' - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
         return view('frontend.page.berita.kategori',$this->data);
+    }
+
+    public function profil($id)
+    {
+        $profil = $this->Profil->where('slug',$id)->first();
+        $this->data['category_name'] = 'Profil';
+        $this->data['sidebar_name'] = 'Profil Kami';
+        $this->data['page_name'] = $profil->nama;
+        $this->data['isi'] = $profil->isi;
+        $this->data['updated_at'] = Carbon::parse($profil->updated_at)->diffForHumans() ;
+        $this->data['site_title'] = '✅ ' .$profil->nama.' - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
+        return view('frontend.page.profil.index',$this->data);
     }
 
     public function unduhan()
     {
         $this->data['category_name'] = 'list seluruh unduhan';
-        $this->data['site_title'] = 'Seluruh Unduhan - BKD RIAU';
+        $this->data['site_title'] = '✅ Seluruh Unduhan - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
         return view('frontend.page.unduhan.index',$this->data);
     }
 
@@ -116,7 +133,7 @@ class HomeCrontoller extends Controller
         $this->data['page_name'] = $kategori->nama;
         $this->data['category_name'] = 'list seluruh unduhan';
         $this->data['id_kategori_unduhan'] = $kategori->id;
-        $this->data['site_title'] = $kategori->nama.' - BKD RIAU';
+        $this->data['site_title'] = '✅ ' .$kategori->nama.' - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
         return view('frontend.page.unduhan.detail',$this->data);
     }
 
@@ -124,7 +141,7 @@ class HomeCrontoller extends Controller
     {
         $this->data['category_name'] = 'data galeri';
         $this->data['galeri'] = $this->galeriGambar->getHome();
-        $this->data['site_title'] = 'Galeri - BKD RIAU';
+        $this->data['site_title'] = '✅ Galeri - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
         return view('frontend.page.galeri.index',$this->data);
     }
 
@@ -135,7 +152,7 @@ class HomeCrontoller extends Controller
         $this->data['category_name'] = 'galeri';
         $this->data['page_name'] = 'galeri '.$galeri->nama;
         $this->data['detail_galeri'] = $this->galeriDetail->where('galeri_gambar_id',$galeri->id)->get();
-        $this->data['site_title'] = 'Galeri '.$galeri->nama.' - BKD RIAU';
+        $this->data['site_title'] = '✅ Galeri '.$galeri->nama.' - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
         return view('frontend.page.galeri.detail',$this->data);
     }
 
