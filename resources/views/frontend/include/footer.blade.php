@@ -46,7 +46,7 @@
                     <!--~~~~~ Start Latest Posts Widget~~~~~-->
                     <div class="col-lg-6">
                         <aside class="widget latest-posts-widget latest-posts-widget-two widget-categories">
-                            <h4 class="widget-title">Unduhan</h4>
+                            <h4 class="widget-title">Unduhan Terbaru</h4>
                             <div class="widget-content">
                                 <ul>  
                                     @foreach($kategori_unduhan_footer as $item)

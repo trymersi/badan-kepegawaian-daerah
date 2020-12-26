@@ -735,8 +735,8 @@ function getGaleriDetail($id)
 
 function getYoutubeID($url)
 {
-    parse_str( parse_url( $url, PHP_URL_QUERY ), $my_array_of_vars );
-    return $my_array_of_vars['v'];    
+    preg_match("#(?<=v=)[a-zA-Z0-9-]+(?=&)|(?<=v\/)[^&\n]+(?=\?)|(?<=v=)[^&\n]+|(?<=youtu.be/)[^&\n]+#", $url, $matches);
+    return $matches[0];
 }
 
 function nomorIndo($nomor)

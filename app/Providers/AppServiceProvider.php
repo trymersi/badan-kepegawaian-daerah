@@ -63,7 +63,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('link_terkait',\App\Models\LinkTerkait::orderBy('nama','asc')->get());
             $view->with('kategori_berita_menu',\App\Models\KategoriBerita::orderBy('nama','asc')->get());
             $view->with('pengaturan_website',\App\Models\Pengaturan::first());
-            $view->with('kategori_unduhan_footer',\App\Models\KategoriUnduhan::orderBy('nama','asc')->limit(10)->get());
+            $view->with('kategori_unduhan_footer',\App\Models\Unduh::orderBy('created_at','asc')->limit(10)->get());
             $view->with('bidang_menu',\App\Models\Bidang::orderBy('nama','asc')->limit(10)->get());
         });
 

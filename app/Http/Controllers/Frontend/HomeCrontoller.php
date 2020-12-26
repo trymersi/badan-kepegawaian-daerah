@@ -96,6 +96,12 @@ class HomeCrontoller extends Controller
     public function detailBerita($id)
     {
         $berita = $this->beritaClass->getDetail($id);
+        if (!isset($_COOKIE['count']))
+        {
+            $increament = $this->beritaClass->find($berita->id);
+            $increament->increment('dilihat',1);
+        }
+
         $this->data['detail_berita'] = $berita;
         $this->data['unduhan'] = $this->unduhClass->where('berita_id',$berita->id)->get();
         $this->data['sebelum'] = $this->beritaClass->getSebelum($berita->id);

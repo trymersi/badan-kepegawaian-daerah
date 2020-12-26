@@ -173,35 +173,7 @@
         </div>
     </div><!--~./End frontpage popular posts ~-->
 
-    <div class="frontpage-popular-posts pb-80">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-header">
-                        <h2 class="section-title">Link BKD Kabupaten / Kota</h2>
-                    </div><!--~./ end section header ~-->
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-12">
-                    <div id="bkd-terkait-carousel" class="owl-carousel carousel-nav-circle">
-                        @foreach($link_terkait as $item)
-                        <article class="post hentry post-grid">
-                            <div class="entry-thumb">
-                                <figure class="thumb-wrap">
-                                    <a href="{{ $item->link }}" target="_blank">
-                                        <img src="{{ asset('uploads/images/link-terkait/'.$item->gambar) }}" width="350px" height="150px" alt="post">
-                                    </a>
-                                </figure><!--./ thumb-wrap -->
-                            </div><!--./ entry-thumb -->
-                        </article><!--~./ end post ~-->
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!--~./End frontpage popular posts ~-->
+    
 
     <div class="top-stories-block style-two ptb-80">
         <div class="container">
@@ -281,6 +253,36 @@
         </div>
     </div><!--~./ end top stories block ~-->
     
+    <div class="frontpage-popular-posts pb-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-header">
+                        <h2 class="section-title">Link BKD Kabupaten / Kota</h2>
+                    </div><!--~./ end section header ~-->
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <div id="bkd-terkait-carousel" class="owl-carousel carousel-nav-circle">
+                        @foreach($link_terkait as $item)
+                        <article class="post hentry post-grid">
+                            <div class="entry-thumb">
+                                <figure class="thumb-wrap">
+                                    <a href="{{ $item->link }}" target="_blank">
+                                        <img src="{{ asset('uploads/images/link-terkait/'.$item->gambar) }}" width="350px" height="150px" alt="post">
+                                    </a>
+                                </figure><!--./ thumb-wrap -->
+                            </div><!--./ entry-thumb -->
+                        </article><!--~./ end post ~-->
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--~./End frontpage popular posts ~-->
+
     <div class="video-channels-posts-block bg-blue ptb-80">
         <div class="container">
             <div class="row">
@@ -289,7 +291,7 @@
                         <!--~~~~~ Start Tab Pane ~~~~~--> 
                         <?php $i = 0; ?>
                         @foreach($video as $item)
-                        <div class="tab-pane fade show @if($i == 0) active @endif" id="{{ $item->slug }}" role="tabpanel">
+                        <div class="tab-pane fade  @if($i == 0) show active @endif" id="{{ $item->slug }}" role="tabpanel">
                             <div class="video-single">
                                 <iframe src="https://www.youtube.com/embed/{{ getYoutubeID($item->url_video) }}" allow="fullscreen" allowfullscreen></iframe>
                             </div>
@@ -302,7 +304,7 @@
                 <div class="col-lg-5">
                     <div class="filter-tab-area video-list">
                         <div class="section-header">
-                            <h2 class="section-title">Video Channels</h2>
+                            <h2 class="section-title">Galeri Video</h2>
                         </div><!--~./ end section header ~-->
                         
                         <div class="video-channels-inner tse-scrollable">
@@ -354,6 +356,8 @@
         </div>
     </div><!--~./ end video channels posts block ~-->
     
+    
+
 </div>
 <!-- End site content --> 
   
