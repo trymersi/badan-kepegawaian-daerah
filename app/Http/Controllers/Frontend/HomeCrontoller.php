@@ -97,6 +97,7 @@ class HomeCrontoller extends Controller
     {
         $berita = $this->beritaClass->getDetail($id);
         $this->data['detail_berita'] = $berita;
+        $this->data['unduhan'] = $this->unduhClass->where('berita_id',$berita->id)->get();
         $this->data['sebelum'] = $this->beritaClass->getSebelum($berita->id);
         $this->data['sesudah'] = $this->beritaClass->getSesudah($berita->id);
         $this->data['page_name'] = $berita->judul;

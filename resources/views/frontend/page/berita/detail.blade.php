@@ -71,6 +71,36 @@
                                     <div class="entry-content">
                                         {!! $detail_berita->konten !!}
                                     </div><!--entry content-->  
+                                    @if(count($unduhan) > 0)
+                                    <blockquote>
+                                        <img src="{{ asset('assets/frontend/images/icon/quote.png') }}" alt="icon">
+                                        <p>Data Dokumen Terkait</p>
+                                    </blockquote>
+                                    <div class="table-responsive">
+                                        <table id="tabel" class="tabel table table-striped display" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>NO</th>
+                                                    <th>NAMA DOKUMEN</th>
+                                                    <th>KETERANGAN / TENTANG</th>
+                                                    <th width="15%"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php $i = 1; ?>
+                                                @foreach($unduhan as $item)
+                                                <tr>
+                                                    <td>{{ $i }}</td>
+                                                    <td>{{ $item->nama }}</td>
+                                                    <td>{{ $item->keterangan }}</td>
+                                                    <td width="15%"><a href="{{ asset('/uploads/unduhan/'.$item->file) }}" target="_blank" class=""><i class="fa fa-download" aria-hidden="true"></i> Unduh</a></td>
+                                                </tr>
+                                                <?php $i++;?>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                      </div>
+                                    @endif
                                 </div>
                             </div>
 
@@ -107,15 +137,15 @@
                                         <article class="post hentry post-list post-list-small">
                                             <div class="entry-thumb">
                                                 <figure class="thumb-wrap">
-                                                    <a href="{{ ('/berita/'.$item->slug) }}">
-                                                        <img width="100px" height="100px" src="{{ ('uploads/images/gambar-berita/'.$item->thumbnail) }}" alt="{{ $item->judul }}">
+                                                    <a href="{{ url('/berita/'.$item->slug) }}">
+                                                        <img width="100px" height="100px" src="{{ asset('uploads/images/gambar-berita/'.$item->thumbnail) }}" alt="{{ $item->judul }}">
                                                     </a>
                                                 </figure><!--./ thumb-wrap -->
                                             </div><!--./ entry-thumb -->
                                             <div class="content-entry-wrap">
                                                 <div class="entry-content">
                                                     <h3 class="entry-title">
-                                                        <a href="{{ ('/berita/'.$item->slug) }}">{{ $item->judul }}</a>
+                                                        <a href="{{ url('/berita/'.$item->slug) }}">{{ $item->judul }}</a>
                                                     </h3><!--./ entry-title -->
                                                 </div><!--./ entry-content -->
                                                 <div class="entry-meta-content">
@@ -149,8 +179,8 @@
                                         <article class="post hentry post-list">
                                             <div class="entry-thumb">
                                                 <figure class="thumb-wrap">
-                                                    <a href="{{ ('/berita/'.$item->slug) }}">
-                                                        <img src="{{ ('uploads/images/gambar-berita/'.$item->thumbnail) }}" width="270px" height="220px" alt="post">
+                                                    <a href="{{ url('/berita/'.$item->slug) }}">
+                                                        <img src="{{ asset('uploads/images/gambar-berita/'.$item->thumbnail) }}" width="270px" height="220px" alt="post">
                                                     </a>
                                                     <div class="featured-badge-list">
                                                         <a class="trending" href="#">
@@ -162,7 +192,7 @@
                                             <div class="content-entry-wrap">
                                                 <div class="entry-content">
                                                     <h3 class="entry-title">
-                                                        <a href="{{ ('/berita/'.$item->slug) }}">{{ $item->judul }}</a>
+                                                        <a href="{{ url('/berita/'.$item->slug) }}">{{ $item->judul }}</a>
                                                     </h3><!--./ entry-title -->
                                                 </div><!--./ entry-content -->
                                                 <div class="entry-meta-content">
