@@ -122,7 +122,7 @@ class Berita extends Model
 
     public function getSesudah($id)
     {
-        return $this->where('id','<',$id)->select('id','judul','thumbnail','slug')->first();
+        return $this->where('id','>',$id)->select('id','judul','thumbnail','slug')->first();
     }
 
     public function getListByKatRel($id)
@@ -143,7 +143,7 @@ class Berita extends Model
             ->orderBy('beritas.created_at','desc')
             ->where('kategori_berita_id',$id)
             ->whereNotIn('beritas.id',[$id])
-            ->limit(3)
+            ->limit(4)
             ->get();
         return $data;
     }

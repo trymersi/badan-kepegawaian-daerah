@@ -133,7 +133,7 @@
                                 <div class="row">
                                     <!--~~~~~ Start Post ~~~~~-->
                                     @foreach($kategori_related as $item)
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-6">
                                         <article class="post hentry post-list post-list-small">
                                             <div class="entry-thumb">
                                                 <figure class="thumb-wrap">

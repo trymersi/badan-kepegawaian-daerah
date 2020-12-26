@@ -24,7 +24,8 @@ Route::prefix('/')->group(function(){
     Route::get('/unduhan', "Frontend\HomeCrontoller@unduhan");
     Route::get('/unduhan/{id}', "Frontend\HomeCrontoller@unduhanDetail");
     Route::get('/unduhan/table/{id}','Frontend\HomeCrontoller@tableUnduhan');
-    Route::get('/bidang/{id}', "Frontend\HomeCrontoller@detailBidang");  
+    Route::get('/bidang/{id}', "Frontend\HomeCrontoller@detailBidang"); 
+    Route::get('/faq', "Frontend\HomeCrontoller@faq"); 
     Route::get('/pencarian-berita', ['as' => 'pencarian', 'uses' => 'Frontend\HomeCrontoller@pencarianBerita']);
 });
 

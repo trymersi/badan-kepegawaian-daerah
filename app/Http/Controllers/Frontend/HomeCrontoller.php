@@ -19,6 +19,7 @@ use App\Models\Profil;
 use App\Models\Bidang;
 use App\Models\SubBidang;
 use App\Models\Tupoksi;
+use App\Models\Faq;
 use DataTables;
 use Carbon\Carbon;
 
@@ -41,6 +42,7 @@ class HomeCrontoller extends Controller
     private $bidangClass;
     private $subBidang;
     private $tupoksiClass;
+    private $faqClass;
 
     public function __construct()
     {
@@ -59,6 +61,7 @@ class HomeCrontoller extends Controller
         $this->bidangClass = new Bidang;
         $this->subBidang = new SubBidang;
         $this->tupoksiClass = new Tupoksi;
+        $this->faqClass = new Faq;
         $this->data = [
             'category_name' => 'Dashboard',
             'main_url' => 'dashboard',
@@ -193,6 +196,14 @@ class HomeCrontoller extends Controller
         $this->data['sub_bidang'] = $this->subBidang->where('bidang_id',$bidang->id)->get();
         $this->data['site_title'] = '✅ Bidang '.$bidang->nama.' - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
         return view('frontend.page.bidang.index',$this->data);
+    }
+
+    public function faq()
+    {
+        $this->data['page_name'] = 'FAQ';
+        $this->data['faq'] = $this->faqClass->orderBy('pertanyaan','asc')->get();
+        $this->data['site_title'] = 'FAQ - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
+        return view('frontend.page.faq.index',$this->data);
     }
 
     public function tableUnduhan($id)
