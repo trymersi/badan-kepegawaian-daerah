@@ -143,6 +143,7 @@
                                                 @endforeach
                                             </ul>
                                         </li>
+                                        <li ><a href="{{ url('/faq') }}"><i class="fa fa-question-circle" aria-hidden="true"></i> FAQ</a>
                                     </ul>
                                 </nav><!--/.menu-->
                             </div><!--~./ mainmenu-wrap ~-->
