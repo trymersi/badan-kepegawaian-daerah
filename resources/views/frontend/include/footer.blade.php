@@ -50,7 +50,7 @@
                                 <ul>  
                                     @foreach($kategori_unduhan_footer as $item)
                                     <li class="cat-item">
-                                        <a href="{{ url('/unduhan/'.$item->slug) }}">{{ $item->nama }}</a>
+                                        <a target="_blank" href="{{ asset('/uploads/unduhan/'.$item->file) }}">{{ $item->nama }}</a>
                                     </li>
                                     @endforeach
                                 </ul>
