@@ -20,7 +20,7 @@
                             <div class="entry-meta-content">
                                 <div class="entry-meta-author">
                                     <div class="entry-author-thumb">
-                                        <img class="avatar photo" src="http://via.placeholder.com/40x40" alt="author">
+                                        <img class="avatar photo" src="{{ asset('uploads/images/gambar-berita/40.png') }}" alt="author">
                                     </div>
                                     <div class="entry-author-name">
                                         <a href="#">{{ $detail_berita->nama_user }}</a>
@@ -28,6 +28,9 @@
                                 </div><!--./ entry-meta-author -->
                                 <div class="entry-date">
                                     <span>{{ tgl_indo($detail_berita->updated_at) }}</span>
+                                </div><!--./ entry-date -->
+                                <div class="entry-date">
+                                    <span><i class="fa fa-eye"></i> {{ $detail_berita->dilihat }} </span>
                                 </div><!--./ entry-date -->
 
                                 <div class="entry-category">
@@ -175,6 +178,12 @@
                                                     <div class="entry-date">
                                                         <span>{{ tgl_indo($item->updated_at) }} </span>
                                                     </div><!--./ entry-date -->
+                                                    <div class="entry-date">
+                                                        <span><i class="fa fa-eye"></i> {{ $item->dilihat }} </span>
+                                                    </div><!--./ entry-date -->
+                                                    <div class="entry-category">
+                                                        <a class="cat" href="{{ url('/kategori-berita/'.$item->slug_kategori) }}">{{ $item->nama_kategori }}</a>
+                                                    </div><!--./ entry-category -->
                                                 </div><!--./ entry-meta-content -->
                                             </div><!--./ content-entry-wrap -->
                                         </article>
@@ -184,13 +193,13 @@
                             </div><!--~./ end related category post ~-->
 
                             <!--~~~~~ Start Add Banner ~~~~~--> 
-                            <div class="add-banner bg-gray">           
+                            {{-- <div class="add-banner bg-gray">           
                                 <div class="add-content text-center ptb-20">
                                     <a title="add" href="#">
                                         <img src="http://via.placeholder.com/728x90" alt="add">
                                     </a>
                                 </div>
-                            </div><!--~./ end add banner ~-->
+                            </div><!--~./ end add banner ~--> --}}
 
                             <!--~~~~~ Start Related Post ~~~~~--> 
                             <div class="related-post pt-80 mb-30">
@@ -221,7 +230,7 @@
                                                 <div class="entry-meta-content">
                                                     <div class="entry-meta-author">
                                                         <div class="entry-author-thumb">
-                                                            <img class="avatar photo" src="http://via.placeholder.com/40x40" alt="author">
+                                                            <img class="avatar photo" src="{{ asset('uploads/images/gambar-berita/40.png') }}" alt="author">
                                                         </div>
                                                         <div class="entry-author-name">
                                                             <a href="#">{{ $item->nama_user }}</a>
@@ -236,7 +245,7 @@
                                                     </div><!--./ entry-category -->
                                                 </div><!--./ entry-meta-content -->
                                                 <div class="entry-summary">
-                                                    <p>{{ $item->meta_deskripsi }}</p>
+                                                    <p>{!! $item->meta_deskripsi !!}</p>
                                                 </div>
                                             </div><!--./ content-entry-wrap -->
                                         </article>

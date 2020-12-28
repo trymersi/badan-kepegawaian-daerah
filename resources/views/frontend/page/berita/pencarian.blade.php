@@ -49,6 +49,9 @@
                                             <div class="entry-date">
                                                 <span>{{ tgl_indo($item->updated_at) }}</span>
                                             </div><!--./ entry-date -->
+                                            <div class="entry-date">
+                                                <span><i class="fa fa-eye"></i> {{ $item->dilihat }} </span>
+                                            </div><!--./ entry-date -->
                                             
                                             <div class="entry-category">
                                                 <a class="cat" href="{{ url('/kategori-berita/'.$item->slug_kategori) }}">{{ $item->nama_kategori }}</a>
