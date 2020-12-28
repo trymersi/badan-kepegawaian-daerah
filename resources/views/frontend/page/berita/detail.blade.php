@@ -133,7 +133,7 @@
                             <!--~~~~~ Start post Navigation ~~~~~--> 
                             <nav class="post-navigation mb-80">
                                 @if(isset($sebelum))
-                                <div class="post-previous bg-image bg-overlay" style="background-image:url({{ asset('/uploads/images/gambar-berita/'.$sebelum->thumbnail) }});width:430px;height:185px;">
+                                <div class="post-previou    s bg-image bg-overlay" style="background-image:url({{ asset('/uploads/images/gambar-berita/'.$sebelum->thumbnail) }});width:430px;height:185px;">
                                     <a rel="prev" href="{{ url('/berita/'.$sebelum->slug) }}">
                                         <span class="label">Berita Sebelumnya</span>
                                         <h3>{{ $sebelum->judul }}</h3>
@@ -152,7 +152,7 @@
 
                             <!--~~~~~ Start Author Info ~~~~~--> 
                            
-
+                            @if(count($kategori_related) != 0)
                             <!--~~~~~ Start Related Category Post ~~~~~--> 
                             <div class="related-category-post">
                                 <h3 class="headline">Berita Lainnya Dari {{ $category_name }}</h3>
@@ -191,7 +191,7 @@
                                     @endforeach
                                 </div>
                             </div><!--~./ end related category post ~-->
-
+                            @endif
                             <!--~~~~~ Start Add Banner ~~~~~--> 
                             {{-- <div class="add-banner bg-gray">           
                                 <div class="add-content text-center ptb-20">
@@ -201,11 +201,12 @@
                                 </div>
                             </div><!--~./ end add banner ~--> --}}
 
+                            @if(count($berita_related) != 0)
                             <!--~~~~~ Start Related Post ~~~~~--> 
                             <div class="related-post pt-80 mb-30">
                                 <h3 class="headline">Berita Lainnya</h3>
                                 <div class="row">
-                                    @foreach($berita_related as $key)
+                                    @foreach($berita_related as $item)
                                     <!--~~~~~ Start Post ~~~~~-->
                                     <div class="col-12">
                                         <article class="post hentry post-list">
@@ -254,7 +255,7 @@
                                    
                                 </div> <!-- /.row -->    
                             </div> <!--~./ end related post ~-->
-
+                            @endif
                             <!--~~~~~ Start Comments Area ~~~~~-->
                             
                         </main>
