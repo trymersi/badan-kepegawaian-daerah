@@ -34,7 +34,7 @@
                                 </div><!--./ entry-date -->
 
                                 <div class="entry-category">
-                                    <a class="cat" href="{{ ('/kategori-berita/'.$detail_berita->slug_kategori) }}">{{ $detail_berita->nama_kategori }}</a>
+                                    <a class="cat" href="{{ url('/kategori-berita/'.$detail_berita->slug_kategori) }}">{{ $detail_berita->nama_kategori }}</a>
                                 </div><!--./ entry-category -->
                             </div><!--./ entry-meta-content -->
                         </div><!--./ content-entry-wrap -->
@@ -133,7 +133,7 @@
                             <!--~~~~~ Start post Navigation ~~~~~--> 
                             <nav class="post-navigation mb-80">
                                 @if(isset($sebelum))
-                                <div class="post-previou    s bg-image bg-overlay" style="background-image:url({{ asset('/uploads/images/gambar-berita/'.$sebelum->thumbnail) }});width:430px;height:185px;">
+                                <div class="post-previous bg-image bg-overlay" style="background-image:url({{ asset('/uploads/images/gambar-berita/'.$sebelum->thumbnail) }});width:430px;height:185px;">
                                     <a rel="prev" href="{{ url('/berita/'.$sebelum->slug) }}">
                                         <span class="label">Berita Sebelumnya</span>
                                         <h3>{{ $sebelum->judul }}</h3>
