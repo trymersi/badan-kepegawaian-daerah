@@ -40,7 +40,7 @@
                                         <div class="entry-meta-content">
                                             <div class="entry-meta-author">
                                                 <div class="entry-author-thumb">
-                                                    <img class="avatar photo" src="http://via.placeholder.com/40x40" alt="author">
+                                                    <img class="avatar photo" src="{{ asset('uploads/images/gambar-berita/40.png') }}" alt="author">
                                                 </div>
                                                 <div class="entry-author-name">
                                                     <a href="#">{{ $item->nama_user }}</a>
