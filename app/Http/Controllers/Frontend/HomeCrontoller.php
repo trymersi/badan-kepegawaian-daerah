@@ -111,7 +111,7 @@ class HomeCrontoller extends Controller
         $this->data['sesudah'] = $this->beritaClass->getSesudah($berita->id);
         $this->data['page_name'] = $berita->judul;
         $this->data['category_name'] = $berita->nama_kategori;
-        $this->data['kategori_related'] = $this->beritaClass->getListByKatRel($berita->id_kategori);
+        $this->data['kategori_related'] = $this->beritaClass->getListByKatRel($berita->id_kategori,$berita->id);
         $this->data['berita_related'] = $this->beritaClass->getRelated($berita->id);
         $this->data['site_title'] = '✅ ' .$berita->judul.' - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
         return view('frontend.page.berita.detail',$this->data);
