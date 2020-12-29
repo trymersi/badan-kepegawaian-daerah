@@ -153,9 +153,7 @@
                                                 @foreach($aplikasi as $item)
                                                 <li><a target="_blank" href="{{ $item->link}}">{{ $item->nama }}</a></li>
                                                 @endforeach
-                                                @foreach($link_terkait as $item)
-                                                <li><a target="_blank" href="{{ $item->link}}">{{ $item->nama }}</a></li>
-                                                @endforeach
+                                               
                                             </ul>
                                         </li>
                                         <li class="dropdown-trigger"><a href="#"><i class="fa fa-list" aria-hidden="true"></i> GALERI</a>

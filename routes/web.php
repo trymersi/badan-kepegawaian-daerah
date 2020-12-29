@@ -32,6 +32,8 @@ Route::prefix('/')->group(function(){
     Route::get('/unduhan/table/{id}','Frontend\HomeController@tableUnduhan');
     Route::get('/bidang/{id}', "Frontend\HomeController@detailBidang"); 
     Route::get('/faq', "Frontend\HomeController@faq"); 
+    Route::get('/pegawai', "Frontend\HomeController@pegawai"); 
+    Route::get('/pegawai/{id}', "Frontend\HomeController@pegawaiDetail"); 
     Route::get('/pencarian-berita', ['as' => 'pencarian', 'uses' => 'Frontend\HomeController@pencarianBerita']);
 });
 

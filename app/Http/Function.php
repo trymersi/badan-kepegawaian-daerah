@@ -711,7 +711,7 @@ function getJabatan($kode)
     switch($kode)
     {
         case 1 :
-            $sosmed = "<span class='badge badge-success'>Kepala Dinas</span>";
+            $sosmed = "<span class='badge badge-success'>Kepala Badan</span>";
             break;
         case 2 :
             $sosmed = "<span class='badge badge-primary'>Sekretaris</span>";
@@ -781,4 +781,24 @@ function getTupoksiSub($id)
 {
     $get = App\Models\Tupoksi::getSub($id);
     return $get;
+}
+
+function jabatan($id)
+{
+    switch($id)
+    {
+        case 1 :
+            $sosmed = "Kepala Badan";
+            break;
+        case 2 :
+            $sosmed = "Sekretaris";
+            break;
+        case 3 :
+            $sosmed = "Kepala Bidang";
+            break;
+        case 4 :
+            $sosmed = "Kepala Sub Bidang";
+            break;
+    }
+    return $sosmed;
 }

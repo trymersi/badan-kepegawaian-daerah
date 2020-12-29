@@ -20,8 +20,10 @@ use App\Models\Bidang;
 use App\Models\SubBidang;
 use App\Models\Tupoksi;
 use App\Models\Faq;
+use App\Models\Pegawai;
 use DataTables;
 use Carbon\Carbon;
+
 
 
 class HomeController extends Controller
@@ -43,6 +45,7 @@ class HomeController extends Controller
     private $subBidang;
     private $tupoksiClass;
     private $faqClass;
+    private $pegawaiClass;
 
     public function __construct()
     {
@@ -62,6 +65,7 @@ class HomeController extends Controller
         $this->subBidang = new SubBidang;
         $this->tupoksiClass = new Tupoksi;
         $this->faqClass = new Faq;
+        $this->pegawaiClass = new Pegawai;
         $this->data = [
             'category_name' => 'Dashboard',
             'main_url' => 'dashboard',
@@ -248,6 +252,25 @@ class HomeController extends Controller
         $this->contact->save();
 
         return redirect()->back()->with('message', 'Pesan kamu telah dikirim!');
+    }
+
+    public function pegawai()
+    {
+        $this->data['category_name'] = 'Pegawai dan Staff';
+        $this->data['site_title'] = '✅ Pegawai dan Staff - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
+        $this->data['kepala_dinas'] = $this->pegawaiClass->where('jabatan',1)->first();
+        $this->data['sekretaris'] = $this->pegawaiClass->where('jabatan',2)->first();
+        $this->data['kabid'] = $this->pegawaiClass->getKabid();
+        $this->data['subid'] = $this->pegawaiClass->getSubid();
+        return view('frontend.page.pegawai.index',$this->data);
+    }
+
+    public function pegawaiDetail($id)
+    {
+        $this->data['category_name'] = 'Pegawai dan Staff';
+        $this->data['site_title'] = '✅ Pegawai dan Staff - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
+        $this->data['pegawai'] = $this->pegawaiClass->getPegawai($id);
+        return view('frontend.page.pegawai.detail',$this->data);
     }
 
     /**

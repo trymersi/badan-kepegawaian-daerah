@@ -91,7 +91,7 @@
                         <div class="col-md-6">
                           <div class="form-group @error('foto') error @enderror">
                             <label>Pilih Foto <span class="text-danger">*</label>
-                            <input type="file" name="c" class="form-control" value="{{ old('foto') }}" accept="image/gif, image/jpeg, image/png" />
+                            <input type="file" name="foto" class="form-control" value="{{ old('foto') }}" accept="image/gif, image/jpeg, image/png" />
                             @error('foto')
                             <div class="help-block"><ul role="alert"><li>{{$message}}</li></ul></div>
                             @enderror
