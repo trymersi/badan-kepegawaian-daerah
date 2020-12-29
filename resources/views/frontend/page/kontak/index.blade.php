@@ -70,39 +70,48 @@
                             <div class="comment-respond" id="respond">
                                 <h3 class="comment-reply-title headline"><span>Mengubungi Kami</span></h3>
                                 <p style="color: black">Anda dapat menghubungi kami melalui formulir di bawah ini</p>
-                                <div id="message"></div>
-                                @if(session()->has('message'))
-                                    <div class="reviews-comments-item-text fl-wrap" style="margin-bottom:10px;">
+                                @if(session()->has('gagal'))
+                                    {{-- <div class="reviews-comments-item-text fl-wrap" style="margin-bottom:10px;">
                                         <p>" {{ session()->get('message') }} "</p>
-                                    </div>
-                                    <br>
+                                    </div> --}}
+                                    <div class="alert alert-danger" role="alert">
+                                        <p>{{ session()->get('gagal') }}</p>
+                                      </div>
                                 @endif
-                                <form  class="custom-form" method="post" action="{{ action('Frontend\HomeController@contactSave') }}">
+                                @if(session()->has('sukses'))
+                                    {{-- <div class="reviews-comments-item-text fl-wrap" style="margin-bottom:10px;">
+                                        <p>" {{ session()->get('message') }} "</p>
+                                    </div> --}}
+                                    <div class="alert alert-success" role="alert">
+                                        <p>{{ session()->get('sukses') }}</p>
+                                      </div>
+                                @endif
+                                <form name="contactForm" id='contact_form' method="post" action="{{ action('Frontend\HomeController@contactSave') }}">
                                     @csrf
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <p>
-                                                <input type='text' name='nama' id='nama' class="form-controllar"  aria-required="true" placeholder="Nama Anda*">
+                                                <input type='text' name='nama' id='nama' class="form-controllar"  aria-required="true" placeholder="Nama Anda*" required>
                                             </p>
                                         </div>
                                         <div class="col-lg-6">
                                             <p>
-                                                <input type='text' name='email' id='email-comments' class="form-controllar"  aria-required="true" placeholder="Email Anda*">
+                                                <input type='email' name='email' id='email-comments' class="form-controllar"  aria-required="true" placeholder="Email Anda*" required>
                                             </p>
                                         </div>
                                         <div class="col-lg-6">
                                             <p>
-                                                <input type='text' name='telpon' id='telpon' class="form-controllar"  aria-required="true" placeholder="Telepon/HP Anda">
+                                                <input type='text' name='telpon' id='telpon' class="form-controllar"  aria-required="true" placeholder="Telepon/HP Anda" required>
                                             </p>
                                         </div>
                                         <div class="col-lg-6">
                                             <p>
-                                                <input type='text' name='judul' id='judul' class="form-controllar"  aria-required="true" placeholder="Judul Anda">
+                                                <input type='text' name='judul' id='judul' class="form-controllar"  aria-required="true" placeholder="Judul Anda" required>
                                             </p>
                                         </div>
                                         <div class="col-12">
                                             <p>
-                                                <textarea name='pesan' id='pesan' class="form-controllar" aria-required="true" rows="8" cols="45" placeholder="Pesan Anda...."></textarea>
+                                                <textarea name='pesan' id='pesan' class="form-controllar" aria-required="true" rows="8" cols="45" placeholder="Pesan Anda...." required></textarea>
                                             </p>
                                         </div>
                                         <div class="col-md-12">
