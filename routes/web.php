@@ -14,19 +14,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('/')->group(function(){
-    Route::get('/', "Frontend\HomeCrontoller@index");   
-    Route::get('/berita', "Frontend\HomeCrontoller@berita");
-    Route::get('/berita/{id}', "Frontend\HomeCrontoller@detailBerita");
-    Route::get('/kategori-berita/{id}', "Frontend\HomeCrontoller@kategoriBerita");
-    Route::get('/profil/{id}', "Frontend\HomeCrontoller@profil");
-    Route::get('/galeri', "Frontend\HomeCrontoller@galeri");   
-    Route::get('/galeri/{id}', "Frontend\HomeCrontoller@galeriDetail");   
-    Route::get('/unduhan', "Frontend\HomeCrontoller@unduhan");
-    Route::get('/unduhan/{id}', "Frontend\HomeCrontoller@unduhanDetail");
-    Route::get('/unduhan/table/{id}','Frontend\HomeCrontoller@tableUnduhan');
-    Route::get('/bidang/{id}', "Frontend\HomeCrontoller@detailBidang"); 
-    Route::get('/faq', "Frontend\HomeCrontoller@faq"); 
-    Route::get('/pencarian-berita', ['as' => 'pencarian', 'uses' => 'Frontend\HomeCrontoller@pencarianBerita']);
+    Route::get('/', "Frontend\HomeController@index");   
+    Route::get('/berita', "Frontend\HomeController@berita");
+    Route::get('/berita/{id}', "Frontend\HomeController@detailBerita");
+    Route::get('/kategori-berita/{id}', "Frontend\HomeController@kategoriBerita");
+    Route::get('/profil/{id}', "Frontend\HomeController@profil");
+    Route::get('/galeri', "Frontend\HomeController@galeri");   
+    Route::get('/galeri/{id}', "Frontend\HomeController@galeriDetail");   
+    Route::get('/unduhan', "Frontend\HomeController@unduhan");
+    Route::get('/unduhan/{id}', "Frontend\HomeController@unduhanDetail");
+    Route::get('/unduhan/table/{id}','Frontend\HomeController@tableUnduhan');
+    Route::get('/bidang/{id}', "Frontend\HomeController@detailBidang"); 
+    Route::get('/faq', "Frontend\HomeController@faq"); 
+    Route::get('/pencarian-berita', ['as' => 'pencarian', 'uses' => 'Frontend\HomeController@pencarianBerita']);
 });
 
 Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()
