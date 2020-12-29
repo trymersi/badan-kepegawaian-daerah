@@ -40,7 +40,7 @@ class AppServiceProvider extends ServiceProvider
             )
             ->orderBy('beritas.dilihat','desc')
             ->groupBy('beritas.id')
-            ->limit(6)
+            ->limit(5)
             ->get());
 
             $view->with('berita_terbaru',\App\Models\Berita::leftJoin('kategori_beritas','kategori_beritas.id','beritas.kategori_berita_id')

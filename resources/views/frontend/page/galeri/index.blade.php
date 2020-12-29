@@ -6,12 +6,13 @@
 @include('frontend.include.breadcrumb')
 <div class="site-content">
     
-    <div class="main-wrapper ptb-80 style-two">
-        <div class="container-gal">
-            <div class="row">
+    <div class="main-wrapper ptb-40 style-two">
+        <div class="container-gal" style="padding:0;">
+            <div class="row" style="padding:0;">
                 <div class="col-lg-12">
-                    <div class="container-gal">
-                        <p class="header-gal">SEMUA GALERI GAMBAR</p>
+                    <div class="container-gal" style="padding:0;">
+                        <!-- <p class="header-gal">SEMUA GALERI GAMBAR</p> -->
+                        <h2 class="section-title text-center">SELURUH GALERI GAMBAR</h2>
                         <div class="content-gal">
                             
                             @foreach($galeri as $item)

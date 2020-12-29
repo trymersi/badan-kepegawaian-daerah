@@ -11,10 +11,15 @@
                 @foreach($profil as $item)
                 <article class="post side-post">
                     <div class="thumb-wrap">
-                        <a href="post-details.html">
-                            <img src="{{ asset('assets/frontend/images/profil/profil.png')}}" alt="profil">
-                        </a>
-                        <span class="count">{{ $no }}</span>
+                    <div class="progress" data-percentage="100">
+                        <div class="progress-left">
+                            <span class="progress-bar"></span>
+                        </div>
+                        <div class="progress-right">
+                            <span class="progress-bar"></span>
+                        </div>
+                        <div class="progress-value">{{$no}}</div>
+                    </div>
                     </div><!--./ thumb-wrap -->
                     <div class="content-entry-wrap">
                         <h3 class="entry-title">

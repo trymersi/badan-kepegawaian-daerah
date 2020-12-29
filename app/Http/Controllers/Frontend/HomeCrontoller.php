@@ -111,7 +111,7 @@ class HomeCrontoller extends Controller
         $this->data['sesudah'] = $this->beritaClass->getSesudah($berita->id);
         $this->data['page_name'] = $berita->judul;
         $this->data['category_name'] = $berita->nama_kategori;
-        $this->data['kategori_related'] = $this->beritaClass->getListByKatRel($berita->id_kategori);
+        $this->data['kategori_related'] = $this->beritaClass->getListByKatRel($berita->id_kategori,$berita->id);
         $this->data['berita_related'] = $this->beritaClass->getRelated($berita->id);
         $this->data['site_title'] = '✅ ' .$berita->judul.' - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
         return view('frontend.page.berita.detail',$this->data);
@@ -169,9 +169,9 @@ class HomeCrontoller extends Controller
 
     public function galeri()
     {
-        $this->data['category_name'] = 'data galeri';
+        $this->data['category_name'] = 'Galeri Gambar';
         $this->data['galeri'] = $this->galeriGambar->getHome();
-        $this->data['site_title'] = '✅ Galeri - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
+        $this->data['site_title'] = '✅ Galeri Gambar - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
         return view('frontend.page.galeri.index',$this->data);
     }
 
@@ -179,10 +179,10 @@ class HomeCrontoller extends Controller
     {
         
         $galeri = $this->galeriGambar->where('slug',$id)->first();
-        $this->data['category_name'] = 'galeri';
-        $this->data['page_name'] = 'galeri '.$galeri->nama;
+        $this->data['category_name'] = 'Detail Galeri Gambar';
+        $this->data['page_name'] = 'galeri gambar '.$galeri->nama;
         $this->data['detail_galeri'] = $this->galeriDetail->where('galeri_gambar_id',$galeri->id)->get();
-        $this->data['site_title'] = '✅ Galeri '.$galeri->nama.' - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
+        $this->data['site_title'] = '✅ Galeri Gambar '.$galeri->nama.' - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
         return view('frontend.page.galeri.detail',$this->data);
     }
 

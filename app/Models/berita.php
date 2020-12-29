@@ -130,7 +130,7 @@ class Berita extends Model
         return $this->where('id','>',$id)->select('id','judul','thumbnail','slug')->first();
     }
 
-    public function getListByKatRel($id)
+    public function getListByKatRel($id,$id_berita)
     {
         $data = $this->leftJoin('kategori_beritas','kategori_beritas.id','beritas.kategori_berita_id')
             ->leftJoin('users','users.id','beritas.user_id')
@@ -147,8 +147,8 @@ class Berita extends Model
                 'beritas.slug',
             )
             ->orderBy('beritas.created_at','desc')
+            ->whereNotIn('beritas.id',[$id_berita])
             ->where('kategori_berita_id',$id)
-            ->whereNotIn('beritas.id',[$id])
             ->limit(4)
             ->get();
         return $data;
@@ -173,7 +173,7 @@ class Berita extends Model
             ->orderBy('beritas.created_at','desc')
             ->groupBy('beritas.id')
             ->whereNotIn('beritas.id',[$id])
-            ->limit(3)
+            ->limit(5)
             ->get();
         return $data;
     }

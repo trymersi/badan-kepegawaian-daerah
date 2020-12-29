@@ -17,11 +17,10 @@
                                 </div>
                                 <p>BADAN KEPEGAWAIAN DAERAH PROVINSI RIAU</p>
                                 <ul class="social-share">
-                                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a class="youtube" href="#"><i class="fa fa-youtube"></i></a></li>
-                                    <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a target="_blank" class="facebook" href="{{ $pengaturan_website->facebook }}"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a target="_blank" class="twitter"  href="{{ $pengaturan_website->twitter }}" ><i class="fa fa-twitter"></i></a></li>
+                                    <li><a target="_blank" class="youtube"  href="{{ $pengaturan_website->youtube }}" ><i class="fa fa-youtube"></i></a></li>
+                                    <li><a target="_blank" class="instagram" href="{{ $pengaturan_website->instagram }}"><i class="fa fa-instagram"></i></a></li>
                                 </ul>
                             </div>
                         </aside>
@@ -51,7 +50,7 @@
                                 <ul>  
                                     @foreach($kategori_unduhan_footer as $item)
                                     <li class="cat-item">
-                                        <a href="{{ url('/unduhan/'.$item->slug) }}">{{ $item->nama }}</a>
+                                        <a target="_blank" href="{{ asset('/uploads/unduhan/'.$item->file) }}">{{ $item->nama }}</a>
                                     </li>
                                     @endforeach
                                 </ul>

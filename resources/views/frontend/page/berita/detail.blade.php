@@ -34,7 +34,7 @@
                                 </div><!--./ entry-date -->
 
                                 <div class="entry-category">
-                                    <a class="cat" href="{{ ('/kategori-berita/'.$detail_berita->slug_kategori) }}">{{ $detail_berita->nama_kategori }}</a>
+                                    <a class="cat" href="{{ url('/kategori-berita/'.$detail_berita->slug_kategori) }}">{{ $detail_berita->nama_kategori }}</a>
                                 </div><!--./ entry-category -->
                             </div><!--./ entry-meta-content -->
                         </div><!--./ content-entry-wrap -->
@@ -133,7 +133,8 @@
                             <!--~~~~~ Start post Navigation ~~~~~--> 
                             <nav class="post-navigation mb-80">
                                 @if(isset($sebelum))
-                                <div class="post-previous bg-image bg-overlay" style="background-image:url({{ asset('/uploads/images/gambar-berita/'.$sebelum->thumbnail) }});width:430px;height:185px;">
+                                <!-- <div class="post-previous bg-image bg-overlay" style="background-image:url({{ asset('/uploads/images/gambar-berita/'.$sebelum->thumbnail) }});width:430px;height:185px;"> -->
+                                <div class="post-previous active bg-image bg-overlay">
                                     <a rel="prev" href="{{ url('/berita/'.$sebelum->slug) }}">
                                         <span class="label">Berita Sebelumnya</span>
                                         <h3>{{ $sebelum->judul }}</h3>
@@ -141,7 +142,8 @@
                                 </div>
                                 @endif
                                 @if(isset($sesudah))
-                                <div class="post-next active bg-image bg-overlay" style="background-image:url({{ asset('/uploads/images/gambar-berita/'.$sesudah->thumbnail) }});width:430px;height:185px;">
+                                <!-- <div class="post-next active bg-image bg-overlay" style="background-image:url({{ asset('/uploads/images/gambar-berita/'.$sesudah->thumbnail) }});width:430px;height:185px;"> -->
+                                <div class="post-next active bg-image bg-overlay">
                                     <a rel="prev" href="{{ url('/berita/'.$sesudah->slug) }}">
                                         <span class="label">Berita Seterusnya</span>
                                         <h3>{{ $sesudah->judul }}</h3>
@@ -152,7 +154,7 @@
 
                             <!--~~~~~ Start Author Info ~~~~~--> 
                            
-
+                            @if(count($kategori_related) != 0)
                             <!--~~~~~ Start Related Category Post ~~~~~--> 
                             <div class="related-category-post">
                                 <h3 class="headline">Berita Lainnya Dari {{ $category_name }}</h3>
@@ -191,7 +193,7 @@
                                     @endforeach
                                 </div>
                             </div><!--~./ end related category post ~-->
-
+                            @endif
                             <!--~~~~~ Start Add Banner ~~~~~--> 
                             {{-- <div class="add-banner bg-gray">           
                                 <div class="add-content text-center ptb-20">
@@ -201,11 +203,12 @@
                                 </div>
                             </div><!--~./ end add banner ~--> --}}
 
+                            @if(count($berita_related) != 0)
                             <!--~~~~~ Start Related Post ~~~~~--> 
                             <div class="related-post pt-80 mb-30">
                                 <h3 class="headline">Berita Lainnya</h3>
                                 <div class="row">
-                                    @foreach($berita_related as $key)
+                                    @foreach($berita_related as $item)
                                     <!--~~~~~ Start Post ~~~~~-->
                                     <div class="col-12">
                                         <article class="post hentry post-list">
@@ -239,7 +242,9 @@
                                                     <div class="entry-date">
                                                         <span>{{ tgl_indo($item->updated_at) }}</span>
                                                     </div><!--./ entry-date -->
-                                                   
+                                                    <div class="entry-date">
+                                                        <span><i class="fa fa-eye"></i> {{ $item->dilihat }} </span>
+                                                    </div><!--./ entry-date -->
                                                     <div class="entry-category">
                                                         <a class="cat" href="{{ url('/kategori-berita/'.$item->slug_kategori) }}">{{ $item->nama_kategori }}</a>
                                                     </div><!--./ entry-category -->
@@ -254,7 +259,7 @@
                                    
                                 </div> <!-- /.row -->    
                             </div> <!--~./ end related post ~-->
-
+                            @endif
                             <!--~~~~~ Start Comments Area ~~~~~-->
                             
                         </main>

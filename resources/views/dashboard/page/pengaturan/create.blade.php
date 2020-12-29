@@ -15,7 +15,7 @@
                     @csrf
                     <div class="box-body">
                        
-                      <div class="row">
+                        <div class="row">
                           <div class="col-md-6">
                             <div class="form-group @error('nama') error @enderror">
                               <label>Nama Kantor <span class="text-danger">*</span></label>
@@ -99,6 +99,53 @@
                           </div>
                         </div>
                         
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group @error('facebook') error @enderror">
+                              <label>Facebook <span class="text-danger">*</span></label>
+                              <input type="text" name="facebook" value="{{ old('facebook') }}" class="form-control" placeholder="Masukan alamat halaman facebook">
+                              @error('facebook')
+                              <div class="help-block"><ul role="alert"><li>{{$message}}</li></ul></div>
+                              @enderror
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group @error('youtube') error @enderror">
+                              <label>Youtube <span class="text-danger">*</span></label>
+                              <input type="text" name="youtube" value="{{ old('youtube') }}" class="form-control" placeholder="Masukan alamat channel youtube">
+                              @error('youtube')
+                              <div class="help-block"><ul role="alert"><li>{{$message}}</li></ul></div>
+                              @enderror
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group @error('instagram') error @enderror">
+                              <label>Instagram <span class="text-danger">*</span></label>
+                              <input type="text" name="instagram" value="{{ old('instagram') }}" class="form-control" placeholder="Masukan alamat profile instagram">
+                              @error('instagram')
+                              <div class="help-block"><ul role="alert"><li>{{$message}}</li></ul></div>
+                              @enderror
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group @error('twitter') error @enderror">
+                              <label>Twitter <span class="text-danger">*</span></label>
+                              <input type="text" name="twitter" value="{{ old('twitter') }}" class="form-control" placeholder="Masukan alamat halaman twitter">
+                              @error('twitter')
+                              <div class="help-block"><ul role="alert"><li>{{$message}}</li></ul></div>
+                              @enderror
+                            </div>
+                          </div>
+                        </div>
                       
                     </div>
                     <!-- /.box-body -->

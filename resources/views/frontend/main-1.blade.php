@@ -50,10 +50,10 @@
                         <div class="top-navbar-right">
                             <div class="social-profile">
                                 <ul class="social-share-two">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="{{ $pengaturan_website->facebook }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="{{ $pengaturan_website->youtube }}" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                                    <li><a href="{{ $pengaturan_website->twitter }}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="{{ $pengaturan_website->instagram }}" target="_blank"><i class="fa fa-instagram"></i></a></li>
                                 </ul>
                             </div><!--~./ social-profile ~-->
                         </div><!--~./ top-navbar-right ~-->
@@ -75,16 +75,15 @@
                             </a>  
                         </div><!--~./ site-logo-block ~-->
                     </div>
-                    <div class="col-lg-8">
-                         <!--~~~~~ Start Add Banner ~~~~~--> 
+                    <!-- <div class="col-lg-8">
                         <div class="add-banner">           
                             <div class="add-content text-right">
                                 <a title="add" href="#">
                                     <img src="{{ asset('assets/frontend/images/slogan.png')}}" alt="slogan-bkd-riau">
                                 </a>
                             </div>
-                        </div><!--~./ end add banner ~-->
-                    </div>
+                        </div>
+                    </div> -->
                 </div>
             </div>
         </div><!--~./ end header middle area ~-->
@@ -143,6 +142,13 @@
                                                 @endforeach
                                             </ul>
                                         </li>
+                                        <li class="dropdown-trigger"><a href="#"><i class="fa fa-list" aria-hidden="true"></i> GALERI</a>
+                                            <ul class="dropdown-content">
+                                                <li><a href="{{ url('/galeri') }}">Galeri Foto</a></li>
+                                                <li><a href="{{ url('/galeri') }}">Galeri Video</a></li>
+                                            </ul>
+                                        </li>
+                                        <li ><a href="{{ url('/faq') }}"><i class="fa fa-question-circle" aria-hidden="true"></i> FAQ</a>
                                     </ul>
                                 </nav><!--/.menu-->
                             </div><!--~./ mainmenu-wrap ~-->

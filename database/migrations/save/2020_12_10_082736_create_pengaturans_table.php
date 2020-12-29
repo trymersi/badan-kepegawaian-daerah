@@ -21,6 +21,10 @@ class CreatePengaturansTable extends Migration
             $table->string('email')->nullable();
             $table->string('latitude')->nullable();
             $table->string('longitude')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('youtube')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('twitter')->nullable();
             $table->string('logo')->nullable();
             $table->timestamps();
             $table->softDeletes();

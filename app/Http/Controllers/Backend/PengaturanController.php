@@ -66,6 +66,10 @@ class PengaturanController extends Controller
             'latitude' => 'required',
             'longitude' => 'required',
             'logo' => 'required',
+            'facebook' => 'required',
+            'youtube' => 'required',
+            'twitter' => 'required',
+            'instagram' => 'required',
         ]);
         if ($validator->fails()) {
             Toastr::error('Terjadi Kesalahan Saat Menyimpan Data', 'Gagal', ["positionClass" => "toast-bottom-right"]);
@@ -90,6 +94,10 @@ class PengaturanController extends Controller
         $this->PengaturanClass->latitude = $request->latitude;
         $this->PengaturanClass->longitude = $request->longitude;
         $this->PengaturanClass->logo = $filename_header ; 
+        $this->PengaturanClass->youtube = $request->youtube;
+        $this->PengaturanClass->facebook = $request->facebook;
+        $this->PengaturanClass->instagram = $request->instagram;
+        $this->PengaturanClass->twitter = $request->twitter;
         $this->PengaturanClass->save();
 
         $this->PengaturanClass->id ? Toastr::success('Data Berhasil Disimpan', 'Sukses', ["positionClass" => "toast-bottom-right"]) : Toastr::error('Terjadi Kesalahan Saat Menyimpan Data', 'Gagal', ["positionClass" => "toast-bottom-right"]);
@@ -139,7 +147,10 @@ class PengaturanController extends Controller
             'email' => 'required',
             'latitude' => 'required',
             'longitude' => 'required',
-            'logo' => 'required',
+            'facebook' => 'required',
+            'youtube' => 'required',
+            'twitter' => 'required',
+            'instagram' => 'required',
         ]);
         if ($validator->fails()) {
             Toastr::error('Terjadi Kesalahan Saat Menyimpan Data', 'Gagal', ["positionClass" => "toast-bottom-right"]);
@@ -166,6 +177,10 @@ class PengaturanController extends Controller
         if(isset($filename_header)):
             $update->logo = $filename_header;
         endif;
+        $update->youtube = $request->youtube;
+        $update->facebook = $request->facebook;
+        $update->instagram = $request->instagram;
+        $update->twitter = $request->twitter;
         $update->save();
         $update ? Toastr::success('Data Berhasil Diubah', 'Sukses', ["positionClass" => "toast-bottom-right"]) : Toastr::error('Terjadi Kesalahan Saat Menyimpan Data', 'Gagal', ["positionClass" => "toast-bottom-right"]);
 
