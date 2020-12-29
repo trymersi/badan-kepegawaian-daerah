@@ -48,6 +48,11 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="top-navbar-right">
+                            <div class="membar-signin">
+                                <ul>
+                                    <li><a href="{{ url('/kontak') }}"><i class="fa fa-building"></i> Hubungi kami</a></li>
+                                </ul>
+                            </div><!--~./ membar-signin ~-->
                             <div class="social-profile">
                                 <ul class="social-share-two">
                                     <li><a href="{{ $pengaturan_website->facebook }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
@@ -56,7 +61,18 @@
                                     <li><a href="{{ $pengaturan_website->instagram }}" target="_blank"><i class="fa fa-instagram"></i></a></li>
                                 </ul>
                             </div><!--~./ social-profile ~-->
-                        </div><!--~./ top-navbar-right ~-->
+                        </div>
+
+                        {{-- <div class="top-navbar-right">
+                            <div class="social-profile">
+                                <ul class="social-share-two">
+                                    <li><a href="{{ $pengaturan_website->facebook }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="{{ $pengaturan_website->youtube }}" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                                    <li><a href="{{ $pengaturan_website->twitter }}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="{{ $pengaturan_website->instagram }}" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                                </ul>
+                            </div><!--~./ social-profile ~-->
+                        </div><!--~./ top-navbar-right ~--> --}}
                     </div>
                 </div>
             </div>
