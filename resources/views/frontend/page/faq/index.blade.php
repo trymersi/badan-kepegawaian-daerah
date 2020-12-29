@@ -17,11 +17,11 @@
                 <div class="col-lg-9">
                     <!--~~~~~ Start Site Main ~~~~~-->
                    <main class="site-main">
-                    <p style="text-align:justify;font-size:14px;">
-                       FAQ
-                    </p>    
-                    
-                    <p style="text-align:justify;font-size:14px;">Pertanyaan - pertanyaan yang berulangkali ditanyakan</p>                   
+                   <div class="post-share-area">
+                            <h3>{{ $page_name }}</h3>
+                        </div>  
+                        <h3 class="headline">Berikut adalah beberapa pertanyaan umum yang kami terima.</h3>
+                    <!-- <p style="text-align:justify;font-size:14px;">Pertanyaan - pertanyaan yang berulangkali ditanyakan</p>                    -->
                     
                     <div aria-multiselectable="true" class="panel-group" id="accordionFaq" role="tablist">
                         <?php $i = 1;?>

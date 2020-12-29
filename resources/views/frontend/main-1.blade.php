@@ -75,16 +75,15 @@
                             </a>  
                         </div><!--~./ site-logo-block ~-->
                     </div>
-                    <div class="col-lg-8">
-                         <!--~~~~~ Start Add Banner ~~~~~--> 
+                    <!-- <div class="col-lg-8">
                         <div class="add-banner">           
                             <div class="add-content text-right">
                                 <a title="add" href="#">
                                     <img src="{{ asset('assets/frontend/images/slogan.png')}}" alt="slogan-bkd-riau">
                                 </a>
                             </div>
-                        </div><!--~./ end add banner ~-->
-                    </div>
+                        </div>
+                    </div> -->
                 </div>
             </div>
         </div><!--~./ end header middle area ~-->
@@ -141,6 +140,12 @@
                                                 @foreach($link_terkait as $item)
                                                 <li><a target="_blank" href="{{ $item->link}}">{{ $item->nama }}</a></li>
                                                 @endforeach
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown-trigger"><a href="#"><i class="fa fa-list" aria-hidden="true"></i> GALERI</a>
+                                            <ul class="dropdown-content">
+                                                <li><a href="{{ url('/galeri') }}">Galeri Foto</a></li>
+                                                <li><a href="{{ url('/galeri') }}">Galeri Video</a></li>
                                             </ul>
                                         </li>
                                         <li ><a href="{{ url('/faq') }}"><i class="fa fa-question-circle" aria-hidden="true"></i> FAQ</a>

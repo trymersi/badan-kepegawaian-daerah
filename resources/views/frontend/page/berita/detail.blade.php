@@ -133,7 +133,8 @@
                             <!--~~~~~ Start post Navigation ~~~~~--> 
                             <nav class="post-navigation mb-80">
                                 @if(isset($sebelum))
-                                <div class="post-previous bg-image bg-overlay" style="background-image:url({{ asset('/uploads/images/gambar-berita/'.$sebelum->thumbnail) }});width:430px;height:185px;">
+                                <!-- <div class="post-previous bg-image bg-overlay" style="background-image:url({{ asset('/uploads/images/gambar-berita/'.$sebelum->thumbnail) }});width:430px;height:185px;"> -->
+                                <div class="post-previous active bg-image bg-overlay">
                                     <a rel="prev" href="{{ url('/berita/'.$sebelum->slug) }}">
                                         <span class="label">Berita Sebelumnya</span>
                                         <h3>{{ $sebelum->judul }}</h3>
@@ -141,7 +142,8 @@
                                 </div>
                                 @endif
                                 @if(isset($sesudah))
-                                <div class="post-next active bg-image bg-overlay" style="background-image:url({{ asset('/uploads/images/gambar-berita/'.$sesudah->thumbnail) }});width:430px;height:185px;">
+                                <!-- <div class="post-next active bg-image bg-overlay" style="background-image:url({{ asset('/uploads/images/gambar-berita/'.$sesudah->thumbnail) }});width:430px;height:185px;"> -->
+                                <div class="post-next active bg-image bg-overlay">
                                     <a rel="prev" href="{{ url('/berita/'.$sesudah->slug) }}">
                                         <span class="label">Berita Seterusnya</span>
                                         <h3>{{ $sesudah->judul }}</h3>
@@ -240,7 +242,9 @@
                                                     <div class="entry-date">
                                                         <span>{{ tgl_indo($item->updated_at) }}</span>
                                                     </div><!--./ entry-date -->
-                                                   
+                                                    <div class="entry-date">
+                                                        <span><i class="fa fa-eye"></i> {{ $item->dilihat }} </span>
+                                                    </div><!--./ entry-date -->
                                                     <div class="entry-category">
                                                         <a class="cat" href="{{ url('/kategori-berita/'.$item->slug_kategori) }}">{{ $item->nama_kategori }}</a>
                                                     </div><!--./ entry-category -->

@@ -47,6 +47,7 @@ class GaleriGambar extends Model
         $data = $this->rightJoin('detail_galeris','detail_galeris.galeri_gambar_id','galeri_gambars.id')
             ->select(
                 'galeri_gambars.id',
+                'galeri_gambars.slug',
                 'detail_galeris.nama',
                 'galeri_gambars.keterangan',
                 'detail_galeris.gambar',

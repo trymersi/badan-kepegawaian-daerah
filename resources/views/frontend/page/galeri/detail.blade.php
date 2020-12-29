@@ -6,12 +6,13 @@
 @include('frontend.include.breadcrumb')
 <div class="site-content">
     
-    <div class="main-wrapper ptb-80 style-two">
+    <div class="main-wrapper ptb-40 style-two">
         <div class="container-gal">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="container-gal">
-                        <h4 class="header-gal text-center">SEMUA GAMBAR DARI GALERI {{ strtoupper($page_name) }}</h4>
+                        <!-- <h4 class="header-gal text-center">SEMUA GAMBAR DARI GALERI {{ strtoupper($page_name) }}</h4> -->
+                        <h2 class="section-title text-center">GALERI GAMBAR{{ strtoupper($page_name) }}</h2>
                         <div class="content-gal">
                             <div class="row justify-content-md-center">
                                 <div class="col-lg-8">

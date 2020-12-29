@@ -42,6 +42,7 @@
                             <div class="entry-date">
                                 <span>{{ tgl_indo($item->updated_at) }}</span>
                             </div><!--./ entry-date -->
+                            
                         </div><!--./ entry-meta-content -->
                     </div>
                 </article><!--./ end post -->
@@ -52,7 +53,7 @@
         </aside><!--~./ end popular posts widget ~-->
           
         <!--~~~~~ Start Widget Advertisement ~~~~~-->
-        <aside class="widget widget-text">     
+        <!-- <aside class="widget widget-text">     
             <h4 class="widget-title"><span>Link Terkait</span></h4>      
             <div class="widget-content">
                 @foreach($link_terkait as $item)
@@ -61,8 +62,22 @@
                 </a>
                 @endforeach
             </div>
-        </aside><!--~./ end widget advertisement ~-->
-           
+        </aside> -->
+
+        <aside class="widget tb-subscribe-widget">
+        <h4 class="widget-title"><span>Link Terkait</span></h4>      
+        @foreach($link_terkait as $item)
+        <div class="widget-content">
+                <div class="subscribe-box">
+                    <div class="icon">
+                    <a title="add" href="{{ $item->link }}" target="_blank">
+                        <img src="{{ asset('uploads/images/link-terkait/'.$item->gambar) }}" alt="{{ $item->nama }}">
+                    </a>
+                    </div>
+                </div>
+        </div>
+        @endforeach
+        </aside>
         
     </div>
 </div><!--~./ end sidebar ~-->
