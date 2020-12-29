@@ -95,6 +95,12 @@ class HomeController extends Controller
         $this->data['site_title'] = '✅ Seluruh Berita - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
         return view('frontend.page.berita.index',$this->data);
     }
+    public function kontak()
+    {
+        $this->data['category_name'] = 'Kontak BKD Riau';
+        $this->data['site_title'] = '✅ Kontak - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
+        return view('frontend.page.kontak.index',$this->data);
+    }
 
     public function detailBerita($id)
     {
@@ -220,6 +226,28 @@ class HomeController extends Controller
             ->addIndexColumn()
             ->rawColumns(['tanggal','option','isi'])
             ->make(true);
+    }
+    public function contactSave(Request $request)
+    {
+       
+        $validator = Validator::make($request->all(), [
+            'nama' => 'required',
+            'email' => 'required',
+            'telpon'=> 'required',
+            'judul'=> 'required',
+            'pesan'=> 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return Redirect::back()->with('message', 'Terjadi Kesalahan Harap Coba Kembali')->withInput();
+        }
+
+        $this->contact->nama = $request->name;
+        $this->contact->email = $request->email;
+        $this->contact->pertanyaan = $request->comments;
+        $this->contact->save();
+
+        return redirect()->back()->with('message', 'Pesan kamu telah dikirim!');
     }
 
     /**

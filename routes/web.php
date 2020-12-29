@@ -14,8 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('/')->group(function(){
+    Route::prefix('/kontak')->group(function(){
+        Route::get('/', "Frontend\HomeController@kontak");
+        Route::post('/','Frontend\HomeController@contactSave');
+    });
+    
     Route::get('/', "Frontend\HomeController@index");   
     Route::get('/berita', "Frontend\HomeController@berita");
+
     Route::get('/berita/{id}', "Frontend\HomeController@detailBerita");
     Route::get('/kategori-berita/{id}', "Frontend\HomeController@kategoriBerita");
     Route::get('/profil/{id}', "Frontend\HomeController@profil");
