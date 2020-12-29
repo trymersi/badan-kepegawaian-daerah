@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Frontend;
-
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Redirect; 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Pengaturan;
@@ -20,6 +21,7 @@ use App\Models\Bidang;
 use App\Models\SubBidang;
 use App\Models\Tupoksi;
 use App\Models\Faq;
+use App\Models\kontak;
 use DataTables;
 use Carbon\Carbon;
 
@@ -43,9 +45,11 @@ class HomeController extends Controller
     private $subBidang;
     private $tupoksiClass;
     private $faqClass;
+    private $contact;
 
     public function __construct()
     {
+        $this->contact = new kontak;
         $this->beritaClass = new Berita;
         $this->PengaturanClass = new Pengaturan;
         $this->AplikasiClass = new Aplikasi;
@@ -239,15 +243,17 @@ class HomeController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return Redirect::back()->with('message', 'Terjadi Kesalahan Harap Coba Kembali')->withInput();
+            return Redirect::back()->with('gagal', 'Terjadi Kesalahan Harap Coba Kembali')->withInput();
         }
 
-        $this->contact->nama = $request->name;
+        $this->contact->nama = $request->nama;
         $this->contact->email = $request->email;
-        $this->contact->pertanyaan = $request->comments;
+        $this->contact->telpon = $request->telpon;
+        $this->contact->judul = $request->judul;
+        $this->contact->pesan = $request->pesan;
         $this->contact->save();
 
-        return redirect()->back()->with('message', 'Pesan kamu telah dikirim!');
+        return redirect()->back()->with('sukses', 'Pesan kamu telah dikirim!');
     }
 
     /**
