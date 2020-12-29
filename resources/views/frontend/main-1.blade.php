@@ -160,7 +160,7 @@
                                         <li class="dropdown-trigger"><a href="#"><i class="fa fa-list" aria-hidden="true"></i> GALERI</a>
                                             <ul class="dropdown-content">
                                                 <li><a href="{{ url('/galeri') }}">Galeri Foto</a></li>
-                                                <li><a href="{{ url('/galeri') }}">Galeri Video</a></li>
+                                                <li><a href="{{ url('/galeri-video') }}">Galeri Video</a></li>
                                             </ul>
                                         </li>
                                         <li ><a href="{{ url('/faq') }}"><i class="fa fa-question-circle" aria-hidden="true"></i> FAQ</a>

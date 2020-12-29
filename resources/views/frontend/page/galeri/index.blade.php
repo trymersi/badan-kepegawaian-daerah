@@ -21,7 +21,7 @@
                                     <div class="box-gal vintage-gal">
                                         <img src="{{ asset('uploads/images/gambar-galeri/'.$item->gambar) }}" alt="{{ $item->nama }}" >
                                         <h2>{{ $item->nama }}</h2>
-                                        <p>{{ $item->keterangan }}</p>
+                                       
                                     </div>
                                 </a>
                             </div>

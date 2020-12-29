@@ -38,6 +38,7 @@ class GaleriGambar extends Model
                 'galeri_gambars.updated_at',
             )
             ->orderBy('galeri_gambars.created_at','desc')
+            ->limit(5)
             ->get();
         return $data;
     }
@@ -55,6 +56,21 @@ class GaleriGambar extends Model
             )
             ->orderBy('galeri_gambars.created_at','desc')
             ->limit(12)
+            ->get();
+        return $data;
+    }
+
+    public function getAll()
+    {
+        $data = $this->select(
+                'galeri_gambars.id',
+                'galeri_gambars.nama',
+                'galeri_gambars.keterangan',
+                'galeri_gambars.gambar',
+                'galeri_gambars.slug',
+                'galeri_gambars.updated_at',
+            )
+            ->orderBy('galeri_gambars.created_at','desc')
             ->get();
         return $data;
     }

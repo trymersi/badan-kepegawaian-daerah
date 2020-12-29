@@ -25,7 +25,8 @@ Route::prefix('/')->group(function(){
     Route::get('/berita/{id}', "Frontend\HomeController@detailBerita");
     Route::get('/kategori-berita/{id}', "Frontend\HomeController@kategoriBerita");
     Route::get('/profil/{id}', "Frontend\HomeController@profil");
-    Route::get('/galeri', "Frontend\HomeController@galeri");   
+    Route::get('/galeri', "Frontend\HomeController@galeri");
+    Route::get('/galeri-video', "Frontend\HomeController@galeriVideo");   
     Route::get('/galeri/{id}', "Frontend\HomeController@galeriDetail");   
     Route::get('/unduhan', "Frontend\HomeController@unduhan");
     Route::get('/unduhan/{id}', "Frontend\HomeController@unduhanDetail");

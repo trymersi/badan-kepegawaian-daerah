@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect; 
 use App\Http\Controllers\Controller;
+use App\Models\GaleriVideo;
 use Illuminate\Http\Request;
 use App\Models\Pengaturan;
 use App\Models\Berita;
@@ -11,7 +12,6 @@ use App\Models\Aplikasi;
 use App\Models\LinkTerkait;
 use App\Models\GaleriGambar;
 use App\Models\DetailGaleri;
-use App\Models\GaleriVideo;
 use App\Models\Slider;
 use App\Models\Unduh;
 use App\Models\kategoriUnduhan;
@@ -70,6 +70,7 @@ class HomeController extends Controller
         $this->tupoksiClass = new Tupoksi;
         $this->faqClass = new Faq;
         $this->pegawaiClass = new Pegawai;
+
         $this->data = [
             'category_name' => 'Dashboard',
             'main_url' => 'dashboard',
@@ -184,15 +185,24 @@ class HomeController extends Controller
     public function galeri()
     {
         $this->data['category_name'] = 'Galeri Gambar';
-        $this->data['galeri'] = $this->galeriGambar->getHome();
+        $this->data['galeri'] = $this->galeriGambar->getAll();
         $this->data['site_title'] = '✅ Galeri Gambar - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
         return view('frontend.page.galeri.index',$this->data);
+    }
+
+    public function galeriVideo()
+    {
+        $this->data['category_name'] = 'Galeri Video';
+        $this->data['galeri'] = $this->galeriVideo->all();
+        $this->data['site_title'] = '✅ Galeri Video - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
+        return view('frontend.page.video.index',$this->data);
     }
 
     public function galeriDetail($id)
     {
         
         $galeri = $this->galeriGambar->where('slug',$id)->first();
+        $this->data['data_galeri'] = $galeri;
         $this->data['category_name'] = 'Detail Galeri Gambar';
         $this->data['page_name'] = 'galeri gambar '.$galeri->nama;
         $this->data['detail_galeri'] = $this->galeriDetail->where('galeri_gambar_id',$galeri->id)->get();

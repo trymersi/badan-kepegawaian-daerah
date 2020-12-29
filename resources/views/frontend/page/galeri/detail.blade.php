@@ -12,7 +12,8 @@
                 <div class="col-lg-12">
                     <div class="container-gal">
                         <!-- <h4 class="header-gal text-center">SEMUA GAMBAR DARI GALERI {{ strtoupper($page_name) }}</h4> -->
-                        <h2 class="section-title text-center">GALERI GAMBAR{{ strtoupper($page_name) }}</h2>
+                        <h2 class="section-title text-center">{{ strtoupper($page_name) }}</h2>
+                        <p class="text-center" style="text-align: justify;">{{ $data_galeri->keterangan }}</p>
                         <div class="content-gal">
                             <div class="row justify-content-md-center">
                                 <div class="col-lg-8">

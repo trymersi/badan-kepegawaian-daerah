@@ -133,14 +133,7 @@
                     </main>
                     <!--~./ end site main ~-->
                     
-                    <!--~~~~~ Load More Area ~~~~~-->
-                    <!-- <div class="load-more-area text-center mt-60">
-                        <button class="btn btn-load-more loadmore">
-                            <i class="fa fa-spinner"></i>
-                            Load More
-                        </button>
-                        <span class="no-posts">No more posts</span>
-                    </div> -->
+                   
                 </div>
 
             </div>
@@ -152,7 +145,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-header">
-                        <h2 class="section-title">Aplikasi & Instansi Terkait</h2>
+                        <h2 class="section-title">Aplikasi Terkait</h2>
                     </div><!--~./ end section header ~-->
                 </div>
             </div>
@@ -161,7 +154,6 @@
                 <div class="col-12">
                     <div id="aplikasi-terkait-carousel" class="owl-carousel carousel-nav-circle">
                        <!--~~~~~ Start Post ~~~~~-->
-                  
                        @foreach($aplikasi as $item)
                         <article class="post hentry post-grid">
                             <div class="entry-thumb">
@@ -196,10 +188,12 @@
                             <li>
                                 <a class="active" data-toggle="tab" href="#semua" role="tab"><i class="fa fa-list"></i>Semua</a>
                             </li>
+                            <?php $i = 1; ?>
                             @foreach($galeri as $item)
                             <li>
-                                <a data-toggle="tab" href="#{{ $item->slug }}" role="tab"><i class="fa fa-picture-o"></i>{{ $item->nama }}</a>
+                                <a data-toggle="tab" href="#{{ $item->slug }}" role="tab"><i class="fa fa-picture-o"></i>Galeri {{ $i }}</a>
                             </li>
+                            <?php $i++; ?>
                             @endforeach
                         </ul>
                     </div><!--~./ end filter tab area ~-->
@@ -219,7 +213,7 @@
                                     <article class="post hentry post-grid">
                                         <div class="entry-thumb">
                                             <figure class="thumb-wrap">
-                                                <a href="{{ url('/galeri/'.$item->slug) }}">
+                                                <a href="#">
                                                     <img src="{{ asset('uploads/images/detail-galeri/'.$item->gambar) }}" width="370px" height="250px alt="{{ $item->nama }}">
                                                 </a>
                                             </figure><!--./ thumb-wrap -->
@@ -265,7 +259,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-header">
-                        <h2 class="section-title">BKD Kabupaten / Kota</h2>
+                        <h2 class="section-title">Link BKD Kabupaten / Kota</h2>
                     </div><!--~./ end section header ~-->
                 </div>
             </div>
@@ -273,13 +267,12 @@
             <div class="row">
                 <div class="col-12">
                     <div id="bkd-terkait-carousel" class="owl-carousel carousel-nav-circle">
-                 
-                    @foreach($link_terkait as $item)
+                        @foreach($link_terkait as $item)
                         <article class="post hentry post-grid">
                             <div class="entry-thumb">
                                 <figure class="thumb-wrap">
                                     <a href="{{ $item->link }}" target="_blank">
-                                        <img src="{{ asset('uploads/images/link-terkait/'.$item->gambar) }}" width="350px" height="150px" alt="post">
+                                        <img src="{{ asset('uploads/images/link-terkait/'.$item->gambar) }}" width="350px" height="150px" alt="{{ $item->nama }}">
                                     </a>
                                 </figure><!--./ thumb-wrap -->
                             </div><!--./ entry-thumb -->
