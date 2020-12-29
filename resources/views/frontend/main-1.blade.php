@@ -138,6 +138,7 @@
                                                         @endforeach
                                                     </ul>
                                                 </li>
+                                                <li><a href="{{ url('/pegawai/') }}">Pegawai & Staff</a></li>
                                             </ul>
                                         </li>
                                         <li class="dropdown-trigger"><a href="#"><i class="fa fa-download" aria-hidden="true"></i> UNDUHAN</a>
