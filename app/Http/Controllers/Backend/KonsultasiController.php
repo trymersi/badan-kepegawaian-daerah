@@ -13,6 +13,7 @@ use DataTables;
 use Toastr;
 use File;
 use Auth;
+use PDF;
 
 class KonsultasiController extends Controller
 {
@@ -91,6 +92,15 @@ class KonsultasiController extends Controller
         
     }
 
+    public function cetak($id)
+    {
+        $data = $this->konsultasi->getEdit($id);
+        $this->data['konsultasi'] = $data;
+        $this->data['title'] = "Pertanyaan";
+        $pdf =  PDF::loadView('dashboard.page.konsultasi.cetak',$this->data);
+        return $pdf->stream('pertanyaan.pdf'); 
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -154,7 +164,8 @@ class KonsultasiController extends Controller
             return DataTables::of($data)
             ->addColumn('option', function($data)
             {
-                $button = '<a href="'.url('dashboard/konsultasi/edit/'.$data->id).'" class="btn btn-warning mb-2 mr-2 btn-sm"><i class="fa fa-pencil" aria-hidden="true"></i></a>';
+                $button = '<a href="'.url('dashboard/konsultasi/edit/'.$data->id).'" class="btn btn-warning mb-2 mr-2 btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></a>';
+                $button .= '<a target="_blank" href="'.url('dashboard/konsultasi/cetak/'.$data->id).'" class="btn btn-success mb-2 mr-2 btn-sm"><i class="fa fa-print" aria-hidden="true"></i></a>';
                 
                 return  $button;
             })

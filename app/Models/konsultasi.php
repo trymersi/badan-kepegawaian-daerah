@@ -45,6 +45,9 @@ class Konsultasi extends Model
                 'konsultasis.nope',
                 'konsultasis.keterangan',
                 'konsultasis.status',
+                'konsultasis.created_at',
+                'konsultasis.updated_at',
+                
             )
             ->orderBy('konsultasis.created_at','desc')
             ->where('konsultasis.id',$id)

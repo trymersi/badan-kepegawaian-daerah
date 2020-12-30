@@ -80,7 +80,11 @@ class KontakController extends Controller
      */
     public function edit($id)
     {
-      
+        $edit = $this->kontakClass->find($id);
+        $this->data['edit'] = $edit;
+        $this->data['update_name'] = $edit->nama;
+        $this->data['page_name'] = 'Lihat data Kontak';
+        return view('dashboard.page.kontak.edit',$this->data);
     }
 
     /**
@@ -118,6 +122,13 @@ class KontakController extends Controller
             {
             return  Carbon::parse($data->created_at)->diffForHumans();
             })
+
+            ->addColumn('option', function($data)
+            {
+                $button = '<a href="'.url('dashboard/kontak/edit/'.$data->id).'" class="btn btn-warning mb-2 mr-2 btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></a>';
+                return  $button;
+            })
+
 
             ->addIndexColumn()
             ->rawColumns(['tanggal','option'])

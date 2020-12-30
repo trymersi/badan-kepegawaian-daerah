@@ -144,6 +144,7 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()
         Route::get('/edit/{id}','Backend\PertanyaanController@edit');
         Route::patch('/update/{id}','Backend\PertanyaanController@update');
         Route::delete('/delete/{id}','Backend\PertanyaanController@destroy');
+        
     });
 
 
@@ -153,6 +154,7 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()
         Route::get('/edit/{id}','Backend\KonsultasiController@edit');
         Route::patch('/update/{id}','Backend\KonsultasiController@update');
         Route::delete('/delete/{id}','Backend\KonsultasiController@destroy');
+        Route::get('/cetak/{id}','Backend\KonsultasiController@cetak');
     });
 
     Route::prefix('/profil')->group(function(){
@@ -205,6 +207,7 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()
     Route::prefix('/kontak')->group(function(){
         Route::resource('/','Backend\KontakController');
         Route::get('/table','Backend\KontakController@table');
+        Route::get('/edit/{id}','Backend\KontakController@edit');
     });
 
     Route::prefix('/slider')->group(function(){

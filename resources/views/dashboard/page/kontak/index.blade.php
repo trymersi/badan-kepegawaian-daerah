@@ -23,6 +23,7 @@
                                 <th>Judul</th>
                                 <th>Pesan</th>
                                 <th>Kontak Masuk</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -106,7 +107,12 @@
             {
                 data: 'tanggal',
                 name: 'tanggal'
+            },
+            {
+                data: 'option',
+                name: 'option'
             }
+            
            ],
            "initComplete": function(settings, json) {
 
