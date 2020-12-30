@@ -18,6 +18,11 @@ Route::prefix('/')->group(function(){
         Route::get('/', "Frontend\HomeController@kontak");
         Route::post('/','Frontend\HomeController@contactSave');
     });
+
+    Route::prefix('/konsultasi')->group(function(){
+        Route::get('/', "Frontend\HomeController@konsultasi");
+        Route::post('/','Frontend\HomeController@konsultasiSave');
+    });
     
     Route::get('/', "Frontend\HomeController@index");   
     Route::get('/berita', "Frontend\HomeController@berita");
@@ -131,6 +136,23 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()
         Route::get('/edit/{id}','Backend\FaqController@edit');
         Route::patch('/update/{id}','Backend\FaqController@update');
         Route::delete('/delete/{id}','Backend\FaqController@destroy');
+    });
+
+    Route::prefix('/pertanyaan')->group(function(){
+        Route::resource('/','Backend\PertanyaanController');
+        Route::get('/table','Backend\PertanyaanController@table');
+        Route::get('/edit/{id}','Backend\PertanyaanController@edit');
+        Route::patch('/update/{id}','Backend\PertanyaanController@update');
+        Route::delete('/delete/{id}','Backend\PertanyaanController@destroy');
+    });
+
+
+    Route::prefix('/konsultasi')->group(function(){
+        Route::resource('/','Backend\KonsultasiController');
+        Route::get('/table','Backend\KonsultasiController@table');
+        Route::get('/edit/{id}','Backend\KonsultasiController@edit');
+        Route::patch('/update/{id}','Backend\KonsultasiController@update');
+        Route::delete('/delete/{id}','Backend\KonsultasiController@destroy');
     });
 
     Route::prefix('/profil')->group(function(){

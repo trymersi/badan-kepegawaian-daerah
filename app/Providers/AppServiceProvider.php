@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Paginator::useBootstrap();
         
-        view()->composer(['frontend.main-1','frontend.include.sidebar','frontend.include.sidebar-profil','frontend.page.kontak.index'],function($view)
+        view()->composer(['frontend.main-1','frontend.include.sidebar','frontend.include.sidebar-profil','frontend.page.kontak.index','frontend.page.konsultasi.index'],function($view)
         {
             $view->with('berita',\App\Models\Berita::leftJoin('kategori_beritas','kategori_beritas.id','beritas.kategori_berita_id')
             ->select(

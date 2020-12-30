@@ -23,6 +23,8 @@ use App\Models\Tupoksi;
 use App\Models\Faq;
 use App\Models\Pegawai;
 use App\Models\kontak;
+use App\Models\Konsultasi;
+use App\Models\Pertanyaan;
 use DataTables;
 use Carbon\Carbon;
 
@@ -49,6 +51,8 @@ class HomeController extends Controller
     private $faqClass;
     private $pegawaiClass;
     private $contact;
+    private $konsultasi;
+    private $pertanyaan;
 
     public function __construct()
     {
@@ -70,6 +74,8 @@ class HomeController extends Controller
         $this->tupoksiClass = new Tupoksi;
         $this->faqClass = new Faq;
         $this->pegawaiClass = new Pegawai;
+        $this->konsultasi = new Konsultasi;
+        $this->pertanyaan = new Pertanyaan;
 
         $this->data = [
             'category_name' => 'Dashboard',
@@ -104,6 +110,7 @@ class HomeController extends Controller
         $this->data['site_title'] = '✅ Seluruh Berita - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
         return view('frontend.page.berita.index',$this->data);
     }
+
     public function kontak()
     {
         $this->data['category_name'] = 'Kontak BKD Riau';
@@ -245,6 +252,7 @@ class HomeController extends Controller
             ->rawColumns(['tanggal','option','isi'])
             ->make(true);
     }
+
     public function contactSave(Request $request)
     {
        
@@ -287,6 +295,40 @@ class HomeController extends Controller
         $this->data['site_title'] = '✅ Pegawai dan Staff - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
         $this->data['pegawai'] = $this->pegawaiClass->getPegawai($id);
         return view('frontend.page.pegawai.detail',$this->data);
+    }
+
+    public function konsultasi()
+    {
+        $this->data['category_name'] = 'Konsultasi BKD Riau';
+        $this->data['pertanyaan'] = $this->pertanyaan->orderBy('nama','asc')->get();
+        $this->data['site_title'] = '✅ Konsultasi - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
+        return view('frontend.page.konsultasi.index',$this->data);
+    }
+
+    public function konsultasiSave(Request $request)
+    {
+       
+        $validator = Validator::make($request->all(), [
+            'nama' => 'required',
+            'email' => 'required',
+            'telpon'=> 'required',
+            'pertanyaan'=> 'required',
+            'pesan'=> 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return Redirect::back()->with('gagal', 'Terjadi Kesalahan Harap Coba Kembali')->withInput();
+        }
+
+        $this->konsultasi->nama = $request->nama;
+        $this->konsultasi->email = $request->email;
+        $this->konsultasi->nope = $request->telpon;
+        $this->konsultasi->pertanyaan_id = $request->pertanyaan;
+        $this->konsultasi->keterangan = $request->pesan;
+        $this->konsultasi->status = 1;
+        $this->konsultasi->save();
+
+        return redirect()->back()->with('sukses', 'Pesan kamu telah dikirim!');
     }
 
     /**

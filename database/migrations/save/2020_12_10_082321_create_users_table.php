@@ -21,10 +21,12 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->unsignedBigInteger('level_user_id')->nullable();
+            $table->unsignedBigInteger('bidang_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('level_user_id')->references('id')->on('level_users')->onDelete('set null');
+            $table->foreign('bidang_id')->references('id')->on('bidangs')->onDelete('set null');
         });
     }
 

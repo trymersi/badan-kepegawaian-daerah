@@ -16,13 +16,16 @@ class CreateKonsultasisTable extends Migration
         Schema::create('konsultasis', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('pertanyaan_id')->nullable();
+            $table->unsignedBigInteger('bidang_id')->nullable();
             $table->string('nama')->nullable();
             $table->string('email')->nullable();
             $table->string('nope')->nullable();
             $table->string('keterangan')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('pertanyaan_id')->references('id')->on('pertanyaans')->onDelete('set null');
+            $table->foreign('bidang_id')->references('id')->on('bidangs')->onDelete('set null');
         });
     }
 

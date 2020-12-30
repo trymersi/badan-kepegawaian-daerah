@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\LevelUser;
+use App\Models\Bidang;
 use Carbon\Carbon;
 use DataTables;
 use Toastr;
@@ -21,12 +22,13 @@ class UserController extends Controller
     private $data;
     private $UserClass;
     private $LevelUserClass;
+    private $bidangClass;
 
     public function __construct()
     {
         $this->UserClass = new User;
         $this->LevelUserClass = new LevelUser;
-
+        $this->bidangClass = new Bidang;
         $this->data = [
             'category_name' => 'User',
             'main_url' => 'user',
@@ -51,6 +53,7 @@ class UserController extends Controller
      */
     public function create()
     {
+        $this->data['bidang'] = $this->bidangClass->orderBy('nama','asc')->get();
         $this->data['level'] = $this->LevelUserClass->orderBy('nama','asc')->get();
         $this->data['page_name'] = 'tambah data user';
         return view('dashboard.page.user.create',$this->data);
@@ -81,6 +84,7 @@ class UserController extends Controller
         $this->UserClass->email = $request->email;
         $this->UserClass->username = $request->username;
         $this->UserClass->level_user_id = $request->level;
+        $this->UserClass->bidang_id = $request->nama_bidang;
         $this->UserClass->password = Hash::make($request->password);
         $this->UserClass->save();
 
@@ -110,7 +114,7 @@ class UserController extends Controller
     {
         $edit = $this->UserClass->find($id);
         $this->data['level'] = $this->LevelUserClass->orderBy('nama','asc')->get();
-
+        $this->data['bidang'] = $this->bidangClass->orderBy('nama','asc')->get();
         $this->data['edit'] = $edit;
         $this->data['update_name'] = $edit->nama;
         $this->data['page_name'] = 'ubah data user';
@@ -142,6 +146,7 @@ class UserController extends Controller
         $update->username = $request->username;
         $update->email = $request->email;
         $update->level_user_id = $request->level;
+        $update->bidang_id = $request->nama_bidang;
         $update->save();
         $update ? Toastr::success('Data Berhasil Diubah', 'Sukses', ["positionClass" => "toast-bottom-right"]) : Toastr::error('Terjadi Kesalahan Saat Menyimpan Data', 'Gagal', ["positionClass" => "toast-bottom-right"]);
 

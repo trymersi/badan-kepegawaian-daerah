@@ -91,6 +91,24 @@
                         </div>
                       </div>
                   </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group @error('nama_bidang') error @enderror">
+                        <label>Nama Bidang <span class="text-danger">*</span></label>
+                        <select name="nama_bidang"  id="bidang" class="form-control select" style="width: 100%;">
+                          <option selected="selected" value="">Pilih Nama Bidang</option>
+                          @foreach($bidang as $bid)
+                              <option @if(old('nama_bidang',$dit->bidang_id) == $bid->id) selected="" @endif value="{{ $bid->id }}">{{ $bid->nama }}</option>
+                          @endforeach
+                        </select>
+                        <div class="help-block"><ul role="info"><li>Isian ini dapat dikosongkan</li></ul></div>
+                        @error('nama_bidang')
+                        <div class="help-block"><ul role="alert"><li>{{$message}}</li></ul></div>
+                        @enderror
+                      </div>
+                    </div>
+                  </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
                         <a href="{{ url('dashboard/'.$main_url) }}" type="button" class="btn btn-rounded btn-warning btn-outline mr-1">
