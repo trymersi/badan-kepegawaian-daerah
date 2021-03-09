@@ -125,6 +125,8 @@ class HomeController extends Controller
         {
             $increament = $this->beritaClass->find($berita->id);
             $increament->increment('dilihat',1);
+            $cookie = 1;
+            setcookie("count", $cookie,time()+86400);
         }
 
         $this->data['detail_berita'] = $berita;
