@@ -777,9 +777,27 @@ function nomorIndo($nomor)
     return $no;
 }
 
-function getTupoksiSub($id)
+function getPar($id)
 {
-    $get = App\Models\Tupoksi::getSub($id);
+    $get = App\Models\KategoriPelayanan::getPar($id);
+    return $get;
+}
+
+function getParCount($id)
+{
+    $get = App\Models\KategoriPelayanan::getParCount($id);
+    return $get;
+}
+
+function getPelayanan($id)
+{
+    $get = App\Models\KategoriPelayanan::getListPelayanan($id);
+    return $get;
+}
+
+function getPelayananCount($id)
+{
+    $get = App\Models\KategoriPelayanan::getListPelayananCount($id);
     return $get;
 }
 

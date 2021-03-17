@@ -19,6 +19,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>Nama Kategori</th>
+                                <th>Jenis Kategori</th>
                                 <th>Jumlah File Unduhan</th>
                                 <th>Terakhir Diubah</th>
                                 <th class="no-content"></th>
@@ -85,6 +86,10 @@
             {
                 data: 'nama',
                 name: 'nama'
+            },
+            {
+                data: 'jenis',
+                name: 'jenis'
             },
             {
                 data: 'jumlah_file',

@@ -59,7 +59,10 @@ class AppServiceProvider extends ServiceProvider
             ->limit(10)
             ->get());
 
-            $view->with('kategori_unduhan',\App\Models\KategoriUnduhan::orderBy('nama','asc')->get());
+            $view->with('kategori_unduhan',\App\Models\KategoriUnduhan::orderBy('nama','asc')->where('jenis',1)->get());
+            $view->with('kategori_peraturan',\App\Models\KategoriPeraturan::orderBy('nama','asc')->get());
+            $view->with('kategori_pelayanan',\App\Models\KategoriPelayanan::whereNull('parent')->get());
+            $view->with('informasi_public',\App\Models\KategoriUnduhan::orderBy('nama','asc')->where('jenis',2)->get());
             $view->with('profil',\App\Models\Profil::orderBy('nama','asc')->get());
             $view->with('aplikasi',\App\Models\Aplikasi::orderBy('nama','asc')->get());
             $view->with('link_terkait',\App\Models\LinkTerkait::orderBy('nama','asc')->get());

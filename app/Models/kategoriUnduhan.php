@@ -16,6 +16,7 @@ class kategoriUnduhan extends Model
                 DB::RAW('count(unduhs.id) as jumlah_file'),
                 'kategori_unduhans.id',
                 'kategori_unduhans.nama',
+                'kategori_unduhans.jenis',
                 'kategori_unduhans.updated_at'
             )
             ->orderBy('kategori_unduhans.created_at','desc')

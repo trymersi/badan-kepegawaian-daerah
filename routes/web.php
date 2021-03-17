@@ -34,8 +34,11 @@ Route::prefix('/')->group(function(){
     Route::get('/galeri-video', "Frontend\HomeController@galeriVideo");   
     Route::get('/galeri/{id}', "Frontend\HomeController@galeriDetail");   
     Route::get('/unduhan', "Frontend\HomeController@unduhan");
+    Route::get('/peraturan/{id}', "Frontend\HomeController@peraturan");
+    Route::get('/pelayanan/{id}', "Frontend\HomeController@pelayanan");
     Route::get('/unduhan/{id}', "Frontend\HomeController@unduhanDetail");
     Route::get('/unduhan/table/{id}','Frontend\HomeController@tableUnduhan');
+    Route::get('/peraturan/table/{id}','Frontend\HomeController@tablePeraturan');
     Route::get('/bidang/{id}', "Frontend\HomeController@detailBidang"); 
     Route::get('/faq', "Frontend\HomeController@faq"); 
     Route::get('/pegawai', "Frontend\HomeController@pegawai"); 
@@ -224,5 +227,37 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()
         Route::get('/edit/{id}','Backend\KategoriUnduhController@edit');
         Route::patch('/update/{id}','Backend\KategoriUnduhController@update');
         Route::delete('/delete/{id}','Backend\KategoriUnduhController@destroy');
+    });
+
+    Route::prefix('/kategori-peraturan')->group(function(){
+        Route::resource('/','Backend\KategoriPeraturanController');
+        Route::get('/table','Backend\KategoriPeraturanController@table');
+        Route::get('/edit/{id}','Backend\KategoriPeraturanController@edit');
+        Route::patch('/update/{id}','Backend\KategoriPeraturanController@update');
+        Route::delete('/delete/{id}','Backend\KategoriPeraturanController@destroy');
+    });
+
+    Route::prefix('/peraturan')->group(function(){
+        Route::resource('/','Backend\PeraturanController');
+        Route::get('/table','Backend\PeraturanController@table');
+        Route::get('/edit/{id}','Backend\PeraturanController@edit');
+        Route::patch('/update/{id}','Backend\PeraturanController@update');
+        Route::delete('/delete/{id}','Backend\PeraturanController@destroy');
+    });
+
+    Route::prefix('/kategori-pelayanan')->group(function(){
+        Route::resource('/','Backend\KategoriPelayananController');
+        Route::get('/table','Backend\KategoriPelayananController@table');
+        Route::get('/edit/{id}','Backend\KategoriPelayananController@edit');
+        Route::patch('/update/{id}','Backend\KategoriPelayananController@update');
+        Route::delete('/delete/{id}','Backend\KategoriPelayananController@destroy');
+    });
+
+    Route::prefix('/pelayanan')->group(function(){
+        Route::resource('/','Backend\PelayananController');
+        Route::get('/table','Backend\PelayananController@table');
+        Route::get('/edit/{id}','Backend\PelayananController@edit');
+        Route::patch('/update/{id}','Backend\PelayananController@update');
+        Route::delete('/delete/{id}','Backend\PelayananController@destroy');
     });
 });

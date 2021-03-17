@@ -51,6 +51,9 @@
                             <div class="membar-signin">
                                 <ul>
                                     <li><a href="{{ url('/kontak') }}"><i class="fa fa-building"></i> Hubungi kami</a></li>
+                                    <li><a href="{{ url('/faq') }}"><i class="fa fa-question-circle"></i> FAQ</a></li>
+                                    <li><a href="{{ url('/konsultasi') }}"><i class="fa fa-comments-o"></i> Konsultasi</a></li>
+                                    
                                 </ul>
                             </div><!--~./ membar-signin ~-->
                             <div class="social-profile">
@@ -115,7 +118,7 @@
                             <div class="mainmenu-area">
                                 <nav class="menu">
                                     <ul id="nav">
-                                        <li ><a href="{{ url('/') }}"><i class="fa fa-home" aria-hidden="true"></i> BERANDA</a>
+                                        <li ><a href="{{ url('/') }}"><i class="fa fa-home" aria-hidden="true"></i> HOME</a>
                                             
                                         </li>
                                         <li class="dropdown-trigger"><a href="#"><i class="fa fa-newspaper-o" aria-hidden="true"></i> BERITA</a>
@@ -149,21 +152,83 @@
                                                 <li><a href="{{ url('/unduhan') }}">Seluruh Unduhan</a></li>
                                             </ul>
                                         </li>
-                                        <li class="dropdown-trigger"><a href="#"><i class="fa fa-list" aria-hidden="true"></i> APPS & LAINNYA</a>
+
+                                        <li class="dropdown-trigger"><a href="#"><i class="fa fa-download" aria-hidden="true"></i> INFORMASI PUBLIK</a>
+                                            <ul class="dropdown-content">
+                                                @foreach($informasi_public as $item)
+                                                <li><a href="{{ url('/unduhan/'.$item->slug) }}">{{ $item->nama }}</a></li>
+                                                @endforeach
+                                            </ul>
+                                        </li>
+
+                                        <li class="dropdown-trigger"><a href="#"><i class="fa fa-download" aria-hidden="true"></i> PERATURAN</a>
+                                            <ul class="dropdown-content">
+                                                @foreach($kategori_peraturan as $item)
+                                                <li><a href="{{ url('/peraturan/'.$item->slug) }}">{{ $item->nama }}</a></li>
+                                                @endforeach
+                                                
+                                            </ul>
+                                        </li>
+
+                                        <li class="dropdown-trigger"><a href="#"><i class="fa fa-download" aria-hidden="true"></i> LAYANAN</a>
+                                            <ul class="dropdown-content">
+                                                <?php 
+                                                ?>
+                                                @foreach($kategori_pelayanan as $item)
+                                                    @if(getParCount($item->id) > 0)
+                                                        <li class="dropdown-trigger"><a href="#"> {{ $item->nama }}</a>
+                                                            <ul class="dropdown-content">
+                                                                @foreach(getPar($item->id) as $kat)
+                                                                    @if(getPelayananCount($kat->id) > 0)
+                                                                        <li class="dropdown-trigger"><a href="#"> {{ $kat->nama }}</a>
+                                                                            <ul class="dropdown-content">
+                                                                                @foreach(getPelayanan($kat->id) as $pel)
+                                                                                <li><a href="{{ url('/pelayanan/'.$pel->slug) }}">{{ $pel->nama }}</a></li>
+                                                                                @endforeach
+                                                                                
+                                                                            </ul>
+                                                                        </li>
+                                                                    @endif
+                                                                        
+                                                                @endforeach
+                                                                
+                                                                @foreach(getPelayanan($item->id) as $pel)
+                                                                <li><a href="{{ url('/pelayanan/'.$pel->slug) }}">{{ $pel->nama }}</a></li>
+                                                                @endforeach
+                                                            </ul>
+                                                        </li>
+                                                    @else
+                                                    <li class="dropdown-trigger"><a href="#"> {{ $item->nama }}</a>
+                                                        <ul class="dropdown-content">
+                                                            @foreach(getPelayanan($item->id) as $pel)
+                                                            <li><a href="{{ url('/pelayanan/'.$pel->slug) }}">{{ $pel->nama }}</a></li>
+                                                            @endforeach
+                                                            
+                                                        </ul>
+                                                    </li>
+                                                        
+                                                    @endif
+                                                
+                                                @endforeach
+                                                
+                                            </ul>
+                                        </li>
+
+                                        {{-- <li class="dropdown-trigger"><a href="#"><i class="fa fa-list" aria-hidden="true"></i> APLIKASI</a>
                                             <ul class="dropdown-content">
                                                 @foreach($aplikasi as $item)
                                                 <li><a target="_blank" href="{{ $item->link}}">{{ $item->nama }}</a></li>
                                                 @endforeach
                                                
                                             </ul>
-                                        </li>
+                                        </li> --}}
                                         <li class="dropdown-trigger"><a href="#"><i class="fa fa-list" aria-hidden="true"></i> GALERI</a>
                                             <ul class="dropdown-content">
                                                 <li><a href="{{ url('/galeri') }}">Galeri Foto</a></li>
                                                 <li><a href="{{ url('/galeri-video') }}">Galeri Video</a></li>
                                             </ul>
                                         </li>
-                                        <li ><a href="{{ url('/faq') }}"><i class="fa fa-question-circle" aria-hidden="true"></i> FAQ</a>
+                                       
                                     </ul>
                                 </nav><!--/.menu-->
                             </div><!--~./ mainmenu-wrap ~-->
@@ -183,9 +248,7 @@
                                 </div><!--~./ search-wrap ~-->
 
                                 <ul class="nav-btns">
-                                    <li>
-                                        <a id="random-post" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Random Post"><img src="{{ asset('assets/frontend/images/icon/random.png')}}" alt="icon"></a>
-                                    </li>
+                                    
                                     <li>
                                         <a href="#" id="bt-show-sidebar"><i class="fa fa-bars"></i></a>
                                     </li>

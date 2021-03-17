@@ -71,6 +71,7 @@ class KategoriUnduhController extends Controller
         }
 
         $this->kategoriUnduh->nama = $request->nama_kategori;
+        $this->kategoriUnduh->jenis = $request->jenis;
         $this->kategoriUnduh->slug = bersih($request->nama_kategori);
         $this->kategoriUnduh->save();
 
@@ -124,6 +125,7 @@ class KategoriUnduhController extends Controller
 
         $update = KategoriUnduhan::find($id);
         $update->nama = $request->nama_kategori;
+        $update->jenis = $request->jenis;
         $update->slug = bersih($request->nama_kategori);
         $update->save();
 
@@ -172,9 +174,13 @@ class KategoriUnduhController extends Controller
             {
             return  Carbon::parse($data->updated_at)->diffForHumans();
             })
+            ->addColumn('jenis', function($data)
+            {
+                return ($data->jenis == "1") ? "<span class='badge badge-success'>Umum</span>" : "<span class='badge badge-info'>Informasi Public</span>";
+            })
 
             ->addIndexColumn()
-            ->rawColumns(['tanggal','option'])
+            ->rawColumns(['tanggal','option','jenis'])
             ->make(true);
     }
 }

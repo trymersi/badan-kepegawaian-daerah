@@ -14,7 +14,10 @@ use App\Models\GaleriGambar;
 use App\Models\DetailGaleri;
 use App\Models\Slider;
 use App\Models\Unduh;
+use App\Models\Peraturan;
+use App\Models\Pelayanan;
 use App\Models\kategoriUnduhan;
+use App\Models\kategoriPeraturan;
 use App\Models\KategoriBerita;
 use App\Models\Profil;
 use App\Models\Bidang;
@@ -53,6 +56,8 @@ class HomeController extends Controller
     private $contact;
     private $konsultasi;
     private $pertanyaan;
+    private $kategoriPeraturan;
+    private $peraturanClass;
 
     public function __construct()
     {
@@ -76,6 +81,9 @@ class HomeController extends Controller
         $this->pegawaiClass = new Pegawai;
         $this->konsultasi = new Konsultasi;
         $this->pertanyaan = new Pertanyaan;
+        $this->kategoriPeraturan = new kategoriPeraturan;
+        $this->peraturanClass = new Peraturan;
+        $this->pelayananClass = new Pelayanan;
 
         $this->data = [
             'category_name' => 'Dashboard',
@@ -180,6 +188,42 @@ class HomeController extends Controller
         return view('frontend.page.unduhan.index',$this->data);
     }
 
+    public function peraturan($id)
+    {
+        $data = $this->kategoriPeraturan->where('slug','LIKE','%'.$id.'%')->first();
+        if($data)
+        {
+            $this->data['category_name'] = $data->nama;
+            $this->data['id_peraturan'] = $data->id;
+            $this->data['site_title'] = '✅ Peraturan - '.$data->nama.' - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
+            return view('frontend.page.peraturan.index',$this->data);
+        }
+        
+    }
+
+    public function pelayanan($id)
+    {
+        $data = $this->pelayananClass->where('slug','LIKE','%'.$id.'%')->first();
+        
+        if($data)
+        {
+            if (!isset($_COOKIE['count']))
+            {
+                $increament = $this->pelayananClass->find($data->id);
+                $increament->increment('dilihat',1);
+                $cookie = 1;
+                setcookie("count", $cookie,time()+86400);
+            }
+
+            $this->data['detail'] = $this->pelayananClass->getSingle($data->id);
+            $this->data['category_name'] = $data->nama;
+            $this->data['id_peraturan'] = $data->id;
+            $this->data['site_title'] = '✅ Peraturan - '.$data->nama.' - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
+            return view('frontend.page.pelayanan.detail',$this->data);
+        }
+        
+    }
+
     public function unduhanDetail($id)
     {
         $kategori = $this->kategoriUnduh->where('slug',$id)->first();
@@ -247,6 +291,22 @@ class HomeController extends Controller
             {
                 
                 return '<a href="'.asset('/uploads/unduhan/'.$data->file).'" target="_blank" class=""><i class="fa fa-download" aria-hidden="true"></i> Unduh</a>';
+            })
+
+
+            ->addIndexColumn()
+            ->rawColumns(['tanggal','option','isi'])
+            ->make(true);
+    }
+
+    public function tablePeraturan($id)
+    {
+        $data = $this->peraturanClass->where('kategori_peraturan_id',$id)->get();
+            return DataTables::of($data)
+            ->addColumn('option', function($data)
+            {
+                
+                return '<a href="'.asset('/uploads/peraturan/'.$data->file).'" target="_blank" class=""><i class="fa fa-download" aria-hidden="true"></i> Unduh</a>';
             })
 
 

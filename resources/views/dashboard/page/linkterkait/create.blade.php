@@ -40,7 +40,7 @@
                         <div class="row">
                           <div class="col-md-6">
                             <div class="form-group @error('jenis') error @enderror">
-                              <label>Level User <span class="text-danger">*</span></label>
+                              <label>Jenis Link <span class="text-danger">*</span></label>
                               <select name="jenis"  id="jenis" class="form-control select" style="width: 100%;">
                                 <option selected="selected" value="">Pilih Jenis Link</option>
                                 <option @if(old('jenis') == 1) selected="" @endif value="1">Link Terkait BKD</option>

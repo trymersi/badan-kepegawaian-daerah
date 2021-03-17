@@ -25,7 +25,21 @@
                            </div>
                          </div>
                        </div>
-                       
+                       <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group @error('jenis') error @enderror">
+                            <label>Jenis Kategori <span class="text-danger">*</span></label>
+                            <select name="jenis"  id="jenis" class="form-control select" style="width: 100%;">
+                              <option selected="selected" value="">Pilih Jenis Kategori</option>
+                              <option @if(old('jenis',$edit->jenis) == 1) selected="" @endif value="1">Kategori Umum</option>
+                              <option @if(old('jenis',$edit->jenis) == 2) selected="" @endif value="2">Informasi Public</option>
+                            </select>
+                            @error('level')
+                            <div class="help-block"><ul role="alert"><li>{{$message}}</li></ul></div>
+                            @enderror
+                          </div>
+                        </div>
+                      </div>
                       
                    </div>
                    <!-- /.box-body -->
@@ -51,3 +65,11 @@
 
 </section>
 @endsection
+@push('js')
+  <script src="{{ asset('assets/backend/vendor_components/select2/dist/js/select2.full.js')}}"></script>
+  <script>  
+    $(document).ready(function() {
+      $(".select").select2();
+    });
+  </script> 
+@endpush

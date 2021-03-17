@@ -171,13 +171,40 @@
 
               </ul>
             </li>
-        <li class="header">Data Konsultasi</li>
+        <li class="header">Pelayanan</li>
             
             <li class="@if($category_name == "Konsultasi") active @endif">
               <a href="{{ url('/dashboard/konsultasi') }}">
                   <i class="fa fa-commenting-o" aria-hidden="true"></i>
                   <span>Konsultasi</span>
               </a>
+            </li>
+
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-info-circle"><span class="path1"></span><span class="path2"></span></i>
+                <span>Data Pelayanan</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-right pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+    
+                <li class="@if($category_name == "Pelayanan") active @endif">
+                  <a href="{{ url('/dashboard/pelayanan') }}">
+                      <i class="fa fa-info-circle" aria-hidden="true"></i>
+                      <span>Pelayanan</span>
+                  </a>
+                </li>
+        
+                <li class="@if($category_name == "Kategori Pelayanan") active @endif">
+                  <a href="{{ url('/dashboard/kategori-pelayanan') }}">
+                      <i class="fa fa-info-circle" aria-hidden="true"></i>
+                      <span>Kategori Pelayanan</span>
+                  </a>
+                </li>
+    
+              </ul>
             </li>
 
         <li class="header">File Unduhan</li>
@@ -199,10 +226,37 @@
               </a>
             </li>
     
-            <li class="@if($category_name == "Aplikasi Terkait") active @endif">
+            <li class="@if($category_name == "Kategori Unduh") active @endif">
               <a href="{{ url('/dashboard/kategori-unduhan') }}">
                   <i class="fa fa-download" aria-hidden="true"></i>
                   <span>Kategori Unduhan</span>
+              </a>
+            </li>
+
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-book"><span class="path1"></span><span class="path2"></span></i>
+            <span>Data Peraturan</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+
+            <li class="@if($category_name == "Peraturan") active @endif">
+              <a href="{{ url('/dashboard/peraturan') }}">
+                  <i class="fa fa-book" aria-hidden="true"></i>
+                  <span>Peraturan</span>
+              </a>
+            </li>
+    
+            <li class="@if($category_name == "Kategori Peraturan") active @endif">
+              <a href="{{ url('/dashboard/kategori-peraturan') }}">
+                  <i class="fa fa-book" aria-hidden="true"></i>
+                  <span>Kategori Peraturan</span>
               </a>
             </li>
 
