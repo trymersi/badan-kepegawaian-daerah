@@ -28,6 +28,8 @@ use App\Models\Pegawai;
 use App\Models\kontak;
 use App\Models\Konsultasi;
 use App\Models\Pertanyaan;
+use App\Models\PertanyaanIkm;
+use App\Models\Survey;
 use DataTables;
 use Carbon\Carbon;
 
@@ -56,6 +58,7 @@ class HomeController extends Controller
     private $contact;
     private $konsultasi;
     private $pertanyaan;
+    private $pertanyaanIkm;
     private $kategoriPeraturan;
     private $peraturanClass;
 
@@ -84,6 +87,7 @@ class HomeController extends Controller
         $this->kategoriPeraturan = new kategoriPeraturan;
         $this->peraturanClass = new Peraturan;
         $this->pelayananClass = new Pelayanan;
+        $this->pertanyaanIkm = new PertanyaanIkm;
 
         $this->data = [
             'category_name' => 'Dashboard',
@@ -393,6 +397,53 @@ class HomeController extends Controller
         return redirect()->back()->with('sukses', 'Pesan kamu telah dikirim!');
     }
 
+    public function ikmIndex()
+    {
+        $this->data['page_name'] = 'IKM BKD Riau';
+        $this->data['pertanyaan'] = $this->pertanyaanIkm->orderBy('urutan','asc')->where('status',1)->limit(7)->get();
+        $this->data['site_title'] = '✅ IKM - Badan Kepegawaian Daerah Provinsi Riau | Bahagia Berkarya';
+        return view('frontend.page.ikm.index',$this->data);
+    }
+
+    public function ikmSave(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'nama' => 'required',
+            'email' => 'required',
+            'umur'=> 'required',
+            'kelamin'=> 'required',
+            'no1'=> 'required',
+            'no2'=> 'required',
+            'no3'=> 'required',
+            'no4'=> 'required',
+            'no5'=> 'required',
+            'no6'=> 'required',
+            'no7'=> 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return Redirect::back()->with('gagal', 'Terjadi Kesalahan Harap Coba Kembali')->withInput();
+        }
+
+
+        $save = new Survey;
+        $save->nama = $request->nama;
+        $save->email = $request->email;
+        $save->umur = $request->umur;
+        $save->jk = $request->kelamin;
+        $save->jawaban1 = $request->no1;
+        $save->jawaban2 = $request->no2;
+        $save->jawaban3 = $request->no3;
+        $save->jawaban4 = $request->no4;
+        $save->jawaban5 = $request->no5;
+        $save->jawaban6 = $request->no6;
+        $save->jawaban7 = $request->no7;
+        $save->masukan = $request->masukan;
+        $save->save();
+
+        return redirect()->back()->with('sukses', 'Survey kamu sudah dikirim, Terimakasih!');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -458,4 +509,5 @@ class HomeController extends Controller
     {
         //
     }
+
 }

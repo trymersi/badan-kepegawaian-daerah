@@ -207,6 +207,33 @@
               </ul>
             </li>
 
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-info-circle"><span class="path1"></span><span class="path2"></span></i>
+                <span>Survey</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-right pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+    
+                <li class="@if($category_name == "Pertanyaan Survey") active @endif">
+                  <a href="{{ url('/dashboard/pertanyaan-ikm') }}">
+                      <i class="fa fa-info-circle" aria-hidden="true"></i>
+                      <span>Pertanyaan Survey</span>
+                  </a>
+                </li>
+        
+                <li class="@if($category_name == "Survey") active @endif">
+                  <a href="{{ url('/dashboard/survey') }}">
+                      <i class="fa fa-info-circle" aria-hidden="true"></i>
+                      <span>Data Survey</span>
+                  </a>
+                </li>
+    
+              </ul>
+            </li>
+
         <li class="header">File Unduhan</li>
 
         <li class="treeview">

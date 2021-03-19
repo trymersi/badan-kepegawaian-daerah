@@ -1,5 +1,7 @@
 <?php
+require '../vendor/autoload.php';
 include 'dom.php';
+use Intervention\Image\ImageManager;
 $connect = mysqli_connect('localhost','root','','bkd_backup');
 $connect2 = mysqli_connect('localhost','root','','project_bkd');
 $getPost = mysqli_query($connect,"select * from wp_posts where post_type='post' and post_status = 'publish'");
@@ -23,6 +25,8 @@ while($r=mysqli_fetch_array($getPost))
             $filename = $nama_bersih.'_'.rand();
             $filepath = 'uploads/images/gambar-berita/'.$filename.'.'.$mimetype;
             $nama = $filename.'.'.$mimetype;
+           
+
             file_put_contents($filepath,file_get_contents($src));
             $truepath = 'https://bkd.riau.go.id/public/uploads/images/gambar-berita/'.$filename.'.'.$mimetype;
             $new_src =$truepath;
@@ -78,44 +82,3 @@ function getThumb($url)
     return isset($file_name) ? $file_name : 'default.jpg';
 }
 
-function meta_description($string) {
-    if(strlen($string) > 160)
-    {
-        $truncate = 160;
-        $string = preg_replace ('/<[^>]*>/', ' ', $string);
-        $string = str_replace("\r", '', $string);
-        $string = str_replace("\n", ' ', $string);
-        $string = str_replace("\t", ' ', $string);
-        $string = str_replace("&nbsp;&nbsp;&nbsp;", ' ', $string);
-        $string = str_replace("&nbsp;&nbsp;", ' ', $string);
-        $string = str_replace("&nbsp; &nbsp;", ' ', $string);
-        $string = trim(preg_replace('/ {2,}/', ' ', $string));
-        $string = preg_replace("/&#?[a-z0-9]{2,8};/i","",$string);
-        $string = preg_replace("#[[:punct:]]#", "", $string);
-        $string = trim($string, ", ");
-        $string = trim($string, " ,");
-        $string = trim($string, ",");
-        $string = str_replace("  ", ' ', $string);
-        $string = trim($string);
-        $string = substr($string, 0, $truncate).'...';
-    }
-    return $string;
-}
-
-function meta_keywords($string) {
-    $string = preg_replace ('/<[^>]*>/', ' ', $string);
-    $string = str_replace("\r", '', $string);
-    $string = str_replace("\n", ' ', $string);
-    $string = str_replace("\t", ' ', $string);
-    $string = trim(preg_replace('/ {2,}/', ' ', $string));
-    $string = preg_replace("/&#?[a-z0-9]{2,8};/i","",$string);
-    $string = preg_replace("#[[:punct:]]#", "", $string);
-    $string = preg_replace("[^-\w\d\s\.=$'€%]",'',$string);
-    $string = str_replace(' ', ', ', $string);
-    $string = str_replace(' ,', '', $string);
-    $string = trim($string, ", ");
-    $string = trim($string, " ,");
-    $string = trim($string, ",");
-    $string = trim($string);
-    return $string;
-}

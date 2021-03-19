@@ -23,11 +23,17 @@ Route::prefix('/')->group(function(){
         Route::get('/', "Frontend\HomeController@konsultasi");
         Route::post('/','Frontend\HomeController@konsultasiSave');
     });
+
+    Route::prefix('/indeks-kepuasan-masyarakat')->group(function(){
+        Route::get('/', "Frontend\HomeController@ikmIndex");
+        Route::post('/','Frontend\HomeController@ikmSave');
+    });
     
     Route::get('/', "Frontend\HomeController@index");   
     Route::get('/berita', "Frontend\HomeController@berita");
 
     Route::get('/berita/{id}', "Frontend\HomeController@detailBerita");
+    
     Route::get('/kategori-berita/{id}', "Frontend\HomeController@kategoriBerita");
     Route::get('/profil/{id}', "Frontend\HomeController@profil");
     Route::get('/galeri', "Frontend\HomeController@galeri");
@@ -259,5 +265,19 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()
         Route::get('/edit/{id}','Backend\PelayananController@edit');
         Route::patch('/update/{id}','Backend\PelayananController@update');
         Route::delete('/delete/{id}','Backend\PelayananController@destroy');
+    });
+
+    Route::prefix('/pertanyaan-ikm')->group(function(){
+        Route::resource('/','Backend\PertanyaanIkmController');
+        Route::get('/table','Backend\PertanyaanIkmController@table');
+        Route::get('/edit/{id}','Backend\PertanyaanIkmController@edit');
+        Route::patch('/update/{id}','Backend\PertanyaanIkmController@update');
+        Route::delete('/delete/{id}','Backend\PertanyaanIkmController@destroy');
+        
+    });
+
+    Route::prefix('/survey')->group(function(){
+        Route::resource('/','Backend\SurveyController');
+        Route::get('/table','Backend\SurveyController@table');
     });
 });

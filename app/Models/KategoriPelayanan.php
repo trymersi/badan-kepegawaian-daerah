@@ -24,7 +24,15 @@ class KategoriPelayanan extends Model
 
     public static function getPar($id)
     {
-        $data = DB::table('kategori_pelayanans')->where('parent',$id)
+        $data = DB::table('kategori_pelayanans')
+            ->leftJoin('pelayanans','pelayanans.kategori_pelayanan_id','kategori_pelayanans.id')
+            ->select(
+                'pelayanans.slug',
+                'kategori_pelayanans.id',
+                'kategori_pelayanans.nama',
+                'kategori_pelayanans.parent'
+                )
+            ->where('kategori_pelayanans.parent',$id)
             ->get();
         return $data;
     }

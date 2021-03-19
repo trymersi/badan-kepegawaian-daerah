@@ -143,7 +143,7 @@ class PertanyaanController extends Controller
     public function table(Request $request)
     {   
         
-        $data = $this->pertanyaan->orderBy('created_at','desc');
+        $data = $this->pertanyaan->orderBy('created_at','desc')->get();
             return DataTables::of($data)
             ->addColumn('option', function($data)
             {

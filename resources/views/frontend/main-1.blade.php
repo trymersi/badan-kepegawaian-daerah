@@ -175,39 +175,27 @@
                                                 <?php 
                                                 ?>
                                                 @foreach($kategori_pelayanan as $item)
-                                                    @if(getParCount($item->id) > 0)
-                                                        <li class="dropdown-trigger"><a href="#"> {{ $item->nama }}</a>
+                                                <li class="dropdown-trigger"><a href="#"> {{ $item->nama }}</a>
+                                                    <ul class="dropdown-content">
+                                                        @foreach(getPar($item->id) as $kat)
+                                                        @if(getParCount($kat->id) > 0)
+                                                        <li class="dropdown-trigger"><a href="#"> {{ $kat->nama }}</a>
                                                             <ul class="dropdown-content">
-                                                                @foreach(getPar($item->id) as $kat)
-                                                                    @if(getPelayananCount($kat->id) > 0)
-                                                                        <li class="dropdown-trigger"><a href="#"> {{ $kat->nama }}</a>
-                                                                            <ul class="dropdown-content">
-                                                                                @foreach(getPelayanan($kat->id) as $pel)
-                                                                                <li><a href="{{ url('/pelayanan/'.$pel->slug) }}">{{ $pel->nama }}</a></li>
-                                                                                @endforeach
-                                                                                
-                                                                            </ul>
-                                                                        </li>
-                                                                    @endif
-                                                                        
+                                                                @foreach(getPar($item->id) as $i)
+                                                                <li ><a href="{{ url('/pelayanan/'.$i->slug) }}"> {{ $i->nama }}</a></li>
                                                                 @endforeach
-                                                                
-                                                                @foreach(getPelayanan($item->id) as $pel)
-                                                                <li><a href="{{ url('/pelayanan/'.$pel->slug) }}">{{ $pel->nama }}</a></li>
-                                                                @endforeach
+
                                                             </ul>
                                                         </li>
-                                                    @else
-                                                    <li class="dropdown-trigger"><a href="#"> {{ $item->nama }}</a>
-                                                        <ul class="dropdown-content">
-                                                            @foreach(getPelayanan($item->id) as $pel)
-                                                            <li><a href="{{ url('/pelayanan/'.$pel->slug) }}">{{ $pel->nama }}</a></li>
-                                                            @endforeach
-                                                            
-                                                        </ul>
-                                                    </li>
+                                                        @else
+
+                                                        <li ><a href="{{ url('/pelayanan/'.$kat->slug) }}"> {{ $kat->nama }}</a></li>
+                                                        @endif
+                                                        @endforeach
                                                         
-                                                    @endif
+                                                        
+                                                    </ul>
+                                                </li>
                                                 
                                                 @endforeach
                                                 
