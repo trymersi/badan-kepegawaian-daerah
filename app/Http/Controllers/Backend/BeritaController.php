@@ -71,6 +71,7 @@ class BeritaController extends Controller
             'judul_berita' => 'required',
             'kategori_berita' => 'required',
             'isi_berita' => 'required',
+            'thumbnail'=>'required'
         ]);
         if ($validator->fails()) {
             Toastr::error('Terjadi Kesalahan Saat Menyimpan Data', 'Gagal', ["positionClass" => "toast-bottom-right"]);
@@ -78,6 +79,16 @@ class BeritaController extends Controller
         }
 
         $nama_bersih = bersih($request->judul_berita,'-');
+
+        if($request->file('thumbnail'))
+        {
+            $filename = $nama_bersih.'_'.rand();
+            $ext = $request->file('thumbnail')->extension();
+            $filepath = public_path('uploads/images/gambar-berita/thumbnail').'/'.$filename.'.'.$ext;
+            $img = Image::make($request->file('thumbnail'))->crop(400, 400)->save($filepath);
+            $thumbnail = $filename.'.'.$ext;
+        }
+
 
         $content = $request->isi_berita;
         $dom = new \DomDocument();
@@ -102,10 +113,6 @@ class BeritaController extends Controller
                 $new_src =$truepath;
                 $img->removeAttribute('src');
                 $img->setAttribute('src', $new_src);
-            }
-            if($hitungGambar == 1)
-            {
-                $thumbnail = $nama;
             }
             $hitungGambar++;
         }
@@ -200,6 +207,15 @@ class BeritaController extends Controller
 
         $nama_bersih = bersih($request->judul_berita,'-');
 
+        if($request->file('thumbnail'))
+        {
+            $filename = $nama_bersih.'_'.rand();
+            $ext = $request->file('thumbnail')->extension();
+            $filepath = public_path('uploads/images/gambar-berita/thumbnail').'/'.$filename.'.'.$ext;
+            $img = Image::make($request->file('thumbnail'))->crop(400, 400)->save($filepath);
+            $thumbnail = $filename.'.'.$ext;
+        }
+
         $content = $request->isi_berita;
         $dom = new \DomDocument();
         libxml_use_internal_errors(true);
@@ -223,10 +239,7 @@ class BeritaController extends Controller
                 $new_src =$truepath;
                 $img->removeAttribute('src');
                 $img->setAttribute('src', $new_src);
-                if($hitungGambar == 1)
-                {
-                    $thumbnail = $nama;
-                }
+               
             }
             
             $hitungGambar++;
@@ -241,8 +254,8 @@ class BeritaController extends Controller
         $edit->judul = $request->judul_berita;
         $edit->konten = $dom->saveHTML();
         $edit->tajuk = ($request->tajuk_berita) ? 1:0;
-        if($edit->thumbnail == '' || $edit->thumbnail == 'default.jpg'):
-        $edit->thumbnail = $thumb;
+        if(isset($thumbnail)):
+        $edit->thumbnail = $thumbnail;
         endif;
         $edit->meta_deskripsi = meta_description($content);
         $edit->meta_keyword = meta_keywords($request->judul_berita);    
@@ -284,22 +297,7 @@ class BeritaController extends Controller
     public function destroy($id)
     {
         
-        $data = $this->BeritaClass->find($id);
-        if($data->thumbnail != "default.jpg")
-        {
-            /* DELETE DATA GAMBAR KETERANGAN*/
-            $path_keterangan = public_path('uploads/images/gambar-berita');
-            $content = $data->isi;
-            $dom = new \DomDocument();
-            libxml_use_internal_errors(true);
-            $dom->loadHtml($content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-            $images = $dom->getElementsByTagName('img');
-            foreach($images as $img)
-            {
-                $src = $img->getAttribute('src');
-                File::delete($path_keterangan.'/'.basename($src));
-            }
-        }
+        $data = $this->beritaClass->find($id);
         
         $file = $this->unduhClass->where('berita_id',$id)->get();
         foreach($file as $key)
@@ -333,7 +331,7 @@ class BeritaController extends Controller
 
             ->addColumn('thumbnail', function($data)
             {
-            return  "<image src='".asset('uploads/images/gambar-berita/'.$data->thumbnail)."' width='200px' height='200px'>";
+            return  "<image src='".asset('uploads/images/gambar-berita/thumbnail/'.$data->thumbnail)."' width='200px' height='200px'>";
             })
 
             ->addColumn('judul', function($data)
@@ -365,5 +363,16 @@ class BeritaController extends Controller
             ->addIndexColumn()
             ->rawColumns(['tanggal','option','file'])
             ->make(true);
+    }
+
+    public function getUpdate()
+    {
+        $path =  public_path('uploads/images/gambar-berita');
+        $path2 =  public_path('uploads/images/gambar-berita/thumbnail');
+        $data = $this->beritaClass->where('thumbnail','!=','default.jpg')->get();
+        foreach($data as $item)
+        {
+            $img = Image::make($path.'/'.$item->thumbnail)->crop(400, 400)->save($path2.'/'.$item->thumbnail);
+        }
     }
 }

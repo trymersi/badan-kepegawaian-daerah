@@ -44,7 +44,7 @@
                             <div class="entry-thumb">
                                 <figure class="thumb-wrap">
                                     <a href="{{ url('/berita/'.$item->slug) }}">
-                                        <img src="{{ asset('uploads/images/gambar-berita/'.$item->thumbnail) }}" alt="{{ $item->judul }}" width="370px" height="200px">
+                                        <img src="{{ asset('uploads/images/gambar-berita/thumbnail/'.$item->thumbnail) }}" alt="{{ $item->judul }}" width="370px" height="200px">
                                     </a>
                                 </figure><!--./ thumb-wrap -->
                             </div><!--./ entry-thumb -->
@@ -100,7 +100,7 @@
                                         <div class="entry-thumb">
                                             <figure class="thumb-wrap">
                                                 <a href="{{ url('/berita/'.$item->slug) }}">
-                                                    <img src="{{ asset('uploads/images/gambar-berita/'.$item->thumbnail) }}" width="140px" height="140px" alt="post">
+                                                    <img src="{{ asset('uploads/images/gambar-berita/thumbnail/'.$item->thumbnail) }}" width="140px" height="140px" alt="post">
                                                 </a>
                                                
                                             </figure><!--./ thumb-wrap -->

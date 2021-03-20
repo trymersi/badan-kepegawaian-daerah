@@ -20,7 +20,7 @@
                                 <th>#</th>
                                 <th>Judul</th>
                                 <th>Konten</th>
-                                <th>Gambar</th>
+                                <th width="15%">Gambar</th>
                                 <th>Kategori Berita</th>
                                 <th>Jumlah File</th>
                                 <th>Terakhir Diubah</th>

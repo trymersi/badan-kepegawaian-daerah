@@ -54,7 +54,18 @@
                           </div>
                         
                         </div>
-                        
+                        <div class="row">
+                          <div class="col-md-8">
+                            <div class="form-group @error('thumbnail') error @enderror">
+                              <label>Thumbnail Berita <span class="text-danger">*</span></label>
+                              <input type="file" name="thumbnail" class="form-control" accept="image/jpg,image/png">
+                              @error('thumbnail')
+                              <div class="help-block"><ul role="alert"><li>{{$message}}</li></ul></div>
+                              @enderror
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                         <div class="form-group">
                           <label>Isi Berita</label>
                           <textarea rows="5"  id="summernote" name="isi_berita" class="form-control">{!! old('isi_berita') !!}</textarea>

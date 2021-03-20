@@ -166,7 +166,7 @@
                                             <div class="entry-thumb">
                                                 <figure class="thumb-wrap">
                                                     <a href="{{ url('/berita/'.$item->slug) }}">
-                                                        <img width="100px" height="100px" src="{{ asset('uploads/images/gambar-berita/'.$item->thumbnail) }}" alt="{{ $item->judul }}">
+                                                        <img width="100px" height="100px" src="{{ asset('uploads/images/gambar-berita/thumbnail/'.$item->thumbnail) }}" alt="{{ $item->judul }}">
                                                     </a>
                                                 </figure><!--./ thumb-wrap -->
                                             </div><!--./ entry-thumb -->
@@ -215,7 +215,7 @@
                                             <div class="entry-thumb">
                                                 <figure class="thumb-wrap">
                                                     <a href="{{ url('/berita/'.$item->slug) }}">
-                                                        <img src="{{ asset('uploads/images/gambar-berita/'.$item->thumbnail) }}" width="270px" height="220px" alt="post">
+                                                        <img src="{{ asset('uploads/images/gambar-berita/thumbnail/'.$item->thumbnail) }}" width="270px" height="220px" alt="post">
                                                     </a>
                                                     <div class="featured-badge-list">
                                                         <a class="trending" href="#">

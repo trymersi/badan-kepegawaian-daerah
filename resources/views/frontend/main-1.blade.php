@@ -302,7 +302,7 @@
                             <article class="post side-post" style="margin-bottom: 20px;">
                                 <div class="thumb-wrap">
                                     <a href="{{ url('/berita/'.$item->slug) }}">
-                                        <img src="{{ asset('uploads/images/gambar-berita/'.$item->thumbnail) }}" alt="{{ $item->judul }}" width="100" height="100">
+                                        <img src="{{ asset('uploads/images/gambar-berita/thumbnail/'.$item->thumbnail) }}" alt="{{ $item->judul }}" width="100" height="100">
                                     </a>
                                     <span class="count">1</span>
                                 </div><!--./ thumb-wrap -->

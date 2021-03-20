@@ -109,6 +109,7 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function()
     Route::prefix('/berita')->group(function(){
         Route::resource('/','Backend\BeritaController');
         Route::get('/table','Backend\BeritaController@table');
+        Route::get('/list','Backend\BeritaController@getUpdate');
         Route::get('/edit/{id}','Backend\BeritaController@edit');
         Route::patch('/update/{id}','Backend\BeritaController@update');
         Route::delete('/delete/{id}','Backend\BeritaController@destroy');

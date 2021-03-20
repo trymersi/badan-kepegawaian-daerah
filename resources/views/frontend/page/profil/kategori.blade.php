@@ -26,7 +26,7 @@
                                     <div class="entry-thumb">
                                         <figure class="thumb-wrap">
                                             <a href="{{ url('/berita/'.$item->slug) }}">
-                                                <img src="{{ asset('uploads/images/gambar-berita/'.$item->thumbnail) }}" width="270px" height="220px" alt="{{ $item->judul }}">
+                                                <img src="{{ asset('uploads/images/gambar-berita/thumbnail/'.$item->thumbnail) }}" width="270px" height="220px" alt="{{ $item->judul }}">
                                             </a>
                                           
                                         </figure><!--./ thumb-wrap -->
