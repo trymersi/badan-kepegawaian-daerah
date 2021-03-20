@@ -372,7 +372,7 @@ class BeritaController extends Controller
         $data = $this->beritaClass->where('thumbnail','!=','default.jpg')->get();
         foreach($data as $item)
         {
-            $img = Image::make($path.'/'.$item->thumbnail)->crop(400, 400)->save($path2.'/'.$item->thumbnail);
+            $img = Image::make($path.'/'.$item->thumbnail)->fit(400, 400)->save($path2.'/'.$item->thumbnail);
         }
     }
 }

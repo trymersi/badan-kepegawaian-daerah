@@ -21,126 +21,138 @@
         </div><!--/#frontpage-slide --> 
     </div>
     
-    
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Start Main Wrapper
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <div class="frontpage-popular-posts pb-80">
+    <div class="section-promo-boxes pt-100" style="padding-bottom: 20px; padding-top:0px;">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <div class="section-header">
-                        <h2 class="section-title">Tajuk Berita</h2>
-                    </div><!--~./ end section header ~-->
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-12">
-                    <div id="popular-posts-carousel" class="owl-carousel carousel-nav-circle">
-                       <!--~~~~~ Start Post ~~~~~-->
-                       @foreach($berita_tajuk as $item)
-                        <article class="post hentry post-grid">
-                            <div class="entry-thumb">
-                                <figure class="thumb-wrap">
-                                    <a href="{{ url('/berita/'.$item->slug) }}">
-                                        <img src="{{ asset('uploads/images/gambar-berita/thumbnail/'.$item->thumbnail) }}" alt="{{ $item->judul }}" width="370px" height="200px">
-                                    </a>
-                                </figure><!--./ thumb-wrap -->
-                            </div><!--./ entry-thumb -->
-                            <div class="content-entry-wrap">
-                                <div class="entry-content">
-                                    <h3 class="entry-title">
-                                        <a href="{{ url('/berita/'.$item->slug) }}">{{ ucwords($item->judul) }}</a>
-                                    </h3><!--./ entry-title -->
-                                </div><!--./ entry-content -->
-                                <div class="entry-meta-content">
-                                    <div class="entry-date">
-                                        <span><i class="fa fa-calendar"></i> {{ tgl_indo($item->updated_at) }} </span>
-                                    </div><!--./ entry-date -->
-                                    <div class="entry-date">
-                                        <span><i class="fa fa-eye"></i> {{ $item->dilihat }} </span>
-                                    </div><!--./ entry-date -->
-                                    <div class="entry-category">
-                                        <a class="cat" href="{{ url('/kategori-berita/'.$item->slug_kategori) }}">{{ $item->nama_kategori }}</a>
-                                    </div><!--./ entry-category -->
-                                </div><!--./ entry-meta-content -->
-                            </div><!--./ content-entry-wrap -->
-                        </article><!--~./ end post ~-->
-                        @endforeach
+                <!--~~~~~ Start Promo Boxes Item ~~~~~-->
+                <div class="col-lg-3 col-md-3">
+                    <div class="promo-boxes-item">
+                        <a class="promo-boxes-item-inner" href="{{ url('indeks-kepuasan-masyarakat') }}">
+                            <div class="promo-thumb">
+                               <img src="{{ asset('assets/frontend/images/pelayanan/ikm.png') }}" alt="Indeks Kepuasan Masyarakat">
+                            </div>
+                            {{-- <div class="promo-text">
+                                <span>IKM</span>
+                            </div> --}}
+                        </a>
                     </div>
-                </div>
+                </div><!--~./ end promo boxes item ~-->
+                
+                <!--~~~~~ Start Promo Boxes Item ~~~~~-->
+                <div class="col-lg-3 col-md-3">
+                    <div class="promo-boxes-item">
+                        <a class="promo-boxes-item-inner" href="#">
+                            <div class="promo-thumb">
+                                <img src="{{ asset('assets/frontend/images/pelayanan/pelayanan.png') }}" alt="Pelayanan Kepegawaian">
+
+                            </div>
+                            {{-- <div class="promo-text">
+                                <span>Konsultasi</span>
+                            </div> --}}
+                        </a>
+                    </div>
+                </div><!--~./ end promo boxes item ~-->
+                
+                <!--~~~~~ Start Promo Boxes Item ~~~~~-->
+                <div class="col-lg-3 col-md-3">
+                    <div class="promo-boxes-item">
+                        <a class="promo-boxes-item-inner" href="{{ url('/kontak') }}">
+                            <div class="promo-thumb">
+                                <img src="{{ asset('assets/frontend/images/pelayanan/pelayanan.png') }}" alt="Pelayanan Kepegawaian">
+                            </div>
+                
+                        </a>
+                    </div>
+                </div><!--~./ end promo boxes item ~-->
+                <div class="col-lg-3 col-md-3">
+                    <div class="promo-boxes-item">
+                        <a class="promo-boxes-item-inner" href="{{ url('/faq') }}">
+                            <div class="promo-thumb">
+                               <img src="{{ asset('assets/frontend/images/pelayanan/pertanyaan.png') }}" alt="Pertanyaan Umum">
+                            </div>
+                            {{-- <div class="promo-text">
+                                <span>Pertanyaan</span>
+                            </div> --}}
+                        </a>
+                    </div>
+                </div><!--~./ end promo boxes item ~-->
             </div>
         </div>
-    </div><!--~./End frontpage popular posts ~-->
-
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Start Main Wrapper
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    </div><!--~./ end section promo boxes ~-->
     <div class="main-wrapper ptb-80">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-9">
                     <!--~~~~~ Start Site Main ~~~~~-->
                     <main class="site-main">
-                        <!--~~~~~ Start Frontpage Cat Posts ~~~~~-->
-                        <div class="frontpage-cat-posts pb-80">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="section-header">
-                                        <h2 class="section-title">Berita Terbaru</h2>
-                                    </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="section-header">
+                                    <h2 class="section-title">Berita Terbaru</h2>
                                 </div>
                             </div><!--~./ end section header ~-->
                             
-                            <div class="row">
-                                @foreach($berita as $item)
-                                <div class="col-lg-6">
-                                    <article class="post hentry post-list post-list-small">
-                                        <div class="entry-thumb">
-                                            <figure class="thumb-wrap">
-                                                <a href="{{ url('/berita/'.$item->slug) }}">
-                                                    <img src="{{ asset('uploads/images/gambar-berita/thumbnail/'.$item->thumbnail) }}" width="140px" height="140px" alt="post">
+                            <!--~~~~~ Start Post ~~~~~-->
+                            @foreach($berita as $item)
+                            <div class="col-12 load-post">
+                                <article class="post hentry post-list">
+                                    <div class="entry-thumb">
+                                        <figure class="thumb-wrap">
+                                            <a href="{{ url('/berita/'.$item->slug) }}">
+                                                <img src="{{ asset('uploads/images/gambar-berita/thumbnail/'.$item->thumbnail) }}" alt="post">
+                                            </a>
+                                            {{-- <div class="featured-badge-list">
+                                                <a class="trending" href="#">
+                                                    <span class="fab fa-gripfire"></span>
                                                 </a>
-                                               
-                                            </figure><!--./ thumb-wrap -->
-                                        </div><!--./ entry-thumb -->
-                                        <div class="content-entry-wrap">
-                                            <div class="entry-content">
-                                                <h3 class="entry-title">
-                                                    <a href="{{ url('/berita/'.$item->slug) }}">{{ ucwords($item->judul) }}</a>
-                                                </h3><!--./ entry-title -->
-                                            </div><!--./ entry-content -->
-                                            <div class="entry-meta-content">
-                                                <div class="entry-date">
-                                                    <span>{{ tgl_indo($item->updated_at) }} </span>
-                                                </div><!--./ entry-date -->
-                                                <div class="entry-date">
-                                                    <span><i class="fa fa-eye"></i> {{ $item->dilihat }} </span>
-                                                </div><!--./ entry-date -->
-                                                <div class="entry-category">
-                                                    <a class="cat" href="{{ url('/kategori-berita/'.$item->slug_kategori) }}">{{ $item->nama_kategori }}</a>
-                                                </div><!--./ entry-category -->
-                                            </div><!--./ entry-meta-content -->
-                                        </div><!--./ content-entry-wrap -->
-                                    </article>
-                                </div><!--~./ end post ~-->
-                                @endforeach
-                                
-                            </div>
-                        </div><!--~./ end frontpage cat posts ~-->
-                        
+                                            </div><!--./ featured-badge-list --> --}}
+                                        </figure><!--./ thumb-wrap -->
+                                    </div><!--./ entry-thumb -->
+                                    <div class="content-entry-wrap">
+                                        <div class="entry-content">
+                                            <h3 class="entry-title">
+                                                <a href="{{ url('/berita/'.$item->slug) }}">{{ ucwords($item->judul) }}</a>
+                                            </h3><!--./ entry-title -->
+                                        </div><!--./ entry-content -->
+                                        <div class="entry-meta-content">
+                                            {{-- <div class="entry-meta-author">
+                                                <div class="entry-author-thumb">
+                                                    <img class="avatar photo" src="http://via.placeholder.com/40x40" alt="author">
+                                                </div>
+                                                <div class="entry-author-name">
+                                                    <a href="#">Ahmed Arafa</a>
+                                                </div>
+                                            </div><!--./ entry-meta-author --> --}}
+                                            <div class="entry-date">
+                                                <span>{{ tgl_indo($item->updated_at) }}</span>
+                                            </div><!--./ entry-date -->
+                                            <div class="entry-views">
+                                                <span>{{ $item->dilihat }} kali dibaca</span>
+                                            </div><!--./ entry-date -->
+                                            <div class="entry-category">
+                                                <a class="cat" href="#">{{ $item->nama_kategori }}</a>
+                                            </div><!--./ entry-category -->
+                                        </div><!--./ entry-meta-content -->
+                                        <div class="entry-summary">
+                                            <p>{{ $item->meta_deskripsi }}</p>
+                                        </div>
+                                    </div><!--./ content-entry-wrap -->
+                                </article>
+                            </div><!--~./ end post ~-->
+                            @endforeach
+                            
+                        </div>
                     </main>
                     <!--~./ end site main ~-->
-                    
-                   
                 </div>
-
+                
+                <!--~~~~~ Start sidebar ~~~~~-->
+                @include('frontend.include.sidebar')
             </div>
         </div>
     </div><!--~./ end main wrapper ~-->
 
-    <div class="frontpage-popular-posts pb-80">
+    {{-- <div class="frontpage-popular-posts pb-80">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -170,7 +182,7 @@
                 </div>
             </div>
         </div>
-    </div><!--~./End frontpage popular posts ~-->
+    </div><!--~./End frontpage popular posts ~--> --}}
 
     
 
@@ -254,7 +266,7 @@
         </div>
     </div><!--~./ end top stories block ~-->
     
-    <div class="frontpage-popular-posts pb-80">
+    {{-- <div class="frontpage-popular-posts pb-80">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -282,7 +294,7 @@
                 </div>
             </div>
         </div>
-    </div><!--~./End frontpage popular posts ~-->
+    </div><!--~./End frontpage popular posts ~--> --}}
 
     <div class="video-channels-posts-block bg-blue ptb-80">
         <div class="container">

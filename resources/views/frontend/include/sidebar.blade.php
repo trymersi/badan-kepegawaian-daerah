@@ -23,16 +23,46 @@
            
         <!--~~~~~ Start Popular Posts Widget~~~~~-->
         <aside class="widget popular-posts-widget">
+            <h4 class="widget-title"><span>Tajuk Berita</span></h4>
+            <div class="widget-content">
+                <?php $i = 1;?>
+                @foreach($berita_tajuk as $item)
+                <article class="post side-post">
+                    <div class="thumb-wrap">
+                        <a href="{{ url('/berita/'.$item->slug) }}">
+                            <img src="{{ asset('uploads/images/gambar-berita/'.$item->thumbnail) }}" width="100px" height="100px" alt="{{ $item->judul }}">
+                        </a>
+                        {{-- <span class="count">{{ $i }}</span> --}}
+                    </div><!--./ thumb-wrap -->
+                    <div class="content-entry-wrap">
+                        <h3 class="entry-title">
+                            <a href="{{ url('/berita/'.$item->slug) }}">{{ $item->judul }}</a>
+                        </h3><!--./ entry-title -->
+                        <div class="entry-meta-content">
+                            <div class="entry-date">
+                                <span>{{ tgl_indo($item->updated_at) }}</span>
+                            </div><!--./ entry-date -->
+                            
+                        </div><!--./ entry-meta-content -->
+                    </div>
+                </article><!--./ end post -->
+                <?php $i++;?>
+                @endforeach
+                
+            </div>
+        </aside><!--~./ end popular posts widget ~-->
+
+        <aside class="widget popular-posts-widget">
             <h4 class="widget-title"><span>Berita Populer</span></h4>
             <div class="widget-content">
                 <?php $i = 1;?>
                 @foreach($berita as $item)
                 <article class="post side-post">
                     <div class="thumb-wrap">
-                        <a href="post-details.html">
+                        <a href="{{ url('/berita/'.$item->slug) }}">
                             <img src="{{ asset('uploads/images/gambar-berita/thumbnail/'.$item->thumbnail) }}" width="100px" height="100px" alt="{{ $item->judul }}">
                         </a>
-                        <span class="count">{{ $i }}</span>
+                        {{-- <span class="count">{{ $i }}</span> --}}
                     </div><!--./ thumb-wrap -->
                     <div class="content-entry-wrap">
                         <h3 class="entry-title">
@@ -53,20 +83,25 @@
         </aside><!--~./ end popular posts widget ~-->
           
         <!--~~~~~ Start Widget Advertisement ~~~~~-->
-        <!-- <aside class="widget widget-text">     
-            <h4 class="widget-title"><span>Link Terkait</span></h4>      
+        <aside class="widget tb-subscribe-widget">
+            <h4 class="widget-title"><span>Aplikasi Terkait</span></h4>      
+            @foreach($aplikasi as $item)
             <div class="widget-content">
-                @foreach($link_terkait as $item)
-                <a title="add" href="{{ $item->link }}" target="_blank">
-                    <img width="270px" src="{{ asset('uploads/images/link-terkait/'.$item->gambar) }}" alt="{{ $item->nama }}">
-                </a>
-                @endforeach
+                    <div class="subscribe-box">
+                        <div class="icon">
+                        <a title="add" href="{{ $item->link }}" target="_blank">
+                            <img src="{{ asset('uploads/images/aplikasi-terkait/'.$item->gambar) }}" alt="{{ $item->nama }}">
+                        </a>
+                        </div>
+                    </div>
             </div>
-        </aside> -->
+            @endforeach
+        </aside>
 
         <aside class="widget tb-subscribe-widget">
-        <h4 class="widget-title"><span>Link Terkait</span></h4>      
+        <h4 class="widget-title"><span>BKD Kabupaten / Kota</span></h4>      
         @foreach($link_terkait as $item)
+        <?php if ($item->jenis == '1') { ?>
         <div class="widget-content">
                 <div class="subscribe-box">
                     <div class="icon">
@@ -76,8 +111,27 @@
                     </div>
                 </div>
         </div>
+        <?php } ?>
         @endforeach
         </aside>
+
+        <aside class="widget tb-subscribe-widget">
+            <h4 class="widget-title"><span>Link Terkait Lainnya</span></h4>  
+         
+            @foreach($link_terkait as $item)
+            <?php if ($item->jenis == '2') { ?>
+            <div class="widget-content">
+                    <div class="subscribe-box">
+                        <div class="icon">
+                        <a title="add" href="{{ $item->link }}" target="_blank">
+                            <img src="{{ asset('uploads/images/link-terkait/'.$item->gambar) }}" alt="{{ $item->nama }}">
+                        </a>
+                        </div>
+                    </div>
+            </div>
+            <?php } ?>
+            @endforeach
+            </aside>
         
     </div>
 </div><!--~./ end sidebar ~-->
